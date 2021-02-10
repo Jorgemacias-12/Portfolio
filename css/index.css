@@ -9,6 +9,12 @@
     display: flex;
 }
 
+.show {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
 .app {
     display: grid;
     width: 100vw;
@@ -52,20 +58,81 @@
     background-color: #fff;
 }
 
-.form > .text{
+.form>.text {
     text-align: center;
 }
 
-.form-title > .title-form{
+.float {
+    position: absolute;
+    left: 39.8%;
+}
+
+.form-title>.title-form {
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: 20px;
     text-align: center;
 }
 
-.inputGroup{
+.inputGroup {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 10%;
+}
+
+.input {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #121212;
+    margin: 5px;
+    padding-left: 5px;
+    width: 40%;
+    height: 35px;
+}
+
+.ig-upe {
+    margin-top: 20px;
+    justify-content: unset;
+    flex-flow: column;
+    height: 40%;
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonGroup>.button {
+    width: 20%;
+    height: 40px;
+    color: white;
+    background-color: #339DFF;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.buttonGroup>.button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #339DFF;
+    transition: 0.1s all;
+}
+
+.get{
+    justify-content: center;
+}
+
+.error{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    width: 60%;
+    height: 10%;
+    background-color: #ff3333;
+}
+
+.closeable{
+    
 }
