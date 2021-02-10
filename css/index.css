@@ -1,0 +1,51 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: arial;
+    outline: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.app {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas: "header header" "form results";
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 60px auto;
+}
+
+.header {
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: header;
+}
+
+.header>.title {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+.insert {
+    grid-area: form;
+    background-color: #1e1e1e;
+    justify-content: center;
+}
+
+.get {
+    background-color: #1e1e1e;
+    grid-area: results;
+}
+
+.form {
+    margin-top: 50px;
+    width: 40%;
+    height: 60%;
+    background-color: #ffff;
+}
