@@ -44,8 +44,28 @@
 }
 
 .form {
+    display: flex;
+    flex-direction: column;
     margin-top: 50px;
     width: 40%;
     height: 60%;
-    background-color: #ffff;
+    background-color: #fff;
+}
+
+.form > .text{
+    text-align: center;
+}
+
+.form-title > .title-form{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.inputGroup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
 }
