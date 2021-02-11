@@ -91,11 +91,20 @@
 
 .input {
     font-family: Arial, Helvetica, sans-serif;
-    border: 1px solid #121212;
+    border: 2px solid #aaa;
     margin: 5px;
     padding-left: 5px;
     width: 40%;
     height: 35px;
+}
+
+.input:hover {
+    border: 2px solid #339DFF;
+    transition: 0.1s all;
+}
+
+.input:focus {
+    border: 2px solid #339DFF;
 }
 
 .ig-upe {
@@ -217,7 +226,6 @@
 }
 
 .mode-selected {
-    
     border-bottom: 2px solid #fa8181;
 }
 
