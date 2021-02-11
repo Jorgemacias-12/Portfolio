@@ -1,0 +1,19 @@
+{
+  "name": "web-db-manipulate",
+  "version": "1.0.0",
+  "description": "Aplicación de ejemplo para modificar, insertar y eliminar registros de tablas de bases de datos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jorgemacias-12/web-db-manipulate.git"
+  },
+  "author": "Jorge Macias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jorgemacias-12/web-db-manipulate/issues"
+  },
+  "homepage": "https://github.com/Jorgemacias-12/web-db-manipulate#readme"
+}
