@@ -63,8 +63,15 @@
 }
 
 .float {
+    color: transparent;
     position: absolute;
-    left: 39.8%;
+    left: 39.7%;
+}
+
+.float:hover{
+    cursor: pointer;
+    color: #339DFF;
+    transition: 0.1s all;
 }
 
 .form-title>.title-form {
@@ -98,6 +105,7 @@
 }
 
 .buttonGroup {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,20 +127,51 @@
     transition: 0.1s all;
 }
 
-.get{
+.get {
     justify-content: center;
 }
 
-.error{
+.errorGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+}
+
+.error {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
-    width: 60%;
-    height: 10%;
+    width: 80%;
+    height: 60%;
     background-color: #ff3333;
 }
 
-.closeable{
-    
+.left{
+    width: 10%;
+}
+
+.closeable {
+    color: #fa8181;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.closeable:hover {
+    color: white;
+    cursor: pointer;
+    transition: 0.1s all;
+}
+
+.text-error {
+    width: 90%;
+    color: white;
+    font-family: arial;
+    font-size: 16px;
+    text-align: center;
+}
+
+.exclamation{
+    color: white;
 }
