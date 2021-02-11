@@ -45,6 +45,7 @@
 }
 
 .get {
+    flex-direction: column;
     background-color: #1e1e1e;
     grid-area: results;
 }
@@ -68,7 +69,7 @@
     left: 39.7%;
 }
 
-.float:hover{
+.float:hover {
     cursor: pointer;
     color: #339DFF;
     transition: 0.1s all;
@@ -148,7 +149,7 @@
     background-color: #ff3333;
 }
 
-.left{
+.left {
     width: 10%;
 }
 
@@ -172,6 +173,55 @@
     text-align: center;
 }
 
-.exclamation{
+.exclamation {
     color: white;
+}
+
+.selector {
+    background-color: #24292e;
+    width: 100%;
+    height: 6%;
+    color: white;
+}
+
+.ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+}
+
+.li {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.li:hover {
+    cursor: pointer;
+    border-bottom: 2px solid #555;
+}
+
+.link {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 54px;
+}
+
+.mode-selected {
+    
+    border-bottom: 2px solid #fa8181;
+}
+
+.frame {
+    width: 100%;
+    height: 94%;
 }
