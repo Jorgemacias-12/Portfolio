@@ -4,6 +4,17 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.text {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+}
+
+.text:first-child {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
 .app {
     display: grid;
     grid-template-areas: "header header" "main aside";
@@ -55,12 +66,16 @@
     flex-flow: row;
     align-items: center;
     width: 60%;
-    height: 40%;
+    height: 45%;
     background-color: #fff;
 }
 
-.reduce{
-    width: 50%;
+.normal {
+    flex-flow: column;
+}
+
+.reduce {
+    width: 55%;
     height: 10%;
 }
 
@@ -69,15 +84,69 @@
     margin: 15px;
 }
 
+.inputGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.column {
+    flex-flow: column;
+}
+
+.inputGroup>.input {
+    width: 50%;
+}
+
 .input {
+    border: 2px solid #7a7a7a;
     padding-left: 5px;
     height: 35px;
     margin: 15px;
 }
 
+.input:focus {
+    border: 2px solid #339DFF;
+}
+
+.input:hover {
+    border: 2px solid #339DFF;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.buttonContainer>.button {
+    background-color: #1ED760;
+}
+
+.buttonContainer>.button:hover {
+    border: 2px solid #1ED760;
+    transition: 0.1s all;
+}
+
 .button {
+    background-color: #339DFF;
+    border: 2px solid transparent;
+    color: white;
+    width: auto;
+    font-size: 20px;
     height: 40px;
     margin: 10px;
+}
+
+.button:hover {
+    border: 2px solid #339DFF;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: 0.1s all;
 }
 
 .info {
