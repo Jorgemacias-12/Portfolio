@@ -2,7 +2,7 @@
   "name": "web-db-manipulate",
   "version": "1.0.0",
   "description": "Aplicación de ejemplo para modificar, insertar y eliminar registros de tablas de bases de datos.",
-  "main": "index.js",
+  "main": "scripts/page.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
