@@ -5,7 +5,6 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='/css/modify.css'>
-    <script src='main.js'></script>
 </head>
 <body>
     <div class="app">
@@ -20,7 +19,7 @@
             </h2>
             <div class="content">
                 <form action="" class="form normal" id="user_modify">
-                    <p class="text">
+                    <p class="text-form">
                         Nombre completo:
                     </p>
                     <div class="inputGroup">
@@ -53,7 +52,14 @@
                 <div class="errorContainer">
                     <div class="error">
                         <span class="closeable-c">
-                            <i class="fas fa-times"></i>
+                            <i class="fas fa-times closeable">
+                            </i>
+                        </span>
+                        <span class="text-c">
+                            <p class="text" id="error-argument">
+                                <i class="fas fa-exclamation-triangle white"></i>
+                                Error: 
+                            </p>
                         </span>
                     </div>
                 </div>
