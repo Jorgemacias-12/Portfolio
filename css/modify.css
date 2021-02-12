@@ -54,9 +54,14 @@
     display: flex;
     flex-flow: row;
     align-items: center;
+    width: 60%;
+    height: 40%;
+    background-color: #fff;
+}
+
+.reduce{
     width: 50%;
     height: 10%;
-    background-color: #fff;
 }
 
 .label {
