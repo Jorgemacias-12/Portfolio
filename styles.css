@@ -1,9 +1,12 @@
+/* Estilos generales */
+
 :root {
+    --bg-color-card: #241c2c;
     --bg-color-header: #33B0FF;
     --bg-color-primary: #1e1e1e;
     --bg-color-secondary: #24292e;
     --bg-color-item-hover: #05445e;
-     --icon-portfolio: url("resources/icon.png");
+    --icon-portfolio: url("resources/icon.png");
     --text-default: white;
 }
 
@@ -11,7 +14,8 @@
     margin: 0px;
     padding: 0px;
     border-spacing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    outline: none;
 }
 
 body {
@@ -21,11 +25,15 @@ body {
     background-color: var(--bg-color-secondary);
 }
 
+/* Estilos del contenedor princial */
+
 .app {
     width: 80%;
     height: 100vh;
     background-color: var(--bg-color-primary);
 }
+
+/* Estilos del header */
 
 .app-header {
     display: flex;
@@ -74,16 +82,30 @@ body {
     list-style: none;
 }
 
-.item {
+.link {
+    color: var(--text-default);
+    text-decoration: none;
     padding: 5px;
 }
 
-.item:hover {
+.link:hover {
     background-color: var(--bg-color-item-hover);
-    transition: 0.1s all;
 }
 
-.item :is(.link) {
-    text-decoration: none;
-    color: var(--text-default);
+/* Estilos para el contenido */
+
+.app-main {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.main-section {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 95%;
+    height: 100%;
+    background-color: var(--bg-color-card);
 }
