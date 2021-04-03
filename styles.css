@@ -49,7 +49,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    width: 30%;
+    width: 20%;
     height: auto;
     margin-right: 50px;
 }
@@ -69,17 +69,19 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 70%;
+    width: 80%;
     height: auto;
 }
 
 .header-list :is(.list) {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    width: 100%;
+    width: 80%;
     height: 60px;
     list-style: none;
+    margin-left: 10%;
+    margin-right: 5%;
 }
 
 .link {
