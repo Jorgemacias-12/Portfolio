@@ -53,6 +53,11 @@ body {
     background-color: var(--bg-color-header);
 }
 
+.float-header {
+    position: fixed;
+    z-index: 10;
+}
+
 .header-logo {
     display: flex;
     justify-content: center;
