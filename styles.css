@@ -25,6 +25,7 @@
     border-spacing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     outline: none;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -157,12 +158,17 @@ body {
 
 /* Sección del portafolio */
 
+#portfolio {
+    height: 900px;
+    min-height: 900px;
+}
+
 .projects {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     place-items: center;
     padding: 10px;
-    min-height: 900px;
+    height: 80%;
 }
 
 .project {
