@@ -9,6 +9,8 @@
     --bg-color-item-hover: #05445e;
     --bg-color-info-hover: rgba(31, 31, 31, 0.75);
     --bg-color-btn-visit: #1c97f1;
+    --bg-color-odd: #3C3744;
+    --bg-color-even: #C70039;
     --icon-portfolio: url("resources/icon.png");
     --icon-html: url("resources/html.png");
     --icon-css: url("resources/css.png");
@@ -33,6 +35,14 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--bg-color-secondary);
+}
+
+section:nth-child(even) {
+    background-color: var(--bg-color-even);
+}
+
+section:nth-child(odd) {
+    background-color: var(--bg-color-odd);
 }
 
 /* Estilos del contenedor princial */
@@ -159,8 +169,13 @@ body {
 /* Sección del portafolio */
 
 #portfolio {
-    height: 900px;
-    min-height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    height: 840px;
+    min-height: 840px;
 }
 
 .projects {
@@ -168,7 +183,8 @@ body {
     grid-template-columns: repeat(3, 1fr);
     place-items: center;
     padding: 10px;
-    height: 80%;
+    width: 80%;
+    height: calc(80% - 60px);
 }
 
 .project {
@@ -227,13 +243,19 @@ body {
 /* Sección de mis habilidades */
 
 .learning {
-    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
 }
 
 .skills-grid {
     display: grid;
     place-items: center;
     grid-template-columns: repeat(3, 1fr);
+    width: 50%;
+    min-width: 50%;
     min-height: 750px;
 }
 
@@ -278,4 +300,11 @@ body {
 .tooltip {
     width: 100%;
     height: 100%;
+}
+
+/* Sección de experiencia */
+
+#experience {
+    height: 700px;
+    min-height: 500px;
 }
