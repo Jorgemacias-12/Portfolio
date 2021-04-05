@@ -1,11 +1,14 @@
 /* Estilos generales */
 
 :root {
-    --bg-color-card: #241c2c;
+    --bg-color-main: #656565;
+    --bg-color-card: #333333;
     --bg-color-header: #33B0FF;
     --bg-color-primary: #1e1e1e;
     --bg-color-secondary: #24292e;
     --bg-color-item-hover: #05445e;
+    --bg-color-info-hover: rgba(31, 31, 31, 0.75);
+    --bg-color-btn-visit: #1c97f1;
     --icon-portfolio: url("resources/icon.png");
     --text-default: white;
 }
@@ -28,7 +31,7 @@ body {
 /* Estilos del contenedor princial */
 
 .app {
-    width: 80%;
+    width: 100%;
     height: 100vh;
     background-color: var(--bg-color-primary);
 }
@@ -49,7 +52,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    width: 20%;
+    width: 30%;
     height: auto;
     margin-right: 50px;
 }
@@ -69,7 +72,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 80%;
+    width: 70%;
     height: auto;
 }
 
@@ -77,14 +80,21 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 80%;
+    width: 100%;
     height: 60px;
     list-style: none;
     margin-left: 10%;
     margin-right: 5%;
 }
 
+.item {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .link {
+    display: block;
+    font-weight: bold;
     color: var(--text-default);
     text-decoration: none;
     padding: 5px;
@@ -105,15 +115,20 @@ body {
 }
 
 .main-section {
-    margin-top: 5px;
-    margin-bottom: 5px;
     width: 100%;
     height: 100%;
-    background-color: var(--bg-color-card);
+    background-color: var(--bg-color-main);
 }
 
 .section-title {
+    font-size: 25px;
+    color: var(--text-default);
+}
 
+.section-text {
+    font-size: 16px;
+    color: var(--text-default);
+    padding: 15px;
 }
 
 .text {
@@ -127,4 +142,64 @@ body {
 
 .text-justify {
     text-align: justify;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    padding: 10px;
+    min-height: 700px;
+}
+
+.project {
+    display: block;
+    width: 400px;
+    height: 300px;
+    background-color: var(--bg-color-card);
+    border: none;
+    position: relative;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.project-info {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.project-text {
+    text-align: justify;
+    padding: 20px;
+    color: white;
+}
+
+.project:hover>.project-info {
+    background-color: var(--bg-color-info-hover);
+    position: absolute;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.btn-visit {
+    background-color: var(--bg-color-btn-visit);
+    text-decoration: none;
+    border: 2px solid transparent;
+    color:white;
+    padding: 10px;
+}
+
+.btn-visit:hover {
+    color: black;
+    background: var(--text-default);
+    border: 2px solid var(--bg-color-btn-visit);
 }
