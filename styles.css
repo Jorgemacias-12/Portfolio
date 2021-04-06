@@ -321,9 +321,33 @@ html ::-webkit-scrollbar-thumb {
 
 #experience {
     display: flex;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 900px;
-    min-height: 840px;
+    height: 500px;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    margin-top: 20px;
+    width: 50%;
+    height: 60%;
+}
+
+.experience-card {
+    width: 200px;
+    height: 200px;
+    display: flex;
+}
+
+.btn-company {
+    width: 100%;
+    background-color: #05445e;
+    border: none;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
 }
