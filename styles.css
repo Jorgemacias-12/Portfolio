@@ -9,7 +9,7 @@
     --bg-color-item-hover: #05445e;
     --bg-color-info-hover: rgba(31, 31, 31, 0.75);
     --bg-color-btn-visit: #1c97f1;
-    --bg-color-odd: #3C3744;
+    --bg-color-odd: #292929;
     --bg-color-even: #C70039;
     --icon-portfolio: url("resources/icon.png");
     --icon-html: url("resources/html.png");
@@ -43,6 +43,50 @@ section:nth-child(even) {
 
 section:nth-child(odd) {
     background-color: var(--bg-color-odd);
+}
+
+html ::-webkit-scrollbar {
+    width: 10px;
+}
+
+html ::-webkit-scrollbar-track {
+    background-color: #262626;
+}
+
+html ::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 10px;
+}
+
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]::after {
+    display: grid;
+    place-items: center;
+    color: white;
+    text-align: center;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    content: attr(data-tooltip);
+    left: 0;
+    top: calc(+100% +10px);
+    border-radius: 3px;
+    box-shadow: 0 0 5px 2px rgba(100, 100, 100, 0.6);
+    background-color: #1e1e1e;
+    z-index: 10;
+    padding: 8px;
+    width: 112px;
+    transition: all 150ms cubic-bezier(.25, .8, .25, 1);
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: 350ms;
 }
 
 /* Estilos del contenedor princial */
@@ -173,9 +217,7 @@ section:nth-child(odd) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-items: center;
-    height: 840px;
-    min-height: 840px;
+    height: 1080px;
 }
 
 .projects {
@@ -184,7 +226,7 @@ section:nth-child(odd) {
     place-items: center;
     padding: 10px;
     width: 80%;
-    height: calc(80% - 60px);
+    height: 50%;
 }
 
 .project {
@@ -242,12 +284,16 @@ section:nth-child(odd) {
 
 /* Sección de mis habilidades */
 
+#habilities {
+    height: calc(1026px + 60px);
+}
+
 .learning {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100%;
+    min-height: 980px;
 }
 
 .skills-grid {
@@ -255,8 +301,8 @@ section:nth-child(odd) {
     place-items: center;
     grid-template-columns: repeat(3, 1fr);
     width: 50%;
+    height: 500px;
     min-width: 50%;
-    min-height: 750px;
 }
 
 .skill {
@@ -264,37 +310,6 @@ section:nth-child(odd) {
     place-items: center;
     width: 128px;
     height: 128px;
-}
-
-[data-tooltip] {
-    position: relative;
-    cursor: pointer;
-}
-
-[data-tooltip]::after {
-    display: grid;
-    place-items: center;
-    color: white;
-    text-align: center;
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-    content: attr(data-tooltip);
-    left: 0;
-    top: calc(+100% +10px);
-    border-radius: 3px;
-    box-shadow: 0 0 5px 2px rgba(100, 100, 100, 0.6);
-    background-color: #1e1e1e;
-    z-index: 10;
-    padding: 8px;
-    width: 112px;
-    transition: all 150ms cubic-bezier(.25, .8, .25, 1);
-}
-
-[data-tooltip]:hover::after {
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: 350ms;
 }
 
 .tooltip {
@@ -305,6 +320,10 @@ section:nth-child(odd) {
 /* Sección de experiencia */
 
 #experience {
-    height: 700px;
-    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 900px;
+    min-height: 840px;
 }
