@@ -118,22 +118,16 @@
                 </h2>
                 <div class="experience-grid">
                     <div class="experience-card">
-                        <button class="btn-company">
-                            <img src="" alt="" class="image-company">
-                            <p class="experience-p">De momento no tengo ninguna experiencia en ninguna empresa</p>
-                        </button>
+                        <img src="#" alt="" class="image-company">
+                        <p class="experience-p">De momento no tengo ninguna experiencia en ninguna empresa</p>
                     </div>
                     <div class="experience-card">
-                        <button class="btn-company">
-                            <img src="" alt="" class="image-company">
-                            <p class="experience-p">De momento no tengo ninguna experiencia en ninguna empresa</p>
-                        </button>
+                        <img src="#" alt="" class="image-company">
+                        <p class="experience-p">De momento no tengo ninguna experiencia en ninguna empresa</p>
                     </div>
                     <div class="experience-card">
-                        <button class="btn-company">
-                            <img src="" alt="" class="image-company">
-                            <p class="experience-p">De momento no tengo ninguna experiencia en ninguna empresa</p>
-                        </button>
+                        <img src="#" alt="" class="image-company">
+                        <p class="experience-p">De momento no tengo ninguna experiencia en ninguna empresa</p>
                     </div>
                 </div>
             </section>
@@ -141,6 +135,47 @@
                 <h2 class="section-title text-center">
                     Contactame
                 </h2>
+                <form class="form-grid" onsubmit="return;" id="contact-form">
+                    <div class="group column">
+                        <label for="names" class="label">
+                            Nombre(s) Completo(s):
+                        </label>
+                        <input type="text" id="names" class="input">
+                    </div>
+                    <div class="group column">
+                        <label for="email" class="label">
+                            Correo Electronico:
+                        </label>
+                        <input type="text" id="email" class="input">
+                    </div>
+                    <div class="group column">
+                        <label for="phoneNumber" class="label">
+                            Número de telefono:
+                        </label>
+                        <input type="tel" id="phoneNumber" class="input">
+                    </div>
+                    <div class="group column">
+                        <label for="message" class="label">
+                            Mensaje:
+                        </label>
+                        <input type="text" id="message" class="input">
+                    </div>
+                    <div class="group row align-center">
+                        <label for="priority" class="label align-center">
+                            Prioridad:
+                        </label>
+                        <select name="priority" id="priority" class="form-select">
+                            <option value="Alta" class="option-item">Alta</option>
+                            <option value="Mediana" class="option-item">Mediana</option>
+                            <option value="Baja" class="option-item">Baja</option>
+                        </select>
+                    </div>
+                    <div class="group column align-center">
+                        <button class="btn-form" id="btn-send">
+                            Enviar
+                        </button>
+                    </div>
+                </form>
             </section>
         </main>
         <script src="scripts/index.js"></script>

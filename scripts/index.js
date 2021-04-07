@@ -8,4 +8,19 @@ const headerManager = () => {
     }
 }
 
+const cleanFields = () => {
+    let sendForm = document.forms["contact-form"];
+    for (let i = 0; i < sendForm.length; i++) {
+        if (sendForm[i].tagName === "INPUT") {
+            sendForm[i].value = "";
+        }
+    }
+}
+
 window.onscroll = () => { headerManager(); }
+
+window.onload = () => {
+    document.getElementById('btn-send').addEventListener("click", () => {
+        cleanFields();
+    });
+}

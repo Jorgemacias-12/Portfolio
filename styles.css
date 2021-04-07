@@ -9,8 +9,11 @@
     --bg-color-item-hover: #05445e;
     --bg-color-info-hover: rgba(31, 31, 31, 0.75);
     --bg-color-btn-visit: #1c97f1;
-    --bg-color-odd: #292929;
-    --bg-color-even: #C70039;
+    --bg-color-select: #2D59D5;
+    --bg-color-odd: #C70039;
+    --bg-color-even: #292929;
+    --bg-color-success: #23af3d;
+    --input-border: #1B52EF;
     --icon-portfolio: url("resources/icon.png");
     --icon-html: url("resources/html.png");
     --icon-css: url("resources/css.png");
@@ -87,6 +90,18 @@ html ::-webkit-scrollbar-thumb {
     opacity: 1;
     transform: translateY(0);
     transition-duration: 350ms;
+}
+
+option:hover {
+    background-color: var(--bg-color-select);
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
 }
 
 /* Estilos del contenedor princial */
@@ -257,7 +272,7 @@ html ::-webkit-scrollbar-thumb {
 .project-text {
     text-align: justify;
     padding: 20px;
-    color: white;
+    color: var(--text-default);
 }
 
 .project:hover>.project-info {
@@ -271,7 +286,7 @@ html ::-webkit-scrollbar-thumb {
     background-color: var(--bg-color-btn-visit);
     text-decoration: none;
     border: 2px solid transparent;
-    color: white;
+    color: var(--text-default);
     padding: 10px;
     border-radius: 30px;
 }
@@ -341,13 +356,98 @@ html ::-webkit-scrollbar-thumb {
     width: 200px;
     height: 200px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #05445e;
 }
 
-.btn-company {
-    width: 100%;
-    background-color: #05445e;
-    border: none;
+.experience-p {
     color: white;
-    font-size: 12px;
-    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    line-height: 22px;
+}
+
+.align-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sección de contacto */
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 950px;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-grid {
+    display: grid;
+    place-items: center;
+    margin-top: 20px;
+    width: 50%;
+    height: 60%;
+}
+
+.group {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.label {
+    padding: 10px 0px 5px 0px;
+    text-align: justify;
+    width: 20%;
+    color: var(--text-default);
+}
+
+.input {
+    width: 96%;
+    height: 30px;
+    border: solid #ccc;
+    border-top: 0px;
+    border-width: 2px;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: transparent;
+    color: var(--text-default);
+}
+
+.form-select {
+    width: 20%;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #ccc;
+    color: var(--text-default);
+}
+
+.option-item {
+    background-color: var(--bg-color-primary);
+}
+
+.btn-form {
+    width: 15%;
+    height: 50px;
+    background-color: var(--bg-color-success);
+    border: 2px solid transparent;
+    cursor: pointer;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.btn-form:hover {
+    width: 15%;
+    height: 50px;
+    background-color: var(--text-default);
+    border: 2px solid var(--bg-color-success);
+    cursor: pointer;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
 }
