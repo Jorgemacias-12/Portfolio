@@ -135,7 +135,8 @@
                 <h2 class="section-title text-center">
                     Contactame
                 </h2>
-                <form class="form-grid" onsubmit="return;" id="contact-form">
+                <form action="javascript:void(0);" class="form-grid" onsubmit="return;" id="contact-form"
+                    novalidate="novalidate">
                     <div class="group column">
                         <label for="names" class="label">
                             Nombre(s) Completo(s):
@@ -164,7 +165,7 @@
                         <label for="priority" class="label align-center">
                             Prioridad:
                         </label>
-                        <select name="priority" id="priority" class="form-select">
+                        <select id="priority" class="form-select">
                             <option value="Alta" class="option-item">Alta</option>
                             <option value="Mediana" class="option-item">Mediana</option>
                             <option value="Baja" class="option-item">Baja</option>
@@ -176,8 +177,17 @@
                         </button>
                     </div>
                 </form>
+                <div class="social-media align-center">
+                    <a href="https://github.com/Jorgemacias-12" target="_blank" class="link">
+                        <i class="fab fa-github icon"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100017914353298" target="_blank" class="link">
+                        <i class="fab fa-facebook-square icon"></i>
+                    </a>
+                </div>
             </section>
         </main>
+        <script src="https://kit.fontawesome.com/7f4f5e3479.js" crossorigin="anonymous"></script>
         <script src="scripts/index.js"></script>
     </div>
 </body>
