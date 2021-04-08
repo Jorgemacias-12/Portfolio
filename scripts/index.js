@@ -20,7 +20,9 @@ const cleanFields = () => {
 window.onscroll = () => { headerManager(); }
 
 window.onload = () => {
+    let date = new Date();
     document.getElementById('btn-send').addEventListener("click", () => {
         cleanFields();
     });
+    document.getElementById('year').innerText = date.getFullYear();
 }

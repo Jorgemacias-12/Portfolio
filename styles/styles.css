@@ -458,7 +458,21 @@ option:hover {
     height: 100px;
 }
 
-.icon {
+.icon-social-media {
     margin-left: 10px;
     margin-right: 10px;
+    color: #ccc;
+}
+
+.icon-social-media:hover {
+    color: #fafafa;
+    background-color: none;
+}
+
+/* Sección del footer */
+
+.app-footer {
+    width: 100%;
+    height: 80px;
+    background-color: #DF2935;
 }
