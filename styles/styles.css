@@ -14,13 +14,13 @@
     --bg-color-even: #292929;
     --bg-color-success: #23af3d;
     --input-border: #1B52EF;
-    --icon-portfolio: url("resources/icon.png");
-    --icon-html: url("resources/html.png");
-    --icon-css: url("resources/css.png");
-    --icon-js: url("resources/js.png");
-    --icon-git: url("resources/git.png");
-    --icon-an: url("resources/angular.png");
-    --icon-ts: url("resources/ts.png");
+    --icon-portfolio: url("../resources/icon.png");
+    --icon-html: url("../resources/html.png");
+    --icon-css: url("../resources/css.png");
+    --icon-js: url("../resources/js.png");
+    --icon-git: url("../resources/git.png");
+    --icon-an: url("../resources/angular.png");
+    --icon-ts: url("../resources/ts.png");
     --text-default: white;
 }
 
