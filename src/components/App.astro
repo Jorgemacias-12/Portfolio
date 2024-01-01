@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+import { getI18N } from '@/i18n'
+import Header from './Header.astro';
+import AboutMe from './AboutMe.astro';
+import Experiences from './Experiences.astro';
+import Projects from './Projects.astro';
+
+const { currentLocale } = Astro
+
+const lang = getI18N({ currentLocale })
+---
+
+<!-- prettier-ignore -->
+<Layout
+  title={lang.SEO_TITLE}
+  description={lang.SEO_DESCRIPTION}
+  keywords={lang.SEO_KEYWORDS}
+>
+  <main class="p-5 flex flex-col gap-10">
+    <AboutMe />
+    <Experiences />
+    <Projects />
+  </main>
+</Layout>
+
+<style></style>
