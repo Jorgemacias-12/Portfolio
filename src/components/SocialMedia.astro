@@ -1,0 +1,29 @@
+---
+import { getI18N } from '@/i18n'
+const { currentLocale } = Astro
+const lang = getI18N({ currentLocale })
+---
+
+<section
+  class="border border-transparent rounded-full px-3 py-1 flex flex-row items-center bg-surface-mixed-100 backdrop-blur-2xl gap-2 mx-auto"
+>
+  {
+    lang.SOCIAL_MEDIA.map((socialMedia) => {
+      const { icon, name, url } = socialMedia
+
+      return (
+        <a
+          class="px-3 rounded-full hover:bg-surface-mixed-400 text-xs md:text-base transition"
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class={icon} />
+          {name}
+        </a>
+      )
+    })
+  }
+</section>
+
+<style></style>
