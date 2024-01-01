@@ -1,0 +1,26 @@
+---
+import { getI18N } from '@/i18n'
+import Experience from './Experience.astro';
+
+const { currentLocale } = Astro
+const lang = getI18N({ currentLocale })
+
+const { Laboral_Experiences } = lang
+---
+
+<section
+  class="mx-auto max-w-1400 sm:max-w-full flex-col"
+>
+  <h2 class="text-3xl text-left font-bold">
+    <span class="fas fa-briefcase"></span>
+    {lang.EXPERIENCE_SECTION_TITLE}
+  </h2>
+
+  <ul class="mt-5 relative border-solid border-0 border-l-2 border-primary-500 p-2">
+    {Laboral_Experiences.map(({ title, company, position, time_span, description}) => {
+      return <Experience title={title} company={company} position={position} time_span={time_span} description={description} />
+    })}
+  </ul>
+</section>
+
+<style></style>
