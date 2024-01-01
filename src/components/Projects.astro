@@ -1,0 +1,17 @@
+---
+import { getI18N } from '@/i18n'
+
+const { currentLocale } = Astro
+const lang = getI18N({ currentLocale })
+
+const { PROJECTS_TITLE } = lang
+---
+
+<section class="mx-auto max-w-1400 sm:max-w-full flex flex-col">
+  <h2 class="text-3xl text-left">
+    <span class="fas fa-code"></span>
+    {PROJECTS_TITLE}
+  </h2>
+</section>
+
+<style></style>
