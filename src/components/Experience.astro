@@ -1,0 +1,53 @@
+---
+type Props = {
+  title: string,
+  company: string,
+  position: string,
+  time_span: string[],
+  description: string
+}
+
+const { title, company, position, time_span, description } = Astro.props
+---
+
+<li class="p-2 rounded experience before:border before:border-primary-100 before:bg-surface-100 xl:w-fit gap-2">
+  
+  <p class="text-xs text-amber-500">
+    <span>{time_span[0]}</span>
+    <span>-</span>
+    <span>{time_span[1]}</span>
+  </p>
+
+  <h3 class="text-rose-600 text-lg flex">
+    {title} - {company}
+  </h3>
+
+  <p class="text-xs text-rose-200">
+    {position}
+  </p>
+
+  <p class="text-base text-primary-500">
+    {description}
+  </p>
+</li>
+
+<style>
+
+  .experience {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+  }
+
+  .experience:before {
+    position: absolute;
+    display: inline-flex;
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    left: -10px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+</style>
