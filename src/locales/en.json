@@ -1,5 +1,51 @@
 {
   "SEO_TITLE": "Jorge Macias - Frontend Developer - Portfolio",
   "SEO_DESCRIPTION": "Explore the portfolio of Jorge Macias, a passionate Frontend Developer with expertise in HTML, CSS, JavaScript, and frameworks like React. Discover innovative projects and highlighted skills in web development.",
-  "SEO_KEYWORDS": "Jorge Macias, Frontend Developer, HTML, CSS, JavaScript, React, Portfolio, Web Projects, Computer Engineering"
+  "SEO_KEYWORDS": "Jorge Macias, Frontend Developer, HTML, CSS, JavaScript, React, Portfolio, Web Projects, Computer Engineering",
+  "HEADER_OPTIONS": [
+    { "title": "Experience", "url": "#experience" },
+    { "title": "Projects", "url": "#projects" },
+    { "title": "About Me", "url": "#about-me" },
+    { "title": "Contact", "url": "#contact" }
+  ],
+  "DEVELOPER_NAME": "Hey, I'm Jorge Macias",
+  "DEVELOPER_PHOTO_ALT": "Jorge Macias photo",
+  "HIRABLE": "Available to work",
+  "ABOUT_ME": [
+    { "text": "+3 Years of experience. ", "color": "" },
+    { "text": "Frontend Developer. ", "color": "text-red-500" },
+    { "text": "From Puerto Vallarta, Mexico. ", "color": "text-orange-500" },
+    {
+      "text": "Specialized in adapting to any technology and framework.",
+      "color": "text-cyan-500"
+    }
+  ],
+  "SOCIAL_MEDIA": [
+    {
+      "icon": "fa-brands fa-github",
+      "name": "GitHub",
+      "url": "https://github.com/Jorgemacias-12"
+    },
+    {
+      "icon": "fa-brands fa-linkedin",
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/in/jamz3"
+    },
+    {
+      "icon": "fas fa-envelope",
+      "name": "rbmk-1000@hotmail.com",
+      "url": "mailto:rbmk-1000@hotmail.com"
+    }
+  ],
+  "EXPERIENCE_SECTION_TITLE": "Laboral experience",
+  "Laboral_Experiences": [
+    {
+      "title": "Desarrollador Frontend ",
+      "company": "Devocamp",
+      "position": "Trainee/Junior",
+      "time_span": ["Julio 2022", "Septiembre 2023"],
+      "description": ""
+    }
+  ],
+  "PROJECTS_TITLE": "Projects"
 }
