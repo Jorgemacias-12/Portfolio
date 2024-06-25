@@ -1,0 +1,66 @@
+{
+  "PAGE_TITLE": "Jorge Macias - Desarrollador de Software",
+  "PAGE_DESCRIPTION": "Jorge Macias - Desarrollador de Software en Backend, Frontend y Aplicaciones de Escritorio.",
+  "ABOUT_ME": [
+    "Soy un desarrollador de software con experiencia en desarrollo web: backend y frontend. También tengo experiencia en desarrollo de aplicaciones de escritorio en Windows.",
+    "He trabajado con una variedad de lenguajes de programación y frameworks, esto me ha permitido adaptarme a entornos de desarrollo facilemente, además de colaborar en equipo eficazmente."
+  ],
+  "COMPONENTS": {
+    "HEADER": [
+      {
+        "label": "Inicio",
+        "url": "/"
+      },
+      {
+        "label": "Acerca de Mí",
+        "url": "#about"
+      },
+      {
+        "label": "Habilidades",
+        "url": "#skills"
+      },
+      {
+        "label": "Experiencia",
+        "url": "#experience"
+      },
+      {
+        "label": "Proyectos",
+        "url": "#projects"
+      },
+      {
+        "label": "Educación",
+        "url": "#education"
+      },
+      {
+        "label": "Contacto",
+        "url": "#contact"
+      }
+    ]
+  },
+  "SECTIONS": [
+    {
+      "label": "Acerca de Mí",
+      "url": "about"
+    },
+    {
+      "label": "Habilidades",
+      "url": "skills"
+    },
+    {
+      "label": "Experiencia",
+      "url": "experience"
+    },
+    {
+      "label": "Proyectos",
+      "url": "projects"
+    },
+    {
+      "label": "Educación",
+      "url": "education"
+    },
+    {
+      "label": "Contacto",
+      "url": "contact"
+    }
+  ]
+}
