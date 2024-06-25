@@ -1,0 +1,16 @@
+---
+import { Header } from "@/components/Header";
+import { getI18N } from "@/i18n";
+import Layout from "@/layouts/Layout.astro";
+
+const { currentLocale } = Astro;
+
+const lang = getI18N(currentLocale!);
+---
+
+<Layout
+	title={lang.PAGE_TITLE}
+	description={lang.PAGE_DESCRIPTION}	
+>
+	<Header lang={currentLocale!} client:only="react"/>
+</Layout>
