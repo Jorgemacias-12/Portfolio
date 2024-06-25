@@ -1,0 +1,12 @@
+.section {
+  @apply border-l border-orange-600 pl-5 max-w-screen-sm mx-auto w-full gap-2 relative;
+}
+
+.section::before {
+  @apply w-4 h-4 rounded-full bg-orange-600 top-0 left-[-9px] absolute;
+  content: "";
+}
+
+.title {
+  @apply text-2xl text-orange-400 capitalize font-bold text-center mb-5;
+}
