@@ -61,12 +61,15 @@ const { title, description } = Astro.props;
 <script>
 	import { $theme } from "@/stores/theme";
 
+	const darkBg = "bg-raisin-black-400";
+	const lightBg = "bg-white-smoke-500";
+
 	$theme.subscribe((value, oldValue) => {
 		if (!oldValue) return;
 
-		const oldBg = oldValue === "light" ? "bg-white" : "bg-onyx-500";
+		const oldBg = oldValue === "light" ? lightBg : darkBg;
 		const oldFg = oldValue === "light" ? "text-black" : "text-white";
-		const bg = value === "light" ? "bg-white" : "bg-onyx-500";
+		const bg = value === "light" ? lightBg : darkBg;
 		const fg = $theme.get() === "light" ? "text-black" : "text-white";
 
 		if (!bg) return;
@@ -78,7 +81,7 @@ const { title, description } = Astro.props;
 		document.body.classList.add(fg);
 	});
 
-	const bg = $theme.get() === "light" ? "bg-white" : "bg-onyx-500";
+	const bg = $theme.get() === "light" ? lightBg : darkBg;
 	const fg = $theme.get() === "light" ? "text-black" : "text-white";
 
 	document.body.classList.add(bg);
