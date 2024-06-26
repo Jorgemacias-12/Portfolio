@@ -10,7 +10,7 @@ export const Link = ({ label, url }: LinkProps) => {
   const theme = useStore($theme);
 
   const hoverBackgroundDark = "hover:bg-raisin-black-600";
-  const hoverBackgroundLight = "hover:bg-white-smoke-400";
+  const hoverBackgroundLight = "hover:bg-indigo-500 hover:text-white";
 
   const background = theme === 'light' ? hoverBackgroundLight : hoverBackgroundDark;
 

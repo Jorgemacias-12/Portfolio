@@ -21,9 +21,9 @@ export const Header = ({ lang }: HeaderProps) => {
   const theme = useStore($theme);
   const [useFixedHeader, setUseFixedHeader] = useState(false);
 
-  const headerDarkClassNames = "bg-raisin-black text-white";
-  const headerLightClassNames = "bg-white-smoke text-black";
-  const menuBackground = theme === 'light' ? 'bg-white-smoke' : 'bg-raisin-black';
+  const headerDarkClassNames = "bg-raisin-black text-white border-none";
+  const headerLightClassNames = "bg-seasalt text-black";
+  const menuBackground = theme === 'light' ? 'bg-white-smoke border divider-y' : 'bg-raisin-black';
   const headerFixedClassNames = useFixedHeader ? `fixed w-full z-50 opacity-90` : "";
 
   const handleMenuShow = () => {
@@ -56,7 +56,7 @@ export const Header = ({ lang }: HeaderProps) => {
   }, [])
 
   return (
-    <header className={`transition-all duration-300 ${theme === 'light' ? headerLightClassNames : headerDarkClassNames} p-4 ${headerFixedClassNames}`}>
+    <header className={`transition-all duration-300 border-b ${theme === 'light' ? headerLightClassNames : headerDarkClassNames} p-4 ${headerFixedClassNames}`}>
       <section className="max-w-screen-xl mx-auto flex justify-between items-center">
         <div className="flex items-center gap-2">
           <h1 className="font-bold">Jorge Macias</h1>

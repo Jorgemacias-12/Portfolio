@@ -31,7 +31,7 @@ export const Switch = (
   const commonIconClasses = "fas fa-md fa-fw";
   const falseState = "translate-x-9";
   const trueState = "translate-x-2"
-  const buttonDarkBg = "bg-onyx border border-raisin-black-600";
+  const buttonDarkBg = "border border-raisin-black-600";
   const buttonLightBg = "bg-whitesmoke-400 border";
 
   const bg = theme === 'light' ? buttonLightBg : buttonDarkBg;
