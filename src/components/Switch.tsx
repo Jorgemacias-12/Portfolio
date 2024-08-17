@@ -43,7 +43,7 @@ export const Switch = (
       className={`inline-flex rounded-2xl w-16 relative h-8 ${bg}`}
       onClick={toggleState}
     >
-      <span className={`absolute left-0 top-1/2 transform -translate-y-1/2 transition-transform duration-300 ease-in-out ${commonIconClasses} ${state ? trueState : falseState} ${state ? icons[1] : icons[0]}`}></span>
+      <span className={`absolute left-0 top-1/2 transform -translate-y-1/2 transition-transform duration-300 ease-in-out ${commonIconClasses} ${state ? trueState : falseState} ${state ? icons[0] : icons[1]}`}></span>
     </button>
   )
 }
