@@ -12,7 +12,7 @@ export const ThemeSwitcher = () => {
   return (
     <Switch 
       defaultState={$theme.get() === 'light'} 
-      icons={["fa-moon", "fa-sun"]}
+      icons={["fa-sun", "fa-moon"]}
       title="Theme switcher light/dark"
       onClick={onThemeChange}
     />
