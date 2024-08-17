@@ -57,10 +57,366 @@
     {
       "label": "Educación",
       "url": "education"
+    }
+  ],
+  "SKILLS": {
+    "LANGS": [
+      {
+        "name": "JavaScript",
+        "icon": "devicon-javascript-plain colored",
+        "description": "He aprendido este lenguaje para empezar mi camino como desarrollador web."
+      },
+      {
+        "name": "TypeScript",
+        "icon": "devicon-typescript-plain colored",
+        "description": "Después de aprender JavaScript, me pasé a TypeScript para aprovechar el sistema de tipos y evitar los problemas asociados con JavaScript."
+      },
+      {
+        "name": "C#",
+        "icon": "devicon-csharp-plain colored",
+        "description": "Lo aprendí en la universidad y he desarrollado algunas aplicaciones que automatizan procesos internos en mi universidad."
+      },
+      {
+        "name": "Python",
+        "icon": "devicon-python-plain",
+        "description": "He utilizado Python para programación competitiva en los últimos dos años (2023-2024) en el ICPC de México. Próximamente, planeo usarlo para proyectos de inteligencia artificial."
+      },
+      {
+        "name": "Lua",
+        "icon": "devicon-lua-plain",
+        "description": "Aprendí Lua al ayudar a un amigo a mejorar el código de un mod para The Binding of Isaac, aprovechando su simplicidad y eficiencia para scripts y desarrollo de juegos."
+      },
+      {
+        "name": "PHP",
+        "icon": "devicon-php-plain colored",
+        "description": "He utilizado PHP para desarrollar aplicaciones web siguiendo el patrón MVC y utilizando un motor de plantillas inspirado en Laravel. Esto me permitió estructurar y modularizar el código eficientemente, mejorando la mantenibilidad y organización del proyecto."
+      },
+      {
+        "name": "SQL / MySQL",
+        "icon": "devicon-mysql-plain colored",
+        "description": "Utilizo SQL y MySQL para gestionar bases de datos en aplicaciones web, asegurando la integridad de los datos y optimizando consultas para mejorar el rendimiento."
+      },
+      {
+        "name": "Java",
+        "icon": "devicon-java-plain colored",
+        "description": "Aprendí Java para programación imperativa y orientada a objetos, con prácticas que incluyeron el desarrollo de interfaces gráficas básicas utilizando javax.swing."
+      }
+    ],
+    "FRAMEWORKS": [
+      {
+        "name": "React",
+        "icon": "devicon-react-original colored",
+        "description": "Utilizo React para construir interfaces de usuario interactivas y dinámicas en mis proyectos web."
+      },
+      {
+        "name": "Node.js",
+        "icon": "devicon-nodejs-plain colored",
+        "description": "He utilizado Node.js para construir aplicaciones del lado del servidor, aprovechando su eficiencia y escalabilidad."
+      },
+      {
+        "name": "Express",
+        "icon": "devicon-express-original colored",
+        "description": "Utilizo Express como un framework minimalista para Node.js, facilitando la creación de APIs robustas y eficientes."
+      },
+      {
+        "name": "WPF",
+        "icon": "devicon-dot-net-plain colored",
+        "description": "He desarrollado aplicaciones de escritorio usando WPF, aprovechando su capacidad para crear interfaces de usuario ricas y fluidas en C#."
+      },
+      {
+        "name": "WinForms",
+        "icon": "devicon-dotnetcore-plain colored",
+        "description": "Utilizo WinForms para desarrollar aplicaciones de escritorio en C#, debido a su facilidad de uso y rápido desarrollo de interfaces."
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "devicon-tailwindcss-plain colored",
+        "description": "Utilizo Tailwind CSS para diseñar aplicaciones web con un enfoque altamente personalizable y basado en utilidades, lo que facilita la creación de interfaces de usuario modernas y responsivas."
+      },
+      {
+        "name": "Astro",
+        "icon": "devicon-astro-plain colored",
+        "description": "He utilizado Astro para construir sitios web estáticos y dinámicos utilizando componentes reutilizables, combinando lo mejor del desarrollo estático y del lado del servidor."
+      },
+      {
+        "name": "Bun",
+        "icon": "devicon-bun-plain",
+        "description": "Utilizo Bun para desarrollar aplicaciones web ligeras y eficientes, aprovechando su enfoque minimalista y su rendimiento optimizado."
+      },
+      {
+        "name": "Prisma",
+        "icon": "devicon-prisma-original",
+        "description": "He utilizado Prisma como ORM (Object-Relational Mapping) para interactuar de manera eficiente con bases de datos en proyectos backend, facilitando el manejo de consultas y la gestión de datos."
+      },
+      {
+        "name": "Next.js",
+        "icon": "devicon-nextjs-plain ",
+        "description": "He utilizado Next.js, un framework de React, para construir aplicaciones web rápidas y escalables con renderizado del lado del servidor y generación de sitios estáticos."
+      }
+    ],
+    "OTHERS": [
+      {
+        "name": "GitHub",
+        "icon": "devicon-github-original",
+        "description": "Utilizo GitHub para almacenar mis proyectos personales y las cosas que voy aprendiendo."
+      },
+      {
+        "name": "DigitalOcean",
+        "icon": "devicon-digitalocean-original colored",
+        "description": "He utilizado DigitalOcean para desarrollar y desplegar una aplicación fullstack como parte de una materia en la universidad."
+      },
+      {
+        "name": "GitHub Actions",
+        "icon": "devicon-githubactions-plain colored",
+        "description": "He usado GitHub Actions en conjunto con DigitalOcean para desplegar el proyecto mencionado anteriormente."
+      },
+      {
+        "name": "Git",
+        "icon": "devicon-git-plain colored",
+        "description": "Utilizo Git para el control de versiones en mis proyectos, lo que me permite gestionar el código de manera eficiente y colaborar con otros desarrolladores."
+      },
+      {
+        "name": "Nginx",
+        "icon": "devicon-nginx-original colored",
+        "description": "He configurado Nginx para gestionar la entrada a la página web del proyecto, mejorando la distribución del tráfico y la seguridad."
+      },
+      {
+        "name": "Insomnia",
+        "icon": "devicon-insomnia-plain colored",
+        "description": "Utilizo Insomnia para probar y documentar APIs, facilitando el desarrollo y la colaboración en proyectos basados en servicios web."
+      },
+      {
+        "name": "Linux",
+        "icon": "devicon-linux-plain",
+        "description": "He utilizado Linux para administrar el servidor de DigitalOcean, aprovechando su estabilidad y flexibilidad."
+      },
+      {
+        "name": "Visual Studio Code",
+        "icon": "devicon-vscode-plain colored",
+        "description": "Utilizo Visual Studio Code como mi editor de código principal debido a su flexibilidad, extensibilidad y soporte para múltiples lenguajes."
+      },
+      {
+        "name": "Visual Studio",
+        "icon": "devicon-visualstudio-plain colored",
+        "description": "Utilizo Visual Studio en Windows para desarrollar aplicaciones en C#, aprovechando sus herramientas avanzadas de desarrollo y depuración."
+      },
+      {
+        "name": "HTML5",
+        "icon": "devicon-html5-plain colored",
+        "description": "Utilizo HTML5 como estándar de marcado para estructurar y presentar contenido en aplicaciones web, integrándolo con CSS y JavaScript para crear interfaces de usuario interactivas y modernas."
+      }
+    ]
+  },
+  "EXPERIENCES": [
+    {
+      "companyName": "Devocamp",
+      "position": "Desarrollador Frontend",
+      "description": "Como desarrollador frontend, mis responsabilidades incluyeron consumir APIs REST, asistir a reuniones diarias, mantener una página de destino y colaborar con diseñadores UX/UI.",
+      "startDate": "Jul 2022",
+      "finishDate": "Sept 2023",
+      "linkedIn": "https://www.linkedin.com/company/devocapm"
+    }
+  ],
+  "PROJECTS": [
+    {
+      "title": "Minecraft-Map-To-Image",
+      "description": "Aplicación de escritorio que permite guardar como imagen mapas dentro de los mundos de Minecraft.",
+      "technologies": [
+        {
+          "name": "C#",
+          "icon": "devicon-csharp-plain colored"
+        },
+        {
+          "name": "WPF",
+          "icon": "devicon-dot-net-plain colored"
+        },
+        {
+          "name": "NuGet",
+          "icon": "devicon-nuget-original"
+        }
+      ],
+      "screenshots": [
+        "https://via.placeholder.com/250?text=ola",
+        "https://via.placeholder.com/250?text=prueba"
+      ],
+      "roles": [
+        "Desarrollador de software",
+        "Administrador de paquetes",
+        "Diseñador UX/UI",
+        "Diseñador de Interfaz de Usuario"
+      ],
+      "responsabilities": [
+        "Diseño e implementación de la interfaz de usuario utilizando WPF.",
+        "Selección de colores y layout de la interfaz.",
+        "Desarrollo de funcionalidades de la aplicación en C#.",
+        "Gestión de dependencias del proyecto utilizando NuGet."
+      ],
+      "repoLink": "https://github.com/Jorgemacias-12/Minecraft-Map-To-Image"
     },
     {
-      "label": "Contacto",
-      "url": "contact"
+      "title": "OpusSN-frontend",
+      "description": "Frontend de la red social Opus para la matería de Ingeniería de software.",
+      "technologies": [
+        {
+          "name": "TypeScript",
+          "icon": "devicon-typescript-plain colored"
+        },
+        {
+          "name": "React",
+          "icon": "devicon-react-original colored"
+        },
+        {
+          "name": "Astro",
+          "icon": "devicon-astro-plain colored"
+        },
+        {
+          "name": "Nanostores",
+          "icon": ""
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "devicon-tailwindcss-original colored"
+        },
+        {
+          "name": "GitHub Actions",
+          "icon": "devicon-githubactions-plain colored"
+        }
+      ],
+      "screenshots": [
+        "/projects/opussn-frontend-landing.png",
+        "/projects/opussn-frontend-register.png",
+        "/projects/opussn-frontend-login.png",
+        "/projects/opussn-frontend-feed-categories.png"
+      ],
+      "roles": [
+        "Desarrollador de software",
+        "Diseñador de Interfaz de Usuario",
+        "Administrador de paquetes"
+      ],
+      "responsabilities": [
+        "Diseño e implementación de la interfaz de usuario utilizando HTML, Tailwind y React.",
+        "Manejo de estados globales utilizando Nanostores.",
+        "CRUD consumiendo una API REST.",
+        "Utilizar Github actions para desplegar el proyecto en un host."
+      ],
+      "repoLink": "https://github.com/Jorgemacias-12/OpusSN-frontend"
+    },
+    {
+      "title": "OpusSN-backend",
+      "description": "Backend de la red social Opus para la matería de ingeniería de software.",
+      "technologies": [
+        {
+          "name": "Typescript",
+          "icon": "devicon-typescript-plain colored"
+        },
+        {
+          "name": "Bun",
+          "icon": "devicon-bun-plain"
+        },
+        {
+          "name": "Prisma",
+          "icon": "devicon-prisma-original"
+        },
+        {
+          "name": "Swagger",
+          "icon": "devicon-swagger-plain colored"
+        },
+        {
+          "name": "MySQL",
+          "icon": "devicon-mysql-original"
+        },
+        {
+          "name": "Nginx",
+          "icon": "devicon-nginx-original"
+        },
+        {
+          "name": "Github Actions",
+          "icon": "devicon-githubactions-plain colored"
+        },
+        {
+          "name": "Digital Ocean",
+          "icon": "devicon-digitalocean-original colored"
+        }
+      ],
+      "screenshots": [
+        "/projects/opussn-backend-swagger.png",
+        "/projects/opussn-backend-posts-endpoint.png",
+        "/projects/opussn-backend-comments-endpoint.png"
+      ],
+      "roles": [
+        "Desarrollador Backend",
+        "Administrador de Bases de Datos",
+        "Administrador de Infraestructura"
+      ],
+      "responsabilities": [
+        "Desarrollo de API RESTful utilizando TypeScript y Bun.",
+        "Modelado de datos con Prisma.",
+        "Documentación de API con Swagger.",
+        "Gestión de base de datos MySQL.",
+        "Configuración del servidor con Nginx.",
+        "Automatización y CI/CD con GitHub Actions.",
+        "Despliegue en Digital Ocean."
+      ],
+      "repoLink": "https://github.com/Jorgemacias-12/OpusSN-backend"
+    },
+    {
+      "title": "Pony The Dragon! [REP]",
+      "description": "Un mod para el juego The Binding of Isaac: Rebirth.",
+      "technologies": [
+        {
+          "name": "Lua",
+          "icon": "devicon-lua-plain"
+        },
+        {
+          "name": "The Binding of Isaac Modding API",
+          "icon": ""
+        }
+      ],
+      "screenshots": [
+        "https://via.placeholder.com/250?text=Screenshot+1",
+        "https://via.placeholder.com/250?text=Screenshot+2"
+      ],
+      "roles": [
+        "Refactorización del código fuente",
+        "Mejora de la facilidad para añadir nuevas features"
+      ],
+      "responsabilities": [
+        "Refactorizar el código fuente existente para mejorar su estructura.",
+        "Implementar cambios que faciliten la adición de nuevas características por parte del creador original."
+      ],
+      "repoLink": "https://github.com/SweetyStorm/PonyCharacter",
+      "demoLink": "https://steamcommunity.com/sharedfiles/filedetails/?id=3012202919"
+    }
+    
+  ],
+  "EDUCATION": [
+    {
+      "degree": "Ingeniería en Computación",
+      "institution": "Universidad de Guadalajara (UdeG)",
+      "campus": "CUCOSTA",
+      "startDate": "Agosto 2021",
+      "endDate": "Actual",
+      "gpa": "95.29",
+      "relevantProjects": [],
+      "courses": [],
+      "achievements": [],
+      "extracurricularActivities": [],
+      "schoolLink": "http://www.cuc.udg.mx/"
+    },
+    {
+      "degree": "Profesional Técnico Bachiller en Informática",
+      "institution": "Conalep",
+      "campus": "Puerto Vallarta 075",
+      "startDate": "Agosto 2018",
+      "endDate": "Julio 2021",
+      "gpa": "9.9/10",
+      "relevantProjects": [],
+      "courses": [],
+      "achievements": [
+        "Promedios altos"
+      ],
+      "extracurricularActivities": [],
+      "schoolLink": "https://www.conalep.edu.mx/"
     }
   ]
 }

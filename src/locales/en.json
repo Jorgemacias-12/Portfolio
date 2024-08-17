@@ -57,10 +57,197 @@
     {
       "label": "Education",
       "url": "education"
-    },
+    }
+  ],
+  "SKILLS": {
+    "LANGS": [
+      {
+        "name": "JavaScript",
+        "icon": "devicon-javascript-plain colored",
+        "description": "I have learned this language to start my path as a web developer."
+      },
+      {
+        "name": "TypeScript",
+        "icon": "devicon-typescript-plain colored",
+        "description": "After learning JavaScript, I moved here to take advantage of the type system and avoid the problems associated with JavaScript."
+      },
+      {
+        "name": "C#",
+        "icon": "devicon-csharp-plain colored",
+        "description": "I learned it in university and have developed some applications that automate internal processes at my university."
+      },
+      {
+        "name": "Python",
+        "icon": "devicon-python-plain",
+        "description": "I have used Python for competitive programming in the last two years (2023-2024) in the ICPC of Mexico. Soon, I plan to use it for artificial intelligence projects."
+      },
+      {
+        "name": "Lua",
+        "icon": "devicon-lua-plain",
+        "description": "I learned Lua by helping a friend improve code for a mod for The Binding of Isaac, leveraging its simplicity and efficiency for scripting and game development."
+      },
+      {
+        "name": "PHP",
+        "icon": "devicon-php-plain colored",
+        "description": "I have used PHP to develop web applications following the MVC pattern and using a template engine inspired by Laravel. This allowed me to structure and modularize code efficiently, improving project maintainability and organization."
+      },
+      {
+        "name": "SQL / MySQL",
+        "icon": "devicon-mysql-plain colored",
+        "description": "I use SQL and MySQL to manage databases in web applications, ensuring data integrity and optimizing queries to improve performance."
+      },
+      {
+        "name": "Java",
+        "icon": "devicon-java-plain colored",
+        "description": "I learned Java for imperative and object-oriented programming, with practices including basic GUI development using javax.swing."
+      }
+    ],
+    "FRAMEWORKS": [
+      {
+        "name": "React",
+        "icon": "devicon-react-original colored",
+        "description": "I use React to build interactive and dynamic user interfaces in my web projects."
+      },
+      {
+        "name": "Node.js",
+        "icon": "devicon-nodejs-plain colored",
+        "description": "I have used Node.js to build server-side applications, leveraging its efficiency and scalability."
+      },
+      {
+        "name": "Express",
+        "icon": "devicon-express-original colored",
+        "description": "I use Express as a minimalist framework for Node.js, making it easier to create robust and efficient APIs."
+      },
+      {
+        "name": "WPF",
+        "icon": "devicon-dot-net-plain colored",
+        "description": "I have developed desktop applications using WPF, leveraging its ability to create rich and fluid user interfaces in C#."
+      },
+      {
+        "name": "WinForms",
+        "icon": "devicon-dotnetcore-plain colored",
+        "description": "I use WinForms to develop desktop applications in C#, due to its ease of use and rapid interface development."
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "devicon-tailwindcss-plain colored",
+        "description": "I use Tailwind CSS to design web applications with a highly customizable and utility-first approach, making it easy to create modern and responsive user interfaces."
+      },
+      {
+        "name": "Astro",
+        "icon": "devicon-astro-plain colored",
+        "description": "I have used Astro to build static and dynamic websites using reusable components, combining the best of static and server-side development."
+      },
+      {
+        "name": "Bun",
+        "icon": "devicon-bun-plain colored",
+        "description": "I use Bun to develop lightweight and efficient web applications, leveraging its minimalist approach and optimized performance."
+      },
+      {
+        "name": "Prisma",
+        "icon": "devicon-prisma-original",
+        "description": "I have used Prisma as an ORM (Object-Relational Mapping) to efficiently interact with databases in backend projects, facilitating query management and data handling."
+      },
+      {
+        "name": "Next.js",
+        "icon": "devicon-nextjs-plain colored",
+        "description": "I have used Next.js, a React framework, to build fast and scalable web applications with server-side rendering and static site generation."
+      }
+    ],
+    "OTHERS": [
+      {
+        "name": "GitHub",
+        "icon": "devicon-github-original",
+        "description": "I use GitHub to store my personal projects and things I learn."
+      },
+      {
+        "name": "DigitalOcean",
+        "icon": "devicon-digitalocean-original colored",
+        "description": "I have used DigitalOcean to develop and deploy a fullstack application as part of a university course."
+      },
+      {
+        "name": "GitHub Actions",
+        "icon": "devicon-githubactions-plain colored",
+        "description": "I have used GitHub Actions in conjunction with DigitalOcean to deploy the aforementioned project."
+      },
+      {
+        "name": "Git",
+        "icon": "devicon-git-plain colored",
+        "description": "I use Git for version control in my projects, allowing me to efficiently manage code and collaborate with other developers."
+      },
+      {
+        "name": "Nginx",
+        "icon": "devicon-nginx-original colored",
+        "description": "I have configured Nginx to manage access to the project's web page, improving traffic distribution and security."
+      },
+      {
+        "name": "Insomnia",
+        "icon": "devicon-insomnia-plain colored",
+        "description": "I use Insomnia to test and document APIs, facilitating development and collaboration on web service-based projects."
+      },
+      {
+        "name": "Linux",
+        "icon": "devicon-linux-plain",
+        "description": "I have used Linux to manage the DigitalOcean server, leveraging its stability and flexibility."
+      },
+      {
+        "name": "Visual Studio Code",
+        "icon": "devicon-vscode-plain colored",
+        "description": "I use Visual Studio Code as my primary code editor due to its flexibility, extensibility, and support for multiple languages."
+      },
+      {
+        "name": "Visual Studio",
+        "icon": "devicon-visualstudio-plain colored",
+        "description": "I use Visual Studio on Windows to develop applications in C#, leveraging its advanced development and debugging tools."
+      },
+      {
+        "name": "HTML5",
+        "icon": "devicon-html5-plain colored",
+        "description": "I use HTML5 as a markup standard to structure and present content in web applications, integrating it with CSS and JavaScript to create interactive and modern user interfaces."
+      }
+    ]
+  },
+  "EXPERIENCES": [
     {
-      "label": "Contact",
-      "url": "contact"
+      "companyName": "Devocamp",
+      "position": "Frontend Developer",
+      "description": "As a frontend developer, my responsibilities included consuming REST APIs, attending daily meetings, maintaining a landing page, and collaborating with UX/UI designers.",
+      "startDate": "Jul 2022",
+      "finishDate": "Sept 2023"
+    }
+  ],
+  "PROJECTS": [
+    {
+      "title": "Minecraft-Map-To-Image",
+      "description": "Aplicación de escritorio que permite guardar como imagen mapas dentro de los mundos de Minecraft.",
+      "technologies": [
+        {
+          "name": "C#",
+          "icon": "devicon-csharp-plain colored"
+        },
+        {
+          "name": "WPF",
+          "icon": "devicon-dot-net-plain colored"
+        },
+        {
+          "name": "NuGet",
+          "icon": "devicon-nuget-original"
+        }
+      ],
+      "screenshots": [""],
+      "roles": [
+        "Desarrollador de software",
+        "Administrador de paquetes",
+        "Diseñador UX/UI",
+        "Diseñador de Interfaz de Usuario"
+      ],
+      "responsabilities": [
+        "Diseño e implementación de la interfaz de usuario utilizando WPF.",
+        "Selección de colores y layout de la interfaz.",
+        "Desarrollo de funcionalidades de la aplicación en C#.",
+        "Gestión de dependencias del proyecto utilizando NuGet."
+      ],
+      "repoLink": "https://github.com/Jorgemacias-12/Minecraft-Map-To-Image"
     }
   ]
 }
