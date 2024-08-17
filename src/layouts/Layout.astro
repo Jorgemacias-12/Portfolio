@@ -29,6 +29,18 @@ const { title, description } = Astro.props;
 			crossorigin="anonymous"
 		/>
 
+		<link
+			rel="preload"
+			href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+			as="style"
+		/>
+
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+		/>
+
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="Jorge Macias - Software Developer" />
 		<meta property="og:url" content="" />
@@ -45,7 +57,6 @@ const { title, description } = Astro.props;
 			property="twitter:description"
 			content="Desarrollador de Software en Backend, Frontend y Aplicaciones de Escritorio."
 		/>
-		<meta name="">
 	</head>
 	<body class="transition-all duration-300 scroll-smooth">
 		<slot />
