@@ -1,5 +1,5 @@
 .section {
-  @apply border-l border-orange-600 pl-5 max-w-screen-sm mx-auto w-full gap-2 relative;
+  @apply border-l border-orange-600 pl-5 max-w-screen-md mx-auto w-full gap-2 relative;
 }
 
 .section::before {
