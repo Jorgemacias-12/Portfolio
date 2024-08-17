@@ -10,5 +10,4 @@ export const MENU_OPTIONS: NavigationItem[] = [
   { label: "Experiencia", url: "#experience" },
   { label: "Proyectos", url: "#projects" },
   { label: "Educación", url: "#education" },
-  { label: "Contacto", url: "#contact" },
 ];
