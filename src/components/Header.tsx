@@ -70,7 +70,7 @@ export const Header = ({ lang }: HeaderProps) => {
           <ul
             className={`fixed top-0 right-0 w-fit h-full p-2 flex flex-col gap-1  ${menuBackground} z-10 tranisiton-all duration-300 transform ${showMenu ? menuShownClasses : menuHiddenClasses} md:static md:opacity-100  md:pointer-events-auto md:flex-row md:items-center`}
           >
-            <section className={`border-b pb-1 flex items-center gap-2 justify-end ${borderColorClassName} md:border-0`}>
+            <section className={`border-b pb-1 flex items-center gap-2 justify-end ${borderColorClassName} md:pb-0 md:border-0`}>
               <ThemeSwitcher />
 
               <button type="button" onClick={handleMenuShow} className={`my-5 fas fa-xl fa-fw ${showMenu ? 'fa-times' : 'fa-bars'} inline-flex cursor-pointer md:hidden`}></button>
