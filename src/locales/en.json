@@ -9,31 +9,27 @@
     "HEADER": [
       {
         "label": "Home",
-        "url": "/"
+        "url": "/en"
       },
       {
         "label": "About Me",
-        "url": "#about"
+        "url": "/en#about"
       },
       {
         "label": "Skills",
-        "url": "#skills"
+        "url": "/en#skills"
       },
       {
         "label": "Experience",
-        "url": "#experience"
+        "url": "/en#experience"
       },
       {
         "label": "Projects",
-        "url": "#projects"
+        "url": "/en#projects"
       },
       {
         "label": "Education",
-        "url": "#education"
-      },
-      {
-        "label": "Contact",
-        "url": "#contact"
+        "url": "/en#education"
       }
     ]
   },
