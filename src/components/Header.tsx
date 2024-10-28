@@ -15,7 +15,7 @@ export const Header = ({ lang }: Props) => {
   const theme = useStore($theme);
   const [showMenu, setShowMenu] = useState(false);
 
-  const headerDarkClassNames = "bg-raisin-black text-white border-none";
+  const headerDarkClassNames = "bg-raisin-black text-white";
   const headerLightClassNames = "bg-seasalt text-black";
 
   const menuBackgroundSolid =
@@ -39,12 +39,28 @@ export const Header = ({ lang }: Props) => {
 
   return (
     <header
-      className={`border-b ${
+      className={`border-b md:border-b-0 md:border-r ${
         theme === "light" ? headerLightClassNames : headerDarkClassNames
-      } p-4`}
+      } ${borderColorClassName} p-4 md:fixed md:w-60 h-full`}
     >
-      <section className="max-w-screen-xl mx-auto flex justify-between items-center gap-2">
+      <section className="max-w-screen-xl mx-auto flex justify-between items-center gap-2 md:flex-col md:justify-end">
         <h1 className="font-bold md:text-2xl">Jorge Macias</h1>
+
+        <section className="flex-1 w-full p-2 hidden md:flex flex-col rounded-md gap-2">
+          <section className="flex gap-2">
+            <ThemeSwitcher />
+
+           <a href="">
+            {lang === "es"}
+           </a>
+          </section>
+
+          <ul className="">
+            {HEADER.map(({ label, url }, index) => {
+              return <Link key={index} label={label} url={url}></Link>;
+            })}
+          </ul>
+        </section>
 
         <button
           type="button"

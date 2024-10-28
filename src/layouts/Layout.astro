@@ -62,6 +62,7 @@ const { title, description } = Astro.props;
     />
   </head>
   <body>
+    <section class="header-placeholder"></section>
     <Header client:only="react" lang={currentLocale!}/>
     <slot />
   </body>
@@ -75,7 +76,12 @@ const { title, description } = Astro.props;
     min-height: 100vh;
     min-height: 100dvh;
     display: grid;
+    padding-left: 0;
     @apply grid-rows-layout_mobile md:grid-cols-layout_desktop md:grid-rows-none;
+  }
+
+  .header-placeholder {
+    @apply hidden md:flex md:w-60;
   }
 </style>
 <script>
