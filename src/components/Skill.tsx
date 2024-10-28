@@ -1,10 +1,10 @@
-import { $theme } from "@/stores/theme"
-import { useStore } from "@nanostores/react"
+import { $theme } from "@/stores";
+import { useStore } from "@nanostores/react";
 
 interface SkillProps {
-  name: string
-  icon: string
-  description: string
+  name: string;
+  icon: string;
+  description: string;
 }
 
 export const Skill = ({ name, icon, description }: SkillProps) => {
@@ -13,10 +13,12 @@ export const Skill = ({ name, icon, description }: SkillProps) => {
   const lightClassNames = "border bg-seasalt-500";
   const darkClassNames = "border-raisin-black-600 bg-raisin-black";
 
-  const themeClassNames = theme === 'light' ? lightClassNames : darkClassNames;
+  const themeClassNames = theme === "light" ? lightClassNames : darkClassNames;
 
   return (
-    <article className={`flex border flex-col rounded-md gap-2 p-2 items-center ${themeClassNames}`}>
+    <article
+      className={`flex border flex-col rounded-md gap-2 p-2 items-center ${themeClassNames}`}
+    >
       <section>
         <span className={`${icon} text-6xl text-center`}></span>
       </section>
@@ -25,5 +27,5 @@ export const Skill = ({ name, icon, description }: SkillProps) => {
         <p>{description}</p>
       </section>
     </article>
-  )
-}
+  );
+};

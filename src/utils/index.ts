@@ -1,7 +1,7 @@
-export function isDarkThemePreferred(): boolean {
-  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-}
+import type { Theme } from "@/types";
 
-export function isLightThemePreferred(): boolean {
-  return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+export const getThemeBasedOnUserPreference = (): Theme => {
+  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark");
+
+  return mediaQuery.matches ? "dark" : "light";
 }

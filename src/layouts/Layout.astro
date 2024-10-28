@@ -1,100 +1,109 @@
 ---
-interface Props {
-	title: string;
-	description: string;
-}
+import { Header } from '@/components/Header';
 
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { currentLocale } = Astro;
 const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title}</title>
-		<meta name="description" content={description} />
-		<link
-			rel="preload"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-			as="style"
-			integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-			integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-			crossorigin="anonymous"
-		/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      as="style"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+    />
 
-		<link
-			rel="preload"
-			href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-			as="style"
-		/>
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+      as="style"
+    />
 
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-		/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
 
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Jorge Macias - Software Developer" />
-		<meta property="og:url" content="" />
-		<meta property="og:image" content="" />
-		<meta
-			property="og:description"
-			content="Jorge Macias - Desarrollador de Software en Backend, Frontend y Aplicaciones de Escritorio."
-		/>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jorge Macias - Software Developer" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta
+      property="og:description"
+      content="Jorge Macias - Desarrollador de Software en Backend, Frontend y Aplicaciones de Escritorio."
+    />
 
-		<meta name="twitter:card" content="summary" />
-		<meta property="twitter:title" content="Jorge Macias - Portfolio" />
-		<meta name="twitter:image" content="" />
-		<meta
-			property="twitter:description"
-			content="Desarrollador de Software en Backend, Frontend y Aplicaciones de Escritorio."
-		/>
-	</head>
-	<body class="transition-all duration-300 scroll-smooth">
-		<slot />
-	</body>
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Jorge Macias - Portfolio" />
+    <meta name="twitter:image" content="" />
+    <meta
+      property="twitter:description"
+      content="Desarrollador de Software en Backend, Frontend y Aplicaciones de Escritorio."
+    />
+  </head>
+  <body>
+    <Header client:only="react" lang={currentLocale!}/>
+    <slot />
+  </body>
 </html>
-
 <style is:global>
-	* {
-		scroll-behavior: smooth;
-	}
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    @apply grid-rows-layout_mobile md:grid-cols-layout_desktop md:grid-rows-none;
+  }
 </style>
-
 <script>
-	import { $theme } from "@/stores/theme";
+  import { $theme } from "@/stores";
 
-	const darkBg = "bg-raisin-black-400";
-	const lightBg = "bg-seasalt-900";
+  const darkBg = "bg-raisin-black-400";
+  const lightBg = "bg-seasalt-900";
 
-	$theme.subscribe((value, oldValue) => {
-		if (!oldValue) return;
+  $theme.subscribe((value, oldValue) => {
+    if (!oldValue) return;
 
-		const oldBg = oldValue === "light" ? lightBg : darkBg;
-		const oldFg = oldValue === "light" ? "text-black" : "text-white";
-		const bg = value === "light" ? lightBg : darkBg;
-		const fg = $theme.get() === "light" ? "text-black" : "text-white";
+    const oldBg = oldValue === "light" ? lightBg : darkBg;
+    const oldFg = oldValue === "light" ? "text-black" : "text-white";
+    const bg = value === "light" ? lightBg : darkBg;
+    const fg = $theme.get() === "light" ? "text-black" : "text-white";
 
-		if (!bg) return;
-		if (!fg) return;
+    if (!bg) return;
+    if (!fg) return;
 
-		document.body.classList.remove(oldBg);
-		document.body.classList.remove(oldFg);
-		document.body.classList.add(bg);
-		document.body.classList.add(fg);
-	});
+    document.body.classList.remove(oldBg);
+    document.body.classList.remove(oldFg);
+    document.body.classList.add(bg);
+    document.body.classList.add(fg);
+  });
 
-	const bg = $theme.get() === "light" ? lightBg : darkBg;
-	const fg = $theme.get() === "light" ? "text-black" : "text-white";
+  const bg = $theme.get() === "light" ? lightBg : darkBg;
+  const fg = $theme.get() === "light" ? "text-black" : "text-white";
 
-	document.body.classList.add(bg);
-	document.body.classList.add(fg);
+  document.body.classList.add(bg);
+  document.body.classList.add(fg);
 </script>

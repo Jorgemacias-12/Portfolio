@@ -1,16 +1,196 @@
 ---
-import { Header } from "@/components/Header";
-import { getI18N } from "@/i18n";
 import Layout from "@/layouts/Layout.astro";
+import { getI18N } from "@/i18n";
+import { TitledSection } from "@/components/TitledSection";
+import { Education } from "@/components/Education";
+import { Job } from "@/components/Job";
+import { Project } from "@/components/Project";
+import { Skill } from "@/components/Skill";
 
 const { currentLocale } = Astro;
 
+if (!currentLocale) {
+  Astro.redirect("/500");
+}
+
 const lang = getI18N(currentLocale!);
+
+const { PAGE_TITLE, PAGE_DESCRIPTION, SECTIONS, ABOUT_ME, SKILLS, EXPERIENCES, PROJECTS, EDUCATION } = lang;
 ---
 
-<Layout
-	title={lang.PAGE_TITLE}
-	description={lang.PAGE_DESCRIPTION}	
->
-	<Header lang={currentLocale!} client:only="react"/>
+<Layout title={PAGE_TITLE} description={PAGE_DESCRIPTION}>
+  <main class="p-4 flex flex-col gap-10">
+    {
+      SECTIONS.map(({ label, url }) => {
+        return (
+          <TitledSection title={label} name={url}>
+            {url === "about" && (
+              <>
+                <img
+                  width="256"
+                  class="rounded-full mx-auto"
+                  src="/JAMZ-p.jpg"
+                  alt="Jorge Macias foto"
+                />
+
+                <h2 class="m-4 text-4xl font-bold text-center">Jorge Macias</h2>
+
+                <div class="flex flex-col gap-2 mt-2">
+                  {ABOUT_ME.map((text) => {
+                    return <p>{text}</p>;
+                  })}
+                </div>
+              </>
+            )}
+
+            {url === "skills" && (
+              <div class="flex flex-col gap-4">
+                <h3 class="text-2xl font-bold">Lenguajes de programación</h3>
+
+                <section class="grid grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-3">
+                  {SKILLS.LANGS.map(({ name, icon, description }, index) => {
+                    return (
+                      <Skill
+                        client:only="react"
+                        name={name}
+                        icon={icon}
+                        description={description}
+                      />
+                    );
+                  })}
+                </section>
+
+                <h3 class="text-2xl font-bold">Frameworks</h3>
+
+                <section class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                  {SKILLS.FRAMEWORKS.map(
+                    ({ name, icon, description }, index) => {
+                      return (
+                        <Skill
+                          client:only="react"
+                          name={name}
+                          icon={icon}
+                          description={description}
+                        />
+                      );
+                    }
+                  )}
+                </section>
+
+                <h3 class="text-2xl font-bold">Otros</h3>
+
+                <section class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                  {SKILLS.OTHERS.map(({ name, icon, description }, index) => {
+                    return (
+                      <Skill
+                        client:only="react"
+                        name={name}
+                        icon={icon}
+                        description={description}
+                      />
+                    );
+                  })}
+                </section>
+              </div>
+            )}
+
+            {url === "experience" && (
+              <section class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                {EXPERIENCES.map(
+                  ({
+                    companyName,
+                    description,
+                    finishDate,
+                    position,
+                    startDate,
+                    linkedIn,
+                  }) => {
+                    return (
+                      <Job
+                        client:only="react"
+                        companyName={companyName}
+                        description={description}
+                        position={position}
+                        startDate={startDate}
+                        finishDate={finishDate}
+                        linkedIn={linkedIn}
+                      />
+                    );
+                  }
+                )}
+              </section>
+            )}
+
+            {url === "projects" && (
+              <section class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                {PROJECTS.map(
+                  ({
+                    title,
+                    description,
+                    technologies,
+                    responsabilities,
+                    roles,
+                    demoLink,
+                    repoLink,
+                    screenshots,
+                  }) => {
+                    return (
+                      <Project
+                        client:only="react"
+                        title={title}
+                        description={description}
+                        technologies={technologies}
+                        responsabilities={responsabilities}
+                        roles={roles}
+                        demoLink={demoLink}
+                        repoLink={repoLink}
+                        screenshots={screenshots}
+                      />
+                    );
+                  }
+                )}
+              </section>
+            )}
+
+            {url === "education" && (
+              <section class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                {EDUCATION.map(
+                  ({
+                    degree,
+                    institution,
+                    campus,
+                    startDate,
+                    endDate,
+                    gpa,
+                    relevantProjects,
+                    courses,
+                    achievements,
+                    extracurricularActivities,
+                    schoolLink,
+                  }) => {
+                    return (
+                      <Education
+                        client:only="react"
+                        degree={degree}
+                        institution={institution}
+                        campus={campus}
+                        startDate={startDate}
+                        endDate={endDate}
+                        gpa={gpa}
+                        relevantProjects={relevantProjects}
+                        courses={courses}
+                        achievements={achievements}
+                        extracurricularActivities={extracurricularActivities}
+                        schoolLink={schoolLink}
+                      />
+                    );
+                  }
+                )}
+              </section>
+            )}
+          </TitledSection>
+        );
+      })
+    }
+  </main>
 </Layout>

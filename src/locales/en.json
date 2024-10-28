@@ -2,9 +2,10 @@
   "PAGE_TITLE": "Jorge Macias - Software Developer",
   "PAGE_DESCRIPTION": "Jorge Macias - Software Developer in Backend, Frontend, and Desktop Applications.",
   "ABOUT_ME": [
-    "Soy un desarrollador de software con experiencia en desarrollo web: backend y frontend. También tengo experiencia en desarrollo de aplicaciones de escritorio en Windows.",
-    "He trabajado con una variedad de lenguajes de programación y frameworks, esto me ha permitido adaptarme a entornos de desarrollo facilemente, además de colaborar en equipo eficazmente."
+    "I am a software developer with experience in web development: backend and frontend. I also have experience in developing desktop applications on Windows.",
+    "I have worked with a variety of programming languages and frameworks, which has allowed me to adapt to development environments easily, as well as to collaborate effectively in team settings."
   ],
+  "HEADER_MENU_CAPTION": "Navigation menu",
   "COMPONENTS": {
     "HEADER": [
       {
@@ -13,23 +14,23 @@
       },
       {
         "label": "About Me",
-        "url": "/en#about"
+        "url": "#about"
       },
       {
         "label": "Skills",
-        "url": "/en#skills"
+        "url": "#skills"
       },
       {
         "label": "Experience",
-        "url": "/en#experience"
+        "url": "#experience"
       },
       {
         "label": "Projects",
-        "url": "/en#projects"
+        "url": "#projects"
       },
       {
         "label": "Education",
-        "url": "/en#education"
+        "url": "#education"
       }
     ]
   },
@@ -60,32 +61,32 @@
       {
         "name": "JavaScript",
         "icon": "devicon-javascript-plain colored",
-        "description": "I have learned this language to start my path as a web developer."
+        "description": "I learned this language to start my journey as a web developer."
       },
       {
         "name": "TypeScript",
         "icon": "devicon-typescript-plain colored",
-        "description": "After learning JavaScript, I moved here to take advantage of the type system and avoid the problems associated with JavaScript."
+        "description": "After learning JavaScript, I moved to TypeScript to take advantage of its type system and avoid the issues associated with JavaScript."
       },
       {
         "name": "C#",
         "icon": "devicon-csharp-plain colored",
-        "description": "I learned it in university and have developed some applications that automate internal processes at my university."
+        "description": "I learned it in university and have developed some applications that automate internal processes in my university."
       },
       {
         "name": "Python",
         "icon": "devicon-python-plain",
-        "description": "I have used Python for competitive programming in the last two years (2023-2024) in the ICPC of Mexico. Soon, I plan to use it for artificial intelligence projects."
+        "description": "I have used Python for competitive programming over the last two years (2023-2024) in the ICPC in Mexico. I plan to use it for artificial intelligence projects soon."
       },
       {
         "name": "Lua",
         "icon": "devicon-lua-plain",
-        "description": "I learned Lua by helping a friend improve code for a mod for The Binding of Isaac, leveraging its simplicity and efficiency for scripting and game development."
+        "description": "I learned Lua by helping a friend improve the code for a mod in The Binding of Isaac, taking advantage of its simplicity and efficiency for scripting and game development."
       },
       {
         "name": "PHP",
         "icon": "devicon-php-plain colored",
-        "description": "I have used PHP to develop web applications following the MVC pattern and using a template engine inspired by Laravel. This allowed me to structure and modularize code efficiently, improving project maintainability and organization."
+        "description": "I have used PHP to develop web applications following the MVC pattern and using a template engine inspired by Laravel, which allowed me to efficiently structure and modularize the code, improving project maintainability and organization."
       },
       {
         "name": "SQL / MySQL",
@@ -95,7 +96,7 @@
       {
         "name": "Java",
         "icon": "devicon-java-plain colored",
-        "description": "I learned Java for imperative and object-oriented programming, with practices including basic GUI development using javax.swing."
+        "description": "I learned Java for imperative and object-oriented programming, with practices that included developing basic graphical interfaces using javax.swing."
       }
     ],
     "FRAMEWORKS": [
@@ -112,12 +113,12 @@
       {
         "name": "Express",
         "icon": "devicon-express-original colored",
-        "description": "I use Express as a minimalist framework for Node.js, making it easier to create robust and efficient APIs."
+        "description": "I use Express as a minimalist framework for Node.js, facilitating the creation of robust and efficient APIs."
       },
       {
         "name": "WPF",
         "icon": "devicon-dot-net-plain colored",
-        "description": "I have developed desktop applications using WPF, leveraging its ability to create rich and fluid user interfaces in C#."
+        "description": "I have developed desktop applications using WPF, taking advantage of its capability to create rich and fluid user interfaces in C#."
       },
       {
         "name": "WinForms",
@@ -127,7 +128,7 @@
       {
         "name": "Tailwind CSS",
         "icon": "devicon-tailwindcss-plain colored",
-        "description": "I use Tailwind CSS to design web applications with a highly customizable and utility-first approach, making it easy to create modern and responsive user interfaces."
+        "description": "I use Tailwind CSS to design web applications with a highly customizable, utility-based approach, making it easy to create modern and responsive user interfaces."
       },
       {
         "name": "Astro",
@@ -136,17 +137,17 @@
       },
       {
         "name": "Bun",
-        "icon": "devicon-bun-plain colored",
+        "icon": "devicon-bun-plain",
         "description": "I use Bun to develop lightweight and efficient web applications, leveraging its minimalist approach and optimized performance."
       },
       {
         "name": "Prisma",
         "icon": "devicon-prisma-original",
-        "description": "I have used Prisma as an ORM (Object-Relational Mapping) to efficiently interact with databases in backend projects, facilitating query management and data handling."
+        "description": "I have used Prisma as an Object-Relational Mapping (ORM) tool to efficiently interact with databases in backend projects, simplifying query handling and data management."
       },
       {
         "name": "Next.js",
-        "icon": "devicon-nextjs-plain colored",
+        "icon": "devicon-nextjs-plain ",
         "description": "I have used Next.js, a React framework, to build fast and scalable web applications with server-side rendering and static site generation."
       }
     ],
@@ -154,7 +155,7 @@
       {
         "name": "GitHub",
         "icon": "devicon-github-original",
-        "description": "I use GitHub to store my personal projects and things I learn."
+        "description": "I use GitHub to store my personal projects and the things I’m learning."
       },
       {
         "name": "DigitalOcean",
@@ -164,7 +165,7 @@
       {
         "name": "GitHub Actions",
         "icon": "devicon-githubactions-plain colored",
-        "description": "I have used GitHub Actions in conjunction with DigitalOcean to deploy the aforementioned project."
+        "description": "I used GitHub Actions along with DigitalOcean to deploy the aforementioned project."
       },
       {
         "name": "Git",
@@ -174,22 +175,22 @@
       {
         "name": "Nginx",
         "icon": "devicon-nginx-original colored",
-        "description": "I have configured Nginx to manage access to the project's web page, improving traffic distribution and security."
+        "description": "I have configured Nginx to manage traffic to the project’s website, improving traffic distribution and security."
       },
       {
         "name": "Insomnia",
         "icon": "devicon-insomnia-plain colored",
-        "description": "I use Insomnia to test and document APIs, facilitating development and collaboration on web service-based projects."
+        "description": "I use Insomnia to test and document APIs, making development and collaboration easier in web service-based projects."
       },
       {
         "name": "Linux",
         "icon": "devicon-linux-plain",
-        "description": "I have used Linux to manage the DigitalOcean server, leveraging its stability and flexibility."
+        "description": "I have used Linux to administer the DigitalOcean server, taking advantage of its stability and flexibility."
       },
       {
         "name": "Visual Studio Code",
         "icon": "devicon-vscode-plain colored",
-        "description": "I use Visual Studio Code as my primary code editor due to its flexibility, extensibility, and support for multiple languages."
+        "description": "I use Visual Studio Code as my main code editor due to its flexibility, extensibility, and support for multiple languages."
       },
       {
         "name": "Visual Studio",
@@ -209,13 +210,14 @@
       "position": "Frontend Developer",
       "description": "As a frontend developer, my responsibilities included consuming REST APIs, attending daily meetings, maintaining a landing page, and collaborating with UX/UI designers.",
       "startDate": "Jul 2022",
-      "finishDate": "Sept 2023"
+      "finishDate": "Sept 2023",
+      "linkedIn": "https://www.linkedin.com/company/devocapm"
     }
   ],
   "PROJECTS": [
     {
       "title": "Minecraft-Map-To-Image",
-      "description": "Aplicación de escritorio que permite guardar como imagen mapas dentro de los mundos de Minecraft.",
+      "description": "Desktop application that allows users to save Minecraft world maps as images.",
       "technologies": [
         {
           "name": "C#",
@@ -230,20 +232,137 @@
           "icon": "devicon-nuget-original"
         }
       ],
-      "screenshots": [""],
-      "roles": [
-        "Desarrollador de software",
-        "Administrador de paquetes",
-        "Diseñador UX/UI",
-        "Diseñador de Interfaz de Usuario"
+      "screenshots": [
+        "https://via.placeholder.com/250?text=ola",
+        "https://via.placeholder.com/250?text=prueba"
       ],
+      "roles": ["Software Developer", "UX/UI Designer"],
       "responsabilities": [
-        "Diseño e implementación de la interfaz de usuario utilizando WPF.",
-        "Selección de colores y layout de la interfaz.",
-        "Desarrollo de funcionalidades de la aplicación en C#.",
-        "Gestión de dependencias del proyecto utilizando NuGet."
+        "Design and programming of an GUI using WPF (.NET)",
+        "Select colors and layout for GUI.",
+        "Develop features of the application using C# language.",
+        "Handle depenencies of the project using NuGet."
       ],
       "repoLink": "https://github.com/Jorgemacias-12/Minecraft-Map-To-Image"
+    },
+    {
+      "title": "OpusSN-frontend",
+      "description": "Frontend of the social network Opus created as a project to the Software Enginnering subject.",
+      "technologies": [
+        {
+          "name": "TypeScript",
+          "icon": "devicon-typescript-plain colored"
+        },
+        {
+          "name": "React",
+          "icon": "devicon-react-original colored"
+        },
+        {
+          "name": "Astro",
+          "icon": "devicon-astro-plain colored"
+        },
+        {
+          "name": "Nanostores",
+          "icon": ""
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "devicon-tailwindcss-original colored"
+        },
+        {
+          "name": "GitHub Actions",
+          "icon": "devicon-githubactions-plain colored"
+        }
+      ],
+      "screenshots": [
+        "/projects/opussn-frontend-landing.png",
+        "/projects/opussn-frontend-register.png",
+        "/projects/opussn-frontend-login.png",
+        "/projects/opussn-frontend-feed-categories.png"
+      ],
+      "roles": ["Software Developer", "UX/UI Designer", "DevOps"],
+      "responsabilities": [
+        "Design and implementation of the GUI using Astro with React.",
+        "Global state handling using nanostores package.",
+        "Consuming an API Rest to interact and send user information.",
+        "Making as DevOps role using Github actions to deploy the project to Digitl Ocean."
+      ],
+      "repoLink": "https://github.com/Jorgemacias-12/OpusSN-frontend"
+    },
+    {
+      "title": "OpusSN-backend",
+      "description": "Backend of the social network Opus created as a project to the Software Engineering subject.",
+      "technologies": [
+        {
+          "name": "Typescript",
+          "icon": "devicon-typescript-plain colored"
+        },
+        {
+          "name": "Bun",
+          "icon": "devicon-bun-plain"
+        },
+        {
+          "name": "Prisma",
+          "icon": "devicon-prisma-original"
+        },
+        {
+          "name": "Swagger",
+          "icon": "devicon-swagger-plain colored"
+        },
+        {
+          "name": "MySQL",
+          "icon": "devicon-mysql-original"
+        },
+        {
+          "name": "Nginx",
+          "icon": "devicon-nginx-original"
+        },
+        {
+          "name": "Github Actions",
+          "icon": "devicon-githubactions-plain colored"
+        },
+        {
+          "name": "Digital Ocean",
+          "icon": "devicon-digitalocean-original colored"
+        }
+      ],
+      "screenshots": [
+        "/projects/opussn-backend-swagger.png",
+        "/projects/opussn-backend-posts-endpoint.png",
+        "/projects/opussn-backend-comments-endpoint.png"
+      ],
+      "roles": [
+        "Backend Developer",
+        "Intrastructure administrator",
+        "DevOps"
+      ],
+      "responsabilities": [
+        "Develop an RestFul API using Typescript and Bun runtime",
+        "Use Prisma as ORM",
+        "Automate API docs using Swagger and openAPI standard",
+        "Configure HTTP server, using Nginx",
+        "Automate DevOps making a Github actions pipeline",
+        "Deployment in Digital Ocean"
+      ],
+      "repoLink": "https://github.com/Jorgemacias-12/OpusSN-backend"
+    }
+  ],
+  "EDUCATION": [
+    {
+      "degree": "Bachelor's Degree in Computer Engineering",
+      "institution": "University of Guadalajara",
+      "campus": "CUCOSTA",
+      "startDate": "Agosto 2021",
+      "endDate": "Current",
+      "gpa": "95.29",
+      "extracurricularActivities": [
+        "Web 3 hackathons (in Puerto Vallarta and Guadalajara)",
+        "ICPC (Mexico regionals) 2023 and 2024"
+      ],
+      "relevantProjects": [],
+      "courses": [],
+      "achievements": ["Second place in the Puerto Vallarta hackathon."],
+      "schoolLink": "http://www.cuc.udg.mx/"
     }
   ]
 }

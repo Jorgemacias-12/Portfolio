@@ -5,6 +5,7 @@
     "Soy un desarrollador de software con experiencia en desarrollo web: backend y frontend. También tengo experiencia en desarrollo de aplicaciones de escritorio en Windows.",
     "He trabajado con una variedad de lenguajes de programación y frameworks, esto me ha permitido adaptarme a entornos de desarrollo facilemente, además de colaborar en equipo eficazmente."
   ],
+  "HEADER_MENU_CAPTION": "Menú de navegación",
   "COMPONENTS": {
     "HEADER": [
       {
@@ -237,9 +238,7 @@
       ],
       "roles": [
         "Desarrollador de software",
-        "Administrador de paquetes",
-        "Diseñador UX/UI",
-        "Diseñador de Interfaz de Usuario"
+        "Diseñador UX/UI"
       ],
       "responsabilities": [
         "Diseño e implementación de la interfaz de usuario utilizando WPF.",
@@ -383,7 +382,6 @@
       "repoLink": "https://github.com/SweetyStorm/PonyCharacter",
       "demoLink": "https://steamcommunity.com/sharedfiles/filedetails/?id=3012202919"
     }
-    
   ],
   "EDUCATION": [
     {
@@ -408,9 +406,7 @@
       "gpa": "9.9/10",
       "relevantProjects": [],
       "courses": [],
-      "achievements": [
-        "Promedios altos"
-      ],
+      "achievements": ["Promedios altos"],
       "extracurricularActivities": [],
       "schoolLink": "https://www.conalep.edu.mx/"
     }

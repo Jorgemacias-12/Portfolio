@@ -1,89 +1,86 @@
 import { getI18N } from "@/i18n";
-import { $theme } from "@/stores/theme";
+import { $theme } from "@/stores";
 import { useStore } from "@nanostores/react";
-import { useEffect, useState } from "react";
-import { Link } from "./Link";
+import { useState } from "react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
+import { Link } from "./Link";
 
-interface HeaderProps {
-  lang: string
+interface Props {
+  lang: string;
 }
 
-export const Header = ({ lang }: HeaderProps) => {
-  const [showMenu, setShowMenu] = useState(false);
-  const [useFixedHeader, setUseFixedHeader] = useState(false);
-  const theme = useStore($theme);
-
-  const { COMPONENTS } = getI18N(lang);
+export const Header = ({ lang }: Props) => {
+  const { COMPONENTS, HEADER_MENU_CAPTION } = getI18N(lang);
   const { HEADER } = COMPONENTS;
-
-  const FIXED_SCROLL_THRESHOLD = 50;
+  const theme = useStore($theme);
+  const [showMenu, setShowMenu] = useState(false);
 
   const headerDarkClassNames = "bg-raisin-black text-white border-none";
   const headerLightClassNames = "bg-seasalt text-black";
-  const headerFixedClassNames = useFixedHeader ? `fixed w-full z-50` : "";
 
-  const menuBackground = theme === 'light' ? 'bg-white-smoke md:bg-transparent' : 'bg-raisin-black md:bg-transparent';
+  const menuBackgroundSolid =
+    theme === "light"
+      ? "bg-white-smoke md:bg-transparent"
+      : "bg-raisin-black md:bg-transparent";
+  const menuBackgroundOpacity =
+    theme === "light"
+      ? "bg-black/50 md:bg-transparent"
+      : "bg-black/50 md:bg-transparent";
+
   const menuHiddenClasses = "pointer-events-none opacity-0 translate-x-[1rem]";
   const menuShownClasses = "opacity-100 translate-x-0 pointer-events-auto";
-
   const dividerLight = "";
   const dividerDark = "border-raisin-black-600";
-  const borderColorClassName = theme === 'light' ? dividerLight : dividerDark;
+  const borderColorClassName = theme === "light" ? dividerLight : dividerDark;
 
   const handleMenuShow = () => {
-    setShowMenu(previousValue => !previousValue);
-  }
-
-  const handleScroll = () => {
-    const scrollOverpassed = window.scrollY > FIXED_SCROLL_THRESHOLD;
-
-    setUseFixedHeader(scrollOverpassed);
-
-    if (useFixedHeader) {
-      const main = document.querySelector('main');
-
-      if (!main) return;
-
-      main.style.marginTop = `${FIXED_SCROLL_THRESHOLD}`;
-    }
-  }
-
-  useEffect(() => {
-    handleScroll();
-
-    addEventListener('scroll', handleScroll);
-
-    return () => {
-      removeEventListener('scroll', handleScroll);
-    }
-  }, [])
+    setShowMenu((previousValue) => !previousValue);
+  };
 
   return (
-    <header className={`transition-all duration-300 border-b ${theme === 'light' ? headerLightClassNames : headerDarkClassNames} p-4 ${headerFixedClassNames}`}>
+    <header
+      className={`border-b ${
+        theme === "light" ? headerLightClassNames : headerDarkClassNames
+      } p-4`}
+    >
       <section className="max-w-screen-xl mx-auto flex justify-between items-center gap-2">
-        <h1 className="font-bold md:text-2xl static z-20">Jorge Macias</h1>
+        <h1 className="font-bold md:text-2xl">Jorge Macias</h1>
 
-        <nav className="flex flex-1 justify-end">
-          <button type="button" onClick={handleMenuShow} className={`fas fa-xl fa-fw ${showMenu ? 'fa-times' : 'fa-bars'} inline-flex cursor-pointer md:hidden`}></button>
+        <button
+          type="button"
+          onClick={handleMenuShow}
+          className={`fas fa fa-xl fa-fw ${
+            showMenu ? "fa-times" : "fa-bars"
+          } md:hidden`}
+        ></button>
 
-          <ul
-            className={`fixed top-0 right-0 w-fit h-full p-2 flex flex-col gap-1  ${menuBackground} z-10 tranisiton-all duration-300 transform ${showMenu ? menuShownClasses : menuHiddenClasses} md:static md:opacity-100  md:pointer-events-auto md:flex-row md:items-center`}
+        <nav
+          className={`fixed top-0 right-0 w-full h-full flex flex-col gap-1  z-10 transition-all duration-300 transform-cpu ${
+            showMenu ? menuShownClasses : menuHiddenClasses
+          } ${menuBackgroundOpacity}`}
+        >
+          <section
+            className={`flex items-center justify-between p-4 ${menuBackgroundSolid}`}
           >
-            <section className={`border-b pb-1 flex items-center gap-2 justify-end ${borderColorClassName} md:pb-0 md:border-0`}>
+            <h2 className="transition-none">{HEADER_MENU_CAPTION}</h2>
+
+            <div className="flex items-center gap-4">
               <ThemeSwitcher />
 
-              <button type="button" onClick={handleMenuShow} className={`my-5 fas fa-xl fa-fw ${showMenu ? 'fa-times' : 'fa-bars'} inline-flex cursor-pointer md:hidden`}></button>
-            </section>
-
-            {
-              HEADER.map(({ label, url }, index) => {
-                return <Link key={index} label={label} url={url}></Link>
-              })
-            }
+              <button
+                type="button"
+                onClick={handleMenuShow}
+                className={`fas fa fa-xl fa-fw fa-times md:hidden gap-2`}
+              ></button>
+            </div>
+          </section>
+          <ul className={`m-4 p-2 rounded-md ${menuBackgroundSolid}`}>
+            {HEADER.map(({ label, url }, index) => {
+              return <Link key={index} label={label} url={url}></Link>;
+            })}
           </ul>
         </nav>
       </section>
     </header>
-  )
-}
+  );
+};

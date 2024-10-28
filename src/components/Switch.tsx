@@ -1,4 +1,4 @@
-import { $theme } from "@/stores/theme"
+import { $theme } from "@/stores"
 import { useStore } from "@nanostores/react"
 import { useState } from "react"
 

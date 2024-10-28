@@ -1,8 +1,20 @@
-import { type Education as EducationProps } from "@/types"
-import { Card } from "./Card"
-import { Details } from "./Details"
+import { type Education as EducationProps } from "@/types";
+import { Card } from "./Card";
+import { Details } from "./Details";
 
-export const Education = ({ degree, institution, campus, startDate, endDate, gpa, relevantProjects, courses, achievements, extracurricularActivities, schoolLink }: EducationProps) => {
+export const Education = ({
+  degree,
+  institution,
+  campus,
+  startDate,
+  endDate,
+  gpa,
+  relevantProjects,
+  courses,
+  achievements,
+  extracurricularActivities,
+  schoolLink,
+}: EducationProps) => {
   return (
     <Card aditionalClassNames="h-fit">
       <h4 className="text-balance text-center font-bold text-lg">{degree}</h4>
@@ -14,8 +26,12 @@ export const Education = ({ degree, institution, campus, startDate, endDate, gpa
         <span className="fas fa-calendar"></span>
 
         <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-full px-2 py-1 bg-indigo-300 text-indigo-800">{startDate}</span>
-          <span className="rounded-full px-2 py-1 bg-rose-300 text-rose-800">{endDate}</span>
+          <span className="rounded-full px-2 py-1 bg-indigo-300 text-indigo-800">
+            {startDate}
+          </span>
+          <span className="rounded-full px-2 py-1 bg-rose-300 text-rose-800">
+            {endDate}
+          </span>
         </div>
       </section>
 
@@ -24,15 +40,32 @@ export const Education = ({ degree, institution, campus, startDate, endDate, gpa
         {gpa}
       </p>
 
-      {relevantProjects && relevantProjects.length !== 0 && <Details title="Proyectos relevantes" content={relevantProjects} />}
+      {relevantProjects && relevantProjects.length !== 0 && (
+        <Details title="Proyectos relevantes" content={relevantProjects} />
+      )}
 
-      {courses && courses.length !== 0 && <Details title="Especialidades" content={courses} />}
+      {courses && courses.length !== 0 && (
+        <Details title="Especialidades" content={courses} />
+      )}
 
-      {achievements && achievements.length !== 0 && <Details title="Logros" content={achievements} />}
+      {achievements && achievements.length !== 0 && (
+        <Details title="Logros" content={achievements} />
+      )}
 
-      {extracurricularActivities && extracurricularActivities.length !== 0 && <Details title="Actividades extracurriculares" content={extracurricularActivities} />}
+      {extracurricularActivities && extracurricularActivities.length !== 0 && (
+        <Details
+          title="Actividades extracurriculares"
+          content={extracurricularActivities}
+        />
+      )}
 
-      <a href={schoolLink} target="_blank" className="text-xs rounded-md bg-slate-900 border border-slate-600 text-slate-300 px-2 py-1">Ir a {institution}</a>
+      <a
+        href={schoolLink}
+        target="_blank"
+        className="text-xs rounded-md bg-slate-900 border border-slate-600 text-slate-300 px-2 py-1"
+      >
+        Ir a {institution}
+      </a>
     </Card>
-  )
-}
+  );
+};

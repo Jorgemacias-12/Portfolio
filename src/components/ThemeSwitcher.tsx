@@ -1,5 +1,5 @@
 import { Switch } from './Switch'
-import { $theme } from '@/stores/theme'
+import { $theme } from '@/stores'
 
 export const ThemeSwitcher = () => {
 

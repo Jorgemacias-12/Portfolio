@@ -53,4 +53,4 @@ export interface Education {
   schoolLink: string;
 }
 
-export type Theme = 'light' | 'dark'; 
+export type Theme = "light" | "dark";

@@ -1,8 +1,8 @@
 import { type Project as ProjectProps } from '@/types';
 import { Card } from './Card';
 import { Carrousel } from './Carrousel';
-import { Technology } from './Technology';
 import { Details } from './Details';
+import { Technology } from './Technology';
 
 export const Project = ({ title, description, technologies, responsabilities, roles, demoLink, screenshots, repoLink }: ProjectProps) => {
   return (
