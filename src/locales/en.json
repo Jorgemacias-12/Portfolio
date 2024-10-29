@@ -233,8 +233,8 @@
         }
       ],
       "screenshots": [
-        "https://via.placeholder.com/250?text=ola",
-        "https://via.placeholder.com/250?text=prueba"
+        "/projects/minecraft-map-to-image-splash.png",
+        "/projects/minecraft-map-to-image-window.png"
       ],
       "roles": ["Software Developer", "UX/UI Designer"],
       "responsabilities": [
@@ -345,6 +345,34 @@
         "Deployment in Digital Ocean"
       ],
       "repoLink": "https://github.com/Jorgemacias-12/OpusSN-backend"
+    },
+    {
+      "title": "Pony The Dragon! [REP]",
+      "description": "A mod for the The Binding of Isaac: Repentance",
+      "technologies": [
+        {
+          "name": "Lua",
+          "icon": "devicon-lua-plain"
+        },
+        {
+          "name": "The Binding of Isaac Mod API",
+          "icon": ""
+        }
+      ],
+      "screenshots": [
+        "/projects/pony_the_dragon_mod.jpeg",
+        "/projects/pony_the_dragon_mod_styles.jpeg"
+      ],
+      "roles": [
+        "Refactor and re write the mod's code",
+        "Improvements to handle actions and skin apply"
+      ],
+      "responsabilities": [
+        "Refactor existent code and use a filesystem structure easy to use.",
+        "Allow to the creator of the mod and his art to be applied in a easy way."
+      ],
+      "repoLink": "https://github.com/SweetyStorm/PonyCharacter",
+      "demoLink": "https://steamcommunity.com/sharedfiles/filedetails/?id=3012202919"
     }
   ],
   "EDUCATION": [

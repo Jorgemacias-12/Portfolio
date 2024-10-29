@@ -233,8 +233,8 @@
         }
       ],
       "screenshots": [
-        "https://via.placeholder.com/250?text=ola",
-        "https://via.placeholder.com/250?text=prueba"
+        "/projects/minecraft-map-to-image-splash.png",
+        "/projects/minecraft-map-to-image-window.png"
       ],
       "roles": [
         "Desarrollador de software",
@@ -356,20 +356,20 @@
     },
     {
       "title": "Pony The Dragon! [REP]",
-      "description": "Un mod para el juego The Binding of Isaac: Rebirth.",
+      "description": "Un mod para el juego The Binding of Isaac: Repentance.",
       "technologies": [
         {
           "name": "Lua",
           "icon": "devicon-lua-plain"
         },
         {
-          "name": "The Binding of Isaac Modding API",
+          "name": "The Binding of Isaac Mod API",
           "icon": ""
         }
       ],
       "screenshots": [
-        "https://via.placeholder.com/250?text=Screenshot+1",
-        "https://via.placeholder.com/250?text=Screenshot+2"
+        "/projects/pony_the_dragon_mod.jpeg",
+        "/projects/pony_the_dragon_mod_styles.jpeg"
       ],
       "roles": [
         "Refactorización del código fuente",

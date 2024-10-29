@@ -4,6 +4,8 @@ import { useStore } from "@nanostores/react";
 import { useState } from "react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { Link } from "./Link";
+import mx_flag from "/mexico.svg?url";
+import usa_flag from "/usa.svg?url";
 
 interface Props {
   lang: string;
@@ -47,12 +49,23 @@ export const Header = ({ lang }: Props) => {
         <h1 className="font-bold md:text-2xl">Jorge Macias</h1>
 
         <section className="flex-1 w-full p-2 hidden md:flex flex-col rounded-md gap-2">
-          <section className="flex gap-2">
+          <section className="flex justify-between items-center gap-2">
             <ThemeSwitcher />
 
-           <a href="">
-            {lang === "es"}
-           </a>
+            <a
+              className="flex items-center gap-2 py-1"
+              href={`${lang === "es" ? "/en" : "/"}`}
+            >
+              <img
+                src={lang === "es" ? usa_flag : mx_flag}
+                alt={`${
+                  lang === "es"
+                    ? "usa flag for lang change"
+                    : "mexico flag for lang change"
+                }`}
+              />
+              {lang === "es" ? "EN" : "ES"}
+            </a>
           </section>
 
           <ul className="">
