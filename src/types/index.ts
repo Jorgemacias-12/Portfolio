@@ -34,6 +34,10 @@ export interface Project {
   repoLink?: string;
 }
 
+export interface ProjectProps extends Project {
+  lang: string;
+}
+
 export interface Technology {
   name: string;
   icon: string;
