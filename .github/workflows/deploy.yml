@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create .env file with base URL
-        run: echo "BASE_URL=/${{ github.event.repository.name }}" > .env
+        run: echo "PUBLIC_BASE_URL=/${{ github.event.repository.name }}" > .env
 
       - name: Install, build, and upload site
         uses: withastro/action@v3
