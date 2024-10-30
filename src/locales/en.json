@@ -380,7 +380,7 @@
       "degree": "Bachelor's Degree in Computer Engineering",
       "institution": "University of Guadalajara",
       "campus": "CUCOSTA",
-      "startDate": "Agosto 2021",
+      "startDate": "August 2021",
       "endDate": "Current",
       "gpa": "95.29",
       "extracurricularActivities": [
@@ -390,7 +390,7 @@
       "relevantProjects": [],
       "courses": [],
       "achievements": ["Second place in the Puerto Vallarta hackathon."],
-      "schoolLink": "http://www.cuc.udg.mx/"
+      "schoolLink": "https://www.cuc.udg.mx/"
     }
   ]
 }
