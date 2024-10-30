@@ -19,7 +19,7 @@ const { PAGE_TITLE, PAGE_DESCRIPTION, SECTIONS, ABOUT_ME, SKILLS, EXPERIENCES, P
 ---
 
 <Layout title={PAGE_TITLE} description={PAGE_DESCRIPTION}>
-  <main class="p-4 flex flex-col gap-10">
+  <main class="p-4 flex flex-col gap-10 mt-[70px]">
     {
       SECTIONS.map(({ label, url }) => {
         return (
@@ -45,7 +45,7 @@ const { PAGE_TITLE, PAGE_DESCRIPTION, SECTIONS, ABOUT_ME, SKILLS, EXPERIENCES, P
 
             {url === "skills" && (
               <div class="flex flex-col gap-4">
-                <h3 class="text-2xl font-bold">Lenguajes de programación</h3>
+                <h3 class="text-2xl font-bold">Programming Languages</h3>
 
                 <section class="grid grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-3">
                   {SKILLS.LANGS.map(({ name, icon, description }, index) => {
@@ -77,7 +77,7 @@ const { PAGE_TITLE, PAGE_DESCRIPTION, SECTIONS, ABOUT_ME, SKILLS, EXPERIENCES, P
                   )}
                 </section>
 
-                <h3 class="text-2xl font-bold">Otros</h3>
+                <h3 class="text-2xl font-bold">Others</h3>
 
                 <section class="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {SKILLS.OTHERS.map(({ name, icon, description }, index) => {
