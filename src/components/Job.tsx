@@ -8,9 +8,10 @@ interface JobProps {
   startDate: string,
   finishDate: string,
   linkedIn?: string,
+  lang: string;
 }
 
-export const Job = ({ companyName, description, position, startDate, finishDate, linkedIn }: JobProps) => {
+export const Job = ({ companyName, description, position, startDate, finishDate, linkedIn, lang }: JobProps) => {
   const theme = useStore($theme);
 
   const lightClassNames = "border bg-seasalt-500";
@@ -30,7 +31,7 @@ export const Job = ({ companyName, description, position, startDate, finishDate,
       {/* TODO: refactor this to change depending of lang */}
       <a className="flex items-center gap-2 bg-blue-500 text-white p-2 rounded-md" href={linkedIn} target="_blank">
         <span className="fa-brands fa-linkedin fa-2xl"></span>
-        Ir a LinkedIn
+        {lang === "es" ? "Ir a LinkedIn" : "Go to LinkedIn"}
       </a>
     </article>
   )
