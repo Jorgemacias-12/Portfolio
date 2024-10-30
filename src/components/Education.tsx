@@ -1,4 +1,4 @@
-import { type Education as EducationProps } from "@/types";
+import { type EducationProps } from "@/types";
 import { Card } from "./Card";
 import { Details } from "./Details";
 
@@ -14,7 +14,12 @@ export const Education = ({
   achievements,
   extracurricularActivities,
   schoolLink,
+  lang
 }: EducationProps) => {
+  const relevantProjectsLabel = lang === "es" ? "Proyectos relevantes" : "Relevant projects";
+
+  const educationGoToLabel = `${lang === "es" ? "Ir a" : "Go to"} ${institution}`;
+
   return (
     <Card aditionalClassNames="h-fit">
       <h4 className="text-balance text-center font-bold text-lg">{degree}</h4>
@@ -41,7 +46,7 @@ export const Education = ({
       </p>
 
       {relevantProjects && relevantProjects.length !== 0 && (
-        <Details title="Proyectos relevantes" content={relevantProjects} />
+        <Details title={relevantProjectsLabel} content={relevantProjects} />
       )}
 
       {courses && courses.length !== 0 && (
@@ -64,7 +69,7 @@ export const Education = ({
         target="_blank"
         className="text-xs rounded-md bg-slate-900 border border-slate-600 text-slate-300 px-2 py-1"
       >
-        Ir a {institution}
+        {educationGoToLabel}
       </a>
     </Card>
   );

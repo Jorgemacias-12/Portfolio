@@ -57,4 +57,8 @@ export interface Education {
   schoolLink: string;
 }
 
+export interface EducationProps extends Education {
+  lang: string;
+}
+
 export type Theme = "light" | "dark";

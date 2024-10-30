@@ -6,6 +6,7 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 import { Link } from "./Link";
 import mx_flag from "/mexico.svg?url";
 import usa_flag from "/usa.svg?url";
+import type { MouseEvent } from "react";
 
 interface Props {
   lang: string;
@@ -38,6 +39,12 @@ export const Header = ({ lang }: Props) => {
   const handleMenuShow = () => {
     setShowMenu((previousValue) => !previousValue);
   };
+
+  const handleMenuHide = (event: MouseEvent<HTMLDivElement>) => {
+    if (event.target !== event.currentTarget) return;
+
+    setShowMenu(false);
+  }
 
   return (
     <header
@@ -77,7 +84,7 @@ export const Header = ({ lang }: Props) => {
 
         <section className="flex flex-1 justify-end gap-4">
           <a
-            className="flex items-center gap-2 py-1"
+            className="flex items-center gap-2 py-1 md:hidden"
             href={`${lang === "es" ? "/en" : "/"}`}
           >
             <img
@@ -104,6 +111,7 @@ export const Header = ({ lang }: Props) => {
           className={`fixed top-0 right-0 w-full h-full flex flex-col gap-1  z-10 transition-all duration-300 transform-cpu ${
             showMenu ? menuShownClasses : menuHiddenClasses
           } ${menuBackgroundOpacity}`}
+          onClick={handleMenuHide}
         >
           <section
             className={`flex items-center justify-between p-4 ${menuBackgroundSolid}`}
