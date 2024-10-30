@@ -22,6 +22,8 @@ export const Link = ({ label, url }: LinkProps) => {
     event.preventDefault();
 
     window.scrollTo({ top: 0, behavior: "smooth" });
+
+    window.history.pushState(null, document.title, window.location.pathname);
   };
 
   return (
