@@ -368,7 +368,7 @@
         "Improvements to handle actions and skin apply"
       ],
       "responsabilities": [
-        "Refactor existent code and use a filesystem structure easy to use.",
+        "Refactor existent code and use a project structure easy to use and understand.",
         "Allow to the creator of the mod and his art to be applied in a easy way."
       ],
       "repoLink": "https://github.com/SweetyStorm/PonyCharacter",
