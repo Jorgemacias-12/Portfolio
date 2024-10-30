@@ -43,7 +43,7 @@ export const Header = ({ lang }: Props) => {
     <header
       className={`border-b md:border-b-0 md:border-r ${
         theme === "light" ? headerLightClassNames : headerDarkClassNames
-      } ${borderColorClassName} p-4 md:fixed md:w-60 h-full`}
+      } ${borderColorClassName} p-4 fixed md:w-60 md:h-full z-10 w-full`}
     >
       <section className="max-w-screen-xl mx-auto flex justify-between items-center gap-2 md:flex-col md:justify-end">
         <h1 className="font-bold md:text-2xl">Jorge Macias</h1>
@@ -75,13 +75,30 @@ export const Header = ({ lang }: Props) => {
           </ul>
         </section>
 
-        <button
-          type="button"
-          onClick={handleMenuShow}
-          className={`fas fa fa-xl fa-fw ${
-            showMenu ? "fa-times" : "fa-bars"
-          } md:hidden`}
-        ></button>
+        <section className="flex flex-1 justify-end gap-4">
+          <a
+            className="flex items-center gap-2 py-1"
+            href={`${lang === "es" ? "/en" : "/"}`}
+          >
+            <img
+              src={lang === "es" ? usa_flag : mx_flag}
+              alt={`${
+                lang === "es"
+                  ? "usa flag for lang change"
+                  : "mexico flag for lang change"
+              }`}
+            />
+            {lang === "es" ? "EN" : "ES"}
+          </a>
+
+          <button
+            type="button"
+            onClick={handleMenuShow}
+            className={`fas fa fa-xl fa-fw ${
+              showMenu ? "fa-times" : "fa-bars"
+            } md:hidden`}
+          ></button>
+        </section>
 
         <nav
           className={`fixed top-0 right-0 w-full h-full flex flex-col gap-1  z-10 transition-all duration-300 transform-cpu ${
