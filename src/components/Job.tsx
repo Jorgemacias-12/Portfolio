@@ -14,8 +14,8 @@ interface JobProps {
 export const Job = ({ companyName, description, position, startDate, finishDate, linkedIn, lang }: JobProps) => {
   const theme = useStore($theme);
 
-  const lightClassNames = "border bg-seasalt-500";
-  const darkClassNames = "border-raisin-black-600 bg-raisin-black";
+  const lightClassNames = "border bg-white";
+  const darkClassNames = "border-black_rain-900 bg-black_rain-800";
 
   const themeClassNames = theme === 'light' ? lightClassNames : darkClassNames;
 

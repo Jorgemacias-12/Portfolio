@@ -9,8 +9,8 @@ interface DetailsProps {
 export const Details = ({ title, content }: DetailsProps) => {
   const theme = useStore($theme);
 
-  const lightClassNames = "bg-white-smoke-500 border";
-  const darkClassNames = "bg-raisin-black-600";
+  const lightClassNames = "bg-white border";
+  const darkClassNames = "bg-black_rain-900";
 
   const themeClassNames = theme === 'light' ? lightClassNames : darkClassNames;
 
