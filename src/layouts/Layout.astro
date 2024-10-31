@@ -87,8 +87,8 @@ const { title, description } = Astro.props;
 <script>
   import { $theme } from "@/stores";
 
-  const darkBg = "bg-raisin-black-400";
-  const lightBg = "bg-seasalt-900";
+  const darkBg = "bg-black_rain-600";
+  const lightBg = "bg-seasalt";
 
   $theme.subscribe((value, oldValue) => {
     if (!oldValue) return;
