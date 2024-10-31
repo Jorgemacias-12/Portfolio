@@ -7,6 +7,7 @@ type LanguageType = {
   PAGE_DESCRIPTION: string;
   ABOUT_ME: string[];
   HEADER_MENU_CAPTION: string;
+  HEADER_PAGE_VERSION_CAPTION: string;
   COMPONENTS: {
     HEADER: {
       label: string;
