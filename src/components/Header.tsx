@@ -1,11 +1,10 @@
 import { getI18N } from "@/i18n";
 import { $theme } from "@/stores";
 import { useStore } from "@nanostores/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { Link } from "./Link";
-import mx_flag from "/mexico.svg?url";
-import usa_flag from "/usa.svg?url";
+import { appendBaseUrl } from "@/utils";
 import type { MouseEvent } from "react";
 
 interface Props {
@@ -17,6 +16,7 @@ export const Header = ({ lang }: Props) => {
   const { HEADER } = COMPONENTS;
   const theme = useStore($theme);
   const [showMenu, setShowMenu] = useState(false);
+  const [flagUrl, setFlagUrl] = useState('');
 
   const headerDarkClassNames = "bg-raisin-black text-white";
   const headerLightClassNames = "bg-seasalt text-black";
@@ -46,6 +46,16 @@ export const Header = ({ lang }: Props) => {
     setShowMenu(false);
   }
 
+  useEffect(() => {
+    const flagImport = async () => {
+      const _flagUrl = appendBaseUrl(lang === "es" ? "/usa.svg" : "/mexico.svg")
+
+      setFlagUrl(_flagUrl);
+    }
+
+    flagImport();
+  }, [lang])
+
   return (
     <header
       className={`border-b md:border-b-0 md:border-r ${
@@ -61,10 +71,10 @@ export const Header = ({ lang }: Props) => {
 
             <a
               className="flex items-center gap-2 py-1"
-              href={`${lang === "es" ? "/en" : "/"}`}
+              href={`${lang === "es" ? appendBaseUrl("/en") : appendBaseUrl("/")}`}
             >
               <img
-                src={lang === "es" ? usa_flag : mx_flag}
+                src={flagUrl}
                 alt={`${
                   lang === "es"
                     ? "usa flag for lang change"
@@ -85,10 +95,10 @@ export const Header = ({ lang }: Props) => {
         <section className="flex flex-1 justify-end gap-4">
           <a
             className="flex items-center gap-2 py-1 md:hidden"
-            href={`${lang === "es" ? "/en" : "/"}`}
+            href={`${lang === "es" ? appendBaseUrl("/en") : appendBaseUrl("/")}`}
           >
             <img
-              src={lang === "es" ? usa_flag : mx_flag}
+              src={flagUrl}
               alt={`${
                 lang === "es"
                   ? "usa flag for lang change"

@@ -3,17 +3,22 @@ import { Card } from './Card';
 import { Carrousel } from './Carrousel';
 import { Details } from './Details';
 import { Technology } from './Technology';
+import { appendBaseUrl } from '@/utils';
 
 export const Project = ({ title, description, technologies, responsabilities, roles, demoLink, screenshots, repoLink, lang }: ProjectProps) => {
   const projectRepoLabel = lang === "es" ? "Repositorio" : "Repository";
   const projectResponsabilitiesLabel = lang === "es" ? "Responsabilidades" : "Responsablities";
   const projectTechnologiesLabel = lang === "es" ? "Tecnologías" : "Technologies";
   
+  const baseUrlScreenshots = (screenshots && screenshots.length > 0) ? 
+    screenshots.map((el) => appendBaseUrl(el)) : 
+    undefined;
+
   return (
     <Card aditionalClassNames='h-fit'>
       <h3 className="text-xl m-2 font-bold">{title}</h3>
 
-      {screenshots && <Carrousel images={screenshots} />}
+      {screenshots && <Carrousel images={baseUrlScreenshots!} />}
 
       <p className="mt-2">{description}</p>
 
