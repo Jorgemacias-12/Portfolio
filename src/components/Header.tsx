@@ -12,19 +12,20 @@ interface Props {
 }
 
 export const Header = ({ lang }: Props) => {
-  const { COMPONENTS, HEADER_MENU_CAPTION } = getI18N(lang);
+  const { COMPONENTS, HEADER_MENU_CAPTION, HEADER_PAGE_VERSION_CAPTION } =
+    getI18N(lang);
   const { HEADER } = COMPONENTS;
   const theme = useStore($theme);
   const [showMenu, setShowMenu] = useState(false);
-  const [flagUrl, setFlagUrl] = useState('');
+  const [flagUrl, setFlagUrl] = useState("");
 
-  const headerDarkClassNames = "bg-raisin-black text-white";
-  const headerLightClassNames = "bg-seasalt text-black";
+  const headerDarkClassNames = "bg-black_rain text-white";
+  const headerLightClassNames = "bg-seasalt-900 text-black";
 
   const menuBackgroundSolid =
     theme === "light"
       ? "bg-white-smoke md:bg-transparent"
-      : "bg-raisin-black md:bg-transparent";
+      : "bg-black_rain md:bg-transparent";
   const menuBackgroundOpacity =
     theme === "light"
       ? "bg-black/50 md:bg-transparent"
@@ -33,7 +34,7 @@ export const Header = ({ lang }: Props) => {
   const menuHiddenClasses = "pointer-events-none opacity-0 translate-x-[1rem]";
   const menuShownClasses = "opacity-100 translate-x-0 pointer-events-auto";
   const dividerLight = "";
-  const dividerDark = "border-raisin-black-600";
+  const dividerDark = "border-black_rain-900";
   const borderColorClassName = theme === "light" ? dividerLight : dividerDark;
 
   const handleMenuShow = () => {
@@ -44,17 +45,19 @@ export const Header = ({ lang }: Props) => {
     if (event.target !== event.currentTarget) return;
 
     setShowMenu(false);
-  }
+  };
 
   useEffect(() => {
     const flagImport = async () => {
-      const _flagUrl = appendBaseUrl(lang === "es" ? "/usa.svg" : "/mexico.svg")
+      const _flagUrl = appendBaseUrl(
+        lang === "es" ? "/usa.svg" : "/mexico.svg"
+      );
 
       setFlagUrl(_flagUrl);
-    }
+    };
 
     flagImport();
-  }, [lang])
+  }, [lang]);
 
   return (
     <header
@@ -71,7 +74,9 @@ export const Header = ({ lang }: Props) => {
 
             <a
               className="flex items-center gap-2 py-1"
-              href={`${lang === "es" ? appendBaseUrl("/en") : appendBaseUrl("/")}`}
+              href={`${
+                lang === "es" ? appendBaseUrl("/en") : appendBaseUrl("/")
+              }`}
             >
               <img
                 src={flagUrl}
@@ -90,12 +95,22 @@ export const Header = ({ lang }: Props) => {
               return <Link key={index} label={label} url={url}></Link>;
             })}
           </ul>
+
+          {import.meta.env.PUBLIC_VERSION !== undefined && (
+            <p className="text-sm text-balance text-center">
+              {HEADER_PAGE_VERSION_CAPTION}{" "}
+              {lang === "es" ? "versión" : "version"}{" "}
+              {import.meta.env.PUBLIC_VERSION}
+            </p>
+          )}
         </section>
 
         <section className="flex flex-1 justify-end gap-4">
           <a
             className="flex items-center gap-2 py-1 md:hidden"
-            href={`${lang === "es" ? appendBaseUrl("/en") : appendBaseUrl("/")}`}
+            href={`${
+              lang === "es" ? appendBaseUrl("/en") : appendBaseUrl("/")
+            }`}
           >
             <img
               src={flagUrl}
