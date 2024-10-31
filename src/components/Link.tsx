@@ -1,5 +1,3 @@
-import { $theme } from "@/stores";
-import { useStore } from "@nanostores/react";
 import type { MouseEvent } from "react";
 
 type LinkProps = {
@@ -8,14 +6,6 @@ type LinkProps = {
 };
 
 export const Link = ({ label, url }: LinkProps) => {
-  const theme = useStore($theme);
-
-  const hoverBackgroundDark = "hover:bg-raisin-black-600";
-  const hoverBackgroundLight = "hover:bg-persimmon-500 hover:text-white";
-
-  const background =
-    theme === "light" ? hoverBackgroundLight : hoverBackgroundDark;
-
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     if (!url.includes("/")) return;
 
@@ -30,7 +20,7 @@ export const Link = ({ label, url }: LinkProps) => {
     <li>
       <a
         aria-label={label}
-        className={`flex flex-1 w-full rounded-md p-2 ${background}`}
+        className={`flex flex-1 w-full rounded-md p-2  hover:bg-persimmon-500 hover:text-white`}
         href={url}
         onClick={handleClick}
       >
