@@ -31,9 +31,15 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Set BASE_URL environment variable
-        run: echo "PUBLIC_BASE_URL=/${{ github.event.repository.name }}" > .env
+      - name: Set environment variables
+        run: |
+          TAG=$(git describe --tags --abbrev=0)
+          COMMIT=$(git rev-parse --short HEAD)
+          VERSION="${TAG}+${COMMIT}"
 
+          echo "PUBLIC_BASE_URL=/${{ github.event.repository.name }}" > .env
+          echo "PUBLIC_VERSION=$VERSION" >> .env
+      
       - name: Install, build, and upload site
         uses: withastro/action@v3
         with:
