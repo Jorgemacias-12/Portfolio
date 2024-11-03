@@ -105,7 +105,7 @@ export const Header = ({ lang }: Props) => {
           )}
         </section>
 
-        <section className="flex flex-1 justify-end gap-4">
+        <section className="flex flex-1 justify-end gap-10">
           <a
             className="flex items-center gap-2 py-1 md:hidden"
             href={`${
@@ -113,6 +113,8 @@ export const Header = ({ lang }: Props) => {
             }`}
           >
             <img
+              className="aspect"
+              loading="eager"
               src={flagUrl}
               alt={`${
                 lang === "es"
