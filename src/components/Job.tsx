@@ -21,7 +21,7 @@ export const Job = ({ companyName, description, position, startDate, finishDate,
 
   return (
     <article className={`flex flex-col border rounded-md p-2 gap-2 items-center ${themeClassNames}`}>
-      <h4 className="text-center font-bold text-2xl">{companyName}</h4>
+      <h3 className="text-center font-bold text-2xl">{companyName}</h3>
       <p>{position}</p>
       <p>{description}</p>
       <section className="flex gap-2">
