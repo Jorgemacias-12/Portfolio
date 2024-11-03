@@ -124,6 +124,7 @@ export const Header = ({ lang }: Props) => {
           </a>
 
           <button
+            title="Mobile version of navigation open button"
             type="button"
             onClick={handleMenuShow}
             className={`fas fa fa-xl fa-fw ${
@@ -147,6 +148,7 @@ export const Header = ({ lang }: Props) => {
               <ThemeSwitcher />
 
               <button
+                title="Mobile version of navigation close button"
                 type="button"
                 onClick={handleMenuShow}
                 className={`fas fa fa-xl fa-fw fa-times md:hidden gap-2`}
