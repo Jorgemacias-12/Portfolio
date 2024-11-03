@@ -34,7 +34,7 @@ export const Project = ({ title, description, technologies, responsabilities, ro
 
       <section className="flex flex-wrap gap-2">
         {demoLink && (
-          <a href={demoLink} target="_blank" rel="noopener noreferrer" className="bg-indigo-300 px-2 rounded-md text-indigo-800">
+          <a href={demoLink} target="_blank" rel="noopener noreferrer" className="bg-indigo-200 px-2 rounded-md text-indigo-900">
             Demo
           </a>
         )}

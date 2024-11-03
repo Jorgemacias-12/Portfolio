@@ -14,11 +14,14 @@ export const Education = ({
   achievements,
   extracurricularActivities,
   schoolLink,
-  lang
+  lang,
 }: EducationProps) => {
-  const relevantProjectsLabel = lang === "es" ? "Proyectos relevantes" : "Relevant projects";
+  const relevantProjectsLabel =
+    lang === "es" ? "Proyectos relevantes" : "Relevant projects";
 
-  const educationGoToLabel = `${lang === "es" ? "Ir a" : "Go to"} ${institution}`;
+  const educationGoToLabel = `${
+    lang === "es" ? "Ir a" : "Go to"
+  } ${institution}`;
 
   return (
     <Card aditionalClassNames="h-fit">
@@ -27,20 +30,20 @@ export const Education = ({
       <p className="text-md">{institution}</p>
       <p className="text-md">{campus}</p>
 
-      <section className="flex gap-2 items-center">
+      <section className="flex gap-2 items-center border px-2 py-1 rounded-md">
         <span className="fas fa-calendar"></span>
 
         <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-full px-2 py-1 bg-indigo-300 text-indigo-800">
+          <span className="rounded-full px-2 py-1 gap-2 bg-indigo-200 text-indigo-900">
             {startDate}
           </span>
-          <span className="rounded-full px-2 py-1 bg-rose-300 text-rose-800">
+          <span className="rounded-full px-2 py-1 bg-rose-200 text-rose-900">
             {endDate}
           </span>
         </div>
       </section>
 
-      <p className="flex gap-2 items-center bg-orange-300 rounded-full px-2 py-1 text-orange-800">
+      <p className="flex gap-2 items-center bg-orange-200 rounded-full px-2 py-1 text-orange-900">
         <span className="fas fa-scroll fa-dw"></span>
         {gpa}
       </p>
