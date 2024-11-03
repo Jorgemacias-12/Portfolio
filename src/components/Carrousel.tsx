@@ -24,6 +24,7 @@ export const Carrousel = ({ images }: CarrouselProps) => {
   return (
     <figure className="flex items-center gap-2 w-full justify-center relative">
       <button
+        title="Change to previous image"
         className="absolute top-1/2 left-2 w-8 h-8 rounded-full -translate-y-1/2 bg-black/50 text-white"
         onClick={onImageChagePrev}
       >
@@ -37,6 +38,7 @@ export const Carrousel = ({ images }: CarrouselProps) => {
         />
       </section>
       <button
+        title="Change to next image"
         className="absolute top-1/2 right-2 w-8 h-8 rounded-full -translate-y-1/2 bg-black/50 text-white"
         onClick={onImageChangeNext}
       >
