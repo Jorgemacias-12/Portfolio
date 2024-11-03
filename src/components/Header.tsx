@@ -79,6 +79,8 @@ export const Header = ({ lang }: Props) => {
               }`}
             >
               <img
+                width={32}
+                height={32}
                 src={flagUrl}
                 alt={`${
                   lang === "es"

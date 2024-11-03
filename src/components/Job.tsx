@@ -35,16 +35,15 @@ export const Job = ({
       <p>{position}</p>
       <p>{description}</p>
       <section className="flex gap-2">
-        <p className="px-4 py-1 rounded-full bg-green-300 text-green-800">
+        <p className="px-4 py-1 rounded-full bg-green-200 text-green-900">
           {startDate}
         </p>
-        <p className="px-4 py-1 rounded-full bg-red-300 text-red-800">
+        <p className="px-4 py-1 rounded-full bg-red-200 text-red-900">
           {finishDate}
         </p>
       </section>
-      {/* TODO: refactor this to change depending of lang */}
       <a
-        className="flex items-center gap-2 bg-blue-500 text-white p-2 rounded-md"
+        className="flex items-center gap-2 bg-blue-800 text-white p-2 rounded-md"
         href={linkedIn}
         target="_blank"
       >
