@@ -155,11 +155,20 @@ export const Header = ({ lang }: Props) => {
               ></button>
             </div>
           </section>
+          
           <ul className={`m-4 p-2 rounded-md ${menuBackgroundSolid}`}>
             {HEADER.map(({ label, url }, index) => {
               return <Link key={index} label={label} url={url}></Link>;
             })}
           </ul>
+
+          {import.meta.env.PUBLIC_VERSION !== undefined && (
+            <p className={`mx-4 p-4 rounded-md text-center ${menuBackgroundSolid}`}>
+              {HEADER_PAGE_VERSION_CAPTION}{" "}
+              {lang === "es" ? "versión" : "version"}{" "}
+              {import.meta.env.PUBLIC_VERSION}
+            </p>
+          )}
         </nav>
       </section>
     </header>
