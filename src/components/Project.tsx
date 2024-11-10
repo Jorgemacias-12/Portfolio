@@ -4,6 +4,8 @@ import { Carrousel } from "./Carrousel";
 import { Details } from "./Details";
 import { Technology } from "./Technology";
 import { appendBaseUrl } from "@/utils";
+import { useStore } from "@nanostores/react";
+import { $theme } from "@/stores";
 
 export const Project = ({
   title,
@@ -16,6 +18,8 @@ export const Project = ({
   repoLink,
   lang,
 }: ProjectProps) => {
+  const theme = useStore($theme);
+
   const projectRepoLabel = lang === "es" ? "Repositorio" : "Repository";
   const projectResponsabilitiesLabel =
     lang === "es" ? "Responsabilidades" : "Responsablities";
@@ -26,6 +30,9 @@ export const Project = ({
     screenshots && screenshots.length > 0
       ? screenshots.map((el) => appendBaseUrl(el))
       : undefined;
+
+  const demoButtonBg = theme === "light" ? "bg-[#056674]" : "bg-persimmon";
+  const githubButtonBg = theme === "light" ? "bg-[#e8ebec]" : "bg-[#0d1117]";
 
   return (
     <Card aditionalClassNames="h-fit">
@@ -58,7 +65,7 @@ export const Project = ({
             href={demoLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#056674] text-white px-2 flex-1 rounded-full h-10 flex items-center justify-center"
+            className={`text-white px-2 flex-1 rounded-full h-10 flex items-center justify-center ${demoButtonBg}`}
           >
             Demo
           </a>
@@ -68,7 +75,7 @@ export const Project = ({
             href={repoLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-slate-900 border-slate-600 text-slate-300 h-10 rounded-full gap-2 flex-1 flex items-center justify-center"
+            className={`h-10 rounded-full gap-2 flex-1 flex items-center justify-center ${githubButtonBg}`}
           >
             <span className="fa-brands fa-github"></span>
             {projectRepoLabel}
