@@ -1,6 +1,8 @@
 import { type EducationProps } from "@/types";
 import { Card } from "./Card";
 import { Details } from "./Details";
+import { useStore } from "@nanostores/react";
+import { $theme } from "@/stores";
 
 export const Education = ({
   degree,
@@ -16,61 +18,45 @@ export const Education = ({
   schoolLink,
   lang,
 }: EducationProps) => {
+  const theme = useStore($theme);
+  // TODO: make theme differences and change font color
   const relevantProjectsLabel =
     lang === "es" ? "Proyectos relevantes" : "Relevant projects";
 
   const educationGoToLabel = `${
-    lang === "es" ? "Ir a" : "Go to"
-  } ${institution}`;
+    lang === "es" ? "Sitio web de la institución" : "Institution webpage"
+  }`;
+
+  const studentGradesLabel = `${lang === "es" ? "Promedio general" : "GPA"}`;
+
+  const subtitleFore = theme == "light" ? "text-gray-600" : "";
 
   return (
     <Card aditionalClassNames="h-fit">
-      <h4 className="text-balance text-center font-bold text-lg">{degree}</h4>
+      <h4 className={`flex gap-2 items-center font-bold text-lg w-full`}>
+        <span className="fas fa-school"></span>
+        <span className="flex-1">{degree}</span>
+      </h4>
 
-      <p className="text-md">{institution}</p>
-      <p className="text-md">{campus}</p>
-
-      <section className="flex gap-2 items-center border px-2 py-1 rounded-md">
-        <span className="fas fa-calendar"></span>
-
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-full px-2 py-1 gap-2 bg-indigo-200 text-indigo-900">
-            {startDate}
-          </span>
-          <span className="rounded-full px-2 py-1 bg-rose-200 text-rose-900">
-            {endDate}
-          </span>
-        </div>
-      </section>
-
-      <p className="flex gap-2 items-center bg-orange-200 rounded-full px-2 py-1 text-orange-900">
-        <span className="fas fa-scroll fa-dw"></span>
-        {gpa}
+      <p className={`w-full text-sm ${subtitleFore}`}>
+        {institution} - {campus}
       </p>
 
-      {relevantProjects && relevantProjects.length !== 0 && (
-        <Details title={relevantProjectsLabel} content={relevantProjects} />
-      )}
+      <p className={`w-full text-sm ${subtitleFore}`}>
+        {startDate} - {endDate}
+      </p>
 
-      {courses && courses.length !== 0 && (
-        <Details title="Especialidades" content={courses} />
-      )}
-
-      {achievements && achievements.length !== 0 && (
-        <Details title="Logros" content={achievements} />
-      )}
-
-      {extracurricularActivities && extracurricularActivities.length !== 0 && (
-        <Details
-          title="Actividades extracurriculares"
-          content={extracurricularActivities}
-        />
-      )}
+      <p className="w-full flex items-center gap-2">
+        <span className="fas fa-scroll fa-dw"></span>
+        <span>
+          {studentGradesLabel}: {gpa}
+        </span>
+      </p>
 
       <a
-        href={schoolLink}
+        className="w-fit px-2 h-10 flex items-center hover:text-blue-500 hover:underline transition-colors duration-100"
         target="_blank"
-        className="text-xs rounded-md bg-slate-900 border border-slate-600 text-slate-300 px-2 py-1"
+        href={schoolLink}
       >
         {educationGoToLabel}
       </a>
