@@ -7,6 +7,9 @@ import { Link } from "./Link";
 import { appendBaseUrl } from "@/utils";
 import type { MouseEvent } from "react";
 
+import CloseIcon from "@mui/icons-material/Close";
+import MenuIcon from "@mui/icons-material/Menu";
+
 interface Props {
   lang: string;
 }
@@ -131,10 +134,10 @@ export const Header = ({ lang }: Props) => {
             title="Mobile version of navigation open button"
             type="button"
             onClick={handleMenuShow}
-            className={`fas fa fa-xl fa-fw ${
-              showMenu ? "fa-times" : "fa-bars"
-            } md:hidden`}
-          ></button>
+            className="md:hidden"
+          >
+            {showMenu ? <CloseIcon fontSize="large" /> : <MenuIcon fontSize="large" />}
+          </button>
         </section>
 
         <nav
@@ -152,14 +155,16 @@ export const Header = ({ lang }: Props) => {
               <ThemeSwitcher />
 
               <button
-                title="Mobile version of navigation close button"
+                title="Mobile version of the navigation close button"
                 type="button"
+                className="md:hidden gap-2"
                 onClick={handleMenuShow}
-                className={`fas fa fa-xl fa-fw fa-times md:hidden gap-2`}
-              ></button>
+              >
+                {showMenu ? <CloseIcon fontSize="large" /> : <MenuIcon fontSize="large" />}
+              </button>
             </div>
           </section>
-          
+
           <ul className={`m-4 p-2 rounded-md ${menuBackgroundSolid}`}>
             {HEADER.map(({ label, url }, index) => {
               return <Link key={index} label={label} url={url}></Link>;
@@ -167,7 +172,9 @@ export const Header = ({ lang }: Props) => {
           </ul>
 
           {import.meta.env.PUBLIC_VERSION !== undefined && (
-            <p className={`mx-4 p-4 rounded-md text-center ${menuBackgroundSolid}`}>
+            <p
+              className={`mx-4 p-4 rounded-md text-center ${menuBackgroundSolid}`}
+            >
               {HEADER_PAGE_VERSION_CAPTION}{" "}
               {lang === "es" ? "versión" : "version"}{" "}
               {import.meta.env.PUBLIC_VERSION}
