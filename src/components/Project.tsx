@@ -33,6 +33,7 @@ export const Project = ({
 
   const demoButtonBg = theme === "light" ? "bg-[#056674]" : "bg-persimmon";
   const githubButtonBg = theme === "light" ? "bg-[#e8ebec]" : "bg-[#0d1117]";
+  // const githubButtonIcon = theme === "light" ? 'devicon-github-original' : 'devicon-github-original colored text-white';
 
   return (
     <Card aditionalClassNames="h-fit">
@@ -77,7 +78,7 @@ export const Project = ({
             rel="noopener noreferrer"
             className={`h-10 rounded-full gap-2 flex-1 flex items-center justify-center ${githubButtonBg}`}
           >
-            <span className="fa-brands fa-github"></span>
+            <span className="devicon-github-original"></span>
             {projectRepoLabel}
           </a>
         )}
