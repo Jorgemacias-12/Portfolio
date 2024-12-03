@@ -5,13 +5,15 @@ import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 import { config } from 'dotenv';
 
+import min from 'astro-min';
+
 config();
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://Jorgemacias-12.github.io",
   base: `${process.env.PUBLIC_BASE_URL || ''}`,
-  integrations: [tailwind(), react()],
+  integrations: [tailwind(), react(), min()],
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],
