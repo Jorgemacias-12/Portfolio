@@ -1,54 +1,44 @@
-# Astro Starter Kit: Basics
+# Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+This is my personal portfolio as a software developer, where you can explore my projects skills and, my approach to web development.
+The portfolio is built using modern technologies and fouceses on provinding a fast an engaging user experience.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Features
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- Showcase of personal projects with detailed descriptions and links to repositories
+- Interactive UI built with react and styled with Tailwind CSS
+- Responsive design for optimal viewing on all devices (not supporting IE 11)
+- Real-time deployment updates through Github Pages
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Tecnologies Used
 
-## 🚀 Project Structure
+- **Astro**: A high-performance static site generator that integrates technologies like React and Tailwind CSS.
+- **React**: A library for building interactive user interfaces and reusable components.
+- **TypeScript**: A superset of JavaScript that provides static typing, helping reduce errors and improve code maintainability.
+- **Tailwind CSS**: A utility-first CSS framework for building custom designs with utility classes.
+- **Material UI**: A React component library following Material Design principles, making it easier to build consistent and accessible interfaces.
+- **Nanostores**: A library for efficient state management in reactive applications.
+- **dotenv**: A module for loading environment variables securely, used to manage sensitive configurations.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Continuous Integration and Development (CI/CD)
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+This project uses **GitHub Actions** to automate the process of building and deploying the portfolio.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Every time a new version is tagged (e.g., 'v1.0.0), the workflow is triggered to:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. Clean up previous deployment
+2. Build the portfolio using the latest code
+3. Deploy the built site to **GitHub Pages**
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Workflow overview
 
-## 🧞 Commands
+- **Triggered by**: Git tags (e.g., `v*`) or manual trigger
+  - **Build process**
+    - Checks out the code.
+    - Sets enviroment variables.
+    - Builds the site using **Astro** and uploads it.
+  - **Deployment**: The site is deployed to **GitHub Pages**
 
-All commands are run from the root of the project, from a terminal:
+## Contact
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **LinkedIn**: [jamz3](https://www.linkedin.com/in/jamz3/)
