@@ -212,7 +212,8 @@
       "description": "Como desarrollador frontend, mis responsabilidades incluyeron consumir APIs REST, asistir a reuniones diarias, mantener una página de destino y colaborar con diseñadores UX/UI.",
       "startDate": "Jul 2022",
       "finishDate": "Sept 2023",
-      "linkedIn": "https://www.linkedin.com/company/devocapm"
+      "linkedIn": "https://www.linkedin.com/company/devocapm",
+      "actualJob": false
     }
   ],
   "PROJECTS": [
@@ -396,11 +397,12 @@
       "courses": [],
       "achievements": [],
       "extracurricularActivities": [],
-      "schoolLink": "http://www.cuc.udg.mx/"
+      "schoolLink": "http://www.cuc.udg.mx/",
+      "finished": false
     },
     {
       "degree": "Profesional Técnico Bachiller en Informática",
-      "institution": "Conalep",
+      "institution": "Colegio Nacional de Educación Profesional Técnica ",
       "campus": "Puerto Vallarta 075",
       "startDate": "Agosto 2018",
       "endDate": "Julio 2021",
@@ -409,7 +411,8 @@
       "courses": [],
       "achievements": ["Promedios altos"],
       "extracurricularActivities": [],
-      "schoolLink": "https://www.conalep.edu.mx/"
+      "schoolLink": "https://www.conalep.edu.mx/",
+      "finished": true
     }
   ]
 }
