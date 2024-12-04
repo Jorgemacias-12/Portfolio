@@ -11,3 +11,29 @@ export const appendBaseUrl = (url: string) => {
 
   return `${baseUrl}${url}`
 }
+
+const EducationBadgeStatusLookUpTable: Record<string, string> = {
+  "true:es": "Graduado",
+  "true:en": "Graduated",
+  "false:es": "Estudiando",
+  "false:en": "Studying",
+}
+
+export const getStudyStatus = (finished: boolean, lang: string = "es") => {
+  const key = `${finished}:${lang}`
+
+  return EducationBadgeStatusLookUpTable[key] || "Unknown state"
+} 
+
+const WorkBadgeStatusLookUpTable: Record<string, string> = {
+  "true:es": "Trabajo actual",
+  "true:en": "Currently working",
+  "false:es": "Trabajé",
+  "false:en": "Previously worked",
+};
+
+export const getWorkStatus = (currentlyWorking: boolean, lang: string = "es") => {
+  const key = `${currentlyWorking}:${lang}`;
+
+  return WorkBadgeStatusLookUpTable[key] || "Unknown state";
+};
