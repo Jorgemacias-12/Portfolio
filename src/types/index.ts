@@ -21,6 +21,7 @@ export interface Job {
   startDate: string;
   finishDate: string;
   linkedIn?: string;
+  actualJob: boolean
 }
 
 export interface Project {
@@ -55,6 +56,7 @@ export interface Education {
   achievements: string[];
   extracurricularActivities: string[];
   schoolLink: string;
+  finished: boolean;
 }
 
 export interface EducationProps extends Education {
