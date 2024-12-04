@@ -212,7 +212,8 @@
       "description": "As a frontend developer, my responsibilities included consuming REST APIs, attending daily meetings, maintaining a landing page, and collaborating with UX/UI designers.",
       "startDate": "Jul 2022",
       "finishDate": "Sept 2023",
-      "linkedIn": "https://www.linkedin.com/company/devocapm"
+      "linkedIn": "https://www.linkedin.com/company/devocapm",
+      "actualJob": false
     }
   ],
   "PROJECTS": [
@@ -391,7 +392,8 @@
       "relevantProjects": [],
       "courses": [],
       "achievements": ["Second place in the Puerto Vallarta hackathon."],
-      "schoolLink": "https://www.cuc.udg.mx/"
+      "schoolLink": "https://www.cuc.udg.mx/",
+      "finished": false
     }
   ]
 }
