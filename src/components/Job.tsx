@@ -1,6 +1,9 @@
 import { $theme } from "@/stores";
 import { useStore } from "@nanostores/react";
 
+import { WorkOutline, CalendarMonthOutlined } from "@mui/icons-material";
+import { FormattedDate } from "./FormattedDate";
+
 interface JobProps {
   companyName: string;
   position: string;
@@ -9,6 +12,7 @@ interface JobProps {
   finishDate: string;
   linkedIn?: string;
   lang: string;
+  actualJob: boolean;
 }
 
 export const Job = ({
@@ -19,36 +23,52 @@ export const Job = ({
   finishDate,
   linkedIn,
   lang,
+  actualJob,
 }: JobProps) => {
   const theme = useStore($theme);
 
+  // #056674
   const lightClassNames = "border bg-white";
   const darkClassNames = "border-black_rain-900 bg-black_rain-800";
 
   const themeClassNames = theme === "light" ? lightClassNames : darkClassNames;
 
+  const jobStatusBadgeColorLight = actualJob ? "bg-[#056674]" : "bg-[#f6f6f7]";
+  const jobStatusBadgeColorDark = actualJob
+    ? "bg-[#056674]"
+    : "bg-black_rain-900";
+  const jobStatusBadgeTheme =
+    theme === "light" ? jobStatusBadgeColorLight : jobStatusBadgeColorDark;
+
+  const goToCompanyUrlLabel = lang === "es" ? "Ir a perfil de compañia" : "Go to company profile";
+
+  const linkedInIconClassNamesTheme = theme === 'light' ? "colored" : "text-white";
+
   return (
     <article
-      className={`flex flex-col border rounded-md p-2 gap-2 items-center ${themeClassNames}`}
+      className={`flex flex-col border rounded-md p-2 gap-2 ${themeClassNames} w-fit`}
     >
-      <h3 className="text-center font-bold text-2xl">{companyName}</h3>
-      <p>{position}</p>
-      <p>{description}</p>
-      <section className="flex gap-2">
-        <p className="px-4 py-1 rounded-full bg-green-200 text-green-900">
-          {startDate}
-        </p>
-        <p className="px-4 py-1 rounded-full bg-red-200 text-red-900">
-          {finishDate}
-        </p>
+      <section className="flex items-center justify-between px-4">
+        <h3 className="font-bold text-xl">{position}</h3>
+
+        <span className={`rounded-full px-2 ${jobStatusBadgeTheme}`}>
+          Anterior
+        </span>
       </section>
-      <a
-        className="flex items-center gap-2 bg-blue-800 text-white p-2 rounded-md"
-        href={linkedIn}
-        target="_blank"
-      >
-        <span className="fa-brands fa-linkedin fa-2xl"></span>
-        {lang === "es" ? "Ir a LinkedIn" : "Go to LinkedIn"}
+      <p className="text-[#71717a] flex px-2">
+        <WorkOutline className="text-[#71717a]" />
+        {companyName}
+      </p>
+      <p className="text-[#71717a] flex px-2">
+        <CalendarMonthOutlined />
+        <FormattedDate date={startDate} lang={lang} />
+        <FormattedDate date={finishDate} lang={lang} />
+      </p>
+      <p className="mt-2 px-2">{description}</p>
+
+      <a className="text-[#71717a] flex items-center gap-2 justify-center"  target="_blank" href={linkedIn}>
+        <span className={`devicon-linkedin-plain ${linkedInIconClassNamesTheme} text-2xl no-underline`}></span>
+        <span className="hover:text-blue-500 hover:underline">{goToCompanyUrlLabel}</span>
       </a>
     </article>
   );
