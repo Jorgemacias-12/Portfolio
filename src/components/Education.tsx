@@ -1,8 +1,11 @@
 import { type EducationProps } from "@/types";
 import { Card } from "./Card";
-import { Details } from "./Details";
 import { useStore } from "@nanostores/react";
 import { $theme } from "@/stores";
+import { getStudyStatus } from "@/utils";
+
+import { CalendarMonthOutlined, SchoolOutlined, MapOutlined, PublicOutlined, HistoryEduOutlined } from "@mui/icons-material";
+import { FormattedDate } from "./FormattedDate";
 
 export const Education = ({
   degree,
@@ -17,49 +20,53 @@ export const Education = ({
   extracurricularActivities,
   schoolLink,
   lang,
+  finished,
 }: EducationProps) => {
   const theme = useStore($theme);
-  // TODO: make theme differences and change font color
-  const relevantProjectsLabel =
-    lang === "es" ? "Proyectos relevantes" : "Relevant projects";
 
-  const educationGoToLabel = `${
-    lang === "es" ? "Sitio web de la institución" : "Institution webpage"
-  }`;
+  const statusColorBadge = finished 
+      ? "bg-[#056674] text-white"
+      : theme === 'light' ?  "bg-[#f6f6f7] border": "bg-black_rain-900"
 
-  const studentGradesLabel = `${lang === "es" ? "Promedio general" : "GPA"}`;
-
-  const subtitleFore = theme == "light" ? "text-gray-600" : "";
-
+  const themeClassNames = theme == 'light' ? "text-[#71717a]" : "text-[#d5d5d5]";
+  
   return (
-    <Card aditionalClassNames="h-fit">
-      <h4 className={`flex gap-2 items-center font-bold text-lg w-full`}>
-        <span className="fas fa-school"></span>
-        <span className="flex-1">{degree}</span>
-      </h4>
+    <Card aditionalClassNames="h-fit w-full">
+      <section className="flex items-center justify-between px-4 w-full">
+        <h4 className="font-bold text-xl">{institution}</h4>
 
-      <p className={`w-full text-sm ${subtitleFore}`}>
-        {institution} - {campus}
-      </p>
-
-      <p className={`w-full text-sm ${subtitleFore}`}>
-        {startDate} - {endDate}
-      </p>
-
-      <p className="w-full flex items-center gap-2">
-        <span className="fas fa-scroll fa-dw"></span>
-        <span>
-          {studentGradesLabel}: {gpa}
+        <span className={`rounded-full px-2 ${statusColorBadge}`}>
+          {getStudyStatus(finished, lang)}
         </span>
-      </p>
+      </section>
 
-      <a
-        className="w-fit px-2 h-10 flex items-center hover:text-blue-500 hover:underline transition-colors duration-100"
-        target="_blank"
-        href={schoolLink}
-      >
-        {educationGoToLabel}
-      </a>
+      <section className={`w-full px-2 flex gap-1 ${themeClassNames} text-sm`}>
+        <MapOutlined />
+        {campus}
+      </section>
+      
+      <section className={`w-full px-2 flex gap-1 ${themeClassNames} text-sm`}>
+        <HistoryEduOutlined />
+        {gpa}
+      </section>
+
+      <section className={`w-full px-2 flex gap-1 ${themeClassNames}`}>
+        <SchoolOutlined />
+        {degree}
+      </section>
+
+      <section className={`w-full px-2 ${themeClassNames} text-sm`}>
+        <CalendarMonthOutlined />
+
+        <FormattedDate date={startDate} lang={lang} />
+        <FormattedDate date={endDate} lang={lang} />
+      </section>
+    
+      <section className={`w-full px-2 ${themeClassNames} flex gap-1 text-sm`}>
+        <PublicOutlined />
+
+        <a className="hover:text-blue-500" href={schoolLink} target="_blank">{schoolLink}</a>
+      </section>
     </Card>
   );
 };
