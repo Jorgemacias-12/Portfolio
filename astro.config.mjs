@@ -13,10 +13,7 @@ config();
 export default defineConfig({
   site: "https://Jorgemacias-12.github.io",
   base: `${process.env.PUBLIC_BASE_URL || ''}`,
-  integrations: [tailwind(), react(), min({
-    minify_css: true,
-    minify_js: false,
-  })],
+  integrations: [tailwind(), react()],
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],
