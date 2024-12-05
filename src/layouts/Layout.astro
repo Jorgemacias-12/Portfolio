@@ -49,7 +49,7 @@ const { PAGE_TITLE, PAGE_DESCRIPTION } = lang;
     <meta property="og:type" content="website" />
     <meta property="og:title" content={PAGE_TITLE} />
     <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
+    <meta property="og:image" content={appendBaseUrl('/og-image.jpg')} />
     <meta
       property="og:description"
       content={PAGE_DESCRIPTION}
@@ -57,7 +57,7 @@ const { PAGE_TITLE, PAGE_DESCRIPTION } = lang;
 
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:title" content={PAGE_TITLE} />
-    <meta name="twitter:image" content="" />
+    <meta name="twitter:image" content={appendBaseUrl('/og-image.jpg')} />
     <meta
       property="twitter:description"
       content={PAGE_DESCRIPTION}
