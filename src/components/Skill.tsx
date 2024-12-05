@@ -23,7 +23,7 @@ export const Skill = ({ name, icon, description }: SkillProps) => {
         <span className={`${icon} text-6xl text-center`}></span>
       </section>
       <section className="flex flex-col">
-        <h4 className="text-center font-bold text-2xl">{name}</h4>
+        <h3 className="text-center font-bold text-2xl">{name}</h3>
         <p className="p-2">{description}</p>
       </section>
     </article>
