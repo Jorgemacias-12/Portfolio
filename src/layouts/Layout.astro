@@ -1,6 +1,7 @@
 ---
 import { Header } from '@/components/Header';
 import { getI18N } from '@/i18n';
+import { appendBaseUrl } from '@/utils';
 
 import '@fontsource/geist-sans/100.css';
 import '@fontsource/geist-sans/200.css';
@@ -29,7 +30,7 @@ const { PAGE_TITLE, PAGE_DESCRIPTION } = lang;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href={appendBaseUrl('/favicon.png')} />
     <title>{title}</title>
     <meta name="description" content={description} />
 
