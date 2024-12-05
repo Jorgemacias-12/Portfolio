@@ -1,5 +1,6 @@
 ---
 import { Header } from '@/components/Header';
+import { getI18N } from '@/i18n';
 
 import '@fontsource/geist-sans/100.css';
 import '@fontsource/geist-sans/200.css';
@@ -17,6 +18,10 @@ interface Props {
 }
 const { currentLocale } = Astro;
 const { title, description } = Astro.props;
+
+const lang = getI18N(currentLocale!);
+
+const { PAGE_TITLE, PAGE_DESCRIPTION } = lang;
 ---
 
 <!doctype html>
@@ -41,12 +46,12 @@ const { title, description } = Astro.props;
     />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Jorge Macias - Software Developer" />
+    <meta property="og:title" content={PAGE_TITLE} />
     <meta property="og:url" content="" />
     <meta property="og:image" content="" />
     <meta
       property="og:description"
-      content="Jorge Macias - Desarrollador de Software en Backend, Frontend y Aplicaciones de Escritorio."
+      content={PAGE_DESCRIPTION}
     />
 
     <meta name="twitter:card" content="summary" />
