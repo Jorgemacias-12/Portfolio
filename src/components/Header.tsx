@@ -66,7 +66,7 @@ export const Header = ({ lang }: Props) => {
     <header
       className={`border-b md:border-b-0 md:border-r ${
         theme === "light" ? headerLightClassNames : headerDarkClassNames
-      } ${borderColorClassName} p-4 fixed md:w-60 md:h-full z-10 w-full`}
+      } ${borderColorClassName} p-4 fixed md:w-60 md:h-full z-20 w-full`}
     >
       <section className="max-w-screen-xl mx-auto flex justify-between items-center gap-2 md:flex-col md:justify-end">
         <h1 className="font-bold md:text-2xl">Jorge Macias</h1>

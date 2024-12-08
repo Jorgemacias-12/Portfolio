@@ -18,19 +18,19 @@ export const Carrousel = ({ images, imageCaptions }: Props) => {
   };
 
   const buttonStyleClassNames =
-    "w-8 h-8 rounded-full flex items-center justify-center bg-black/50 text-white absolute";
+    "w-8 h-8 rounded-full flex items-center justify-center bg-black/50 text-white absolute z-10";
 
   return (
     <figure className="relative w-full h-auto overflow-hidden">
       <button
         onClick={handlePrev}
-        className={`${buttonStyleClassNames} top-1/2 left-2 -translate-y-1/2 z-40`}
+        className={`${buttonStyleClassNames} top-1/2 left-2 -translate-y-1/2`}
       >
         <ChevronLeft fontSize="large" />
       </button>
       <button
         onClick={handleNext}
-        className={`${buttonStyleClassNames} top-1/2 right-2 -translate-y-1/2 z-40`}
+        className={`${buttonStyleClassNames} top-1/2 right-2 -translate-y-1/2`}
       >
         <ChevronRight fontSize="large" />
       </button>
