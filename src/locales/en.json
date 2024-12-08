@@ -219,7 +219,7 @@
   "PROJECTS": [
     {
       "title": "Minecraft-Map-To-Image",
-      "description": "Desktop application that allows users to save Minecraft world maps as images.",
+      "description": "Desktop application that allows saving maps from Minecraft worlds as images.",
       "technologies": [
         {
           "name": "C#",
@@ -240,117 +240,16 @@
       ],
       "roles": ["Software Developer", "UX/UI Designer"],
       "responsabilities": [
-        "Design and programming of an GUI using WPF (.NET)",
-        "Select colors and layout for GUI.",
-        "Develop features of the application using C# language.",
-        "Handle depenencies of the project using NuGet."
+        "Design and implement the user interface using WPF.",
+        "Select colors and layout for the interface.",
+        "Develop the application's functionalities in C#.",
+        "Manage project dependencies using NuGet."
       ],
       "repoLink": "https://github.com/Jorgemacias-12/Minecraft-Map-To-Image"
     },
     {
-      "title": "OpusSN-frontend",
-      "description": "Frontend of the social network Opus created as a project to the Software Enginnering subject.",
-      "technologies": [
-        {
-          "name": "TypeScript",
-          "icon": "devicon-typescript-plain colored"
-        },
-        {
-          "name": "React",
-          "icon": "devicon-react-original colored"
-        },
-        {
-          "name": "Astro",
-          "icon": "devicon-astro-plain colored"
-        },
-        {
-          "name": "Nanostores",
-          "icon": ""
-        },
-        {
-          "name": "Tailwind CSS",
-          "icon": "devicon-tailwindcss-original colored"
-        },
-        {
-          "name": "GitHub Actions",
-          "icon": "devicon-githubactions-plain colored"
-        }
-      ],
-      "screenshots": [
-        "/projects/opussn-frontend-landing.png",
-        "/projects/opussn-frontend-register.png",
-        "/projects/opussn-frontend-login.png",
-        "/projects/opussn-frontend-feed-categories.png"
-      ],
-      "roles": ["Software Developer", "UX/UI Designer", "DevOps"],
-      "responsabilities": [
-        "Design and implementation of the GUI using Astro with React.",
-        "Global state handling using nanostores package.",
-        "Consuming an API Rest to interact and send user information.",
-        "Making as DevOps role using Github actions to deploy the project to Digitl Ocean."
-      ],
-      "repoLink": "https://github.com/Jorgemacias-12/OpusSN-frontend"
-    },
-    {
-      "title": "OpusSN-backend",
-      "description": "Backend of the social network Opus created as a project to the Software Engineering subject.",
-      "technologies": [
-        {
-          "name": "Typescript",
-          "icon": "devicon-typescript-plain colored"
-        },
-        {
-          "name": "Bun",
-          "icon": "devicon-bun-plain"
-        },
-        {
-          "name": "Prisma",
-          "icon": "devicon-prisma-original"
-        },
-        {
-          "name": "Swagger",
-          "icon": "devicon-swagger-plain colored"
-        },
-        {
-          "name": "MySQL",
-          "icon": "devicon-mysql-original"
-        },
-        {
-          "name": "Nginx",
-          "icon": "devicon-nginx-original"
-        },
-        {
-          "name": "Github Actions",
-          "icon": "devicon-githubactions-plain colored"
-        },
-        {
-          "name": "Digital Ocean",
-          "icon": "devicon-digitalocean-original colored"
-        }
-      ],
-      "screenshots": [
-        "/projects/opussn-backend-swagger.png",
-        "/projects/opussn-backend-posts-endpoint.png",
-        "/projects/opussn-backend-comments-endpoint.png"
-      ],
-      "roles": [
-        "Backend Developer",
-        "Intrastructure administrator",
-        "DevOps"
-      ],
-      "responsabilities": [
-        "Develop an RestFul API using Typescript and Bun runtime",
-        "Use Prisma as ORM",
-        "Automate API docs using Swagger and openAPI standard",
-        "Configure HTTP server, using Nginx",
-        "Automate DevOps making a Github actions pipeline",
-        "Deployment in Digital Ocean"
-      ],
-      "repoLink": "https://github.com/Jorgemacias-12/OpusSN-backend"
-    },
-    {
       "title": "Pony The Dragon! [REP]",
-      "description": "A mod for the The Binding of Isaac: Repentance",
+      "description": "A mod for the game The Binding of Isaac: Repentance.",
       "technologies": [
         {
           "name": "Lua",
@@ -365,35 +264,99 @@
         "/projects/pony_the_dragon_mod.jpeg",
         "/projects/pony_the_dragon_mod_styles.jpeg"
       ],
-      "roles": [
-        "Refactor and re write the mod's code",
-        "Improvements to handle actions and skin apply"
-      ],
+      "roles": ["Code Refactorer", "Feature Addition Facilitator"],
       "responsabilities": [
-        "Refactor existent code and use a project structure easy to use and understand.",
-        "Allow to the creator of the mod and his art to be applied in a easy way."
+        "Refactor the existing source code to improve its structure.",
+        "Implement changes that make it easier for the original creator to add new features."
       ],
       "repoLink": "https://github.com/SweetyStorm/PonyCharacter",
       "demoLink": "https://steamcommunity.com/sharedfiles/filedetails/?id=3012202919"
+    },
+    {
+      "title": "Monte-Carlo-Global-Illumination-Demo",
+      "description": "A 3D program using OpenGL and pygame, along with the Monte Carlo method to simulate global illumination in an environment.",
+      "technologies": [
+        {
+          "name": "Python",
+          "icon": "devicon-python-plain"
+        },
+        {
+          "name": "OpenGL",
+          "icon": "devicon-opengl-plain"
+        },
+        {
+          "name": "Pygame",
+          "icon": ""
+        },
+        {
+          "name": "GLSL",
+          "icon": ""
+        }
+      ],
+      "screenshots": [
+        "/projects/Montecarlo-0.png",
+        "/projects/Montecarlo-1.png",
+        "/projects/Montecarlo-2.png",
+        "/projects/Montecarlo-3.png"
+      ],
+      "roles": ["Developer"],
+      "responsabilities": [
+        "Implement a basic 3D environment.",
+        "Set up basic OpenGL configuration.",
+        "Implement a collision-free camera system."
+      ],
+      "repoLink": "https://github.com/Jorgemacias-12/Monte-Carlo-Global-Illumination-Demo"
+    },
+    {
+      "title": "Socket-practice",
+      "description": "Implementation of TCP and UDP server/client, used for use cases such as messaging applications and file transfer.",
+      "technologies": [
+        {
+          "name": "Python",
+          "icon": "devicon-python-plain"
+        }
+      ],
+      "screenshots": [
+        "/projects/socket-tcp.png",
+        "/projects/socket-tcp-2.png",
+        "/projects/socket-tcp-3.png"
+      ],
+      "roles": ["Developer"],
+      "responsabilities": [
+        "Implement the use of TCP socket in a useful way, server and client messaging.",
+        "Implement the use of UDP socket in a useful way, file transfer."
+      ],
+      "repoLink": "https://github.com/Jorgemacias-12/socket-practice"
     }
   ],
   "EDUCATION": [
     {
-      "degree": "Bachelor's Degree in Computer Engineering",
-      "institution": "University of Guadalajara",
+      "degree": "Bachelor's in Computer Engineering",
+      "institution": "University of Guadalajara (UdeG)",
       "campus": "CUCOSTA",
       "startDate": "August 2021",
-      "endDate": "Current",
+      "endDate": "Present",
       "gpa": "95.29",
-      "extracurricularActivities": [
-        "Web 3 hackathons (in Puerto Vallarta and Guadalajara)",
-        "ICPC (Mexico regionals) 2023 and 2024"
-      ],
       "relevantProjects": [],
       "courses": [],
-      "achievements": ["Second place in the Puerto Vallarta hackathon."],
-      "schoolLink": "https://www.cuc.udg.mx/",
+      "achievements": [],
+      "extracurricularActivities": [],
+      "schoolLink": "http://www.cuc.udg.mx/",
       "finished": false
+    },
+    {
+      "degree": "Professional Technician in Computer Science",
+      "institution": "National College of Professional Technical Education",
+      "campus": "Puerto Vallarta 075",
+      "startDate": "August 2018",
+      "endDate": "July 2021",
+      "gpa": "9.9/10",
+      "relevantProjects": [],
+      "courses": [],
+      "achievements": ["High GPAs"],
+      "extracurricularActivities": [],
+      "schoolLink": "https://www.conalep.edu.mx/",
+      "finished": true
     }
   ]
 }

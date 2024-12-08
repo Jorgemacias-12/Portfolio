@@ -238,10 +238,7 @@
         "/projects/minecraft-map-to-image-splash.png",
         "/projects/minecraft-map-to-image-window.png"
       ],
-      "roles": [
-        "Desarrollador de software",
-        "Diseñador UX/UI"
-      ],
+      "roles": ["Desarrollador de software", "Diseñador UX/UI"],
       "responsabilities": [
         "Diseño e implementación de la interfaz de usuario utilizando WPF.",
         "Selección de colores y layout de la interfaz.",
@@ -249,112 +246,6 @@
         "Gestión de dependencias del proyecto utilizando NuGet."
       ],
       "repoLink": "https://github.com/Jorgemacias-12/Minecraft-Map-To-Image"
-    },
-    {
-      "title": "OpusSN-frontend",
-      "description": "Frontend de la red social Opus para la matería de Ingeniería de software.",
-      "technologies": [
-        {
-          "name": "TypeScript",
-          "icon": "devicon-typescript-plain colored"
-        },
-        {
-          "name": "React",
-          "icon": "devicon-react-original colored"
-        },
-        {
-          "name": "Astro",
-          "icon": "devicon-astro-plain colored"
-        },
-        {
-          "name": "Nanostores",
-          "icon": ""
-        },
-        {
-          "name": "Tailwind CSS",
-          "icon": "devicon-tailwindcss-original colored"
-        },
-        {
-          "name": "GitHub Actions",
-          "icon": "devicon-githubactions-plain colored"
-        }
-      ],
-      "screenshots": [
-        "/projects/opussn-frontend-landing.png",
-        "/projects/opussn-frontend-register.png",
-        "/projects/opussn-frontend-login.png",
-        "/projects/opussn-frontend-feed-categories.png"
-      ],
-      "roles": [
-        "Desarrollador de software",
-        "Diseñador de Interfaz de Usuario",
-        "Administrador de paquetes"
-      ],
-      "responsabilities": [
-        "Diseño e implementación de la interfaz de usuario utilizando HTML, Tailwind y React.",
-        "Manejo de estados globales utilizando Nanostores.",
-        "CRUD consumiendo una API REST.",
-        "Utilizar Github actions para desplegar el proyecto en un host."
-      ],
-      "repoLink": "https://github.com/Jorgemacias-12/OpusSN-frontend"
-    },
-    {
-      "title": "OpusSN-backend",
-      "description": "Backend de la red social Opus para la matería de ingeniería de software.",
-      "technologies": [
-        {
-          "name": "Typescript",
-          "icon": "devicon-typescript-plain colored"
-        },
-        {
-          "name": "Bun",
-          "icon": "devicon-bun-plain"
-        },
-        {
-          "name": "Prisma",
-          "icon": "devicon-prisma-original"
-        },
-        {
-          "name": "Swagger",
-          "icon": "devicon-swagger-plain colored"
-        },
-        {
-          "name": "MySQL",
-          "icon": "devicon-mysql-original"
-        },
-        {
-          "name": "Nginx",
-          "icon": "devicon-nginx-original"
-        },
-        {
-          "name": "Github Actions",
-          "icon": "devicon-githubactions-plain colored"
-        },
-        {
-          "name": "Digital Ocean",
-          "icon": "devicon-digitalocean-original colored"
-        }
-      ],
-      "screenshots": [
-        "/projects/opussn-backend-swagger.png",
-        "/projects/opussn-backend-posts-endpoint.png",
-        "/projects/opussn-backend-comments-endpoint.png"
-      ],
-      "roles": [
-        "Desarrollador Backend",
-        "Administrador de Bases de Datos",
-        "Administrador de Infraestructura"
-      ],
-      "responsabilities": [
-        "Desarrollo de API RESTful utilizando TypeScript y Bun.",
-        "Modelado de datos con Prisma.",
-        "Documentación de API con Swagger.",
-        "Gestión de base de datos MySQL.",
-        "Configuración del servidor con Nginx.",
-        "Automatización y CI/CD con GitHub Actions.",
-        "Despliegue en Digital Ocean."
-      ],
-      "repoLink": "https://github.com/Jorgemacias-12/OpusSN-backend"
     },
     {
       "title": "Pony The Dragon! [REP]",
@@ -383,6 +274,62 @@
       ],
       "repoLink": "https://github.com/SweetyStorm/PonyCharacter",
       "demoLink": "https://steamcommunity.com/sharedfiles/filedetails/?id=3012202919"
+    },
+    {
+      "title": "Monte-Carlo-Global-Illumination-Demo",
+      "description": "Un programa 3d que usa OpenGL y pygame, además de el método Monte Carlo para simular la iluminación global de un entorno.",
+      "technologies": [
+        {
+          "name": "Python",
+          "icon": "devicon-python-plain"
+        },
+        {
+          "name": "OpenGL",
+          "icon": "devicon-opengl-plain"
+        },
+        {
+          "name": "Pygame",
+          "icon": ""
+        },
+        {
+          "name": "GLSL",
+          "icon": ""
+        }
+      ],
+      "screenshots": [
+        "/projects/Montecarlo-0.png",
+        "/projects/Montecarlo-1.png",
+        "/projects/Montecarlo-2.png",
+        "/projects/Montecarlo-3.png"
+      ],
+      "roles": ["Desarrollador"],
+      "responsabilities": [
+        "Implementar un entorno 3d básico",
+        "Implementar configuración básica de OpenGL",
+        "Implementar un sistema de cámara sin colisiones"
+      ],
+      "repoLink": "https://github.com/Jorgemacias-12/Monte-Carlo-Global-Illumination-Demo"
+    },
+    {
+      "title": "Socket-practice",
+      "description": "Implementación de servidor/cliente TCP y UDP, usandolo para casos de uso como: aplicacion de mensajeria y envio de archivos.",
+      "technologies": [
+        {
+          "name": "Python",
+          "icon": "devicon-python-plain"
+        }
+      ],
+      "screenshots": [
+        "/projects/socket-tcp.png",
+        "/projects/socket-tcp-2.png",
+        "/projects/socket-tcp-3.png"
+      ],
+      "roles": ["Desarrollador"],
+      "responsabilities": [
+        "Implementar el uso de socket TCP en algo útil, servidor y cliente de mensajería.",
+        "Implementr el uso de socket UDP en algo útil, transferencia de archivos."
+      ],
+      "repoLink": "https://github.com/Jorgemacias-12/socket-practice"
     }
   ],
   "EDUCATION": [
