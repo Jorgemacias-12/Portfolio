@@ -214,6 +214,15 @@
       "finishDate": "Sept 2023",
       "linkedIn": "https://www.linkedin.com/company/devocapm",
       "actualJob": false
+    },
+    {
+      "companyName": "SMCI",
+      "position": "Desarrollador Backend y DevOps",
+      "description": "Como desarrollador Backend, y DevOps, algunas de mis responsabilidades fueron: implementar arquitectura de software para la creación de una API Rest para un producto que haría crecer el nivel de manejo del cliente sobre su giro. Mejorar un proyecto previo con nuevas tecnologías. Usar OpenAPI para crear una documentación casí automática. Además de momentar los sistemas de despligue continuo del backend y el frontend requerido para el producto.",
+      "startDate": "Dic 2024",
+      "finishDate": "Feb 2025",
+      "linkedIn": null,
+      "actualJob": false
     }
   ],
   "PROJECTS": [
