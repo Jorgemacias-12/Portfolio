@@ -1,17 +1,17 @@
 ---
-import { Header } from '@/components/Header';
-import { getI18N } from '@/i18n';
-import { appendBaseUrl } from '@/utils';
+import { Header } from "@/components/Header";
+import { getI18N } from "@/i18n";
+import { appendBaseUrl } from "@/utils";
 
-import '@fontsource/geist-sans/100.css';
-import '@fontsource/geist-sans/200.css';
-import '@fontsource/geist-sans/300.css';
-import '@fontsource/geist-sans/400.css';
-import '@fontsource/geist-sans/500.css';
-import '@fontsource/geist-sans/600.css';
-import '@fontsource/geist-sans/700.css';
-import '@fontsource/geist-sans/800.css';
-import '@fontsource/geist-sans/900.css';
+import "@fontsource/geist-sans/100.css";
+import "@fontsource/geist-sans/200.css";
+import "@fontsource/geist-sans/300.css";
+import "@fontsource/geist-sans/400.css";
+import "@fontsource/geist-sans/500.css";
+import "@fontsource/geist-sans/600.css";
+import "@fontsource/geist-sans/700.css";
+import "@fontsource/geist-sans/800.css";
+import "@fontsource/geist-sans/900.css";
 
 interface Props {
   title: string;
@@ -30,7 +30,7 @@ const { PAGE_TITLE, PAGE_DESCRIPTION } = lang;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href={appendBaseUrl('/favicon.png')} />
+    <link rel="icon" type="image/png" href={appendBaseUrl("/favicon.png")} />
     <title>{title}</title>
     <meta name="description" content={description} />
 
@@ -49,23 +49,22 @@ const { PAGE_TITLE, PAGE_DESCRIPTION } = lang;
     <meta property="og:type" content="website" />
     <meta property="og:title" content={PAGE_TITLE} />
     <meta property="og:url" content="" />
-    <meta property="og:image" content={appendBaseUrl('/og-image.jpg')} />
-    <meta
-      property="og:description"
-      content={PAGE_DESCRIPTION}
-    />
+    <meta property="og:image" content={appendBaseUrl("/og-image.jpg")} />
+    <meta property="og:description" content={PAGE_DESCRIPTION} />
 
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:title" content={PAGE_TITLE} />
-    <meta name="twitter:image" content={appendBaseUrl('/og-image.jpg')} />
+    <meta name="twitter:image" content={appendBaseUrl("/og-image.jpg")} />
+    <meta property="twitter:description" content={PAGE_DESCRIPTION} />
+
     <meta
-      property="twitter:description"
-      content={PAGE_DESCRIPTION}
+      name="google-site-verification"
+      content="19ev_yaCk6dZ5MoTvVU8Uf9AZ6S69Tt1U2PrMc-N170"
     />
   </head>
   <body>
     <section class="header-placeholder"></section>
-    <Header client:only="react" lang={currentLocale!}/>
+    <Header client:only="react" lang={currentLocale!} />
     <slot />
   </body>
 </html>
