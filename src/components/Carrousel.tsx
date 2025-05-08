@@ -23,12 +23,14 @@ export const Carrousel = ({ images, imageCaptions }: Props) => {
   return (
     <figure className="relative w-full h-auto overflow-hidden">
       <button
+        title="Carrousel previous image button"
         onClick={handlePrev}
         className={`${buttonStyleClassNames} top-1/2 left-2 -translate-y-1/2`}
       >
         <ChevronLeft fontSize="large" />
       </button>
       <button
+        title="Carrousel next image button"
         onClick={handleNext}
         className={`${buttonStyleClassNames} top-1/2 right-2 -translate-y-1/2`}
       >

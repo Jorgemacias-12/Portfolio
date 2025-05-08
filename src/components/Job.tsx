@@ -50,23 +50,21 @@ export const Job = ({
 
   return (
     <article
-      className={`flex flex-col border rounded-md p-2 gap-2 ${themeClassNames} w-full`}
+      className={`flex flex-col border justify-between rounded-md p-2 gap-2 ${themeClassNames} w-full`}
     >
-      <section className="flex items-center justify-between px-4 w-full">
+      <section className="flex items-center justify-between px-4 py-2 w-full gap-1">
         <h4 className="font-bold text-xl">{position}</h4>
 
         <span className={`rounded-full px-2 ${statusColorBadge}`}>
           {getWorkStatus(actualJob, lang)}
         </span>
       </section>
-
       <section
         className={`w-full px-4 flex fap-1 ${textColorClassNames} text-lg`}
       >
         <WorkOutline />
         {companyName}
       </section>
-
       <section
         className={`w-full px-4 flex gap-1 ${textColorClassNames} text-lg`}
       >
@@ -76,17 +74,17 @@ export const Job = ({
         <hr />
         <FormattedDate date={finishDate} lang={lang} />
       </section>
-
       <p className="px-4">{description}</p>
-
-      <a
-        target="_blank"
-        className="px-4 flex items-center gap-2 hover:text-blue-500"
-        href={linkedIn}
-      >
-        <span className="devicon-linkedin-plain colored text-2xl text-transparent"></span>
-        {goToCompanyProfileLabel}
-      </a>
+      {linkedIn && (
+        <a
+          target="_blank"
+          className="px-4 flex items-center gap-2 hover:text-blue-500"
+          href={linkedIn}
+        >
+          <span className="devicon-linkedin-plain colored text-2xl text-transparent"></span>
+          {goToCompanyProfileLabel}
+        </a>
+      )}
     </article>
   );
 };

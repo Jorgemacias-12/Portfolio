@@ -31,7 +31,7 @@ export const Project = ({
       ? screenshots.map((el) => appendBaseUrl(el))
       : undefined;
 
-  const demoButtonBg = theme === "light" ? "bg-[#056674]" : "bg-persimmon";
+  const demoButtonBg = theme === "light" ? "bg-[#056674]" : "bg-persimmon dark:text-black";
   const githubButtonBg = theme === "light" ? "bg-[#e8ebec]" : "bg-[#0d1117]";
   // const githubButtonIcon = theme === "light" ? 'devicon-github-original' : 'devicon-github-original colored text-white';
 
@@ -39,7 +39,7 @@ export const Project = ({
     <Card aditionalClassNames="h-fit">
       {screenshots && <Carrousel images={baseUrlScreenshots!} />}
 
-      <h3 className="text-xl font-bold m-2">{title}</h3>
+      <h4 className="text-xl font-bold m-2">{title}</h4>
 
       <p className="p-2 text-sm ">{description}</p>
 
