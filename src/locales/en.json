@@ -2,16 +2,16 @@
   "PAGE_TITLE": "Jorge Macias - Software Developer",
   "PAGE_DESCRIPTION": "Jorge Macias - Software Developer in Backend, Frontend, and Desktop Applications.",
   "ABOUT_ME": [
-    "I am a software developer with experience in web development: backend and frontend. I also have experience in developing desktop applications on Windows.",
-    "I have worked with a variety of programming languages and frameworks, which has allowed me to adapt to development environments easily, as well as to collaborate effectively in team settings."
+    "I am a software developer with experience in web development: backend and frontend. I also have experience in developing Windows desktop applications.",
+    "I have worked with a variety of programming languages and frameworks, which has allowed me to adapt easily to development environments and collaborate effectively in teams."
   ],
-  "HEADER_MENU_CAPTION": "Navigation menu",
-  "HEADER_PAGE_VERSION_CAPTION": "Made with ❤️ ",
+  "HEADER_MENU_CAPTION": "Navigation Menu",
+  "HEADER_PAGE_VERSION_CAPTION": "Made with ❤️",
   "COMPONENTS": {
     "HEADER": [
       {
         "label": "Home",
-        "url": "/en"
+        "url": "/"
       },
       {
         "label": "About Me",
@@ -62,32 +62,32 @@
       {
         "name": "JavaScript",
         "icon": "devicon-javascript-plain colored",
-        "description": "I learned this language to start my journey as a web developer."
+        "description": "I learned this language to begin my journey as a web developer."
       },
       {
         "name": "TypeScript",
         "icon": "devicon-typescript-plain colored",
-        "description": "After learning JavaScript, I moved to TypeScript to take advantage of its type system and avoid the issues associated with JavaScript."
+        "description": "After learning JavaScript, I moved to TypeScript to take advantage of the type system and avoid issues associated with JavaScript."
       },
       {
         "name": "C#",
         "icon": "devicon-csharp-plain colored",
-        "description": "I learned it in university and have developed some applications that automate internal processes in my university."
+        "description": "I learned it in university and have developed some applications that automate internal processes at my university."
       },
       {
         "name": "Python",
         "icon": "devicon-python-plain",
-        "description": "I have used Python for competitive programming over the last two years (2023-2024) in the ICPC in Mexico. I plan to use it for artificial intelligence projects soon."
+        "description": "I have used Python for competitive programming over the last two years (2023-2024) in the ICPC in Mexico. Soon, I plan to use it for artificial intelligence projects."
       },
       {
         "name": "Lua",
         "icon": "devicon-lua-plain",
-        "description": "I learned Lua by helping a friend improve the code for a mod in The Binding of Isaac, taking advantage of its simplicity and efficiency for scripting and game development."
+        "description": "I learned Lua while helping a friend improve the code for a mod for The Binding of Isaac, taking advantage of its simplicity and efficiency for scripting and game development."
       },
       {
         "name": "PHP",
         "icon": "devicon-php-plain colored",
-        "description": "I have used PHP to develop web applications following the MVC pattern and using a template engine inspired by Laravel, which allowed me to efficiently structure and modularize the code, improving project maintainability and organization."
+        "description": "I have used PHP to develop web applications following the MVC pattern and using a templating engine inspired by Laravel. This allowed me to structure and modularize the code efficiently, improving maintainability and project organization."
       },
       {
         "name": "SQL / MySQL",
@@ -97,7 +97,7 @@
       {
         "name": "Java",
         "icon": "devicon-java-plain colored",
-        "description": "I learned Java for imperative and object-oriented programming, with practices that included developing basic graphical interfaces using javax.swing."
+        "description": "I learned Java for imperative and object-oriented programming, with practices including the development of basic graphical interfaces using javax.swing."
       }
     ],
     "FRAMEWORKS": [
@@ -109,7 +109,7 @@
       {
         "name": "Node.js",
         "icon": "devicon-nodejs-plain colored",
-        "description": "I have used Node.js to build server-side applications, leveraging its efficiency and scalability."
+        "description": "I have used Node.js to build server-side applications, taking advantage of its efficiency and scalability."
       },
       {
         "name": "Express",
@@ -119,7 +119,7 @@
       {
         "name": "WPF",
         "icon": "devicon-dot-net-plain colored",
-        "description": "I have developed desktop applications using WPF, taking advantage of its capability to create rich and fluid user interfaces in C#."
+        "description": "I have developed desktop applications using WPF, leveraging its ability to create rich and fluid user interfaces in C#."
       },
       {
         "name": "WinForms",
@@ -129,7 +129,7 @@
       {
         "name": "Tailwind CSS",
         "icon": "devicon-tailwindcss-plain colored",
-        "description": "I use Tailwind CSS to design web applications with a highly customizable, utility-based approach, making it easy to create modern and responsive user interfaces."
+        "description": "I use Tailwind CSS to design web applications with a highly customizable and utility-based approach, facilitating the creation of modern and responsive user interfaces."
       },
       {
         "name": "Astro",
@@ -139,16 +139,16 @@
       {
         "name": "Bun",
         "icon": "devicon-bun-plain",
-        "description": "I use Bun to develop lightweight and efficient web applications, leveraging its minimalist approach and optimized performance."
+        "description": "I use Bun to develop lightweight and efficient web applications, taking advantage of its minimalist approach and optimized performance."
       },
       {
         "name": "Prisma",
         "icon": "devicon-prisma-original",
-        "description": "I have used Prisma as an Object-Relational Mapping (ORM) tool to efficiently interact with databases in backend projects, simplifying query handling and data management."
+        "description": "I have used Prisma as an ORM (Object-Relational Mapping) to efficiently interact with databases in backend projects, facilitating query handling and data management."
       },
       {
         "name": "Next.js",
-        "icon": "devicon-nextjs-plain ",
+        "icon": "devicon-nextjs-plain",
         "description": "I have used Next.js, a React framework, to build fast and scalable web applications with server-side rendering and static site generation."
       }
     ],
@@ -156,7 +156,7 @@
       {
         "name": "GitHub",
         "icon": "devicon-github-original",
-        "description": "I use GitHub to store my personal projects and the things I’m learning."
+        "description": "I use GitHub to store my personal projects and the things I am learning."
       },
       {
         "name": "DigitalOcean",
@@ -166,22 +166,22 @@
       {
         "name": "GitHub Actions",
         "icon": "devicon-githubactions-plain colored",
-        "description": "I used GitHub Actions along with DigitalOcean to deploy the aforementioned project."
+        "description": "I have used GitHub Actions in conjunction with DigitalOcean to deploy the aforementioned project."
       },
       {
         "name": "Git",
         "icon": "devicon-git-plain colored",
-        "description": "I use Git for version control in my projects, allowing me to efficiently manage code and collaborate with other developers."
+        "description": "I use Git for version control in my projects, allowing me to manage code efficiently and collaborate with other developers."
       },
       {
         "name": "Nginx",
         "icon": "devicon-nginx-original colored",
-        "description": "I have configured Nginx to manage traffic to the project’s website, improving traffic distribution and security."
+        "description": "I have configured Nginx to manage access to the project's website, improving traffic distribution and security."
       },
       {
         "name": "Insomnia",
         "icon": "devicon-insomnia-plain colored",
-        "description": "I use Insomnia to test and document APIs, making development and collaboration easier in web service-based projects."
+        "description": "I use Insomnia to test and document APIs, facilitating development and collaboration in web service-based projects."
       },
       {
         "name": "Linux",
@@ -191,17 +191,17 @@
       {
         "name": "Visual Studio Code",
         "icon": "devicon-vscode-plain colored",
-        "description": "I use Visual Studio Code as my main code editor due to its flexibility, extensibility, and support for multiple languages."
+        "description": "I use Visual Studio Code as my primary code editor due to its flexibility, extensibility, and support for multiple languages."
       },
       {
         "name": "Visual Studio",
         "icon": "devicon-visualstudio-plain colored",
-        "description": "I use Visual Studio on Windows to develop applications in C#, leveraging its advanced development and debugging tools."
+        "description": "I use Visual Studio on Windows to develop applications in C#, taking advantage of its advanced development and debugging tools."
       },
       {
         "name": "HTML5",
         "icon": "devicon-html5-plain colored",
-        "description": "I use HTML5 as a markup standard to structure and present content in web applications, integrating it with CSS and JavaScript to create interactive and modern user interfaces."
+        "description": "I use HTML5 as the markup standard to structure and present content in web applications, integrating it with CSS and JavaScript to create interactive and modern user interfaces."
       }
     ]
   },
@@ -214,12 +214,21 @@
       "finishDate": "Sept 2023",
       "linkedIn": "https://www.linkedin.com/company/devocapm",
       "actualJob": false
+    },
+    {
+      "companyName": "SMCI",
+      "position": "Backend Developer and DevOps",
+      "description": "As a Backend Developer and DevOps, some of my responsibilities included: implementing software architecture for creating a REST API for a product that would increase the client's control over their operations. Improving a previous project with new technologies. Using OpenAPI to create nearly automatic documentation. Additionally, setting up continuous deployment systems for the backend and frontend required for the product.",
+      "startDate": "Dec 2024",
+      "finishDate": "Feb 2025",
+      "linkedIn": null,
+      "actualJob": false
     }
   ],
   "PROJECTS": [
     {
       "title": "Minecraft-Map-To-Image",
-      "description": "Desktop application that allows saving maps from Minecraft worlds as images.",
+      "description": "Desktop application that allows saving Minecraft in-game maps as images.",
       "technologies": [
         {
           "name": "C#",
@@ -240,10 +249,10 @@
       ],
       "roles": ["Software Developer", "UX/UI Designer"],
       "responsabilities": [
-        "Design and implement the user interface using WPF.",
-        "Select colors and layout for the interface.",
-        "Develop the application's functionalities in C#.",
-        "Manage project dependencies using NuGet."
+        "Design and implementation of the user interface using WPF.",
+        "Color selection and interface layout.",
+        "Development of application functionalities in C#.",
+        "Project dependency management using NuGet."
       ],
       "repoLink": "https://github.com/Jorgemacias-12/Minecraft-Map-To-Image"
     },
@@ -264,17 +273,20 @@
         "/projects/pony_the_dragon_mod.jpeg",
         "/projects/pony_the_dragon_mod_styles.jpeg"
       ],
-      "roles": ["Code Refactorer", "Feature Addition Facilitator"],
+      "roles": [
+        "Source code refactoring",
+        "Improving ease of adding new features"
+      ],
       "responsabilities": [
-        "Refactor the existing source code to improve its structure.",
-        "Implement changes that make it easier for the original creator to add new features."
+        "Refactor existing source code to improve its structure.",
+        "Implement changes to facilitate the addition of new features by the original creator."
       ],
       "repoLink": "https://github.com/SweetyStorm/PonyCharacter",
       "demoLink": "https://steamcommunity.com/sharedfiles/filedetails/?id=3012202919"
     },
     {
       "title": "Monte-Carlo-Global-Illumination-Demo",
-      "description": "A 3D program using OpenGL and pygame, along with the Monte Carlo method to simulate global illumination in an environment.",
+      "description": "A 3D program that uses OpenGL and Pygame, along with the Monte Carlo method, to simulate global illumination in an environment.",
       "technologies": [
         {
           "name": "Python",
@@ -301,15 +313,15 @@
       ],
       "roles": ["Developer"],
       "responsabilities": [
-        "Implement a basic 3D environment.",
-        "Set up basic OpenGL configuration.",
-        "Implement a collision-free camera system."
+        "Implement a basic 3D environment",
+        "Implement basic OpenGL configuration",
+        "Implement a collision-free camera system"
       ],
       "repoLink": "https://github.com/Jorgemacias-12/Monte-Carlo-Global-Illumination-Demo"
     },
     {
       "title": "Socket-practice",
-      "description": "Implementation of TCP and UDP server/client, used for use cases such as messaging applications and file transfer.",
+      "description": "Implementation of TCP and UDP server/client, using it for use cases such as: messaging application and file transfer.",
       "technologies": [
         {
           "name": "Python",
@@ -323,15 +335,15 @@
       ],
       "roles": ["Developer"],
       "responsabilities": [
-        "Implement the use of TCP socket in a useful way, server and client messaging.",
-        "Implement the use of UDP socket in a useful way, file transfer."
+        "Implement the use of TCP sockets in something useful, a messaging server and client.",
+        "Implement the use of UDP sockets in something useful, file transfer."
       ],
       "repoLink": "https://github.com/Jorgemacias-12/socket-practice"
     }
   ],
   "EDUCATION": [
     {
-      "degree": "Bachelor's in Computer Engineering",
+      "degree": "Computer Engineering",
       "institution": "University of Guadalajara (UdeG)",
       "campus": "CUCOSTA",
       "startDate": "August 2021",
@@ -345,7 +357,7 @@
       "finished": false
     },
     {
-      "degree": "Professional Technician in Computer Science",
+      "degree": "Professional Technical Bachelor in Computer Science",
       "institution": "National College of Professional Technical Education",
       "campus": "Puerto Vallarta 075",
       "startDate": "August 2018",
@@ -353,7 +365,7 @@
       "gpa": "9.9/10",
       "relevantProjects": [],
       "courses": [],
-      "achievements": ["High GPAs"],
+      "achievements": ["High grades"],
       "extracurricularActivities": [],
       "schoolLink": "https://www.conalep.edu.mx/",
       "finished": true
