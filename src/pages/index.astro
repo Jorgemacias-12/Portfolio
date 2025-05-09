@@ -12,11 +12,21 @@ const { currentLocale } = Astro;
 
 if (!currentLocale) {
   Astro.redirect("/500");
+  throw new Error("Current locale is null");
 }
 
-const lang = getI18N(currentLocale!);
+const lang = getI18N(currentLocale);
 
-const { PAGE_TITLE, PAGE_DESCRIPTION, SECTIONS, ABOUT_ME, SKILLS, EXPERIENCES, PROJECTS, EDUCATION } = lang;
+const {
+  PAGE_TITLE,
+  PAGE_DESCRIPTION,
+  SECTIONS,
+  ABOUT_ME,
+  SKILLS,
+  EXPERIENCES,
+  PROJECTS,
+  EDUCATION,
+} = lang;
 ---
 
 <Layout title={PAGE_TITLE} description={PAGE_DESCRIPTION}>
@@ -172,7 +182,7 @@ const { PAGE_TITLE, PAGE_DESCRIPTION, SECTIONS, ABOUT_ME, SKILLS, EXPERIENCES, P
                     achievements,
                     extracurricularActivities,
                     schoolLink,
-                    finished
+                    finished,
                   }) => {
                     return (
                       <Education
