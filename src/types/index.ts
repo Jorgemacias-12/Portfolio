@@ -20,8 +20,8 @@ export interface Job {
   description: string;
   startDate: string;
   finishDate: string;
-  linkedIn?: string;
-  actualJob: boolean
+  linkedIn?: string | null | undefined;
+  actualJob: boolean;
 }
 
 export interface Project {
