@@ -1,11 +1,7 @@
-import { type ProjectProps } from "@/types";
+import type { ProjectProps } from "@/types";
 import { Card } from "./Card";
-import { Carrousel } from "./Carrousel";
-import { Details } from "./Details";
 import { Technology } from "./Technology";
-import { appendBaseUrl } from "@/utils";
-import { useStore } from "@nanostores/react";
-import { $theme } from "@/stores";
+import { Details } from "./Details";
 
 export const Project = ({
   title,
@@ -18,39 +14,28 @@ export const Project = ({
   repoLink,
   lang,
 }: ProjectProps) => {
-  const theme = useStore($theme);
-
   const projectRepoLabel = lang === "es" ? "Repositorio" : "Repository";
   const projectResponsabilitiesLabel =
     lang === "es" ? "Responsabilidades" : "Responsablities";
   const projectTechnologiesLabel =
     lang === "es" ? "Tecnologías" : "Technologies";
 
-  const baseUrlScreenshots =
-    screenshots && screenshots.length > 0
-      ? screenshots.map((el) => appendBaseUrl(el))
-      : undefined;
-
-  const demoButtonBg = theme === "light" ? "bg-[#056674]" : "bg-persimmon dark:text-black";
-  const githubButtonBg = theme === "light" ? "bg-[#e8ebec]" : "bg-[#0d1117]";
-  // const githubButtonIcon = theme === "light" ? 'devicon-github-original' : 'devicon-github-original colored text-white';
-
   return (
     <Card aditionalClassNames="h-fit">
-      {screenshots && <Carrousel images={baseUrlScreenshots!} />}
+      <h3 className="text-xl font-bold mt-2">{title}</h3>
 
-      <h4 className="text-xl font-bold m-2">{title}</h4>
+      {screenshots && "No hay carrousel, pero haré uno mejor que el otro XD"}
 
-      <p className="p-2 text-sm ">{description}</p>
+      <p className="p-2 text-sm">{description}</p>
 
       <h4 className="text-left w-full pl-2 text-sm">
         {projectTechnologiesLabel}
       </h4>
 
-      <section className="flex gap-1 flex-wrap justify-center">
-        {technologies.map(({ name, icon }) => (
-          <Technology key={name} name={name} icon={icon} />
-        ))}
+      <section className="flex flex-wrap gap-1 justify-center">
+        {technologies.map(({ name, icon }) => {
+          return <Technology key={name} name={name} icon={icon} />;
+        })}
       </section>
 
       <Details
@@ -60,13 +45,13 @@ export const Project = ({
 
       <Details title="Roles" content={roles} />
 
-      <section className="flex items-center flex-wrap gap-2 mt-2 w-full">
+      <section className="flex flex-wrap items-center gap-2 w-full mt-2">
         {demoLink && (
           <a
             href={demoLink}
             target="_blank"
             rel="noopener noreferrer"
-            className={`text-white px-2 flex-1 rounded-full h-10 flex items-center justify-center ${demoButtonBg}`}
+            className="text-white px-2 flex-1 rounded-full h-10 flex items-center justify-center bg-[#056674] dark:bg-persimmon"
           >
             Demo
           </a>
@@ -76,9 +61,9 @@ export const Project = ({
             href={repoLink}
             target="_blank"
             rel="noopener noreferrer"
-            className={`h-10 rounded-full gap-2 flex-1 flex items-center justify-center ${githubButtonBg}`}
+            className="h-10 rounded-full gap-2 flex-1 flex items-center justify-center bg-[#e8ebec] dark:bg-[#0d1117]"
           >
-            <span className="devicon-github-original"></span>
+            <span className="devicon-github-original" />
             {projectRepoLabel}
           </a>
         )}

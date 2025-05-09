@@ -1,10 +1,13 @@
-import { type EducationProps } from "@/types";
+import type { EducationProps } from "@/types";
 import { Card } from "./Card";
-import { useStore } from "@nanostores/react";
-import { $theme } from "@/stores";
 import { getStudyStatus } from "@/utils";
-
-import { CalendarMonthOutlined, SchoolOutlined, MapOutlined, PublicOutlined, HistoryEduOutlined } from "@mui/icons-material";
+import {
+  CalendarMonthOutlined,
+  HistoryEduOutlined,
+  MapOutlined,
+  PublicOutlined,
+  SchoolOutlined,
+} from "@mui/icons-material";
 import { FormattedDate } from "./FormattedDate";
 
 export const Education = ({
@@ -22,50 +25,54 @@ export const Education = ({
   lang,
   finished,
 }: EducationProps) => {
-  const theme = useStore($theme);
+  const statusColorBadge = finished
+    ? "bg-[#056674] text-white"
+    : "bg-[#f6f6f7] border dark:bg-black_rain-900";
 
-  const statusColorBadge = finished 
-      ? "bg-[#056674] text-white"
-      : theme === 'light' ?  "bg-[#f6f6f7] border": "bg-black_rain-900"
+  const textClassNames = "text-[#71717a] dark:text-[#d5d5d5]";
 
-  const themeClassNames = theme == 'light' ? "text-[#71717a]" : "text-[#d5d5d5]";
-  
   return (
-    <Card aditionalClassNames="h-fit w-full">
-      <section className="flex items-center justify-between px-4 w-full">
-        <h5 className="font-bold text-xl">{institution}</h5>
+    <Card aditionalClassNames="">
+      <section className="flex-items-center justify-between px-4 w-full">
+        <h4 className="font-bold text-xl">{institution}</h4>
 
         <span className={`rounded-full px-2 ${statusColorBadge}`}>
           {getStudyStatus(finished, lang)}
         </span>
       </section>
 
-      <section className={`w-full px-2 flex gap-1 ${themeClassNames} text-sm`}>
+      <section className={`flex gap-1 w-full px-2 text-sm ${textClassNames}`}>
         <MapOutlined />
         {campus}
       </section>
-      
-      <section className={`w-full px-2 flex gap-1 ${themeClassNames} text-sm`}>
+
+      <section className={`flex gap-1 w-full px-2 text-sm ${textClassNames}`}>
         <HistoryEduOutlined />
         {gpa}
       </section>
 
-      <section className={`w-full px-2 flex gap-1 ${themeClassNames}`}>
+      <section className={`flex gap-1 w-full px-2 text-sm ${textClassNames}`}>
         <SchoolOutlined />
         {degree}
       </section>
 
-      <section className={`w-full px-2 ${themeClassNames} text-sm`}>
+      <section className={`w-full px-2 text-sm ${textClassNames}`}>
         <CalendarMonthOutlined />
 
         <FormattedDate date={startDate} lang={lang} />
         <FormattedDate date={endDate} lang={lang} />
       </section>
-    
-      <section className={`w-full px-2 ${themeClassNames} flex gap-1 text-sm`}>
-        <PublicOutlined />
 
-        <a className="hover:text-blue-500" href={schoolLink} target="_blank">{schoolLink}</a>
+      <section className={`flex gap-1 text-sm w-full px-2 ${textClassNames}`}>
+        <PublicOutlined />
+        <a
+          className="hover:text-blue-500"
+          href={schoolLink}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {schoolLink}
+        </a>
       </section>
     </Card>
   );

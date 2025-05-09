@@ -1,11 +1,10 @@
 import type { MouseEvent } from "react";
-
-type LinkProps = {
+interface Props {
   label: string;
   url: string;
-};
+}
 
-export const Link = ({ label, url }: LinkProps) => {
+export const Link = ({ label, url }: Props) => {
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     if (!url.includes("/")) return;
 
@@ -20,7 +19,7 @@ export const Link = ({ label, url }: LinkProps) => {
     <li>
       <a
         aria-label={label}
-        className={`flex flex-1 w-full rounded-md p-2  hover:bg-persimmon-500 hover:text-white`}
+        className="flex flex-1 w-full rounded-md p-2 hover:bg-persimmon-500 hover:text-white"
         href={url}
         onClick={handleClick}
       >

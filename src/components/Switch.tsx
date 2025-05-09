@@ -2,8 +2,6 @@ import { $theme } from "@/stores";
 import { useStore } from "@nanostores/react";
 import { useState, type ReactNode } from "react";
 
-import Icon from "@mui/material/Icon";
-
 interface SwitchProps {
   icons?: ReactNode[]; // falseIcon, trueIcon
   title?: string;

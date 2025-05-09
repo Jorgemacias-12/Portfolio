@@ -1,11 +1,9 @@
-import { getI18N } from "@/i18n";
-import { $theme } from "@/stores";
-import { useStore } from "@nanostores/react";
+import type { MouseEvent } from "react";
+import { appendBaseUrl } from "@/utils";
 import { useEffect, useState } from "react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
+import { getI18N } from "@/i18n";
 import { Link } from "./Link";
-import { appendBaseUrl } from "@/utils";
-import type { MouseEvent } from "react";
 
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -18,37 +16,8 @@ export const Header = ({ lang }: Props) => {
   const { COMPONENTS, HEADER_MENU_CAPTION, HEADER_PAGE_VERSION_CAPTION } =
     getI18N(lang);
   const { HEADER } = COMPONENTS;
-  const theme = useStore($theme);
   const [showMenu, setShowMenu] = useState(false);
   const [flagUrl, setFlagUrl] = useState("");
-
-  const headerDarkClassNames = "bg-black_rain text-white";
-  const headerLightClassNames = "bg-seasalt-900 text-black";
-
-  const menuBackgroundSolid =
-    theme === "light"
-      ? "bg-white-smoke md:bg-transparent"
-      : "bg-black_rain md:bg-transparent";
-  const menuBackgroundOpacity =
-    theme === "light"
-      ? "bg-black/50 md:bg-transparent"
-      : "bg-black/50 md:bg-transparent";
-
-  const menuHiddenClasses = "pointer-events-none opacity-0 translate-x-[1rem]";
-  const menuShownClasses = "opacity-100 translate-x-0 pointer-events-auto";
-  const dividerLight = "";
-  const dividerDark = "border-black_rain-900";
-  const borderColorClassName = theme === "light" ? dividerLight : dividerDark;
-
-  const handleMenuShow = () => {
-    setShowMenu((previousValue) => !previousValue);
-  };
-
-  const handleMenuHide = (event: MouseEvent<HTMLDivElement>) => {
-    if (event.target !== event.currentTarget) return;
-
-    setShowMenu(false);
-  };
 
   useEffect(() => {
     const flagImport = async () => {
@@ -62,12 +31,21 @@ export const Header = ({ lang }: Props) => {
     flagImport();
   }, [lang]);
 
+  const handleMenuShow = () => {
+    setShowMenu((previousValue) => !previousValue);
+  };
+
+  const handleMenuHide = (event: MouseEvent<HTMLDivElement>) => {
+    if (event.target !== event.currentTarget) return;
+
+    setShowMenu(false);
+  };
+
+  const menuHiddenClasses = "pointer-events-none opacity-0 translate-x-[1rem]";
+  const menuShownClasses = "opacity-100 translate-x-0 pointer-events-auto";
+
   return (
-    <header
-      className={`border-b md:border-b-0 md:border-r ${
-        theme === "light" ? headerLightClassNames : headerDarkClassNames
-      } ${borderColorClassName} p-4 fixed md:w-60 md:h-full z-20 w-full`}
-    >
+    <header className="border-b dark:border-black_rain-800 bg-white dark:bg-black_rain-700 md:border-r p-4 fixed md:w-60 md:h-full z-20 w-full">
       <section className="max-w-screen-xl mx-auto flex justify-between items-center gap-2 md:flex-col md:justify-end">
         <h1 className="font-bold md:text-2xl">Jorge Macias</h1>
 
@@ -95,9 +73,9 @@ export const Header = ({ lang }: Props) => {
             </a>
           </section>
 
-          <ul className="">
-            {HEADER.map(({ label, url }, index) => {
-              return <Link key={index} label={label} url={url}></Link>;
+          <ul>
+            {HEADER.map(({ label, url }) => {
+              return <Link label={label} url={url} key={`link-${url}`} />;
             })}
           </ul>
 
@@ -112,10 +90,10 @@ export const Header = ({ lang }: Props) => {
 
         <section className="flex flex-1 justify-end gap-10">
           <a
-            className="flex items-center gap-2 py-1 md:hidden"
             href={`${
               lang === "es" ? appendBaseUrl("/en") : appendBaseUrl("/")
             }`}
+            className="flex items-center gap-2 py-1 md:hidden"
           >
             <img
               className="aspect"
@@ -136,19 +114,22 @@ export const Header = ({ lang }: Props) => {
             onClick={handleMenuShow}
             className="md:hidden"
           >
-            {showMenu ? <CloseIcon fontSize="large" /> : <MenuIcon fontSize="large" />}
+            {showMenu ? (
+              <CloseIcon fontSize="large" />
+            ) : (
+              <MenuIcon fontSize="large" />
+            )}
           </button>
         </section>
 
         <nav
-          className={`fixed top-0 right-0 w-full h-full flex flex-col gap-1  z-10 transition-all duration-300 transform-cpu ${
+          className={`fixed top-0 right-0 bg-black/25 dark:bg-white/25 w-full h-full flex flex-col gap-1 z-10 transition-all duration-300 transform-cpu ${
             showMenu ? menuShownClasses : menuHiddenClasses
-          } ${menuBackgroundOpacity}`}
+          } `}
           onClick={handleMenuHide}
+          onKeyUp={() => {}}
         >
-          <section
-            className={`flex items-center justify-between p-4 ${menuBackgroundSolid}`}
-          >
+          <section className="flex items-center justify-between bg-white p-4 dark:bg-black_rain md:bg-transparent dark:md:bg-transparent">
             <h2 className="transition-none">{HEADER_MENU_CAPTION}</h2>
 
             <div className="flex items-center gap-4">
@@ -160,21 +141,23 @@ export const Header = ({ lang }: Props) => {
                 className="md:hidden gap-2"
                 onClick={handleMenuShow}
               >
-                {showMenu ? <CloseIcon fontSize="large" /> : <MenuIcon fontSize="large" />}
+                {showMenu ? (
+                  <CloseIcon fontSize="large" />
+                ) : (
+                  <MenuIcon fontSize="large" />
+                )}
               </button>
             </div>
           </section>
 
-          <ul className={`m-4 p-2 rounded-md ${menuBackgroundSolid}`}>
-            {HEADER.map(({ label, url }, index) => {
-              return <Link key={index} label={label} url={url}></Link>;
+          <ul className="bg-white border dark:border-0 rounded-md dark:bg-black_rain m-4 p-2">
+            {HEADER.map(({ label, url }) => {
+              return <Link key={`label-${label}`} label={label} url={url} />;
             })}
           </ul>
 
           {import.meta.env.PUBLIC_VERSION !== undefined && (
-            <p
-              className={`mx-4 p-4 rounded-md text-center ${menuBackgroundSolid}`}
-            >
+            <p className="mx-4 p-4 rounded-md text-center border dark:border-0  bg-white md:bg-transparent dark:bg-black_rain dark:md:bg-transparent">
               {HEADER_PAGE_VERSION_CAPTION}{" "}
               {lang === "es" ? "versión" : "version"}{" "}
               {import.meta.env.PUBLIC_VERSION}

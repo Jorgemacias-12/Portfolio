@@ -11,7 +11,10 @@ export const ThemeSwitcher = () => {
   return (
     <Switch
       defaultState={$theme.get() === "light"}
-      icons={[<DarkMode fontSize="small" />, <LightMode fontSize="small" />]}
+      icons={[
+        <DarkMode fontSize="small" key="DGM" />,
+        <LightMode fontSize="small" key="LGM" />,
+      ]}
       title="Theme switcher light/dark"
       onClick={onThemeChange}
     />

@@ -1,21 +1,13 @@
-import { $theme } from "@/stores";
-import { useStore } from "@nanostores/react";
-import { useRef, useState, type MouseEvent } from "react";
-
 import { ArrowRightOutlined } from "@mui/icons-material";
+import { useRef, useState } from "react";
+import type { MouseEvent } from "react";
 
-interface DetailsProps {
+interface Props {
   title: string;
   content: string[];
 }
 
-export const Details = ({ title, content }: DetailsProps) => {
-  const theme = useStore($theme);
-  const themeClassNames =
-    theme === "light"
-      ? "bg-white border"
-      : "bg-black_rain-90 border border-black_rain-900";
-
+export const Details = ({ title, content }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   let animation: Animation | null = null;
@@ -99,13 +91,14 @@ export const Details = ({ title, content }: DetailsProps) => {
 
   return (
     <details
-      className={`block gap-2 w-full p-2 rounded-md ${themeClassNames}`}
+      className="block gap-2 w-full p-2 rounded-md bg-white border dark:bg-black_rain-900 dark:border-black_rain-900"
       ref={detailsEl}
       open={isOpen}
     >
       <summary
         className="flex items-center gap-2 cursor-pointer"
         onClick={handleClick}
+        onKeyUp={() => {}}
         ref={summaryEl}
       >
         <ArrowRightOutlined
@@ -121,9 +114,9 @@ export const Details = ({ title, content }: DetailsProps) => {
         />
         {title}
       </summary>
-      <ul className={`list-disc pl-6 flex-grow-0`} ref={contentEl}>
+      <ul className="list-disc pl-6 flex-grow-0" ref={contentEl}>
         {content.map((text, index) => (
-          <li className="marker:mr-0" key={index}>
+          <li className="marker:mr-0" key={text}>
             {text}
           </li>
         ))}

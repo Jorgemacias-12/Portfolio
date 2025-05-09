@@ -3,13 +3,12 @@ interface Props {
   lang: string;
   text?: string;
 }
-
 export const FormattedDate = ({ date, lang, text }: Props) => {
-  let parsedDate = new Date(date);
+  const parsedDate = new Date(date);
 
-  const isInvalidDate = isNaN(parsedDate.getTime());
+  const isDateInvalid = Number.isNaN(parsedDate.getTime());
 
-  const i18nDate = isInvalidDate
+  const i18nDate = isDateInvalid
     ? lang === "es"
       ? " - Actual"
       : " - Current"
