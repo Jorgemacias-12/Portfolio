@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
@@ -10,10 +11,10 @@ export default {
         "screen-xs": "400px",
       },
       gridTemplateRows: {
-        'layout_mobile': 'auto 1fr'
+        layout_mobile: "auto 1fr",
       },
       gridTemplateColumns: {
-        'layout_desktop': 'auto 1fr'
+        layout_desktop: "auto 1fr",
       },
       colors: {
         "raisin-black": {
@@ -86,8 +87,8 @@ export default {
           600: "#141619",
           700: "#171a1d",
           800: "#212529",
-          900: "#373b3e"
-        }
+          900: "#373b3e",
+        },
       },
     },
   },
