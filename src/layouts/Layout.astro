@@ -20,7 +20,9 @@ interface Props {
 const { currentLocale } = Astro;
 const { title, description } = Astro.props;
 
-const lang = getI18N(currentLocale!);
+if (!currentLocale) throw new Error("Current locale is null");
+
+const lang = getI18N(currentLocale);
 
 const { PAGE_TITLE, PAGE_DESCRIPTION } = lang;
 ---
@@ -82,11 +84,19 @@ const { PAGE_TITLE, PAGE_DESCRIPTION } = lang;
     @apply grid-rows-layout_mobile md:grid-cols-layout_desktop md:grid-rows-none;
   }
 
-  ::-moz-selection {
+  .dark ::-moz-selection {
     background-color: #301201;
   }
-  ::selection {
+  .dark ::selection {
     background-color: #301201;
+  }
+
+  ::-moz-selection {
+    background-color: #f35b04;
+  }
+
+  ::selection {
+    background-color: #f35b04;
   }
 
   .header-placeholder {
