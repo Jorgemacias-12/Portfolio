@@ -62,7 +62,7 @@ const { PAGE_TITLE, PAGE_DESCRIPTION } = lang;
       content="19ev_yaCk6dZ5MoTvVU8Uf9AZ6S69Tt1U2PrMc-N170"
     />
   </head>
-  <body>
+  <body class="bg-[#f7f7f8] dark:bg-black_rain-400 text-black dark:text-white">
     <section class="header-placeholder"></section>
     <Header client:only="react" lang={currentLocale!} />
     <slot />
@@ -82,6 +82,13 @@ const { PAGE_TITLE, PAGE_DESCRIPTION } = lang;
     @apply grid-rows-layout_mobile md:grid-cols-layout_desktop md:grid-rows-none;
   }
 
+  ::-moz-selection {
+    background-color: #301201;
+  }
+  ::selection {
+    background-color: #301201;
+  }
+
   .header-placeholder {
     @apply flex w-full md:w-60;
   }
@@ -89,29 +96,10 @@ const { PAGE_TITLE, PAGE_DESCRIPTION } = lang;
 <script>
   import { $theme } from "@/stores";
 
-  const darkBg = "bg-black_rain-600";
-  const lightBg = "bg-seasalt";
-
   $theme.subscribe((value, oldValue) => {
-    if (!oldValue) return;
-
-    const oldBg = oldValue === "light" ? lightBg : darkBg;
-    const oldFg = oldValue === "light" ? "text-black" : "text-white";
-    const bg = value === "light" ? lightBg : darkBg;
-    const fg = $theme.get() === "light" ? "text-black" : "text-white";
-
-    if (!bg) return;
-    if (!fg) return;
-
-    document.body.classList.remove(oldBg);
-    document.body.classList.remove(oldFg);
-    document.body.classList.add(bg);
-    document.body.classList.add(fg);
+    document.documentElement.classList.remove(oldValue!);
+    document.documentElement.classList.add(value);
   });
 
-  const bg = $theme.get() === "light" ? lightBg : darkBg;
-  const fg = $theme.get() === "light" ? "text-black" : "text-white";
-
-  document.body.classList.add(bg);
-  document.body.classList.add(fg);
+  document.documentElement.classList.add($theme.get());
 </script>
