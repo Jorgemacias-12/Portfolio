@@ -9,7 +9,7 @@ config();
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://Jorgemacias-12.github.io",
+  site: "jorgemacias.dev",
   base: `${process.env.PUBLIC_BASE_URL || ""}`,
   integrations: [tailwind(), react()],
   i18n: {
