@@ -37,7 +37,6 @@ jobs:
           COMMIT=$(git rev-parse --short HEAD)
           VERSION="${TAG}+${COMMIT}"
 
-          echo "PUBLIC_BASE_URL=/${{ github.event.repository.name }}" > .env
           echo "PUBLIC_VERSION=$VERSION" >> .env
       
       - name: Install, build, and upload site
