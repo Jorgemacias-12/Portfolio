@@ -1,32 +1,6 @@
 import english from "@/locales/en.json";
 import spanish from "@/locales/es.json";
-import type { Education, Job, Project, Skill } from "@/types";
-
-type LanguageType = {
-  PAGE_TITLE: string;
-  PAGE_DESCRIPTION: string;
-  ABOUT_ME: string[];
-  HEADER_MENU_CAPTION: string;
-  HEADER_PAGE_VERSION_CAPTION: string;
-  COMPONENTS: {
-    HEADER: {
-      label: string;
-      url: string;
-    }[];
-  };
-  SECTIONS: {
-    label: string;
-    url: string;
-  }[];
-  SKILLS: {
-    LANGS: Skill[];
-    FRAMEWORKS: Skill[];
-    OTHERS: Skill[];
-  };
-  EXPERIENCES: Job[];
-  PROJECTS: Project[];
-  EDUCATION: Education[];
-};
+import type { Education, Job, LanguageType, Project, Skill } from "@/types";
 
 const LANGUAGES: Record<string, LanguageType> = {
   en: english,

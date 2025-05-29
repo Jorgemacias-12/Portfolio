@@ -1,3 +1,30 @@
+export interface LanguageType {
+  PAGE_TITLE: string;
+  PAGE_DESCRIPTION: string;
+  KEYWORDS: string[];
+  ABOUT_ME: string[];
+  HEADER_MENU_CAPTION: string;
+  HEADER_PAGE_VERSION_CAPTION: string;
+  COMPONENTS: {
+    HEADER: {
+      label: string;
+      url: string;
+    }[];
+  };
+  SECTIONS: {
+    label: string;
+    url: string;
+  }[];
+  SKILLS: {
+    LANGS: Skill[];
+    FRAMEWORKS: Skill[];
+    OTHERS: Skill[];
+  };
+  EXPERIENCES: Job[];
+  PROJECTS: Project[];
+  EDUCATION: Education[];
+}
+
 export interface NavigationItem {
   label: string;
   url: string;
