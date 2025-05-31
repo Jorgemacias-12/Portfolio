@@ -1,0 +1,190 @@
+---
+import { appendBaseUrl } from "@/utils";
+import { getI18N } from "@/i18n";
+import { ThemeSwitcher } from "../ThemeSwitcher";
+import { Menu, X } from "@lucide/astro";
+import { Link } from "../Link";
+
+const { lang } = Astro.props;
+
+const languageUrl = lang === "es" ? appendBaseUrl("/en") : appendBaseUrl("");
+const languageCaption = lang === "es" ? "EN" : "ES";
+const flagUrl = appendBaseUrl(lang === "es" ? "/usa.svg" : "/mexico.svg");
+const { COMPONENTS, HEADER_MENU_CAPTION, HEADER_PAGE_VERSION_CAPTION } =
+  getI18N(lang);
+const { HEADER } = COMPONENTS;
+---
+
+<header
+  class="border-b p-2 h-16 flex justify-between items-center bg-white dark:bg-black_rain dark:border-b-black_rain-900 dark:text-white"
+>
+  <section class="flex items-center gap-1">
+    <img src="/og-image.jpg" width="32" class="" alt="Jorge A Macias Z" />
+
+    <h1 class="font-bold">Jorge Macias</h1>
+  </section>
+
+  <ul class="hidden md:flex md:items-center">
+    {
+      HEADER.map(({ label, url }) => {
+        return <Link label={label} url={url} />;
+      })
+    }
+  </ul>
+
+  <section class="hidden md:flex md:items-center md:justify-between gap-4">
+    <div class="p-2 flex items-center justify-between gap-1">
+      <ThemeSwitcher client:only="react" />
+
+      <a class="flex items-center gap-2 py-1" href={languageUrl}>
+        <img
+          width={32}
+          height={32}
+          src={flagUrl}
+          alt={`${
+            lang === "es"
+              ? "usa flag for lang change"
+              : "mexico flag for lang change"
+          }`}
+        />
+
+        {languageCaption}
+      </a>
+    </div>
+  </section>
+
+  <section
+    id="mobile-menu"
+    class="fixed w-full h-full hidden md:hidden bg-black/60 inset-0 backdrop-blur-sm"
+  >
+    <nav
+      id="mobile-menu-content"
+      class="bg-white flex flex-col dark:bg-black_rain w-8/12 h-full transition-all duration-300 ease-in-out transform translate-x-[-100%]"
+    >
+      <section
+        class="flex items-center gap-1 border-b dark:border-b-black_rain-900 p-4 justify-between"
+      >
+        <div class="flex items-center gap-1">
+          <img src="/og-image.jpg" width="32" class="" alt="Jorge A Macias Z" />
+
+          <h1 class="font-bold">Jorge Macias</h1>
+        </div>
+
+        <button type="button" class="menu-opener">
+          <Menu size={32} />
+          <X class="hidden hover:text-red-500" size={32} />
+        </button>
+      </section>
+
+      <div
+        class="p-2 border-b dark:border-b-black_rain-900 flex items-center justify-between"
+      >
+        <ThemeSwitcher client:only="react" />
+
+        <a class="flex items-center gap-2 py-1" href={languageUrl}>
+          <img
+            width={32}
+            height={32}
+            src={flagUrl}
+            alt={`${
+              lang === "es"
+                ? "usa flag for lang change"
+                : "mexico flag for lang change"
+            }`}
+          />
+
+          {languageCaption}
+        </a>
+      </div>
+
+      <ul class="p-2 border-b dark:border-b-black_rain-900">
+        {
+          HEADER.map(({ label, url }) => {
+            return <Link label={label} url={url} />;
+          })
+        }
+      </ul>
+
+      <section class="p-4 border-b dark:border-b-black_rain-900">
+        {
+          import.meta.env.PUBLIC_VERSION !== undefined && (
+            <p class="text-xs">
+              {HEADER_PAGE_VERSION_CAPTION}{" "}
+              {lang === "es" ? "versión" : "version"}{" "}
+              {import.meta.env.PUBLIC_VERSION}
+            </p>
+          )
+        }
+      </section>
+    </nav>
+  </section>
+
+  <section class="md:hidden flex items-center">
+    <button type="button" class="menu-opener">
+      <Menu size={32} />
+      <X class="hidden hover:text-red-500" size={32} />
+    </button>
+  </section>
+</header>
+
+<script>
+  const menuButtons = document.querySelectorAll(".menu-opener");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const content = document.getElementById("mobile-menu-content");
+  const menuIcon = document.querySelector(".lucide.lucide-menu");
+  const xIcon = document.querySelector(".lucide.lucide-x");
+
+  let menuState = false;
+
+  mobileMenu?.addEventListener("click", (e) => {
+    if (e.target !== e.currentTarget) return;
+
+    menuState = false;
+
+    if (!menuIcon || !xIcon || !mobileMenu || !content) return;
+
+    menuIcon.classList.toggle("hidden", menuState);
+    xIcon.classList.toggle("hidden", !menuState);
+
+    if (menuState) {
+      content.classList.remove("hidden");
+      setTimeout(() => {
+        content.classList.remove("translate-x-[-100%]");
+      }, 20);
+    } else {
+      content.classList.add("translate-x-[-100%]");
+      setTimeout(() => {
+        content.classList.add("hidden");
+      }, 300);
+    }
+
+    mobileMenu?.classList.toggle("hidden", !menuState);
+  });
+
+  menuButtons.forEach((el) => {
+    el.addEventListener("click", () => {
+      menuState = !menuState;
+
+      if (!menuIcon || !xIcon || !mobileMenu || !content) return;
+
+      menuIcon.classList.toggle("hidden", menuState);
+      xIcon.classList.toggle("hidden", !menuState);
+
+      if (menuState) {
+        content.classList.remove("hidden");
+        setTimeout(() => {
+          content.classList.remove("translate-x-[-100%]");
+        }, 20);
+      } else {
+        content.classList.add("translate-x-[-100%]");
+        setTimeout(() => {
+          content.classList.add("hidden");
+        }, 300);
+      }
+
+      mobileMenu?.classList.toggle("hidden", !menuState);
+
+      document.documentElement.style.overflow = menuState ? "hidden" : "";
+    });
+  });
+</script>
