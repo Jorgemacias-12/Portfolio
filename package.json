@@ -16,8 +16,7 @@
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
     "@fontsource/geist-sans": "^5.1.0",
-    "@mui/icons-material": "^6.1.9",
-    "@mui/material": "^6.1.9",
+    "@lucide/astro": "^0.511.0",
     "@nanostores/persistent": "^0.10.1",
     "@nanostores/react": "^0.7.2",
     "@types/react": "^18.3.2",
@@ -28,6 +27,7 @@
     "nanostores": "^0.10.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "tailwind-merge": "^3.3.0",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
   },
