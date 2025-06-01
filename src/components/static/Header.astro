@@ -127,64 +127,47 @@ const { HEADER } = COMPONENTS;
   </section>
 </header>
 
-<script>
-  const menuButtons = document.querySelectorAll(".menu-opener");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const content = document.getElementById("mobile-menu-content");
-  const menuIcon = document.querySelector(".lucide.lucide-menu");
-  const xIcon = document.querySelector(".lucide.lucide-x");
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuButtons = document.querySelectorAll(".menu-opener");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuContent = document.getElementById("mobile-menu-content");
+    const menuIcons = document.querySelectorAll(".lucide.lucide-menu");
+    const closeIcons = document.querySelectorAll(".lucide.lucide-x");
 
-  let menuState = false;
+    let isMenuOpen = false;
 
-  mobileMenu?.addEventListener("click", (e) => {
-    if (e.target !== e.currentTarget) return;
+    const toggleMenu = () => {
+      isMenuOpen = !isMenuOpen;
 
-    menuState = false;
+      menuIcons.forEach((icon) => icon.classList.toggle("hidden", isMenuOpen));
 
-    if (!menuIcon || !xIcon || !mobileMenu || !content) return;
+      closeIcons.forEach((icon) =>
+        icon.classList.toggle("hidden", !isMenuOpen)
+      );
 
-    menuIcon.classList.toggle("hidden", menuState);
-    xIcon.classList.toggle("hidden", !menuState);
-
-    if (menuState) {
-      content.classList.remove("hidden");
-      setTimeout(() => {
-        content.classList.remove("translate-x-[-100%]");
-      }, 20);
-    } else {
-      content.classList.add("translate-x-[-100%]");
-      setTimeout(() => {
-        content.classList.add("hidden");
-      }, 300);
-    }
-
-    mobileMenu?.classList.toggle("hidden", !menuState);
-  });
-
-  menuButtons.forEach((el) => {
-    el.addEventListener("click", () => {
-      menuState = !menuState;
-
-      if (!menuIcon || !xIcon || !mobileMenu || !content) return;
-
-      menuIcon.classList.toggle("hidden", menuState);
-      xIcon.classList.toggle("hidden", !menuState);
-
-      if (menuState) {
-        content.classList.remove("hidden");
+      if (isMenuOpen) {
+        mobileMenu.classList.remove("hidden");
         setTimeout(() => {
-          content.classList.remove("translate-x-[-100%]");
+          menuContent.classList.remove("translate-x-[-100%]");
         }, 20);
       } else {
-        content.classList.add("translate-x-[-100%]");
+        menuContent.classList.add("translate-x-[-100%]");
+
         setTimeout(() => {
-          content.classList.add("hidden");
+          mobileMenu.classList.add("hidden");
         }, 300);
       }
 
-      mobileMenu?.classList.toggle("hidden", !menuState);
+      document.documentElement.style.overflow = isMenuOpen ? "hidden" : "";
+    };
 
-      document.documentElement.style.overflow = menuState ? "hidden" : "";
+    menuButtons.forEach((btn) => btn.addEventListener("click", toggleMenu));
+
+    mobileMenu.addEventListener("click", (e) => {
+      if (e.target === mobileMenu) {
+        toggleMenu();
+      }
     });
   });
 </script>
