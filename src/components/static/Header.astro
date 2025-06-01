@@ -222,3 +222,67 @@ const { HEADER } = COMPONENTS;
     applyScrollEffects();
   });
 </script>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuContent = document.getElementById("mobile-menu-content");
+    const menuIcons = document.querySelectorAll(".lucide.lucide-menu");
+    const closeIcons = document.querySelectorAll(".lucide.lucide-x");
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeThreshold = 50;
+
+    const openMenu = () => {
+      mobileMenu.classList.remove("hidden");
+
+      menuIcons.forEach((icon) => icon.classList.toggle("hidden", true));
+      closeIcons.forEach((icon) => icon.classList.toggle("hidden", false));
+
+      setTimeout(() => {
+        menuContent.classList.remove("translate-x-[-100%]");
+      }, 20);
+
+      document.documentElement.style.overflow = "hidden";
+    };
+
+    const closeMenu = () => {
+      menuContent.classList.add("translate-x-[-100%]");
+
+      menuIcons.forEach((icon) => icon.classList.toggle("hidden", false));
+      closeIcons.forEach((icon) => icon.classList.toggle("hidden", true));
+
+      setTimeout(() => {
+        mobileMenu.classList.add("hidden");
+        document.documentElement.style.overflow = "";
+      }, 300);
+    };
+
+    const handleTouchStart = (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    };
+
+    const handleTouchEnd = (e) => {
+      if (window.innerWidth >= 768) return;
+
+      touchEndX = e.changedTouches[0].screenX;
+
+      const diffX = touchEndX - touchStartX;
+
+      if (diffX < -swipeThreshold) {
+        closeMenu();
+      }
+
+      if (diffX > swipeThreshold) {
+        openMenu();
+      }
+    };
+
+    document.addEventListener("touchstart", handleTouchStart, {
+      passive: true,
+    });
+
+    document.addEventListener("touchend", handleTouchEnd, { passive: true });
+  });
+</script>
