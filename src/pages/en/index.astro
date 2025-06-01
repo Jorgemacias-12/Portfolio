@@ -1,212 +1,37 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/static/Header.astro";
+import Section from "@/components/static/Section.astro";
 import { getI18N } from "@/i18n";
-import { TitledSection } from "@/components/TitledSection";
-import { Education } from "@/components/Education";
-import { Job } from "@/components/Job";
-import { Project } from "@/components/Project";
-import { Skill } from "@/components/Skill";
-import { appendBaseUrl } from "@/utils";
+import Layout from "@/layouts/Layout.astro";
+import { SECTION_COMPONENTS } from "@/utils";
 
 const { currentLocale } = Astro;
 
-if (!currentLocale) {
-  Astro.redirect("/500");
-  throw new Error("Current locale is null");
-}
+if (!currentLocale)
+  throw new Error("Locale not provided or default didn't load propperly");
 
 const lang = getI18N(currentLocale);
 
-const {
-  PAGE_TITLE,
-  PAGE_DESCRIPTION,
-  SECTIONS,
-  ABOUT_ME,
-  SKILLS,
-  EXPERIENCES,
-  PROJECTS,
-  EDUCATION,
-} = lang;
+const { PAGE_TITLE, PAGE_DESCRIPTION, SECTIONS } = lang;
 ---
 
 <Layout title={PAGE_TITLE} description={PAGE_DESCRIPTION}>
-  <main class="p-4 flex flex-col gap-10 mt-[70px] md:mt-0">
+  <Header lang={currentLocale} />
+  <main class="dark:text-white">
     {
-      SECTIONS.map(({ label, url }) => {
+      SECTIONS.map(async ({ label, url }) => {
+        const loader = SECTION_COMPONENTS[url];
+
+        if (!loader) return null;
+
+        const Component = (await loader()).default;
+
+        const variant = url === "about" ? "hero" : "normal";
+
         return (
-          <TitledSection title={label} name={url}>
-            {url === "about" && (
-              <>
-                <img
-                  width="256"
-                  class="rounded-full mx-auto"
-                  src={appendBaseUrl("/JAMZ-p.jpg")}
-                  alt="Jorge Macias photo"
-                />
-
-                <h3 class="m-4 text-4xl font-bold text-center">Jorge Macias</h3>
-
-                <div class="flex flex-col gap-2 mt-2">
-                  {ABOUT_ME.map((text) => {
-                    return <p>{text}</p>;
-                  })}
-                </div>
-              </>
-            )}
-
-            {url === "skills" && (
-              <div class="flex flex-col gap-4">
-                <h3 class="text-2xl font-bold">Programming Languages</h3>
-
-                <section class="grid grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-3">
-                  {SKILLS.LANGS.map(({ name, icon, description }, index) => {
-                    return (
-                      <Skill
-                        client:only="react"
-                        name={name}
-                        icon={icon}
-                        description={description}
-                      />
-                    );
-                  })}
-                </section>
-
-                <h3 class="text-2xl font-bold">Frameworks</h3>
-
-                <section class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  {SKILLS.FRAMEWORKS.map(
-                    ({ name, icon, description }, index) => {
-                      return (
-                        <Skill
-                          client:only="react"
-                          name={name}
-                          icon={icon}
-                          description={description}
-                        />
-                      );
-                    }
-                  )}
-                </section>
-
-                <h3 class="text-2xl font-bold">Others</h3>
-
-                <section class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  {SKILLS.OTHERS.map(({ name, icon, description }, index) => {
-                    return (
-                      <Skill
-                        client:only="react"
-                        name={name}
-                        icon={icon}
-                        description={description}
-                      />
-                    );
-                  })}
-                </section>
-              </div>
-            )}
-
-            {url === "experience" && (
-              <section class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {EXPERIENCES.map(
-                  ({
-                    companyName,
-                    description,
-                    finishDate,
-                    position,
-                    startDate,
-                    linkedIn,
-                    actualJob,
-                  }) => {
-                    return (
-                      <Job
-                        client:only="react"
-                        companyName={companyName}
-                        description={description}
-                        position={position}
-                        startDate={startDate}
-                        finishDate={finishDate}
-                        linkedIn={linkedIn!}
-                        actualJob={actualJob}
-                        lang={currentLocale as string}
-                      />
-                    );
-                  }
-                )}
-              </section>
-            )}
-
-            {url === "projects" && (
-              <section class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {PROJECTS.map(
-                  ({
-                    title,
-                    description,
-                    technologies,
-                    responsabilities,
-                    roles,
-                    demoLink,
-                    repoLink,
-                    screenshots,
-                  }) => {
-                    return (
-                      <Project
-                        client:only="react"
-                        title={title}
-                        description={description}
-                        technologies={technologies}
-                        responsabilities={responsabilities}
-                        roles={roles}
-                        demoLink={demoLink}
-                        repoLink={repoLink}
-                        screenshots={screenshots}
-                        lang={currentLocale as string}
-                      />
-                    );
-                  }
-                )}
-              </section>
-            )}
-
-            {url === "education" && (
-              <section class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {EDUCATION.map(
-                  ({
-                    degree,
-                    institution,
-                    campus,
-                    startDate,
-                    endDate,
-                    gpa,
-                    relevantProjects,
-                    courses,
-                    achievements,
-                    extracurricularActivities,
-                    schoolLink,
-                    finished,
-                  }) => {
-                    return (
-                      <Education
-                        client:only="react"
-                        degree={degree}
-                        institution={institution}
-                        campus={campus}
-                        startDate={startDate}
-                        endDate={endDate}
-                        gpa={gpa}
-                        relevantProjects={relevantProjects}
-                        courses={courses}
-                        achievements={achievements}
-                        extracurricularActivities={extracurricularActivities}
-                        schoolLink={schoolLink}
-                        finished={finished}
-                        lang={currentLocale as string}
-                      />
-                    );
-                  }
-                )}
-              </section>
-            )}
-          </TitledSection>
+          <Section id={label} title={label} variant={variant}>
+            <Component />
+          </Section>
         );
       })
     }
