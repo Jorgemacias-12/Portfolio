@@ -91,3 +91,13 @@ export interface EducationProps extends Education {
 }
 
 export type Theme = "light" | "dark";
+
+export interface AstroComponent {
+  (props: any): any;
+  isAstroComponent?: boolean;
+}
+
+export type SectionProps = {
+  lang: LanguageType;
+  currentLocale?: string;
+};

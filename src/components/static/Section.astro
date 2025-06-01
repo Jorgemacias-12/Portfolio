@@ -1,0 +1,73 @@
+---
+import { twMerge } from "tailwind-merge";
+
+export interface Props {
+  id?: string;
+  title?: string;
+  variant?: "normal" | "hero";
+  class?: string;
+  titleClass?: string;
+  contentClass?: string;
+}
+
+const {
+  id,
+  title,
+  variant = "normal",
+  class: sectionClass = "",
+  titleClass = "",
+  contentClass = "",
+} = Astro.props;
+
+const baseSectionClasses = "w-full py-12 px-4 sm:px-6 lg:px-8";
+const heroSectionClasses =
+  "min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-indigo-50 to-blue-100";
+const normalSectionClasses = "max-w-6xl mx-auto";
+
+const baseTitleClasses = "mb-6";
+const heroTitleClasses =
+  "text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900";
+const normalTitleClasses = "text-2xl sm:text-3xl font-semibold text-gray-800";
+
+const baseContentClasses = "";
+const heroContentClasses = "text-lg sm:text-xl text-gray-600";
+const normalContentClasses = "text-base sm:text-lg text-gray-700";
+---
+
+<section
+  id={id}
+  class={twMerge(
+    baseSectionClasses,
+    variant === "hero" ? heroSectionClasses : normalSectionClasses,
+    sectionClass
+  )}
+>
+  <div
+    class={twMerge(
+      variant === "hero" ? "text-center max-w-3xl mx-auto" : "w-full"
+    )}
+  >
+    {
+      title && (
+        <h2
+          class={twMerge(
+            baseTitleClasses,
+            variant === "hero" ? heroTitleClasses : normalTitleClasses,
+            titleClass
+          )}
+        >
+          {title}
+        </h2>
+      )
+    }
+
+    <div
+      class={twMerge(
+        variant === "hero" ? heroContentClasses : normalContentClasses,
+        contentClass
+      )}
+    >
+      <slot />
+    </div>
+  </div>
+</section>
