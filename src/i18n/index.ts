@@ -1,6 +1,6 @@
 import english from "@/locales/en.json";
 import spanish from "@/locales/es.json";
-import type { Education, Job, LanguageType, Project, Skill } from "@/types";
+import type { LanguageType } from "@/types";
 
 const LANGUAGES: Record<string, LanguageType> = {
   en: english,
