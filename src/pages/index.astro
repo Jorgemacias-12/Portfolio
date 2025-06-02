@@ -27,9 +27,16 @@ const { PAGE_TITLE, PAGE_DESCRIPTION, SECTIONS } = lang;
         const Component = (await loader()).default;
 
         const variant = url === "about" ? "hero" : "normal";
+        const isOptionalTitle = url === "about";
+        const optionalStyles = url === "about" ? "" : "";
 
         return (
-          <Section id={label} title={label} variant={variant}>
+          <Section
+            id={label}
+            optionalTitle={isOptionalTitle}
+            title={label}
+            variant={variant}
+          >
             <Component />
           </Section>
         );

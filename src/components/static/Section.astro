@@ -4,6 +4,7 @@ import { twMerge } from "tailwind-merge";
 export interface Props {
   id?: string;
   title?: string;
+  optionalTitle?: boolean;
   variant?: "normal" | "hero";
   class?: string;
   titleClass?: string;
@@ -13,6 +14,7 @@ export interface Props {
 const {
   id,
   title,
+  optionalTitle,
   variant = "normal",
   class: sectionClass = "",
   titleClass = "",
@@ -48,7 +50,7 @@ const normalContentClasses = "text-base sm:text-lg text-gray-700";
     )}
   >
     {
-      title && (
+      title && !optionalTitle && (
         <h2
           class={twMerge(
             baseTitleClasses,

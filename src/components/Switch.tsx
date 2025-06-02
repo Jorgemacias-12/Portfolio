@@ -28,7 +28,7 @@ export const Switch = ({
 
   const animationFalse = "translate-x-9";
   const animationTrue = "translate-x-2";
-  const buttonDarkBg = "border bg-whitesmoke-400";
+  const buttonDarkBg = "border bg-whitesmoke-400 dark:border-black_rain-900";
   const buttonLightBg = "bg-whitesmoke-400 border";
 
   const bg = theme === "light" ? buttonLightBg : buttonDarkBg;

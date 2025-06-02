@@ -38,7 +38,7 @@ export const Job = ({
   return (
     <Card aditionalClassNames="justify-between">
       <section className="flex items-center justify-between px-4 w-full">
-        <h4 className="text-xl font-bold">{position}</h4>
+        <h3 className="text-xl font-bold">{position}</h3>
 
         <span className={`rounded-full px-2 ${statusColorBadge}`}>
           {getWorkStatus(actualJob, lang)}

@@ -34,7 +34,7 @@ export const Education = ({
   return (
     <Card aditionalClassNames="">
       <section className="flex-items-center justify-between px-4 w-full">
-        <h4 className="font-bold text-xl">{institution}</h4>
+        <h3 className="font-bold text-xl">{institution}</h3>
 
         <span className={`rounded-full px-2 ${statusColorBadge}`}>
           {getStudyStatus(finished, lang)}

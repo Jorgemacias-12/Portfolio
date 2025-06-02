@@ -51,7 +51,7 @@ export const Project = ({
             href={demoLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white px-2 flex-1 rounded-full h-10 flex items-center justify-center bg-[#056674] dark:bg-persimmon"
+            className="text-white px-2 flex-1 rounded-full h-10 flex items-center justify-center bg-[#056674] dark:bg-persimmon-200"
           >
             Demo
           </a>
