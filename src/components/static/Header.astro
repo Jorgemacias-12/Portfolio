@@ -60,7 +60,7 @@ const { HEADER } = COMPONENTS;
   >
     <nav
       id="mobile-menu-content"
-      class="flex flex-col bg-white dark:bg-black_rain w-8/12 h-full transition-all duration-300 ease-in-out transform translate-x-[-100%]"
+      class="flex flex-col justify-between bg-white dark:bg-black_rain w-8/12 h-full transition-all duration-300 ease-in-out transform translate-x-[-100%]"
     >
       <section
         class="flex items-center gap-1 border-b bg-white dark:bg-black_rain dark:border-b-black_rain-900 p-4 justify-between"
@@ -73,43 +73,45 @@ const { HEADER } = COMPONENTS;
 
         <button type="button" class="menu-opener">
           <Menu size={32} />
-          <X class="hidden hover:text-red-500" size={32} />
+          <X class="hidden hover:text-red-500" size={24} />
         </button>
       </section>
 
-      <div
-        class="p-2 border-b bg-white dark:bg-black_rain dark:border-b-black_rain-900 flex items-center justify-between"
-      >
-        <ThemeSwitcher client:only="react" />
+      <section class="flex flex-col flex-1">
+        <div
+          class="p-2 border-b bg-white dark:bg-black_rain dark:border-b-black_rain-900 flex items-center justify-between"
+        >
+          <ThemeSwitcher client:only="react" />
 
-        <a class="flex items-center gap-2 py-1" href={languageUrl}>
-          <img
-            width={32}
-            height={32}
-            src={flagUrl}
-            alt={`${
-              lang === "es"
-                ? "usa flag for lang change"
-                : "mexico flag for lang change"
-            }`}
-          />
+          <a class="flex items-center gap-2 py-1" href={languageUrl}>
+            <img
+              width={32}
+              height={32}
+              src={flagUrl}
+              alt={`${
+                lang === "es"
+                  ? "usa flag for lang change"
+                  : "mexico flag for lang change"
+              }`}
+            />
 
-          {languageCaption}
-        </a>
-      </div>
+            {languageCaption}
+          </a>
+        </div>
 
-      <ul
-        class="p-2 border-b bg-white dark:bg-black_rain dark:border-b-black_rain-900"
-      >
-        {
-          HEADER.map(({ label, url }) => {
-            return <Link label={label} url={url} />;
-          })
-        }
-      </ul>
+        <ul
+          class="p-2 border-b bg-white dark:bg-black_rain dark:border-b-black_rain-900"
+        >
+          {
+            HEADER.map(({ label, url }) => {
+              return <Link label={label} url={url} />;
+            })
+          }
+        </ul>
+      </section>
 
       <section
-        class="p-4 border-b bg-white dark:bg-black_rain dark:border-b-black_rain-900"
+        class="p-4 border-t bg-white dark:bg-black_rain dark:border-t-black_rain-900"
       >
         {
           import.meta.env.PUBLIC_VERSION !== undefined && (
@@ -134,53 +136,19 @@ const { HEADER } = COMPONENTS;
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
-    const menuButtons = document.querySelectorAll(".menu-opener");
+    const headerEl = document.getElementById("header");
     const mobileMenu = document.getElementById("mobile-menu");
     const menuContent = document.getElementById("mobile-menu-content");
+    const menuButtons = document.querySelectorAll(".menu-opener");
     const menuIcons = document.querySelectorAll(".lucide.lucide-menu");
     const closeIcons = document.querySelectorAll(".lucide.lucide-x");
 
     let isMenuOpen = false;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let isSwipingHorizontally = false;
+    const swipeThreshold = 80;
 
-    const toggleMenu = () => {
-      isMenuOpen = !isMenuOpen;
-
-      menuIcons.forEach((icon) => icon.classList.toggle("hidden", isMenuOpen));
-
-      closeIcons.forEach((icon) =>
-        icon.classList.toggle("hidden", !isMenuOpen)
-      );
-
-      if (isMenuOpen) {
-        mobileMenu.classList.remove("hidden");
-        setTimeout(() => {
-          menuContent.classList.remove("translate-x-[-100%]");
-        }, 20);
-      } else {
-        menuContent.classList.add("translate-x-[-100%]");
-
-        setTimeout(() => {
-          mobileMenu.classList.add("hidden");
-        }, 300);
-      }
-
-      document.documentElement.style.overflow = isMenuOpen ? "hidden" : "";
-    };
-
-    menuButtons.forEach((btn) => btn.addEventListener("click", toggleMenu));
-
-    mobileMenu.addEventListener("click", (e) => {
-      if (e.target === mobileMenu) {
-        toggleMenu();
-      }
-    });
-  });
-</script>
-
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const headerEl = document.getElementById("header");
-    let ticking = false;
     const glassClasses = [
       "fixed",
       "top-0",
@@ -194,95 +162,121 @@ const { HEADER } = COMPONENTS;
       "dark:border-b-[#070708]/50",
     ];
 
-    const applyScrollEffects = () => {
-      const currentScroll = window.scrollY;
+    const headerObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const shouldApplyGlass = !entry.isIntersecting;
+          glassClasses.forEach((c) => {
+            headerEl.classList.toggle(c, shouldApplyGlass);
+          });
 
-      if (currentScroll > 20) {
-        glassClasses.forEach((c) => headerEl.classList.add(c));
+          if (shouldApplyGlass) {
+            headerEl.classList.add("w-full", "px-4");
+          } else {
+            headerEl.classList.add("bg-white", "dark:bg-black_rain");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "20px 0px 0px 0px" }
+    );
 
-        headerEl.classList.add("w-full", "px-4");
+    const triggerElement = document.createElement("div");
+    triggerElement.style.position = "absolute";
+    triggerElement.style.top = "0";
+    triggerElement.style.height = "1px";
+    triggerElement.style.width = "100%";
+    triggerElement.style.pointerEvents = "none";
+    document.body.prepend(triggerElement);
+    headerObserver.observe(triggerElement);
+
+    const toggleMenu = (shouldOpen) => {
+      if (typeof shouldOpen === "boolean") {
+        if (shouldOpen === isMenuOpen) return;
+        isMenuOpen = shouldOpen;
       } else {
-        glassClasses.forEach((c) => headerEl.classList.remove(c));
-
-        headerEl.classList.add("bg-white", "dark:bg-black_rain");
+        isMenuOpen = !isMenuOpen;
       }
 
-      ticking = false;
-    };
+      menuIcons.forEach((icon) => icon.classList.toggle("hidden", isMenuOpen));
+      closeIcons.forEach((icon) =>
+        icon.classList.toggle("hidden", !isMenuOpen)
+      );
 
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(applyScrollEffects);
-        ticking = true;
+      if (isMenuOpen) {
+        mobileMenu.classList.remove("hidden");
+        setTimeout(
+          () => menuContent.classList.remove("translate-x-[-100%]"),
+          20
+        );
+      } else {
+        menuContent.classList.add("translate-x-[-100%]");
+        setTimeout(() => mobileMenu.classList.add("hidden"), 300);
       }
-    };
 
-    window.addEventListener("scroll", handleScroll);
-
-    applyScrollEffects();
-  });
-</script>
-
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const mobileMenu = document.getElementById("mobile-menu");
-    const menuContent = document.getElementById("mobile-menu-content");
-    const menuIcons = document.querySelectorAll(".lucide.lucide-menu");
-    const closeIcons = document.querySelectorAll(".lucide.lucide-x");
-
-    let touchStartX = 0;
-    let touchEndX = 0;
-    const swipeThreshold = 50;
-
-    const openMenu = () => {
-      mobileMenu.classList.remove("hidden");
-
-      menuIcons.forEach((icon) => icon.classList.toggle("hidden", true));
-      closeIcons.forEach((icon) => icon.classList.toggle("hidden", false));
-
-      setTimeout(() => {
-        menuContent.classList.remove("translate-x-[-100%]");
-      }, 20);
-
-      document.documentElement.style.overflow = "hidden";
-    };
-
-    const closeMenu = () => {
-      menuContent.classList.add("translate-x-[-100%]");
-
-      menuIcons.forEach((icon) => icon.classList.toggle("hidden", false));
-      closeIcons.forEach((icon) => icon.classList.toggle("hidden", true));
-
-      setTimeout(() => {
-        mobileMenu.classList.add("hidden");
-        document.documentElement.style.overflow = "";
-      }, 300);
+      document.documentElement.style.overflow = isMenuOpen ? "hidden" : "";
     };
 
     const handleTouchStart = (e) => {
-      touchStartX = e.changedTouches[0].screenX;
+      if (window.innerWidth >= 768) return;
+
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      isSwipingHorizontally = false;
+    };
+
+    const handleTouchMove = (e) => {
+      if (window.innerWidth >= 768) return;
+
+      const touchX = e.touches[0].clientX;
+      const touchY = e.touches[0].clientY;
+      const diffX = touchX - touchStartX;
+      const diffY = touchY - touchStartY;
+
+      if (!isSwipingHorizontally) {
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+          isSwipingHorizontally = true;
+        }
+      }
+
+      if (isSwipingHorizontally && Math.abs(diffX) > 10) {
+        e.preventDefault();
+      }
     };
 
     const handleTouchEnd = (e) => {
       if (window.innerWidth >= 768) return;
 
-      touchEndX = e.changedTouches[0].screenX;
-
+      const touchEndX = e.changedTouches[0].clientX;
       const diffX = touchEndX - touchStartX;
 
-      if (diffX < -swipeThreshold) {
-        closeMenu();
-      }
-
-      if (diffX > swipeThreshold) {
-        openMenu();
+      if (Math.abs(diffX) > swipeThreshold) {
+        if (diffX > 0 && !isMenuOpen) {
+          toggleMenu(true);
+        } else if (diffX < 0 && isMenuOpen) {
+          toggleMenu(false);
+        }
       }
     };
 
-    document.addEventListener("touchstart", handleTouchStart, {
-      passive: true,
-    });
+    menuButtons.forEach((btn) =>
+      btn.addEventListener("click", () => toggleMenu())
+    );
+    mobileMenu.addEventListener(
+      "click",
+      (e) => e.target === mobileMenu && toggleMenu(false)
+    );
 
+    document.addEventListener("touchstart", handleTouchStart, {
+      passive: false,
+    });
+    document.addEventListener("touchmove", handleTouchMove, { passive: false });
     document.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+    window.addEventListener("beforeunload", () => {
+      headerObserver.unobserve(triggerElement);
+      document.removeEventListener("touchstart", handleTouchStart);
+      document.removeEventListener("touchmove", handleTouchMove);
+      document.removeEventListener("touchend", handleTouchEnd);
+    });
   });
 </script>
