@@ -20,7 +20,7 @@ const { HEADER } = COMPONENTS;
   class="border-b w-full p-2 h-16 flex justify-between items-center bg-white dark:bg-black_rain dark:border-b-black_rain-900 dark:text-white"
 >
   <section class="flex items-center gap-1">
-    <img src="/og-image.jpg" width="32" class="" alt="Jorge A Macias Z" />
+    <img src="/avatar.png" width="32" height="32" alt="My custom toothless" />
 
     <h1 class="font-bold">Jorge Macias</h1>
   </section>
@@ -66,12 +66,22 @@ const { HEADER } = COMPONENTS;
         class="flex items-center gap-1 border-b bg-white dark:bg-black_rain dark:border-b-black_rain-900 p-4 justify-between"
       >
         <div class="flex items-center gap-1">
-          <img src="/og-image.jpg" width="32" class="" alt="Jorge A Macias Z" />
+          <img
+            src="/avatar.png"
+            width="32"
+            height="32"
+            alt="Jorge A Macias Z"
+          />
 
           <h1 class="font-bold">Jorge Macias</h1>
         </div>
 
-        <button type="button" class="menu-opener">
+        <button
+          type="button"
+          class="menu-opener"
+          aria-label="open mobile menu"
+          name="open mobile menu"
+        >
           <Menu size={32} />
           <X class="hidden hover:text-red-500" size={24} />
         </button>
@@ -127,7 +137,12 @@ const { HEADER } = COMPONENTS;
   </section>
 
   <section class="md:hidden flex items-center">
-    <button type="button" class="menu-opener">
+    <button
+      type="button"
+      class="menu-opener"
+      aria-label="open mobile menu"
+      name="open mobile menu"
+    >
       <Menu size={32} />
       <X class="hidden hover:text-red-500" size={32} />
     </button>
