@@ -7,7 +7,7 @@ import { Link } from "../Link";
 
 const { lang } = Astro.props;
 
-const languageUrl = lang === "es" ? appendBaseUrl("/en") : appendBaseUrl("");
+const languageUrl = lang === "es" ? appendBaseUrl("/en") : appendBaseUrl("/");
 const languageCaption = lang === "es" ? "EN" : "ES";
 const flagUrl = appendBaseUrl(lang === "es" ? "/usa.svg" : "/mexico.svg");
 const { COMPONENTS, HEADER_MENU_CAPTION, HEADER_PAGE_VERSION_CAPTION } =
