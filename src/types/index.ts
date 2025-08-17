@@ -5,24 +5,22 @@ export interface LanguageType {
   ABOUT_ME: string[];
   HEADER_MENU_CAPTION: string;
   HEADER_PAGE_VERSION_CAPTION: string;
+  HERO_TAGLINE: string;
+  HERO_CTA: string;
   COMPONENTS: {
-    HEADER: {
-      label: string;
-      url: string;
-    }[];
+    HEADER: SectionItem[];
   };
-  SECTIONS: {
-    label: string;
-    url: string;
-  }[];
-  SKILLS: {
-    LANGS: Skill[];
-    FRAMEWORKS: Skill[];
-    OTHERS: Skill[];
-  };
+  SECTIONS: SectionItem[];
+  SKILLS: SkillSection[];
   EXPERIENCES: Job[];
   PROJECTS: Project[];
   EDUCATION: Education[];
+}
+
+export interface SkillSection {
+  title: string;
+  type: SkillType;
+  content: Skill[];
 }
 
 export interface NavigationItem {
@@ -37,18 +35,23 @@ export interface SectionItem {
 
 export interface Skill {
   name: string;
-  icon: string;
+  icon?: string;
   description: string;
+  type: SkillType;
 }
 
 export interface Job {
   companyName: string;
-  position: string;
-  description: string;
+  companyPageUrl: string;
+  companyAddress?: string;
+  isFullTime?: boolean;
+  companyDescription?: string;
+  achievements?: string[];
   startDate: string;
-  finishDate: string;
-  linkedIn?: string | null | undefined;
-  actualJob: boolean;
+  endDate: string;
+  actualJob?: string;
+  position: string;
+  technologies?: Skill[];
 }
 
 export interface Project {
@@ -60,10 +63,6 @@ export interface Project {
   roles: string[];
   responsabilities: string[];
   repoLink?: string;
-}
-
-export interface ProjectProps extends Project {
-  lang: string;
 }
 
 export interface Technology {
@@ -101,3 +100,11 @@ export type SectionProps = {
   lang: LanguageType;
   currentLocale?: string;
 };
+
+export type SkillType =
+  | "language"
+  | "frontend"
+  | "backend"
+  | "database"
+  | "tool_and_platform"
+  | "mobile";
