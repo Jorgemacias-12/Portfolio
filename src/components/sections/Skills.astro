@@ -1,0 +1,34 @@
+---
+import { getI18N } from "@/i18n";
+import Skill from "../static/Skill.astro";
+import type { Skill as SkillProps } from "@/types";
+
+const { currentLocale } = Astro;
+
+if (!currentLocale) {
+  Astro.redirect("/500");
+  throw new Error("Current locale is null");
+}
+
+const { SKILLS } = getI18N(currentLocale);
+---
+
+<section class="flex flex-col gap-4">
+  {
+    SKILLS.map((skill) => (
+      <div class="flex flex-col gap-2">
+        <h3 class="font-medium">{skill.title}</h3>
+        <div class="grid grid-cols-2 gap-2">
+          {skill.content.map((s) => {
+            const props: SkillProps = {
+              ...s,
+              type: skill.type,
+            };
+
+            return <Skill {...props} />;
+          })}
+        </div>
+      </div>
+    ))
+  }
+</section>
