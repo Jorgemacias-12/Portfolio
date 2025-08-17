@@ -27,6 +27,8 @@
   ],
   "HEADER_MENU_CAPTION": "Menú de navegación",
   "HEADER_PAGE_VERSION_CAPTION": "Hecho con ❤️ ",
+  "HERO_TAGLINE": "Desarrollador de Software con sólida experiencia práctica en distintos lenguajes y entornos, capaz de adaptarse rápidamente a nuevos retos gracias al aprendizaje adquirido en proyectos diversos.",
+  "HERO_CTA": "Ver proyectos",
   "COMPONENTS": {
     "HEADER": [
       {
@@ -65,7 +67,7 @@
       "url": "skills"
     },
     {
-      "label": "Experiencia",
+      "label": "Experiencia Profesional",
       "url": "experience"
     },
     {
@@ -77,172 +79,224 @@
       "url": "education"
     }
   ],
-  "SKILLS": {
-    "LANGS": [
-      {
-        "name": "JavaScript",
-        "icon": "devicon-javascript-plain colored",
-        "description": "He aprendido este lenguaje para empezar mi camino como desarrollador web."
-      },
-      {
-        "name": "TypeScript",
-        "icon": "devicon-typescript-plain colored",
-        "description": "Después de aprender JavaScript, me pasé a TypeScript para aprovechar el sistema de tipos y evitar los problemas asociados con JavaScript."
-      },
-      {
-        "name": "C#",
-        "icon": "devicon-csharp-plain colored",
-        "description": "Lo aprendí en la universidad y he desarrollado algunas aplicaciones que automatizan procesos internos en mi universidad."
-      },
-      {
-        "name": "Python",
-        "icon": "devicon-python-plain",
-        "description": "He utilizado Python para programación competitiva en los últimos dos años (2023-2024) en el ICPC de México. Próximamente, planeo usarlo para proyectos de inteligencia artificial."
-      },
-      {
-        "name": "Lua",
-        "icon": "devicon-lua-plain",
-        "description": "Aprendí Lua al ayudar a un amigo a mejorar el código de un mod para The Binding of Isaac, aprovechando su simplicidad y eficiencia para scripts y desarrollo de juegos."
-      },
-      {
-        "name": "PHP",
-        "icon": "devicon-php-plain colored",
-        "description": "He utilizado PHP para desarrollar aplicaciones web siguiendo el patrón MVC y utilizando un motor de plantillas inspirado en Laravel. Esto me permitió estructurar y modularizar el código eficientemente, mejorando la mantenibilidad y organización del proyecto."
-      },
-      {
-        "name": "SQL / MySQL",
-        "icon": "devicon-mysql-plain colored",
-        "description": "Utilizo SQL y MySQL para gestionar bases de datos en aplicaciones web, asegurando la integridad de los datos y optimizando consultas para mejorar el rendimiento."
-      },
-      {
-        "name": "Java",
-        "icon": "devicon-java-plain colored",
-        "description": "Aprendí Java para programación imperativa y orientada a objetos, con prácticas que incluyeron el desarrollo de interfaces gráficas básicas utilizando javax.swing."
-      }
-    ],
-    "FRAMEWORKS": [
-      {
-        "name": "React",
-        "icon": "devicon-react-original colored",
-        "description": "Utilizo React para construir interfaces de usuario interactivas y dinámicas en mis proyectos web."
-      },
-      {
-        "name": "Node.js",
-        "icon": "devicon-nodejs-plain colored",
-        "description": "He utilizado Node.js para construir aplicaciones del lado del servidor, aprovechando su eficiencia y escalabilidad."
-      },
-      {
-        "name": "Express",
-        "icon": "devicon-express-original colored",
-        "description": "Utilizo Express como un framework minimalista para Node.js, facilitando la creación de APIs robustas y eficientes."
-      },
-      {
-        "name": "WPF",
-        "icon": "devicon-dot-net-plain colored",
-        "description": "He desarrollado aplicaciones de escritorio usando WPF, aprovechando su capacidad para crear interfaces de usuario ricas y fluidas en C#."
-      },
-      {
-        "name": "WinForms",
-        "icon": "devicon-dotnetcore-plain colored",
-        "description": "Utilizo WinForms para desarrollar aplicaciones de escritorio en C#, debido a su facilidad de uso y rápido desarrollo de interfaces."
-      },
-      {
-        "name": "Tailwind CSS",
-        "icon": "devicon-tailwindcss-plain colored",
-        "description": "Utilizo Tailwind CSS para diseñar aplicaciones web con un enfoque altamente personalizable y basado en utilidades, lo que facilita la creación de interfaces de usuario modernas y responsivas."
-      },
-      {
-        "name": "Astro",
-        "icon": "devicon-astro-plain colored",
-        "description": "He utilizado Astro para construir sitios web estáticos y dinámicos utilizando componentes reutilizables, combinando lo mejor del desarrollo estático y del lado del servidor."
-      },
-      {
-        "name": "Bun",
-        "icon": "devicon-bun-plain",
-        "description": "Utilizo Bun para desarrollar aplicaciones web ligeras y eficientes, aprovechando su enfoque minimalista y su rendimiento optimizado."
-      },
-      {
-        "name": "Prisma",
-        "icon": "devicon-prisma-original",
-        "description": "He utilizado Prisma como ORM (Object-Relational Mapping) para interactuar de manera eficiente con bases de datos en proyectos backend, facilitando el manejo de consultas y la gestión de datos."
-      },
-      {
-        "name": "Next.js",
-        "icon": "devicon-nextjs-plain ",
-        "description": "He utilizado Next.js, un framework de React, para construir aplicaciones web rápidas y escalables con renderizado del lado del servidor y generación de sitios estáticos."
-      }
-    ],
-    "OTHERS": [
-      {
-        "name": "GitHub",
-        "icon": "devicon-github-original",
-        "description": "Utilizo GitHub para almacenar mis proyectos personales y las cosas que voy aprendiendo."
-      },
-      {
-        "name": "DigitalOcean",
-        "icon": "devicon-digitalocean-original colored",
-        "description": "He utilizado DigitalOcean para desarrollar y desplegar una aplicación fullstack como parte de una materia en la universidad."
-      },
-      {
-        "name": "GitHub Actions",
-        "icon": "devicon-githubactions-plain colored",
-        "description": "He usado GitHub Actions en conjunto con DigitalOcean para desplegar el proyecto mencionado anteriormente."
-      },
-      {
-        "name": "Git",
-        "icon": "devicon-git-plain colored",
-        "description": "Utilizo Git para el control de versiones en mis proyectos, lo que me permite gestionar el código de manera eficiente y colaborar con otros desarrolladores."
-      },
-      {
-        "name": "Nginx",
-        "icon": "devicon-nginx-original colored",
-        "description": "He configurado Nginx para gestionar la entrada a la página web del proyecto, mejorando la distribución del tráfico y la seguridad."
-      },
-      {
-        "name": "Insomnia",
-        "icon": "devicon-insomnia-plain colored",
-        "description": "Utilizo Insomnia para probar y documentar APIs, facilitando el desarrollo y la colaboración en proyectos basados en servicios web."
-      },
-      {
-        "name": "Linux",
-        "icon": "devicon-linux-plain",
-        "description": "He utilizado Linux para administrar el servidor de DigitalOcean, aprovechando su estabilidad y flexibilidad."
-      },
-      {
-        "name": "Visual Studio Code",
-        "icon": "devicon-vscode-plain colored",
-        "description": "Utilizo Visual Studio Code como mi editor de código principal debido a su flexibilidad, extensibilidad y soporte para múltiples lenguajes."
-      },
-      {
-        "name": "Visual Studio",
-        "icon": "devicon-visualstudio-plain colored",
-        "description": "Utilizo Visual Studio en Windows para desarrollar aplicaciones en C#, aprovechando sus herramientas avanzadas de desarrollo y depuración."
-      },
-      {
-        "name": "HTML5",
-        "icon": "devicon-html5-plain colored",
-        "description": "Utilizo HTML5 como estándar de marcado para estructurar y presentar contenido en aplicaciones web, integrándolo con CSS y JavaScript para crear interfaces de usuario interactivas y modernas."
-      }
-    ]
-  },
+  "SKILLS": [
+    {
+      "title": "Lenguajes de Programación",
+      "type": "language",
+      "content": [
+        {
+          "name": "JavaScript",
+          "icon": "devicon-javascript-plain colored",
+          "description": "He aprendido este lenguaje para empezar mi camino como desarrollador web."
+        },
+        {
+          "name": "TypeScript",
+          "icon": "devicon-typescript-plain colored",
+          "description": "Después de aprender JavaScript, me pasé a TypeScript para aprovechar el sistema de tipos y evitar los problemas asociados con JavaScript."
+        },
+        {
+          "name": "C#",
+          "icon": "devicon-csharp-plain colored",
+          "description": "Lo aprendí en la universidad y he desarrollado algunas aplicaciones que automatizan procesos internos en mi universidad."
+        },
+        {
+          "name": "Python",
+          "icon": "devicon-python-plain",
+          "description": "He utilizado Python para programación competitiva en el ICPC de México. También lo he usado en proyectos como una demo 3D usando OpenGL y para trabajar con sockets."
+        },
+        {
+          "name": "Lua",
+          "icon": "devicon-lua-plain",
+          "description": "Aprendí Lua al ayudar a un amigo a mejorar un mod para The Binding of Isaac, aprovechando su simplicidad para scripting."
+        },
+        {
+          "name": "PHP",
+          "icon": "devicon-php-plain colored",
+          "description": "He utilizado PHP para desarrollar aplicaciones web usando MVC y un motor de plantillas tipo Laravel."
+        },
+        {
+          "name": "SQL",
+          "icon": "devicon-mysql-plain",
+          "description": "Utilizo SQL y MySQL para gestionar bases de datos en aplicaciones web, optimizando consultas para rendimiento."
+        },
+        {
+          "name": "Java",
+          "icon": "devicon-java-plain colored",
+          "description": "Aprendí Java en el área de programación orientada a objetos con interfaces gráficas usando javax.swing."
+        }
+      ]
+    },
+    {
+      "title": "FrontEnd",
+      "type": "frontend",
+      "content": [
+        {
+          "name": "React",
+          "icon": "devicon-react-original colored",
+          "description": "Utilizo React para construir interfaces interactivas en proyectos web personales y académicos."
+        },
+        {
+          "name": "Next.js",
+          "icon": "devicon-nextjs-plain",
+          "description": "He usado Next.js para crear aplicaciones web escalables con renderizado del lado del servidor y generación estática."
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "devicon-tailwindcss-plain colored",
+          "description": "Utilizo Tailwind para construir interfaces modernas y responsivas de forma rápida."
+        },
+        {
+          "name": "Astro",
+          "icon": "devicon-astro-plain colored",
+          "description": "He usado Astro para desarrollar sitios estáticos con componentes reutilizables, ideal para documentación o portafolios."
+        },
+        {
+          "name": "HTML5",
+          "icon": "devicon-html5-plain colored",
+          "description": "Utilizo HTML5 para estructurar contenido web junto con CSS y JavaScript."
+        }
+      ]
+    },
+    {
+      "title": "BackEnd",
+      "type": "backend",
+      "content": [
+        {
+          "name": "Node.js",
+          "icon": "devicon-nodejs-plain colored",
+          "description": "Utilizado para construir servidores backend eficientes con JavaScript."
+        },
+        {
+          "name": "Express",
+          "icon": "devicon-express-original",
+          "description": "Framework que uso junto a Node para crear APIs REST robustas."
+        },
+        {
+          "name": "PHP (MVC)",
+          "icon": "devicon-php-plain colored",
+          "description": "Lo he usado para construir aplicaciones backend usando el patrón Modelo-Vista-Controlador."
+        },
+        {
+          "name": "Bun",
+          "icon": "devicon-bun-plain",
+          "description": "Utilizado para desarrollo web eficiente con tiempos de carga rápidos."
+        },
+        {
+          "name": "Prisma",
+          "icon": "devicon-prisma-original",
+          "description": "ORM que he usado para manejar bases de datos SQL con validación de tipos."
+        }
+      ]
+    },
+    {
+      "title": "Base de datos",
+      "type": "database",
+      "content": [
+        {
+          "name": "MySQL",
+          "icon": "devicon-mysql-plain",
+          "description": "He usado MySQL como sistema de base de datos principal en múltiples proyectos."
+        },
+        {
+          "name": "Prisma (ORM)",
+          "icon": "devicon-prisma-original",
+          "description": "ORM usado para interactuar con bases de datos de forma segura y eficiente."
+        }
+      ]
+    },
+    {
+      "title": "Herramientas y Plataformas",
+      "type": "tool_and_platform",
+      "content": [
+        {
+          "name": "Git",
+          "icon": "devicon-git-plain colored",
+          "description": "Uso Git como sistema de control de versiones para mis proyectos personales y colaborativos."
+        },
+        {
+          "name": "GitHub",
+          "icon": "devicon-github-original",
+          "description": "Alojo mis repositorios y documentación en GitHub."
+        },
+        {
+          "name": "GitHub Actions",
+          "icon": "devicon-githubactions-plain colored",
+          "description": "He configurado CI/CD usando GitHub Actions para desplegar proyectos automáticamente."
+        },
+        {
+          "name": "Nginx",
+          "icon": "devicon-nginx-original colored",
+          "description": "Configuré Nginx para servir y enrutar tráfico a mis aplicaciones web."
+        },
+        {
+          "name": "DigitalOcean",
+          "icon": "devicon-digitalocean-original colored",
+          "description": "He usado DigitalOcean como proveedor de infraestructura para desplegar aplicaciones completas."
+        },
+        {
+          "name": "Linux",
+          "icon": "devicon-linux-plain",
+          "description": "He utilizado Linux para administrar servidores de producción y entornos de desarrollo."
+        },
+        {
+          "name": "Insomnia",
+          "icon": "devicon-insomnia-plain colored",
+          "description": "Herramienta que utilizo para probar y documentar APIs."
+        },
+        {
+          "name": "NuGet",
+          "icon": "devicon-nuget-original",
+          "description": "Manejé dependencias de aplicaciones en C# con NuGet en proyectos WPF."
+        },
+        {
+          "name": "Visual Studio Code",
+          "icon": "devicon-vscode-plain colored",
+          "description": "Editor principal que uso para desarrollo web, con extensiones útiles y configuración personalizada."
+        },
+        {
+          "name": "Visual Studio",
+          "icon": "devicon-visualstudio-plain colored",
+          "description": "Utilizo Visual Studio en Windows para desarrollar aplicaciones de escritorio en C#."
+        }
+      ]
+    },
+    {
+      "title": "Desarrollo Móvil",
+      "type": "mobile",
+      "content": [
+        {
+          "name": "Próximamente",
+          "icon": "",
+          "description": "Planeo aprender frameworks como React Native o Flutter para incursionar en el desarrollo móvil."
+        }
+      ]
+    }
+  ],
   "EXPERIENCES": [
     {
       "companyName": "Devocamp",
-      "position": "Desarrollador Frontend",
-      "description": "Como desarrollador frontend, mis responsabilidades incluyeron consumir APIs REST, asistir a reuniones diarias, mantener una página de destino y colaborar con diseñadores UX/UI.",
-      "startDate": "Jul 2022",
-      "finishDate": "Sept 2023",
-      "linkedIn": "https://www.linkedin.com/company/devocapm",
-      "actualJob": false
+      "companyPageUrl": "https://www.linkedin.com/company/devocapm",
+      "companyAddress": "Remoto",
+      "isFullTime": false,
+      "achievements": null,
+      "startDate": "Jul. 2022",
+      "endDate": "Sep. 2023",
+      "actualJob": false,
+      "position": "Desarrollador Frontend Trainee",
+      "technologies": null
     },
     {
       "companyName": "SMCI",
-      "position": "Desarrollador Backend y DevOps",
-      "description": "Como desarrollador Backend, y DevOps, algunas de mis responsabilidades fueron: implementar arquitectura de software para la creación de una API Rest para un producto que haría crecer el nivel de manejo del cliente sobre su giro. Mejorar un proyecto previo con nuevas tecnologías. Usar OpenAPI para crear una documentación casí automática. Además de momentar los sistemas de despligue continuo del backend y el frontend requerido para el producto.",
-      "startDate": "Dic 2024",
-      "finishDate": "Feb 2025",
-      "linkedIn": null,
-      "actualJob": false
+      "companyPageUrl": "https://smci.com.mx/",
+      "companyAddress": "Pto. Vallarta, Jalisco",
+      "isFullTime": false,
+      "companyDescription": "Servicio de Monitoreo y Comunicación Integral (SMCI)",
+      "achievements": null,
+      "startDate": "Dic. 2024",
+      "endDate": "Feb. 2025",
+      "actualJob": false,
+      "position": "Desarrollador backend y DevOps",
+      "technologies": null
     }
   ],
   "PROJECTS": [
