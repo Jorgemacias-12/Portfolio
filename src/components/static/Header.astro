@@ -1,23 +1,21 @@
 ---
 import { appendBaseUrl } from "@/utils";
 import { getI18N } from "@/i18n";
-import { ThemeSwitcher } from "../ThemeSwitcher";
 import { Menu, X } from "@lucide/astro";
-import { Link } from "../Link";
+import Link from "./Link.astro";
 
 const { lang } = Astro.props;
 
 const languageUrl = lang === "es" ? appendBaseUrl("/en") : appendBaseUrl("/");
 const languageCaption = lang === "es" ? "EN" : "ES";
 const flagUrl = appendBaseUrl(lang === "es" ? "/usa.svg" : "/mexico.svg");
-const { COMPONENTS, HEADER_MENU_CAPTION, HEADER_PAGE_VERSION_CAPTION } =
-  getI18N(lang);
+const { COMPONENTS, HEADER_PAGE_VERSION_CAPTION } = getI18N(lang);
 const { HEADER } = COMPONENTS;
 ---
 
 <header
   id="header"
-  class="border-b w-full p-2 h-16 flex justify-between items-center bg-white dark:bg-black_rain dark:border-b-black_rain-900 dark:text-white"
+  class="border-b w-full p-2 h-16 flex justify-between items-center dark:text-white dark:bg-dark-background dark:border-b-dark-border"
 >
   <section class="flex items-center gap-1">
     <img src="/avatar.png" width="32" height="32" alt="My custom toothless" />
@@ -28,15 +26,13 @@ const { HEADER } = COMPONENTS;
   <ul class="hidden md:flex md:items-center">
     {
       HEADER.map(({ label, url }) => {
-        return <Link label={label} url={url} />;
+        return <Link isForMenu label={label} url={url} />;
       })
     }
   </ul>
 
   <section class="hidden md:flex md:items-center md:justify-between gap-4">
     <div class="p-2 flex items-center justify-between gap-1">
-      <ThemeSwitcher client:only="react" />
-
       <a class="flex items-center gap-2 py-1" href={languageUrl}>
         <img
           width={32}
@@ -56,14 +52,14 @@ const { HEADER } = COMPONENTS;
 
   <section
     id="mobile-menu"
-    class="fixed w-full min-h-dvh h-full hidden md:hidden bg-black/60 inset-0 backdrop-blur-sm"
+    class="fixed w-full min-h-dvh h-full hidden md:hidden bg-black/60 inset-0 backdrop-blur-sm z-50"
   >
     <nav
       id="mobile-menu-content"
-      class="flex flex-col justify-between bg-white dark:bg-black_rain w-8/12 h-full transition-all duration-300 ease-in-out transform translate-x-[-100%]"
+      class="flex flex-col justify-between bg-light-background dark:bg-dark-background w-8/12 h-full transition-all duration-300 ease-in-out transform translate-x-[-100%]"
     >
       <section
-        class="flex items-center gap-1 border-b bg-white dark:bg-black_rain dark:border-b-black_rain-900 p-4 justify-between"
+        class="flex items-center gap-1 border-b dark:border-b-dark-border p-4 justify-between"
       >
         <div class="flex items-center gap-1">
           <img
@@ -89,10 +85,8 @@ const { HEADER } = COMPONENTS;
 
       <section class="flex flex-col flex-1">
         <div
-          class="p-2 border-b bg-white dark:bg-black_rain dark:border-b-black_rain-900 flex items-center justify-between"
+          class="p-2 border-b dark:border-b-dark-border flex items-center justify-between"
         >
-          <ThemeSwitcher client:only="react" />
-
           <a class="flex items-center gap-2 py-1" href={languageUrl}>
             <img
               width={32}
@@ -109,20 +103,16 @@ const { HEADER } = COMPONENTS;
           </a>
         </div>
 
-        <ul
-          class="p-2 border-b bg-white dark:bg-black_rain dark:border-b-black_rain-900"
-        >
+        <ul class="p-2 border-b dark:border-b-dark-border">
           {
             HEADER.map(({ label, url }) => {
-              return <Link label={label} url={url} />;
+              return <Link isForMenu label={label} url={url} />;
             })
           }
         </ul>
       </section>
 
-      <section
-        class="p-4 border-t bg-white dark:bg-black_rain dark:border-t-black_rain-900"
-      >
+      <section class="p-4 border-t dark:border-t-dark-border">
         {
           import.meta.env.PUBLIC_VERSION !== undefined && (
             <p class="text-xs">
@@ -169,11 +159,10 @@ const { HEADER } = COMPONENTS;
       "top-0",
       "left-0",
       "right-0",
-      "z-40",
+      "z-50",
       "backdrop-blur-md",
       "bg-white/90",
       "dark:bg-[#212529]/90",
-      "border-b-white/20",
       "dark:border-b-[#070708]/50",
     ];
 
@@ -258,6 +247,7 @@ const { HEADER } = COMPONENTS;
       }
     };
 
+    
     const handleTouchEnd = (e) => {
       if (window.innerWidth >= 768) return;
 
