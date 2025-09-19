@@ -27,7 +27,7 @@ const keywords = KEYWORDS.join(", ");
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={currentLocale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -86,7 +86,7 @@ const keywords = KEYWORDS.join(", ");
     />
   </head>
 
-  <body class="bg-[#f6f6f7] dark:bg-black_rain-600">
+  <body class="bg-white dark:bg-base-dark">
     <slot />
   </body>
 </html>
@@ -99,18 +99,6 @@ const keywords = KEYWORDS.join(", ");
   body {
     min-height: 100vh;
     min-height: 100dvh;
-  }
-  .dark ::-moz-selection {
-    background-color: #301201;
-  }
-  .dark ::selection {
-    background-color: #301201;
-  }
-  ::-moz-selection {
-    background-color: #f35b04;
-  }
-  ::selection {
-    background-color: #f35b04;
   }
 </style>
 
