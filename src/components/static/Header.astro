@@ -15,10 +15,16 @@ const { HEADER } = COMPONENTS;
 
 <header
   id="header"
-  class="border-b w-full p-2 h-16 flex justify-between items-center dark:text-white dark:bg-dark-background dark:border-b-dark-border"
+  class="border-b w-full p-2 h-16 flex justify-between items-center backdrop-filter backdrop-blur-sm bg-opacity-10 dark:border-surface-dark dark:bg-surface-dark dark:text-base-light"
 >
-  <section class="flex items-center gap-1">
-    <img src="/avatar.png" width="32" height="32" alt="My custom toothless" />
+  <section class="flex items-center gap-2">
+    <img
+      src="/avatar.png"
+      class="rounded-full"
+      width="32"
+      height="32"
+      alt="My custom toothless"
+    />
 
     <h1 class="font-bold">Jorge Macias</h1>
   </section>
@@ -56,10 +62,10 @@ const { HEADER } = COMPONENTS;
   >
     <nav
       id="mobile-menu-content"
-      class="flex flex-col justify-between bg-light-background dark:bg-dark-background w-8/12 h-full transition-all duration-300 ease-in-out transform translate-x-[-100%]"
+      class="flex flex-col justify-between bg-white dark:bg-surface-dark w-8/12 h-full transition-all duration-300 ease-in-out transform translate-x-[-100%]"
     >
       <section
-        class="flex items-center gap-1 border-b dark:border-b-dark-border p-4 justify-between"
+        class="flex items-center gap-1 border-b dark:border-surfaceElevated-dark p-4 justify-between"
       >
         <div class="flex items-center gap-1">
           <img
@@ -85,7 +91,7 @@ const { HEADER } = COMPONENTS;
 
       <section class="flex flex-col flex-1">
         <div
-          class="p-2 border-b dark:border-b-dark-border flex items-center justify-between"
+          class="p-2 border-b dark:border-surfaceElevated-dark flex items-center justify-between"
         >
           <a class="flex items-center gap-2 py-1" href={languageUrl}>
             <img
@@ -103,7 +109,7 @@ const { HEADER } = COMPONENTS;
           </a>
         </div>
 
-        <ul class="p-2 border-b dark:border-b-dark-border">
+        <ul class="p-2 border-b dark:border-surfaceElevated-dark">
           {
             HEADER.map(({ label, url }) => {
               return <Link isForMenu label={label} url={url} />;
@@ -112,7 +118,7 @@ const { HEADER } = COMPONENTS;
         </ul>
       </section>
 
-      <section class="p-4 border-t dark:border-t-dark-border">
+      <section class="p-4 border-t dark:border-surfaceElevated-dark">
         {
           import.meta.env.PUBLIC_VERSION !== undefined && (
             <p class="text-xs">
@@ -247,7 +253,6 @@ const { HEADER } = COMPONENTS;
       }
     };
 
-    
     const handleTouchEnd = (e) => {
       if (window.innerWidth >= 768) return;
 
