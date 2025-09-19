@@ -33,7 +33,7 @@ const { flagUrl, avatarAlt, languageCaption, languageUrl, version_caption } =
   <ul class="hidden md:flex md:items-center">
     {
       sections.map(({ label, url }) => {
-        return <Link isForMenu label={label} url={url} />;
+        return <Link isForMenu label={label} url={`#${url}`} />;
       })
     }
   </ul>
