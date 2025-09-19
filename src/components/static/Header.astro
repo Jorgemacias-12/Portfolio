@@ -113,7 +113,7 @@ const { flagUrl, avatarAlt, languageCaption, languageUrl, version_caption } =
         <ul class="p-2 border-b dark:border-surfaceElevated-dark">
           {
             sections.map(({ label, url }) => {
-              return <Link isForMenu label={label} url={url} />;
+              return <Link isForMenu label={label} url={`#${url}`} />;
             })
           }
         </ul>
