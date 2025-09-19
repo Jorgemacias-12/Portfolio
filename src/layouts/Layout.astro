@@ -1,5 +1,5 @@
 ---
-import { getI18N } from "@/i18n";
+import { getTranslations } from "@/i18n";
 import { appendBaseUrl } from "@/utils";
 
 import "@fontsource/geist-sans/100.css";
@@ -20,9 +20,14 @@ const { title, description } = Astro.props;
 if (!currentLocale)
   throw new Error("Locale not provided or default didn't load propperly");
 
-const lang = getI18N(currentLocale);
+const translation = getTranslations(currentLocale);
 
-const { PAGE_TITLE, PAGE_DESCRIPTION, KEYWORDS } = lang;
+const { site } = translation;
+const {
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  keywords: KEYWORDS,
+} = site;
 const keywords = KEYWORDS.join(", ");
 ---
 
@@ -31,7 +36,7 @@ const keywords = KEYWORDS.join(", ");
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{title}</title>
+    <title>{PAGE_TITLE ?? title}</title>
 
     <link
       rel="preload"
@@ -40,7 +45,7 @@ const keywords = KEYWORDS.join(", ");
     />
 
     <link rel="canonical" href={Astro.url.href} />
-    <meta name="description" content={description} />
+    <meta name="description" content={PAGE_DESCRIPTION ?? description} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="Jorge Antonio Macias Zambrano" />
     <meta
