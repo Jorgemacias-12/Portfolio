@@ -30,5 +30,47 @@
     "personal": "Programo porque me interesa entender cómo funcionan las cosas que uso en mi día a día. También me inspira la energía nuclear, un tema que alguna vez fue mi 'sueño'.",
     "ctaProjects": "Ver proyectos",
     "ctaContact": "Contáctame"
+  },
+  "sections": [
+    {
+      "label": "Acerca de Mí",
+      "url": "about"
+    },
+    {
+      "label": "Proyectos",
+      "url": "projects"
+    },
+    {
+      "label": "Habilidades",
+      "url": "skills"
+    },
+    {
+      "label": "Experiencia Profesional",
+      "url": "experience"
+    },
+    {
+      "label": "Educación",
+      "url": "education"
+    }
+  ],
+  "sections_data": {
+    "about": {
+      "photoAlt": "Foto de Jorge Macias",
+      "greeting": "Hola, soy Jorge 👋",
+      "who": "Estudiante de Ingeniería en Computación en la Universidad de Guadalajara.",
+      "what": "He tenido experiencia desarrollando proyectos personales y colaborando en iniciativas profesionales, donde aprendí a combinar el backend, frontend y despliegue en la nube.",
+      "personal": "Programo porque me interesa entender cómo funcionan las cosas que uso en mi día a día. También me inspira la energía nuclear, un tema que alguna vez fue mi 'sueño'.",
+      "ctaProjects": "Ver proyectos",
+      "ctaContact": "Contáctame"
+    }
+  },
+  "components": {
+    "header": {
+      "languageUrl": "/",
+      "languageCaption": "EN",
+      "flagUrl": "/usa.svg",
+      "avatarAlt": "Avatar de chimuelo para mí",
+      "version_caption": "Hecho con ❤️"
+    }
   }
 }

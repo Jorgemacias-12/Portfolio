@@ -23,12 +23,46 @@
       "tech portfolio"
     ]
   },
-  "hero": {
-    "greeting": "Hi, I’m Jorge 👋",
-    "who": "Computer Engineering student at the University of Guadalajara.",
-    "what": "I’ve gained experience through personal projects and professional collaborations, learning to work across backend, frontend, and cloud deployment.",
-    "personal": "I program because I’m curious about how the things I use every day actually work. I’m also inspired by nuclear energy — a field that once was my dream.",
-    "ctaProjects": "View Projects",
-    "ctaContact": "Contact Me"
+  "sections": [
+    {
+      "label": "About Me",
+      "url": "about"
+    },
+    {
+      "label": "Projects",
+      "url": "projects"
+    },
+    {
+      "label": "Skills",
+      "url": "skills"
+    },
+    {
+      "label": "Experience",
+      "url": "experience"
+    },
+    {
+      "label": "Education",
+      "url": "education"
+    }
+  ],
+  "sections_data": {
+    "about": {
+      "photoAlt": "Jorge Macia's photo",
+      "greeting": "Hi, I’m Jorge 👋",
+      "who": "Computer Engineering student at the University of Guadalajara.",
+      "what": "I’ve gained experience through personal projects and professional collaborations, learning to work across backend, frontend, and cloud deployment.",
+      "personal": "I program because I’m curious about how the things I use every day actually work. I’m also inspired by nuclear energy — a field that once was my dream.",
+      "ctaProjects": "View Projects",
+      "ctaContact": "Contact Me"
+    }
+  },
+  "components": {
+    "header": {
+      "languageUrl": "/en",
+      "languageCaption": "ES",
+      "flagUrl": "/mexico.svg",
+      "avatarAlt": "Toothless avatar of me",
+      "version_caption": "Made with ❤️"
+    }
   }
 }
