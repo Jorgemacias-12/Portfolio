@@ -1,7 +1,7 @@
 ---
 import Header from "@/components/static/Header.astro";
 import Section from "@/components/static/Section.astro";
-import { getI18N } from "@/i18n";
+import { getTranslations } from "@/i18n";
 import Layout from "@/layouts/Layout.astro";
 import { SECTION_COMPONENTS } from "@/utils";
 
@@ -10,16 +10,17 @@ const { currentLocale } = Astro;
 if (!currentLocale)
   throw new Error("Locale not provided or default didn't load propperly");
 
-const lang = getI18N(currentLocale);
+const translation = getTranslations(currentLocale);
 
-const { PAGE_TITLE, PAGE_DESCRIPTION, SECTIONS } = lang;
+const { sections, site } = translation;
+const { title: PAGE_TITLE, description: PAGE_DESCRIPTION } = site;
 ---
 
 <Layout title={PAGE_TITLE} description={PAGE_DESCRIPTION}>
   <Header lang={currentLocale} />
   <main class="dark:text-white">
     {
-      SECTIONS.map(async ({ label, url }) => {
+      sections.map(async ({ label, url }) => {
         const loader = SECTION_COMPONENTS[url];
 
         if (!loader) return null;
@@ -27,12 +28,11 @@ const { PAGE_TITLE, PAGE_DESCRIPTION, SECTIONS } = lang;
         const Component = (await loader()).default;
 
         const variant = url === "about" ? "hero" : "normal";
-        const isOptionalTitle = url === "about";
-        const optionalStyles = url === "about" ? "" : "";
+        const isOptionalTitle = url === "about" ? false : true;
 
         return (
           <Section
-            id={label}
+            id={url}
             optionalTitle={isOptionalTitle}
             title={label}
             variant={variant}
