@@ -1,16 +1,17 @@
 ---
 import { appendBaseUrl } from "@/utils";
-import { getI18N } from "@/i18n";
 import { Menu, X } from "@lucide/astro";
 import Link from "./Link.astro";
+import { getTranslations } from "@/i18n";
 
 const { lang } = Astro.props;
 
-const languageUrl = lang === "es" ? appendBaseUrl("/en") : appendBaseUrl("/");
-const languageCaption = lang === "es" ? "EN" : "ES";
-const flagUrl = appendBaseUrl(lang === "es" ? "/usa.svg" : "/mexico.svg");
-const { COMPONENTS, HEADER_PAGE_VERSION_CAPTION } = getI18N(lang);
-const { HEADER } = COMPONENTS;
+const translation = getTranslations(lang);
+
+const { components, sections } = translation;
+const { header } = components;
+const { flagUrl, avatarAlt, languageCaption, languageUrl, version_caption } =
+  header;
 ---
 
 <header
@@ -23,7 +24,7 @@ const { HEADER } = COMPONENTS;
       class="rounded-full"
       width="32"
       height="32"
-      alt="My custom toothless"
+      alt={avatarAlt}
     />
 
     <h1 class="font-bold">Jorge Macias</h1>
@@ -31,7 +32,7 @@ const { HEADER } = COMPONENTS;
 
   <ul class="hidden md:flex md:items-center">
     {
-      HEADER.map(({ label, url }) => {
+      sections.map(({ label, url }) => {
         return <Link isForMenu label={label} url={url} />;
       })
     }
@@ -39,7 +40,7 @@ const { HEADER } = COMPONENTS;
 
   <section class="hidden md:flex md:items-center md:justify-between gap-4">
     <div class="p-2 flex items-center justify-between gap-1">
-      <a class="flex items-center gap-2 py-1" href={languageUrl}>
+      <a class="flex items-center gap-2 py-1" href={appendBaseUrl(languageUrl)}>
         <img
           width={32}
           height={32}
@@ -111,7 +112,7 @@ const { HEADER } = COMPONENTS;
 
         <ul class="p-2 border-b dark:border-surfaceElevated-dark">
           {
-            HEADER.map(({ label, url }) => {
+            sections.map(({ label, url }) => {
               return <Link isForMenu label={label} url={url} />;
             })
           }
@@ -122,8 +123,7 @@ const { HEADER } = COMPONENTS;
         {
           import.meta.env.PUBLIC_VERSION !== undefined && (
             <p class="text-xs">
-              {HEADER_PAGE_VERSION_CAPTION}{" "}
-              {lang === "es" ? "versión" : "version"}{" "}
+              {version_caption} {lang === "es" ? "versión" : "version"}{" "}
               {import.meta.env.PUBLIC_VERSION}
             </p>
           )
