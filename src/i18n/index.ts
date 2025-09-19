@@ -1,12 +1,13 @@
 import english from "@/locales/en.json";
 import spanish from "@/locales/es.json";
-import type { LanguageType } from "@/types";
+
+export type LanguageType = typeof english;
 
 const LANGUAGES: Record<string, LanguageType> = {
   en: english,
   es: spanish,
 };
 
-export const getI18N = (currentLocale: string): LanguageType => {
-  return LANGUAGES[currentLocale] ?? LANGUAGES.en;
+export const getTranslations = (locale: string): LanguageType => {
+  return LANGUAGES[locale] ?? LANGUAGES.en;
 };
