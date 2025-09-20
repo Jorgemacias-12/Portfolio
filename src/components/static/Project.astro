@@ -2,7 +2,7 @@
 import { type Project as Props, type SkillType } from "@/types";
 import ProjectStatusBadge from "./ProjectStatusBadge.astro";
 import { Carrousel } from "../Carrousel";
-import { CheckCircle, Code, Github, TriangleAlert } from "@lucide/astro";
+import { CheckCircle, Code, TriangleAlert } from "@lucide/astro";
 import { getTranslations } from "@/i18n";
 import Skill from "./Skill.astro";
 
@@ -32,7 +32,7 @@ const {
 ---
 
 <article
-  class="border p-2 rounded shadow-md dark:bg-surface-dark dark:border-surfaceElevated-dark flex flex-col gap-2"
+  class="border p-2 rounded shadow-md bg-white dark:bg-surface-dark dark:border-surfaceElevated-dark flex flex-col gap-2"
 >
   <header class="flex justify-between items-center">
     <h2 class="text-xl font-bold">{name}</h2>
