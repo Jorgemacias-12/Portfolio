@@ -1,0 +1,113 @@
+---
+import { type Project as Props, type SkillType } from "@/types";
+import ProjectStatusBadge from "./ProjectStatusBadge.astro";
+import { Carrousel } from "../Carrousel";
+import { CheckCircle, Code, Github, TriangleAlert } from "@lucide/astro";
+import { getTranslations } from "@/i18n";
+import Skill from "./Skill.astro";
+
+const {
+  name,
+  description,
+  technologies,
+  role,
+  url,
+  splash,
+  status,
+  features,
+  images,
+  limitations,
+} = Astro.props;
+
+const locale = Astro.currentLocale!!;
+const translation = getTranslations(locale);
+const { components } = translation;
+const { project } = components;
+const {
+  technologies_section_caption,
+  key_features_section_caption,
+  limitations_section_caption,
+  repo_view_caption,
+} = project;
+---
+
+<article
+  class="border p-2 rounded shadow-md dark:bg-surface-dark dark:border-surfaceElevated-dark flex flex-col gap-2"
+>
+  <header class="flex justify-between items-center">
+    <h2 class="text-xl font-bold">{name}</h2>
+
+    <ProjectStatusBadge status={status} />
+  </header>
+  <main class="flex flex-col gap-4">
+    <p class="text-sm text-[#737373] dark:text-[#bfbfbf] text-pretty">
+      {description}
+    </p>
+
+    <p class="text-sm text-[#737373] dark:text-[#bfbfbf] text-pretty">
+      {role}
+    </p>
+
+    <Carrousel splash={splash} images={images} client:only="react" />
+
+    <section class="flex flex-col gap-1">
+      <h3 class="flex items-center gap-2 font-bold">
+        <Code size={24} />
+        {technologies_section_caption}
+      </h3>
+
+      <div class="flex gap-1">
+        {
+          technologies.map(({ name, icon, category }) => (
+            <Skill name={name} icon={icon} type={category as SkillType} />
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h4 class="flex items-center gap-2 font-bold">
+        <CheckCircle size={24} class="text-green-600" />
+        {key_features_section_caption}
+      </h4>
+
+      <ul class="flex flex-col gap-1 pl-6">
+        {
+          features &&
+            features.map((text) => (
+              <li class="list-disc">
+                <span class="text-sm">{text}</span>
+              </li>
+            ))
+        }
+      </ul>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h5 class="flex items-center gap-2 font-bold">
+        <TriangleAlert size="24" class="text-yellow-600" />
+        {limitations_section_caption}
+      </h5>
+      <ul class="flex flex-col gap-1 pl-6">
+        {
+          limitations &&
+            limitations.map((text) => (
+              <li class="list-disc">
+                <span class="text-sm">{text}</span>
+              </li>
+            ))
+        }
+      </ul>
+    </section>
+  </main>
+  <foot class="flex flex-col">
+    <a
+      target="_blank"
+      href={url}
+      class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-transparent bg-[#181818] text-white dark:bg-white dark:text-black dark:hover:bg-input/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 w-full"
+    >
+      <span class="devicon-github-plain"></span>
+      {repo_view_caption}
+    </a>
+  </foot>
+</article>
