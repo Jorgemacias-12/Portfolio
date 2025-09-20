@@ -33,7 +33,8 @@ export default {
         },
         accent: {
           light: "#6758b8",
-          dark: "#A78BFA",
+          dark: "#4a3f84",
+          lighter: "#8e79ff",
         },
       },
     },
