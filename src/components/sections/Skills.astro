@@ -1,7 +1,7 @@
 ---
-import { getI18N } from "@/i18n";
-import Skill from "../static/Skill.astro";
-import type { Skill as SkillProps } from "@/types";
+import { getTranslations } from "@/i18n";
+import type { SkillType } from "@/types";
+import SkillCard from "../SkillCard.astro";
 
 const { currentLocale } = Astro;
 
@@ -10,25 +10,14 @@ if (!currentLocale) {
   throw new Error("Current locale is null");
 }
 
-const { SKILLS } = getI18N(currentLocale);
+const translation = getTranslations(currentLocale);
+const { skills } = translation;
 ---
 
-<section class="flex flex-col gap-4">
+<section class="grid grid-cols-1 md:grid-cols-2 gap-4">
   {
-    SKILLS.map((skill) => (
-      <div class="flex flex-col gap-2">
-        <h3 class="font-medium">{skill.title}</h3>
-        <div class="grid grid-cols-2 gap-2">
-          {skill.content.map((s) => {
-            const props: SkillProps = {
-              ...s,
-              type: skill.type,
-            };
-
-            return <Skill {...props} />;
-          })}
-        </div>
-      </div>
+    skills.map(({ title, type, content }) => (
+      <SkillCard title={title} type={type as SkillType} content={content} />
     ))
   }
 </section>
