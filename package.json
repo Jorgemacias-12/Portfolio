@@ -13,8 +13,6 @@
     "@astrojs/check": "^0.7.0",
     "@astrojs/react": "^3.3.4",
     "@astrojs/tailwind": "^5.1.0",
-    "@emotion/react": "^11.13.5",
-    "@emotion/styled": "^11.13.5",
     "@fontsource/geist-sans": "^5.1.0",
     "@lucide/astro": "^0.511.0",
     "@nanostores/persistent": "^0.10.1",
