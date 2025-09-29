@@ -1,10 +1,11 @@
 ---
 import { type Project as Props, type SkillType } from "@/types";
-import ProjectStatusBadge from "./ProjectStatusBadge.astro";
 import { Carrousel } from "../Carrousel";
 import { CheckCircle, Code, TriangleAlert } from "@lucide/astro";
 import { getTranslations } from "@/i18n";
 import Skill from "./Skill.astro";
+import Badge from "../Badge.astro";
+import { projectStatusStylesCriteria } from "@/data";
 
 const {
   name,
@@ -14,6 +15,7 @@ const {
   url,
   splash,
   status,
+  status_caption,
   features,
   images,
   limitations,
@@ -37,7 +39,11 @@ const {
   <header class="flex justify-between items-center">
     <h2 class="text-xl font-bold">{name}</h2>
 
-    <ProjectStatusBadge status={status} />
+    <Badge
+      text={status_caption}
+      styleCriteria={projectStatusStylesCriteria}
+      type={status}
+    />
   </header>
   <main class="flex flex-col gap-4">
     <p class="text-sm text-[#737373] dark:text-[#bfbfbf] text-pretty">
@@ -56,7 +62,7 @@ const {
         {technologies_section_caption}
       </h3>
 
-      <div class="flex gap-1">
+      <div class="flex gap-1 overflow-x-auto p-1">
         {
           technologies.map(({ name, icon, category }) => (
             <Skill name={name} icon={icon} type={category as SkillType} />
