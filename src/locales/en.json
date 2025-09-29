@@ -29,12 +29,12 @@
       "url": "about"
     },
     {
-      "label": "Projects",
-      "url": "projects"
-    },
-    {
       "label": "Skills",
       "url": "skills"
+    },
+    {
+      "label": "Projects",
+      "url": "projects"
     },
     {
       "label": "Experience",
@@ -58,11 +58,481 @@
   },
   "components": {
     "header": {
-      "languageUrl": "/en",
+      "languageUrl": "/",
       "languageCaption": "ES",
       "flagUrl": "/mexico.svg",
       "avatarAlt": "Toothless avatar of me",
       "version_caption": "Made with ❤️"
+    },
+    "project": {
+      "technologies_section_caption": "Technologies",
+      "key_features_section_caption": "Key features",
+      "limitations_section_caption": "Limitations",
+      "repo_view_caption": "View on GitHub"
+    },
+    "education": {
+      "institution_visit_link_caption": "Visit Institution",
+      "grading_caption": "GPA"
+    },
+    "job": {
+      "responsabilities_caption": "Reponsabilities",
+      "technologies_caption": "Technologies",
+      "key_projects_caption": "Key Projects",
+      "company_open_url_caption": "Visit Company"
     }
-  }
+  },
+  "projects": [
+    {
+      "name": "NBTMap Explorer",
+      "description": "Desktop tool to explore, preview, and export Minecraft item maps from game files.",
+      "technologies": [
+        {
+          "name": "C#",
+          "icon": "devicon-csharp-plain colored",
+          "category": "language"
+        },
+        {
+          "name": "WPF",
+          "icon": "devicon-wpf-plain colored",
+          "category": "frontend"
+        },
+        {
+          "name": "MVVM",
+          "icon": "devicon-dotnet-plain colored",
+          "category": "tool_and_platform"
+        }
+      ],
+      "role": "Developed the entire application, including Minecraft installation detection and map export functionality.",
+      "url": "https://github.com/Jorgemacias-12/NBTMap-Explorer",
+      "splash": "/images/projects/nbtmap-splash.png",
+      "images": [
+        "/images/projects/nbtmap-1.png",
+        "/images/projects/nbtmap-2.png"
+      ],
+      "status": "inProgress",
+      "status_caption": "Ongoing",
+      "features": [
+        "Automatic detection of Minecraft installation (Java/Bedrock)",
+        "Item map visualization (`map_X.dat`)",
+        "Export maps to images (PNG)",
+        "Simple and modern interface with splash screen"
+      ],
+      "limitations": [
+        "Initial support only on Windows",
+        "Item maps only, no full world rendering",
+        "Editing or creating new maps is out of scope"
+      ]
+    },
+    {
+      "name": "Java CoffeeMaker Testing",
+      "description": "Project to experiment with unit testing methodologies in Java using a CoffeeMaker simulation. Includes 'buggy' and 'golden' implementations for TDD practice and defect detection.",
+      "technologies": [
+        {
+          "name": "Java",
+          "icon": "devicon-java-plain colored",
+          "category": "language"
+        },
+        {
+          "name": "JUnit",
+          "icon": "devicon-junit-plain colored",
+          "category": "tool_and_platform"
+        },
+        {
+          "name": "TDD",
+          "icon": "devicon-javascript-plain colored",
+          "category": "tool_and_platform"
+        }
+      ],
+      "role": "Developed the CoffeeMaker simulation and configured unit tests to explore defects and TDD methodologies.",
+      "url": "https://github.com/Jorgemacias-12/java-coffemake-testing",
+      "splash": "/images/projects/coffeemaker-splash.png",
+      "images": [
+        "/images/projects/coffeemaker-1.png",
+        "/images/projects/coffeemaker-2.png"
+      ],
+      "status": "inProgress",
+      "status_caption": "Ongoing",
+      "features": [
+        "Simulation of a CoffeeMaker machine",
+        "'Buggy' and 'golden' implementations for testing",
+        "TDD practice and defect detection"
+      ],
+      "limitations": [
+        "Only a Java test environment",
+        "No graphical interface, console simulation only",
+        "Focus exclusively on unit testing and TDD"
+      ]
+    },
+    {
+      "name": "Monte Carlo Global Illumination Demo",
+      "description": "3D program in OpenGL using the Monte Carlo method to generate Global Illumination and explore advanced lighting techniques.",
+      "technologies": [
+        {
+          "name": "Python",
+          "icon": "devicon-python-plain colored",
+          "category": "language"
+        },
+        {
+          "name": "OpenGL",
+          "icon": "devicon-opengl-plain colored",
+          "category": "frontend"
+        },
+        {
+          "name": "GLSL",
+          "icon": "devicon-c-plain colored",
+          "category": "frontend"
+        },
+        {
+          "name": "Monte Carlo",
+          "icon": "devicon-python-plain colored",
+          "category": "tool_and_platform"
+        }
+      ],
+      "role": "Developed the 3D demo implementing Monte Carlo method to compute global illumination in simple scenes.",
+      "url": "https://github.com/Jorgemacias-12/Monte-Carlo-Global-Illumination-Demo",
+      "splash": "/images/projects/montecarlo-splash.png",
+      "images": [
+        "/images/projects/montecarlo-1.png",
+        "/images/projects/montecarlo-2.png"
+      ],
+      "status": "inProgress",
+      "status_caption": "Ongoing",
+      "features": [
+        "Global Illumination simulation using Monte Carlo method",
+        "3D rendering with OpenGL and GLSL shaders",
+        "Exploring advanced lighting techniques"
+      ],
+      "limitations": [
+        "Demo focused on simple scenes",
+        "No advanced user interface",
+        "Basic performance optimization"
+      ]
+    },
+    {
+      "name": "PonyCharacter Mod",
+      "description": "Mod for The Binding of Isaac: Repentance+ that adds new characters and custom graphics.",
+      "technologies": [
+        {
+          "name": "Lua",
+          "icon": "devicon-lua-plain colored",
+          "category": "language"
+        },
+        {
+          "name": "The Binding of Isaac Modding API",
+          "icon": "devicon-lua-plain colored",
+          "category": "tool_and_platform"
+        }
+      ],
+      "role": "Collaborated by rewriting and cleaning the mod code to improve maintainability and readability.",
+      "url": "https://github.com/SweetyStorm/PonyCharacter",
+      "splash": "/images/projects/ponycharacter-splash.png",
+      "images": [
+        "/images/projects/ponycharacter-1.png",
+        "/images/projects/ponycharacter-2.png"
+      ],
+      "status": "completed",
+      "status_caption": "Finished",
+      "features": [
+        "New playable characters with unique abilities",
+        "Custom graphics and integrated assets",
+        "Compatible with Repentance+"
+      ],
+      "limitations": [
+        "Only compatible with the Repentance+ version of the game",
+        "No new levels or enemies included",
+        "Depends on other mods if shared assets are integrated"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Computer Engineering",
+      "institution": "University of Guadalajara (UdeG)",
+      "campus": "CUCOSTA",
+      "startDate": "August 2021",
+      "endDate": "Present",
+      "gpa": "95.29/100",
+      "relevantProjects": [],
+      "courses": [],
+      "achievements": [],
+      "extracurricularActivities": [],
+      "schoolLink": "http://www.cuc.udg.mx/",
+      "finished": false,
+      "finished_caption": "Ongoing"
+    },
+    {
+      "degree": "Professional Technical Bachelor in Computer Science",
+      "institution": "National College of Professional Technical Education",
+      "campus": "Puerto Vallarta 075",
+      "startDate": "August 2018",
+      "endDate": "July 2021",
+      "gpa": "9.9/10",
+      "relevantProjects": [],
+      "courses": [],
+      "achievements": ["High grades"],
+      "extracurricularActivities": [],
+      "schoolLink": "https://www.conalep.edu.mx/",
+      "finished": true,
+      "finished_caption": "Completed"
+    }
+  ],
+  "jobs": [
+    {
+      "company": "Partum Unit Studio",
+      "location": "Puerto Vallarta, Jalisco, Mexico",
+      "work_type": "hybrid",
+      "period": "2023 – February 2025",
+      "role": "Software Engineer - Project Lead",
+      "responsibilities": [
+        "Define technologies to be used per project",
+        "Develop backend and frontend",
+        "Refactor colleagues' code",
+        "Participate in meetings with clients and team",
+        "Handle DevOps tasks"
+      ],
+      "key_projects": [
+        {
+          "name": "BlancApp",
+          "description": "Email automation tool for the university.",
+          "url": null
+        }
+      ]
+    },
+    {
+      "company": "SMCI",
+      "location": "Puerto Vallarta, Jalisco, Mexico",
+      "work_type": "onsite",
+      "period": "December 2024 - February 2025",
+      "role": "Backend Engineer / DevOps",
+      "responsibilities": [
+        "Set up backend project",
+        "Set up CI/CD pipelines for backend and frontend",
+        "Resolve deployment issues",
+        "Participate in meetings with client, boss, and other developers",
+        "Drink coffee (lol)"
+      ],
+      "key_projects": [
+        {
+          "name": "SmartBus",
+          "description": "Private smart transportation system.",
+          "url": null
+        }
+      ]
+    },
+    {
+      "company": "Devocamp",
+      "location": "Weehawken, New Jersey, USA",
+      "work_type": "remote",
+      "period": "July 2022 – September 2023",
+      "role": "Trainee Frontend Developer",
+      "technologies": ["React", "Next.js"],
+      "responsibilities": [
+        "Attend daily stand-ups",
+        "Participate in meetings with UX/UI team",
+        "Implement page sections based on UX/UI decisions",
+        "Report progress in Kanban boards and await approvals"
+      ],
+      "key_projects": [
+        {
+          "name": "Devocamp Landing Page",
+          "description": "Redesign of the company's landing page to target software consulting clients.",
+          "url": null
+        }
+      ],
+      "links": ["https://www.linkedin.com/company/devocapm/"]
+    }
+  ],
+  "skills": [
+    {
+      "title": "Programming Languages",
+      "type": "language",
+      "content": [
+        {
+          "name": "JavaScript",
+          "icon": "devicon-javascript-plain colored",
+          "description": "I learned this language to begin my journey as a web developer."
+        },
+        {
+          "name": "TypeScript",
+          "icon": "devicon-typescript-plain colored",
+          "description": "After learning JavaScript, I moved to TypeScript to take advantage of the type system and avoid problems associated with JavaScript."
+        },
+        {
+          "name": "C#",
+          "icon": "devicon-csharp-plain colored",
+          "description": "I learned it in university and have developed some applications that automate internal processes at my university."
+        },
+        {
+          "name": "Python",
+          "icon": "devicon-python-plain",
+          "description": "I've used Python for competitive programming in the ICPC Mexico. I've also used it in projects like a 3D demo using OpenGL and for working with sockets."
+        },
+        {
+          "name": "Lua",
+          "icon": "devicon-lua-plain",
+          "description": "I learned Lua while helping a friend improve a mod for The Binding of Isaac, taking advantage of its simplicity for scripting."
+        },
+        {
+          "name": "PHP",
+          "icon": "devicon-php-plain colored",
+          "description": "I've used PHP to develop web applications using MVC and a Laravel-like templating engine."
+        },
+        {
+          "name": "SQL",
+          "icon": "devicon-mysql-plain",
+          "description": "I use SQL and MySQL to manage databases in web applications, optimizing queries for performance."
+        },
+        {
+          "name": "Java",
+          "icon": "devicon-java-plain colored",
+          "description": "I learned Java in the object-oriented programming area with graphical interfaces using javax.swing."
+        }
+      ]
+    },
+    {
+      "title": "FrontEnd",
+      "type": "frontend",
+      "content": [
+        {
+          "name": "React",
+          "icon": "devicon-react-original colored",
+          "description": "I use React to build interactive interfaces in personal and academic web projects."
+        },
+        {
+          "name": "Next.js",
+          "icon": "devicon-nextjs-plain",
+          "description": "I've used Next.js to create scalable web applications with server-side rendering and static generation."
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "devicon-tailwindcss-plain colored",
+          "description": "I use Tailwind to build modern and responsive interfaces quickly."
+        },
+        {
+          "name": "Astro",
+          "icon": "devicon-astro-plain colored",
+          "description": "I've used Astro to develop static sites with reusable components, ideal for documentation or portfolios."
+        },
+        {
+          "name": "HTML5",
+          "icon": "devicon-html5-plain colored",
+          "description": "I use HTML5 to structure web content along with CSS and JavaScript."
+        }
+      ]
+    },
+    {
+      "title": "BackEnd",
+      "type": "backend",
+      "content": [
+        {
+          "name": "Node.js",
+          "icon": "devicon-nodejs-plain colored",
+          "description": "Used to build efficient JavaScript backend servers."
+        },
+        {
+          "name": "Express",
+          "icon": "devicon-express-original",
+          "description": "Framework I use with Node to create robust REST APIs."
+        },
+        {
+          "name": "PHP (MVC)",
+          "icon": "devicon-php-plain colored",
+          "description": "I've used it to build backend applications using the Model-View-Controller pattern."
+        },
+        {
+          "name": "Bun",
+          "icon": "devicon-bun-plain",
+          "description": "Used for efficient web development with fast loading times."
+        },
+        {
+          "name": "Prisma",
+          "icon": "devicon-prisma-original",
+          "description": "ORM I've used to handle SQL databases with type validation."
+        }
+      ]
+    },
+    {
+      "title": "Databases",
+      "type": "database",
+      "content": [
+        {
+          "name": "MySQL",
+          "icon": "devicon-mysql-plain",
+          "description": "I've used MySQL as the main database system in multiple projects."
+        },
+        {
+          "name": "Prisma (ORM)",
+          "icon": "devicon-prisma-original",
+          "description": "ORM used to interact with databases safely and efficiently."
+        }
+      ]
+    },
+    {
+      "title": "Tools and Platforms",
+      "type": "tool_and_platform",
+      "content": [
+        {
+          "name": "Git",
+          "icon": "devicon-git-plain colored",
+          "description": "I use Git as a version control system for my personal and collaborative projects."
+        },
+        {
+          "name": "GitHub",
+          "icon": "devicon-github-original",
+          "description": "I host my repositories and documentation on GitHub."
+        },
+        {
+          "name": "GitHub Actions",
+          "icon": "devicon-githubactions-plain colored",
+          "description": "I've configured CI/CD using GitHub Actions to deploy projects automatically."
+        },
+        {
+          "name": "Nginx",
+          "icon": "devicon-nginx-original colored",
+          "description": "I configured Nginx to serve and route traffic to my web applications."
+        },
+        {
+          "name": "DigitalOcean",
+          "icon": "devicon-digitalocean-original colored",
+          "description": "I've used DigitalOcean as an infrastructure provider to deploy complete applications."
+        },
+        {
+          "name": "Linux",
+          "icon": "devicon-linux-plain",
+          "description": "I've used Linux to manage production servers and development environments."
+        },
+        {
+          "name": "Insomnia",
+          "icon": "devicon-insomnia-plain colored",
+          "description": "Tool I use to test and document APIs."
+        },
+        {
+          "name": "NuGet",
+          "icon": "devicon-nuget-original",
+          "description": "I managed C# application dependencies with NuGet in WPF projects."
+        },
+        {
+          "name": "Visual Studio Code",
+          "icon": "devicon-vscode-plain colored",
+          "description": "Primary editor I use for web development, with useful extensions and custom configuration."
+        },
+        {
+          "name": "Visual Studio",
+          "icon": "devicon-visualstudio-plain colored",
+          "description": "I use Visual Studio on Windows to develop desktop applications in C#."
+        }
+      ]
+    },
+    {
+      "title": "Mobile Development",
+      "type": "mobile",
+      "content": [
+        {
+          "name": "Coming Soon",
+          "icon": "",
+          "description": "I plan to learn frameworks like React Native or Flutter to venture into mobile development."
+        }
+      ]
+    }
+  ]
 }
