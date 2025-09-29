@@ -1,20 +1,10 @@
-export interface LanguageType {
-  PAGE_TITLE: string;
-  PAGE_DESCRIPTION: string;
-  KEYWORDS: string[];
-  ABOUT_ME: string[];
-  HEADER_MENU_CAPTION: string;
-  HEADER_PAGE_VERSION_CAPTION: string;
-  HERO_TAGLINE: string;
-  HERO_CTA: string;
-  COMPONENTS: {
-    HEADER: SectionItem[];
-  };
-  SECTIONS: SectionItem[];
-  SKILLS: SkillSection[];
-  EXPERIENCES: Job[];
-  PROJECTS: Project[];
-  EDUCATION: Education[];
+export type Locales = {
+  [key: string]: string;
+};
+
+export interface TimeUnit {
+  averageDays: number;
+  locales: Locales;
 }
 
 export interface SkillSection {
@@ -37,37 +27,59 @@ export interface Skill {
   name: string;
   icon?: string;
   description: string;
-  type: SkillType;
 }
+
+export interface JobProject {
+  name: string;
+  description: string;
+  url: string | null;
+}
+
+export type WorkType = "remote" | "hybrid" | "onsite";
 
 export interface Job {
-  companyName: string;
-  companyPageUrl: string;
-  companyAddress?: string;
-  isFullTime?: boolean;
-  companyDescription?: string;
-  achievements?: string[];
-  startDate: string;
-  endDate: string;
-  actualJob?: string;
-  position: string;
-  technologies?: Skill[];
+  company: string;
+  location: string;
+  work_type: WorkType;
+  period: string;
+  role: string;
+  technologies?: string[];
+  responsabilities: string[];
+  key_projects?: JobProject[];
+  links?: string[];
 }
 
+export type ProjectStatus = "completed" | "inProgress" | "planned";
+export type EducationStatus = "false" | "true";
+
 export interface Project {
-  title: string;
+  name: string;
   description: string;
   technologies: Technology[];
-  screenshots?: string[];
-  demoLink?: string;
-  roles: string[];
-  responsabilities: string[];
-  repoLink?: string;
+  role: string;
+  url?: string;
+  splash?: string;
+  images?: string[];
+  status: ProjectStatus;
+  status_caption: string;
+  features?: string[];
+  limitations?: string[];
 }
+
+export type TechnologyCategory =
+  | "language"
+  | "frontend"
+  | "backend"
+  | "database"
+  | "tool_and_platform"
+  | "mobile";
+
+export type SectionVariant = "normal" | "hero";
 
 export interface Technology {
   name: string;
   icon: string;
+  category?: TechnologyCategory;
 }
 
 export interface Education {
@@ -83,6 +95,7 @@ export interface Education {
   extracurricularActivities: string[];
   schoolLink: string;
   finished: boolean;
+  finished_caption: string;
 }
 
 export interface EducationProps extends Education {
@@ -97,7 +110,6 @@ export interface AstroComponent {
 }
 
 export type SectionProps = {
-  lang: LanguageType;
   currentLocale?: string;
 };
 
@@ -108,3 +120,9 @@ export type SkillType =
   | "database"
   | "tool_and_platform"
   | "mobile";
+
+export interface SkillSection {
+  title: string;
+  type: SkillType;
+  content: Skill[];
+}
