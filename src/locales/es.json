@@ -1,0 +1,30 @@
+{
+  "site": {
+    "title": "Jorge Macias | Desarrollador de Software",
+    "description": "Desarrollador de software especializado en frontend, backend y aplicaciones de escritorio. Explora mis proyectos y portafolio.",
+    "keywords": [
+      "Jorge Macias",
+      "Jorge Antonio Macias Zambrano",
+      "Jorge Macias portfolio",
+      "desarrollador web",
+      "frontend developer",
+      "React developer",
+      "web developer Puerto Vallarta",
+      "software engineer Puerto Vallarta",
+      "developer portfolio",
+      "web development projects",
+      "React applications",
+      "TypeScript",
+      "JavaScript",
+      "WPF",
+      "C#",
+      "Astro",
+      "Tailwind",
+      "tech portfolio"
+    ],
+    "author": "Jorge Antonio Macias Zambrano"
+  },
+  "sections": [],
+  "sections_data": {},
+  "components": {}
+}
