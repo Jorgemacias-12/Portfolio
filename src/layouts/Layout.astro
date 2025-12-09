@@ -1,0 +1,76 @@
+---
+import { getTranslation } from "@/i18n";
+import type { Locale } from "@/types";
+import { appendBaseUrl } from "@/utils";
+import schema from "@/data/schema.json";
+
+const { currentLocale } = Astro;
+
+if (!currentLocale) {
+  throw new Error("Locale not provided or default didn't load properly");
+}
+
+const { t } = getTranslation(currentLocale as Locale);
+---
+
+<html title={t("site.title")} lang={currentLocale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{t("site.title")}</title>
+    <link rel="canonical" href={Astro.url.href} />
+    <meta name="description" content={t("site.description")} />
+    <meta name="keywords" content={t("site.keywords").join(", ")} />
+    <meta name="author" content={t("site.author")} />
+
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="google-site-verification"
+      content="19ev_yaCk6dZ5MoTvVU8Uf9AZ6S69Tt1U2PrMc-N170"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={t("site.title")} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:image" content={appendBaseUrl("/og-image.jpg")} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content={`Portafolio de ${t("site.author")}`}
+    />
+    <meta property="og:description" content={t("site.description")} />
+    <meta property="og:site_name" content={t("site.title")} />
+
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(schema)}
+    />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+  </head>
+  <body class="scroll-smooth">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+</style>
