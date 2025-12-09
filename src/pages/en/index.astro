@@ -1,0 +1,14 @@
+---
+import { getTranslation } from "@/i18n";
+import Layout from "@/layouts/Layout.astro";
+import type { Locale } from "@/types";
+
+const { currentLocale } = Astro;
+
+if (!currentLocale)
+  throw new Error("Locale not provided or default didn't load propperly");
+
+const { t } = getTranslation(currentLocale as Locale);
+---
+
+<Layout> Ejemplo </Layout>
