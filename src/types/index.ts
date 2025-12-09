@@ -10,8 +10,8 @@ export type TranslationObject = {
   t: <K extends TranslationKey>(key: K) => ValueAtKey<LanguageType, K>;
 };
 
-export type NestedKeyOf<T extends Record<string, any>> = {
-  [K in keyof T & string]: T[K] extends Record<string, any>
+export type NestedKeyOf<T extends Record<string, unknown>> = {
+  [K in keyof T & string]: T[K] extends Record<string, unknown>
     ? `${K}` | `${K}.${NestedKeyOf<T[K]>}`
     : `${K}`;
 }[keyof T & string];
