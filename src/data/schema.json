@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jorge Antonio Macias Zambrano",
+  "url": "https://jorgemacias.dev",
+  "jobTitle": "Desarrollador de Software",
+  "sameAs": [
+    "https://github.com/Jorgemacias-12",
+    "https://linkedin.com/in/jamz3"
+  ]
+}
