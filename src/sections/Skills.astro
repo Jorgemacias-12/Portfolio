@@ -1,0 +1,49 @@
+---
+import Skill from "@/components/Skill.astro";
+import { getTranslation } from "@/i18n";
+import type { Locale } from "@/types";
+
+const { currentLocale } = Astro;
+const { t } = getTranslation(currentLocale as Locale);
+const backend = t("sections_data.skills.categories.backend");
+const frontend = t("sections_data.skills.categories.frontend");
+const tools = t("sections_data.skills.categories.tools");
+---
+
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div class="flex flex-col gap-4">
+    <h2 class="text-xl font-semibold mb-4">{frontend.name}</h2>
+
+    <main class="flex flex-col gap-2">
+      {
+        frontend.skills.map(({ icon, name }) => {
+          return <Skill icon={icon} name={name} color={frontend.iconColor} />;
+        })
+      }
+    </main>
+  </div>
+
+  <div class="flex flex-col gap-4">
+    <h2 class="text-xl font-semibold mb-4">{backend.name}</h2>
+
+    <main class="flex flex-col gap-2">
+      {
+        backend.skills.map(({ icon, name }) => {
+          return <Skill icon={icon} name={name} color={backend.iconColor} />;
+        })
+      }
+    </main>
+  </div>
+
+  <div class="flex flex-col gap-4">
+    <h2 class="text-xl font-semibold mb-4">{tools.name}</h2>
+
+    <main class="flex flex-col gap-2">
+      {
+        tools.skills.map(({ icon, name }) => {
+          return <Skill icon={icon} name={name} color={tools.iconColor} />;
+        })
+      }
+    </main>
+  </div>
+</section>

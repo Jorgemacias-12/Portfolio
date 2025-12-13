@@ -1,0 +1,18 @@
+---
+import Experience from "@/components/Experience.astro";
+import { getTranslation } from "@/i18n";
+import type { Locale } from "@/types";
+
+const { currentLocale } = Astro;
+const { t } = getTranslation(currentLocale as Locale);
+
+const experiences = t("sections_data.experiences");
+---
+
+<main class="">
+  {
+    experiences.map((props) => {
+      return <Experience {...props} />;
+    })
+  }
+</main>

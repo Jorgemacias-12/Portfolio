@@ -1,0 +1,38 @@
+---
+import { getTranslation } from "@/i18n";
+import type { Locale } from "@/types";
+
+const { currentLocale } = Astro;
+const { t } = getTranslation(currentLocale as Locale);
+---
+
+<section class="flex flex-col-reverse md:flex-row gap-4">
+  <div class="w-auto flex flex-col gap-4 space-y-4">
+    <div class="flex flex-col gap-4">
+      <p class="text-lg text-gray-500 dark:text-gray-400">
+        {t("sections_data.about.greeting")}
+      </p>
+      <h1
+        class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground text-balance"
+      >
+        {t("sections_data.about.short_name")}
+      </h1>
+      <p class="text-xl sm:text-2xl text-accent-500 font-medium">
+        {t("sections_data.about.position")}
+      </p>
+    </div>
+    <p class="w-auto text-gray-500 dark:text-gray-400">
+      {t("sections_data.about.tagline")}
+    </p>
+  </div>
+
+  <div class="w-full flex items-center justify-center p-2 md:p-0">
+    <img
+      class="rounded-full"
+      src="/JAMZ-p.jpg"
+      alt=""
+      width="192"
+      height="192"
+    />
+  </div>
+</section>
