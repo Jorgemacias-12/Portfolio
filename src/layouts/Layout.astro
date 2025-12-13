@@ -34,7 +34,10 @@ const { t } = getTranslation(currentLocale as Locale);
     <meta property="og:type" content="website" />
     <meta property="og:title" content={t("site.title")} />
     <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:image" content={appendBaseUrl("/og-image.jpg")} />
+    <meta property="og:logo" content={appendBaseUrl("/favicon.ico")} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
