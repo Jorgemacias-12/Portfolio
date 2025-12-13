@@ -1,0 +1,77 @@
+---
+import type { Experience as Props } from "@/types";
+import { Briefcase } from "lucide-astro";
+import Skill from "./Skill.astro";
+
+const { company, period, responsabilities, role, technologies } = Astro.props;
+---
+
+<article
+  class="border-l border-accent-500 relative
+  flex flex-col
+  transition-all duration-300
+  hover:border-accent-600
+  hover:before:scale-110
+  py-8 pr-8 pl-4
+  md:pl-8
+  before:content-['']
+  before:absolute
+  before:left-0
+  before:-translate-x-1/2
+  before:w-4
+  before:h-4
+  before:rounded-full
+  before:bg-accent-500
+  before:border-4
+  before:border-accent-500
+  before:shadow-lg
+  before:block
+  before:top-4
+  md:before:top-1/2
+  md:before:-translate-y-1/2
+  before:transition-all
+  before:duration-300"
+>
+  <section
+    class="p-4 mt-4 w-fit flex flex-col gap-4 shadow-md bg-gray-100 dark:bg-dark-750 rounded-md group"
+  >
+    <div class="flex items-center gap-2">
+      <Briefcase
+        class="flex-shrink-0 text-black dark:text-white p-2 flex h-14 w-14 items-center justify-center rounded-xl"
+        size={20}
+      />
+
+      <div class="flex-1 min-w-0">
+        <h3
+          class="text-xl font-bold text-foreground mb-1 group-hover:text-accent transition-colors"
+        >
+          {role}
+        </h3>
+        <p class="text-accent font-semibold mb-1">{company}</p>
+        <p class="text-sm text-muted-foreground font-medium">{period}</p>
+      </div>
+    </div>
+
+    <ul class="flex flex-col gap-2 list-inside marker:text-accent-500">
+      {
+        responsabilities.map((r) => {
+          return (
+            <li class="list-item text-sm list-disc dark:text-gray-100 text-balance">
+              {r}
+            </li>
+          );
+        })
+      }
+    </ul>
+
+    <hr class="border-gray-800 dark:border-dark-500" />
+
+    <footer class="flex flex-wrap gap-2 items-center">
+      {
+        technologies.map((props) => {
+          return <Skill {...props} />;
+        })
+      }
+    </footer>
+  </section>
+</article>
