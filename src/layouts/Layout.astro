@@ -3,6 +3,8 @@ import { getTranslation } from "@/i18n";
 import type { Locale } from "@/types";
 import { appendBaseUrl } from "@/utils";
 import schema from "@/data/schema.json";
+import Header from "@/components/Header.astro";
+import "@fontsource-variable/inter";
 
 const { currentLocale } = Astro;
 
@@ -63,14 +65,56 @@ const { t } = getTranslation(currentLocale as Locale);
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
   </head>
-  <body class="scroll-smooth">
+  <body
+    class="scroll-smooth bg-white dark:bg-dark-900 text-black dark:text-white"
+  >
+    <Header />
     <slot />
   </body>
 </html>
 
+<script>
+  (function () {
+    document.documentElement.classList.toggle(
+      "dark",
+      localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+    );
+  })();
+</script>
+
 <style is:global>
   body {
+    font-family: "Inter Variable", sans-serif;
+    scroll-behavior: smooth;
     min-height: 100vh;
     min-height: 100dvh;
+  }
+
+  body {
+    --sb-track-color: #000000;
+    --sb-thumb-color: #ff5c00;
+    --sb-size: 6px;
+  }
+
+  body::-webkit-scrollbar {
+    width: var(--sb-size);
+  }
+
+  body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 3px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    body {
+      scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
   }
 </style>
