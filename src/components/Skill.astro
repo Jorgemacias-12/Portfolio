@@ -1,0 +1,17 @@
+---
+import type { Skill as Props } from "@/types";
+
+const { icon, name, color } = Astro.props;
+
+const iconClassName = `text-xl devicon-${icon}-plain ${color}`;
+---
+
+<article
+  class="p-2 bg-gray-100 rounded-md dark:bg-dark-750 flex items-center gap-2"
+>
+  <i class={iconClassName}></i>
+  <span
+    class="text-sm font-medium text-black dark:text-white group-hover:font-semibold transition-all"
+    >{name}</span
+  >
+</article>
