@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jorgemacias.dev/sitemap.xml
