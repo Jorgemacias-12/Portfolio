@@ -3,6 +3,8 @@ import english from "@/locales/en.json";
 export type LanguageType = typeof english;
 export type Locale = "en" | "es";
 export type TranslationKey = NestedKeyOf<LanguageType>;
+export type Theme = "light" | "dark";
+export type SectionVariant = "hero" | "normal";
 
 export type TranslationObject = {
   locale: Locale;
@@ -28,3 +30,32 @@ export type ValueAtKey<
   : Key extends keyof Obj
   ? Obj[Key]
   : never;
+
+export interface AstroComponent {
+  (props: any): any;
+  isAstroComponent?: boolean;
+}
+
+export interface MenuItem {
+  label: string;
+  url: string;
+}
+
+export type LinkComponentProps = MenuItem & {
+  isForMenu?: boolean;
+  isForElement?: boolean;
+};
+
+export interface Skill {
+  name: string;
+  icon: string;
+  color?: string;
+}
+
+export interface Experience {
+  role: string;
+  company: string;
+  period: string;
+  responsabilities: string[];
+  technologies: Skill[];
+}
