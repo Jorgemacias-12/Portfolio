@@ -1,0 +1,73 @@
+---
+import { getTranslation } from "@/i18n";
+import type { Locale } from "@/types";
+import type { Education as Props } from "@/types";
+import { Building, MapPin, Calendar } from "@lucide/astro";
+import { ExternalLink, Star } from "lucide-astro";
+
+const { t } = getTranslation(Astro.currentLocale as Locale);
+const {
+  campus,
+  degree,
+  endDate,
+  finished,
+  gpa,
+  institution,
+  schoolLink,
+  startDate,
+} = Astro.props;
+---
+
+<article
+  class="flex justify-between relative flex-col gap-4 bg-gray-100 shadow-md dark:bg-dark-800 p-2 rounded-lg transition-colors duration-200"
+>
+  <header class="flex flex-col gap-2">
+    <h5 class="text-2xl text-balance truncate font-semibold text-accent-500">
+      {degree}
+    </h5>
+  </header>
+
+  <main class="flex flex-col gap-2 pl-2">
+    <section
+      class="flex gap-2 items-center text-gray-700 dark:text-gray-100/50"
+    >
+      <Building />
+      <p class="text-sm">
+        {institution}
+      </p>
+    </section>
+    <section
+      class="flex gap-2 items-center text-gray-700 dark:text-gray-100/50"
+    >
+      <MapPin />
+      <p class="text-sm">
+        {campus}
+      </p>
+    </section>
+    <section
+      class="flex gap-2 items-center text-gray-700 dark:text-gray-100/50"
+    >
+      <Calendar />
+      <p class="text-sm">
+        {startDate} - {endDate}
+      </p>
+    </section>
+
+    <section
+      class="bg-accent-500/10 mt-2 rounded-lg px-2 py-1 flex items-centter gap-2"
+    >
+      <Star class="text-accent-500" />
+      <p class="font-semibold">{gpa}</p>
+    </section>
+  </main>
+  <footer class="flex justify-center">
+    <a
+      class="mx-auto flex items-center gap-2 text-sm text-gray-700 dark:text-gray-100/50"
+      target="_blank"
+      href={schoolLink}
+    >
+      <ExternalLink size={24} />
+      {schoolLink}
+    </a>
+  </footer>
+</article>
