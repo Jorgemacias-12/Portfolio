@@ -1,0 +1,17 @@
+---
+import Education from "@/components/Education.astro";
+import { getTranslation } from "@/i18n";
+import type { Locale } from "@/types";
+
+const { currentLocale } = Astro;
+const { t } = getTranslation(currentLocale as Locale);
+const education = t("sections_data.education");
+---
+
+<main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  {
+    education.map((props) => {
+      return <Education {...props} />;
+    })
+  }
+</main>
