@@ -1,4 +1,6 @@
 ---
+import Section from "@/components/Section.astro";
+import { SECTION_COMPONENTS } from "@/config";
 import { getTranslation } from "@/i18n";
 import Layout from "@/layouts/Layout.astro";
 import type { Locale } from "@/types";
@@ -9,6 +11,33 @@ if (!currentLocale)
   throw new Error("Locale not provided or default didn't load propperly");
 
 const { t } = getTranslation(currentLocale as Locale);
+
+const sections = t("sections");
 ---
 
-<Layout> Ejemplo </Layout>
+<Layout>
+  <main class="">
+    {
+      sections.map(async ({ label, url }) => {
+        const loader = SECTION_COMPONENTS[url];
+
+        if (!loader) return null;
+
+        const Component = (await loader()).default;
+
+        const isOptionalTitlePresent = url !== "about";
+
+        return (
+          <Section
+            id={url}
+            title={label}
+            variant="normal"
+            optionalTitle={isOptionalTitlePresent}
+          >
+            <Component />
+          </Section>
+        );
+      })
+    }
+  </main>
+</Layout>
