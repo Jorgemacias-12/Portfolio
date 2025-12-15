@@ -1,8 +1,18 @@
 ---
 import Project from "@/components/Project.astro";
+import { getTranslation } from "@/i18n";
+import type { Locale } from "@/types";
 
+const { currentLocale } = Astro;
+const { t } = getTranslation(currentLocale as Locale);
+
+const projects = t("sections_data.projects");
 ---
 
-projects
-
-<Project />
+<main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  {
+    projects.map((props) => {
+      return <Project {...props} />;
+    })
+  }
+</main>
