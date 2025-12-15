@@ -10,9 +10,15 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), maintenance({
-    enabled: process.env.MAINTENANCE_ENABLED === "true",
-  }), react(), min(), sitemap()],
+  integrations: [
+    tailwind(),
+    maintenance({
+      enabled: process.env.MAINTENANCE_ENABLED === "true",
+    }),
+    react(),
+    min(),
+    sitemap({}),
+  ],
   site: "https://jorgemacias.dev",
   base: process.env.PUBLIC_BASE_URL || "",
   i18n: {
