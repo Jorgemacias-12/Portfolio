@@ -1,9 +1,9 @@
-name: Deploy to Gihub Pages
+name: Deploy to Github Pages
 
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
   workflow_dispatch:
 
 permissions:
@@ -37,9 +37,16 @@ jobs:
           COMMIT=$(git rev-parse --short HEAD)
           VERSION="${TAG}+${COMMIT}"
 
-          echo "PUBLIC_BASE_URL=/${{ github.event.repository.name }}" > .env
-          echo "PUBLIC_VERSION=$VERSION" >> .env
-      
+          # Inicializar archivo .env con VERSION
+          echo "PUBLIC_VERSION=$VERSION" > .env
+
+          # Verificar si PUBLIC_DOMAIN está definido como variable de entorno/secreto
+          if [ -n "${{ vars.PUBLIC_DOMAIN || secrets.PUBLIC_DOMAIN }}" ]; then
+            echo "PUBLIC_DOMAIN está definido, no se establece PUBLIC_BASE_URL"
+          else
+            echo "PUBLIC_BASE_URL=/${{ github.event.repository.name }}" >> .env
+          fi
+
       - name: Install, build, and upload site
         uses: withastro/action@v3
         with:
