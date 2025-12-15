@@ -228,6 +228,7 @@
       "languageUrl": "/",
       "languageCaption": "ES",
       "flagUrl": "/mexico.svg",
+      "menu_opener_title": "button that opens the mobile menu",
       "avatarAlt": "Toothless avatar of me",
       "version_title": "version",
       "version_caption": "Made with ❤️"

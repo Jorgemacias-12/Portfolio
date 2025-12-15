@@ -225,6 +225,7 @@
   "components": {
     "header": {
       "title": "Portafolio",
+      "menu_opener_title": "Botón para abrir menú móvil",
       "home_url": "/",
       "languageUrl": "/en",
       "languageCaption": "EN",

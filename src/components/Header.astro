@@ -51,7 +51,7 @@ const lang = currentLocale;
 
         {languageCaption}
       </a>
-      <ThemeToggler client:only />
+      <ThemeToggler client:only="react" />
     </section>
   </nav>
 
@@ -61,7 +61,12 @@ const lang = currentLocale;
       href={appendBaseUrl("/")}>{t("site.author_shortname")}</a
     >
 
-    <button type="button" class="menu-opener" aria-label="" name="">
+    <button
+      title={t("components.header.menu_opener_title")}
+      type="button"
+      class="menu-opener"
+      aria-label={t("components.header.menu_opener_title")}
+    >
       <Menu size={32} />
       <X class="hidden hover:text-red-500" size={32} />
     </button>
@@ -109,7 +114,7 @@ const lang = currentLocale;
 
             {languageCaption}
           </a>
-          <ThemeToggler client:only />
+          <ThemeToggler client:only="react" />
         </div>
         <ul class="flex flex-col p-4 gap-2 dark:border-dark-500 flex-1">
           {
