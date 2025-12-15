@@ -10,6 +10,10 @@ const { currentLocale } = Astro;
 const { t } = getTranslation(currentLocale as Locale);
 
 const sections = t("sections");
+const languageUrl = t("components.header.languageUrl");
+const flagUrl = t("components.header.flagUrl");
+const languageCaption = t("components.header.languageCaption");
+const lang = currentLocale;
 ---
 
 <header
@@ -33,7 +37,20 @@ const sections = t("sections");
     </ul>
 
     <section class="flex items-center gap-4">
-      <p>Language toggler</p>
+      <a class="flex items-center gap-2 py-1" href={appendBaseUrl(languageUrl)}>
+        <img
+          width={32}
+          height={32}
+          src={flagUrl}
+          alt={`${
+            lang === "es"
+              ? "usa flag for lang change"
+              : "mexico flag for lang change"
+          }`}
+        />
+
+        {languageCaption}
+      </a>
       <ThemeToggler client:only />
     </section>
   </nav>
@@ -75,7 +92,23 @@ const sections = t("sections");
 
       <section class="flex flex-col gap-4 flex-1 divide-y">
         <div class="flex p-4 pb-0 items-center justify-between">
-          <p>Language toggler</p>
+          <a
+            class="flex items-center gap-2 py-1"
+            href={appendBaseUrl(languageUrl)}
+          >
+            <img
+              width={32}
+              height={32}
+              src={flagUrl}
+              alt={`${
+                lang === "es"
+                  ? "usa flag for lang change"
+                  : "mexico flag for lang change"
+              }`}
+            />
+
+            {languageCaption}
+          </a>
           <ThemeToggler client:only />
         </div>
         <ul class="flex flex-col p-4 gap-2 dark:border-dark-500 flex-1">
