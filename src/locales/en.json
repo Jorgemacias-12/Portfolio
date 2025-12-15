@@ -1,11 +1,242 @@
 {
   "site": {
-    "title": "",
-    "description": "",
-    "keywords": [],
-    "author": ""
+    "title": "Jorge Macias | Software Developer",
+    "description": "Software developer specialized in frontend, backend, and desktop applications. Explore my projects and portfolio.",
+    "keywords": [
+      "Jorge Macias",
+      "Jorge Antonio Macias Zambrano",
+      "Jorge Macias portfolio",
+      "web developer",
+      "frontend developer",
+      "React developer",
+      "web developer Puerto Vallarta",
+      "software engineer Puerto Vallarta",
+      "developer portfolio",
+      "web development projects",
+      "React applications",
+      "TypeScript",
+      "JavaScript",
+      "WPF",
+      "C#",
+      "Astro",
+      "Tailwind",
+      "tech portfolio"
+    ],
+    "author": "Jorge Antonio Macias Zambrano",
+    "author_shortname": "Jorge Macias"
   },
-  "sections": [],
-  "sections_data": {},
-  "components": {}
+  "sections": [
+    {
+      "label": "About Me",
+      "url": "about"
+    },
+    {
+      "label": "Skills",
+      "url": "skills"
+    },
+    {
+      "label": "Experience",
+      "url": "experience"
+    },
+    {
+      "label": "Projects",
+      "url": "projects"
+    },
+    {
+      "label": "Education",
+      "url": "education"
+    }
+  ],
+  "sections_data": {
+    "about": {
+      "greeting": "Hello, I'm",
+      "short_name": "Jorge Macias",
+      "position": "Fullstack Engineer",
+      "tagline": "Building thoughtful, functional experiences driven by curiosity and continuous learning."
+    },
+    "skills": {
+      "categories": {
+        "frontend": {
+          "name": "Frontend",
+          "color": "from-blue-500 to-cyan-500",
+          "iconColor": "text-blue-500",
+          "skills": [
+            { "name": "Javascript", "icon": "javascript" },
+            { "name": "Typescript", "icon": "typescript" },
+            { "name": "CSS", "icon": "css3" },
+            { "name": "HTML", "icon": "html5" },
+            { "name": "React", "icon": "react" },
+            { "name": "Astro", "icon": "astro" },
+            { "name": "WPF", "icon": "dot-net" },
+            { "name": "WinForms", "icon": "dotnetcore" }
+          ]
+        },
+        "backend": {
+          "name": "Backend",
+          "color": "from-green-500 to-emerald-500",
+          "iconColor": "text-green-500",
+          "skills": [
+            { "name": "Python", "icon": "python" },
+            { "name": "NodeJS", "icon": "nodejs" },
+            { "name": "Bun", "icon": "bun" },
+            { "name": "PHP", "icon": "php" },
+            { "name": "Laravel", "icon": "laravel" },
+            { "name": "C#", "icon": "csharp" },
+            { "name": "MySQL", "icon": "mysql" },
+            { "name": "SQL", "icon": "azuresqldatabase" }
+          ]
+        },
+        "tools": {
+          "name": "Herramientas & DevOps",
+          "color": "from-orange-500 to-red-500",
+          "iconColor": "text-orange-500",
+          "skills": [
+            { "name": "Git", "icon": "git" },
+            { "name": "CI/CD (Github Actions)", "icon": "githubactions" },
+            { "name": "Vercel", "icon": "vercel" },
+            { "name": "GitHub", "icon": "github" },
+            { "name": "Nginx", "icon": "nginx" },
+            { "name": "Insomnia", "icon": "insomnia" },
+            { "name": "Visual Studio Code", "icon": "vscode" }
+          ]
+        }
+      }
+    },
+    "experiences": [
+      {
+        "role": "Software Developer (Backend & DevOps)",
+        "company": "SMCI",
+        "period": "December 24, 2024 - February 28, 2025",
+        "responsabilities": [
+          "Defined the project's tech stack based on requirements and future system needs.",
+          "Designed the system's foundational architecture to ensure clarity, modularity, and maintainability.",
+          "Implemented the backend foundation using FastAPI and Prisma ORM, establishing the initial data flow.",
+          "Configured CI/CD pipelines with GitHub Actions to automate testing and deployments.",
+          "Set up the AWS VPS for the project's deployment and runtime environment."
+        ],
+        "technologies": [
+          {
+            "name": "Python",
+            "icon": "python",
+            "color": "text-blue-500"
+          },
+          { "name": "FastAPI", "icon": "fastapi", "color": "text-green-500" },
+          {
+            "name": "Prisma ORM",
+            "icon": "prisma",
+            "color": "text-orange-500"
+          },
+          {
+            "name": "GitHub Actions",
+            "icon": "githubactions",
+            "color": "text-orange-500"
+          },
+          { "name": "GitHub", "icon": "github" }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "NBTMap Explorer",
+        "description": "Desktop tool for exploring, previewing, and exporting Minecraft item maps directly from game files.",
+        "tags": [
+          { "name": "C#", "icon": "csharp" },
+          { "name": "WPF", "icon": "dotnetcore" },
+          { "name": "MVVM", "icon": "dot-net" }
+        ],
+        "images": [
+          { "url": "/projects/nbtmap-1.png", "description": "" },
+          { "url": "/projects/nbtmap-2.png", "description": "" }
+        ],
+        "link": {
+          "url": "https://github.com/Jorgemacias-12/NBTMap-Explorer",
+          "label": "GitHub Repository"
+        }
+      },
+      {
+        "name": "PonyCharacter Mod",
+        "description": "Mod for The Binding of Isaac: Repentance+ that adds new characters and custom graphics.",
+        "tags": [
+          { "name": "Lua", "icon": "lua" },
+          { "name": "The Binding of Isaac Modding API", "icon": "lua" }
+        ],
+        "images": [
+          { "url": "/projects/ponycharacter-1.jpeg", "description": "" },
+          { "url": "/projects/ponycharacter-2.jpeg", "description": "" }
+        ],
+        "link": {
+          "url": "https://github.com/SweetyStorm/PonyCharacter",
+          "label": "GitHub Repository"
+        }
+      },
+      {
+        "name": "Monte Carlo Global Illumination Demo",
+        "description": "3D OpenGL program that uses the Monte Carlo method to generate Global Illumination and explore advanced lighting techniques.",
+        "tags": [
+          { "name": "Python", "icon": "python", "category": "language" },
+          { "name": "OpenGL", "icon": "opengl", "category": "frontend" },
+          { "name": "GLSL", "icon": "c", "category": "frontend" }
+        ],
+        "images": [
+          { "url": "/projects/montecarlo-1.png", "description": "" },
+          { "url": "/projects/montecarlo-2.png", "description": "" },
+          { "url": "/projects/montecarlo-3.png", "description": "" }
+        ],
+        "link": {
+          "url": "https://github.com/Jorgemacias-12/Monte-Carlo-Global-Illumination-Demo",
+          "label": "GitHub Repository"
+        }
+      }
+    ],
+    "education": [
+      {
+        "degree": "Computer Engineering",
+        "institution": "University of Guadalajara (UdeG)",
+        "campus": "CUCOSTA",
+        "startDate": "August 2021",
+        "endDate": "Present",
+        "gpa": "96.15/100",
+        "relevantProjects": [],
+        "courses": [],
+        "achievements": [],
+        "extracurricularActivities": [],
+        "schoolLink": "http://www.cuc.udg.mx/",
+        "finished": false,
+        "finished_caption": "Ongoing"
+      },
+      {
+        "degree": "Professional Technical Bachelor in Computer Science",
+        "institution": "National College of Professional Technical Education",
+        "campus": "Puerto Vallarta 075",
+        "startDate": "August 2018",
+        "endDate": "July 2021",
+        "gpa": "9.9/10",
+        "relevantProjects": [],
+        "courses": [],
+        "achievements": ["High grades"],
+        "extracurricularActivities": [],
+        "schoolLink": "https://www.conalep.edu.mx/",
+        "finished": true,
+        "finished_caption": "Completed"
+      }
+    ]
+  },
+  "components": {
+    "header": {
+      "title": "Portfolio",
+      "home_url": "/en",
+      "languageUrl": "/",
+      "languageCaption": "ES",
+      "flagUrl": "/mexico.svg",
+      "avatarAlt": "Toothless avatar of me",
+      "version_title": "version",
+      "version_caption": "Made with ❤️"
+    },
+    "carrousel": {
+      "images_indicator": "images"
+    },
+    "education": {
+      "calification_caption": "GPA"
+    }
+  }
 }
