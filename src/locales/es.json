@@ -22,9 +22,222 @@
       "Tailwind",
       "tech portfolio"
     ],
-    "author": "Jorge Antonio Macias Zambrano"
+    "author": "Jorge Antonio Macias Zambrano",
+    "author_shortname": "Jorge Macias"
   },
-  "sections": [],
-  "sections_data": {},
-  "components": {}
+  "sections": [
+    {
+      "label": "Acerca de Mí",
+      "url": "about"
+    },
+    {
+      "label": "Habilidades",
+      "url": "skills"
+    },
+    {
+      "label": "Experiencia Profesional",
+      "url": "experience"
+    },
+    {
+      "label": "Proyectos",
+      "url": "projects"
+    },
+
+    {
+      "label": "Educación",
+      "url": "education"
+    }
+  ],
+  "sections_data": {
+    "about": {
+      "greeting": "Hola, yo soy",
+      "short_name": "Jorge Macias",
+      "position": "Ingeniero Fullstack",
+      "tagline": "Creando experiencias funcionales y bien pensadas, guiadas por la curiosidad y el aprendizaje constante."
+    },
+    "skills": {
+      "categories": {
+        "frontend": {
+          "name": "Frontend",
+          "color": "from-blue-500 to-cyan-500",
+          "iconColor": "text-blue-500",
+          "skills": [
+            { "name": "Javascript", "icon": "javascript" },
+            { "name": "Typescript", "icon": "typescript" },
+            { "name": "CSS", "icon": "css3" },
+            { "name": "HTML", "icon": "html5" },
+            { "name": "React", "icon": "react" },
+            { "name": "Astro", "icon": "astro" },
+            { "name": "WPF", "icon": "dot-net" },
+            { "name": "WinForms", "icon": "dotnetcore" }
+          ]
+        },
+        "backend": {
+          "name": "Backend",
+          "color": "from-green-500 to-emerald-500",
+          "iconColor": "text-green-500",
+          "skills": [
+            { "name": "Python", "icon": "python" },
+            { "name": "NodeJS", "icon": "nodejs" },
+            { "name": "Bun", "icon": "bun" },
+            { "name": "PHP", "icon": "php" },
+            { "name": "Laravel", "icon": "laravel" },
+            { "name": "C#", "icon": "csharp" },
+            { "name": "MySQL", "icon": "mysql" },
+            { "name": "SQL", "icon": "azuresqldatabase" }
+          ]
+        },
+        "tools": {
+          "name": "Herramientas & DevOps",
+          "color": "from-orange-500 to-red-500",
+          "iconColor": "text-orange-500",
+          "skills": [
+            { "name": "Git", "icon": "git" },
+            { "name": "CI/CD (Github Actions)", "icon": "githubactions" },
+            { "name": "Vercel", "icon": "vercel" },
+            { "name": "GitHub", "icon": "github" },
+            { "name": "Nginx", "icon": "nginx" },
+            { "name": "Insomnia", "icon": "insomnia" },
+            { "name": "Visual Studio Code", "icon": "vscode" }
+          ]
+        }
+      }
+    },
+    "experiences": [
+      {
+        "role": "Desarrollador de Software (Backend & DevOps)",
+        "company": "SMCI",
+        "period": "24 de Diciembre 2024 - 28 de febrero de 2025",
+        "responsabilities": [
+          "Definí el stack tecnológico del proyecto en función de los requisitos y necesidades futuras del sistema.",
+          "Diseñé la arquitectura base del sistema para asegurar claridad, modularidad y mantenibilidad.",
+          "Implementé la base del backend con FastAPI y Prisma ORM, definiendo el flujo inicial de datos.",
+          "Configuré pipelines de CI/CD con GitHub Actions para automatizar pruebas y despliegues.",
+          "Configuré el VPS en AWS para el despliegue y ejecución del proyecto."
+        ],
+        "technologies": [
+          {
+            "name": "Python",
+            "icon": "python",
+            "color": "text-blue-500"
+          },
+          { "name": "FastAPI", "icon": "fastapi", "color": "text-green-500" },
+          {
+            "name": "Prisma ORM",
+            "icon": "prisma",
+            "color": "text-orange-500"
+          },
+          {
+            "name": "GitHub Actions",
+            "icon": "githubactions",
+            "color": "text-orange-500"
+          },
+          { "name": "GitHub", "icon": "github" }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "NBTMap Explorer",
+        "description": "Herramienta de escritorio para explorar, previsualizar y exportar mapas de ítems de Minecraft desde los archivos del juego.",
+        "tags": [
+          { "name": "C#", "icon": "csharp" },
+          { "name": "WPF", "icon": "dotnetcore" },
+          { "name": "MVVM", "icon": "dot-net" }
+        ],
+        "images": [
+          { "url": "/projects/nbtmap-1.png", "description": "" },
+          { "url": "/projects/nbtmap-2.png", "description": "" }
+        ],
+        "link": {
+          "url": "https://github.com/Jorgemacias-12/NBTMap-Explorer",
+          "label": "Repositorio de GitHub"
+        }
+      },
+      {
+        "name": "PonyCharacter Mod",
+        "description": "Mod para The Binding of Isaac: Repentance+ que agrega nuevos personajes y gráficos personalizados.",
+        "tags": [
+          { "name": "Lua", "icon": "lua" },
+          { "name": "The Binding of Isaac Modding API", "icon": "lua" }
+        ],
+        "images": [
+          { "url": "/projects/ponycharacter-1.jpeg", "description": "" },
+          { "url": "/projects/ponycharacter-2.jpeg", "description": "" }
+        ],
+        "link": {
+          "url": "https://github.com/SweetyStorm/PonyCharacter",
+          "label": "Repositorio de GitHub"
+        }
+      },
+      {
+        "name": "Monte Carlo Global Illumination Demo",
+        "description": "Programa 3D en OpenGL que utiliza el método Monte Carlo para generar Global Illumination y explorar técnicas de iluminación avanzada.",
+        "tags": [
+          { "name": "Python", "icon": "python", "category": "language" },
+          { "name": "OpenGL", "icon": "opengl", "category": "frontend" },
+          { "name": "GLSL", "icon": "c", "category": "frontend" }
+        ],
+        "images": [
+          { "url": "/projects/montecarlo-1.png", "description": "" },
+          { "url": "/projects/montecarlo-2.png", "description": "" },
+          { "url": "/projects/montecarlo-3.png", "description": "" }
+        ],
+        "link": {
+          "url": "https://github.com/Jorgemacias-12/Monte-Carlo-Global-Illumination-Demo",
+          "label": "Repositorio de GitHub"
+        }
+      }
+    ],
+    "education": [
+      {
+        "degree": "Ingeniería en Computación",
+        "institution": "Universidad de Guadalajara (UdeG)",
+        "campus": "CUCOSTA",
+        "startDate": "Agosto 2021",
+        "endDate": "Actual",
+        "gpa": "96.15/100",
+        "relevantProjects": [],
+        "courses": [],
+        "achievements": [],
+        "extracurricularActivities": [],
+        "schoolLink": "http://www.cuc.udg.mx/",
+        "finished": false,
+        "finished_caption": "En curso"
+      },
+      {
+        "degree": "Profesional Técnico Bachiller en Informática",
+        "institution": "Colegio Nacional de Educación Profesional Técnica ",
+        "campus": "Puerto Vallarta 075",
+        "startDate": "Agosto 2018",
+        "endDate": "Julio 2021",
+        "gpa": "9.9/10",
+        "relevantProjects": [],
+        "courses": [],
+        "achievements": ["Promedios altos"],
+        "extracurricularActivities": [],
+        "schoolLink": "https://www.conalep.edu.mx/",
+        "finished": true,
+        "finished_caption": "Terminado"
+      }
+    ]
+  },
+  "components": {
+    "header": {
+      "title": "Portafolio",
+      "home_url": "/",
+      "languageUrl": "/en",
+      "languageCaption": "EN",
+      "flagUrl": "/usa.svg",
+      "avatarAlt": "Avatar de chimuelo para mí",
+      "version_title": "versión",
+      "version_caption": "Hecho con ❤️"
+    },
+    "carrousel": {
+      "images_indicator": "imágenes"
+    },
+    "education": {
+      "calification_caption": "Promedio"
+    }
+  }
 }
