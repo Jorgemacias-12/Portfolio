@@ -10,5 +10,5 @@ export const SECTION_COMPONENTS: Record<
   about: () => import("@/sections/About.astro"),
   experience: () => import("@/sections/Experiences.astro"),
   projects: () => import("@/sections/Projects.astro"),
-  education: () => import("@/sections/Education.astro"),
+  education: () => import("@/sections/Schools.astro"),
 };
