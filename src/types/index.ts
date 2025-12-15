@@ -5,6 +5,7 @@ export type Locale = "en" | "es";
 export type TranslationKey = NestedKeyOf<LanguageType>;
 export type Theme = "light" | "dark";
 export type SectionVariant = "hero" | "normal";
+export type LinkItem = MenuItem;
 
 export type TranslationObject = {
   locale: Locale;
@@ -58,4 +59,28 @@ export interface Experience {
   period: string;
   responsabilities: string[];
   technologies: Skill[];
+}
+
+export interface Image {
+  url: string;
+  description: string;
+}
+
+export interface Project {
+  name: string;
+  description: string;
+  tags: Skill[];
+  images: Image[];
+  link: LinkItem;
+}
+
+export interface Education {
+  degree: string;
+  institution: string;
+  campus: string;
+  startDate: string;
+  endDate: string;
+  gpa: string;
+  schoolLink: string;
+  finished: boolean;
 }
