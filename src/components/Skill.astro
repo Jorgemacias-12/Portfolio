@@ -1,13 +1,14 @@
 ---
 import type { Skill as Props } from "@/types";
+import { twMerge } from "tailwind-merge";
 
 const { icon, name, color } = Astro.props;
 
-const iconClassName = `text-xl devicon-${icon}-plain ${color}`;
+const iconClassName = twMerge("text-xl", `devicon-${icon}-plain`, color);
 ---
 
 <article
-  class="p-2 bg-gray-100 rounded-md dark:bg-dark-750 flex items-center gap-2"
+  class="p-2 bg-gray-100 rounded-md dark:bg-dark-650 flex items-center gap-2"
 >
   <i class={iconClassName}></i>
   <span
