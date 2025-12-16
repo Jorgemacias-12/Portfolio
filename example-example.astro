@@ -1,0 +1,204 @@
+---
+import { getTranslation } from "@/i18n";
+import type { Locale } from "@/types";
+import { appendBaseUrl } from "@/utils";
+
+const { currentLocale } = Astro;
+const { t } = getTranslation(currentLocale as Locale);
+
+const sections = t("sections");
+---
+
+<header
+  id="header"
+  class="sticky z-50 backdrop-blur-md top-0 border-b bg-white/80 dark:border-dark-700 dark:bg-dark-800 dark:bg-dark-800/80"
+>
+  <nav
+    class="p-4 max-w-6xl mx-auto hidden md:flex justify-between items-center"
+  >
+    <a
+      class="font-medium cursor-pointer text-xl hover:text-accent-700 dark:hover:text-accent-600"
+      href={appendBaseUrl("/")}>{t("components.header.title")}</a
+    >
+
+    <ul class="flex items-center gap-4">
+      {
+        sections.map((el) => {
+          return (
+            <li>
+              <a
+                class="text-sm text-gray-600 dark:text-gray-300 hover:dark:bg-dark-600 hover:bg-gray-200 rounded p-2 transition-colors duration-200 hover:text-accent-800 hover:dark:text-accent-500"
+                href={appendBaseUrl(`#${el.url}`)}
+              >
+                {el.label}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+
+    <section class="flex items-center gap-4">
+      <p>Language toggler</p>
+      <p>Theme toggler</p>
+    </section>
+  </nav>
+
+  <nav
+    id="mobile-menu"
+    class="fixed w-full min-h-dvh h-full hidden md:hidden bg-black/60 inset-0 backdrop-blur-sm z-50"
+  >
+    <section
+      id="mobile-menu-content"
+      class="flex flex-col justify-between bg-white dark:bg-dark-750 w-8/12 h-full transition-all duration-300 ease-in-out transform translate-x-[-100%]"
+    >
+      Contenido
+    </section>
+  </nav>
+</header>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const headerEl = document.getElementById("header");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuContent = document.getElementById("mobile-menu-content");
+    const menuButtons = document.querySelectorAll(".menu-opener");
+    const menuIcons = document.querySelectorAll(".lucide.lucide-menu");
+    const closeIcons = document.querySelectorAll(".lucide.lucide-x");
+
+    let isMenuOpen = false;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let isSwipingHorizontally = false;
+    const swipeThreshold = 80;
+
+    const glassClasses = [
+      "fixed",
+      "top-0",
+      "left-0",
+      "right-0",
+      "z-50",
+      "backdrop-blur-md",
+      "bg-white/80",
+      "dark:bg-dark-800/80",
+      "dark:border-b-[#070708]/50",
+    ];
+
+    const headerObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const shouldApplyGlass = !entry.isIntersecting;
+          glassClasses.forEach((c) => {
+            headerEl.classList.toggle(c, shouldApplyGlass);
+          });
+
+          if (shouldApplyGlass) {
+            headerEl.classList.add("w-full", "px-4");
+          } else {
+            headerEl.classList.add("bg-white", "dark:bg-black_rain");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "20px 0px 0px 0px" }
+    );
+
+    const triggerElement = document.createElement("div");
+    triggerElement.style.position = "absolute";
+    triggerElement.style.top = "0";
+    triggerElement.style.height = "1px";
+    triggerElement.style.width = "100%";
+    triggerElement.style.pointerEvents = "none";
+    document.body.prepend(triggerElement);
+    headerObserver.observe(triggerElement);
+
+    const toggleMenu = (shouldOpen) => {
+      if (typeof shouldOpen === "boolean") {
+        if (shouldOpen === isMenuOpen) return;
+        isMenuOpen = shouldOpen;
+      } else {
+        isMenuOpen = !isMenuOpen;
+      }
+
+      menuIcons.forEach((icon) => icon.classList.toggle("hidden", isMenuOpen));
+      closeIcons.forEach((icon) =>
+        icon.classList.toggle("hidden", !isMenuOpen)
+      );
+
+      if (isMenuOpen) {
+        mobileMenu.classList.remove("hidden");
+        setTimeout(
+          () => menuContent.classList.remove("translate-x-[-100%]"),
+          20
+        );
+      } else {
+        menuContent.classList.add("translate-x-[-100%]");
+        setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+      }
+
+      document.documentElement.style.overflow = isMenuOpen ? "hidden" : "";
+    };
+
+    const handleTouchStart = (e) => {
+      if (window.innerWidth >= 768) return;
+
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      isSwipingHorizontally = false;
+    };
+
+    const handleTouchMove = (e) => {
+      if (window.innerWidth >= 768) return;
+
+      const touchX = e.touches[0].clientX;
+      const touchY = e.touches[0].clientY;
+      const diffX = touchX - touchStartX;
+      const diffY = touchY - touchStartY;
+
+      if (!isSwipingHorizontally) {
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+          isSwipingHorizontally = true;
+        }
+      }
+
+      if (isSwipingHorizontally && Math.abs(diffX) > 10) {
+        e.preventDefault();
+      }
+    };
+
+    const handleTouchEnd = (e) => {
+      if (window.innerWidth >= 768) return;
+
+      const touchEndX = e.changedTouches[0].clientX;
+      const diffX = touchEndX - touchStartX;
+
+      if (Math.abs(diffX) > swipeThreshold) {
+        if (diffX > 0 && !isMenuOpen) {
+          toggleMenu(true);
+        } else if (diffX < 0 && isMenuOpen) {
+          toggleMenu(false);
+        }
+      }
+    };
+
+    menuButtons.forEach((btn) =>
+      btn.addEventListener("click", () => toggleMenu())
+    );
+    mobileMenu.addEventListener(
+      "click",
+      (e) => e.target === mobileMenu && toggleMenu(false)
+    );
+
+    document.addEventListener("touchstart", handleTouchStart, {
+      passive: false,
+    });
+    document.addEventListener("touchmove", handleTouchMove, { passive: false });
+    document.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+    window.addEventListener("beforeunload", () => {
+      headerObserver.unobserve(triggerElement);
+      document.removeEventListener("touchstart", handleTouchStart);
+      document.removeEventListener("touchmove", handleTouchMove);
+      document.removeEventListener("touchend", handleTouchEnd);
+    });
+  });
+</script>
