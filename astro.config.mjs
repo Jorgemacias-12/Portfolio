@@ -4,7 +4,6 @@ import { defineConfig } from "astro/config";
 import maintenance from "astro-maintenance";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
-import min from "astro-min";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -16,7 +15,6 @@ export default defineConfig({
       enabled: process.env.MAINTENANCE_ENABLED === "true",
     }),
     react(),
-    // min(),
     sitemap({}),
   ],
   site: "https://jorgemacias.dev",
