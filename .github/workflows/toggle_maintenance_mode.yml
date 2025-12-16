@@ -1,0 +1,17 @@
+name: Toggle maintenance mode
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  toggle:
+    runs-on: ubuntu-latest
+    permissions: write-all
+
+    steps:
+      
