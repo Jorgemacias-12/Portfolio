@@ -4,8 +4,8 @@ import { defineConfig } from "astro/config";
 import maintenance from "astro-maintenance";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
-
 import sitemap from "@astrojs/sitemap";
+import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,6 +16,7 @@ export default defineConfig({
     }),
     react(),
     sitemap({}),
+    compress(),
   ],
   site: "https://jorgemacias.dev",
   base: process.env.PUBLIC_BASE_URL || "",

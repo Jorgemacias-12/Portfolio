@@ -18,6 +18,7 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "astro": "^5.16.4",
+    "astro-compress": "^2.3.8",
     "astro-maintenance": "^2.0.0",
     "lucide-astro": "^0.556.0",
     "lucide-react": "^0.556.0",
