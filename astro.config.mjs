@@ -16,7 +16,7 @@ export default defineConfig({
       enabled: process.env.MAINTENANCE_ENABLED === "true",
     }),
     react(),
-    min(),
+    // min(),
     sitemap({}),
   ],
   site: "https://jorgemacias.dev",
