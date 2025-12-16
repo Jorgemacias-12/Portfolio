@@ -1,17 +1,29 @@
-name: Toggle maintenance mode
+name: Toggle Maintenance Mode
 
 on:
   workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    inputs:
+      maintenance:
+        description: "Enable maintenance mode"
+        required: false
+        type: boolean
+        default: false
 
 jobs:
-  toggle:
+  update-maintenance:
     runs-on: ubuntu-latest
-    permissions: write-all
-
     steps:
-      
+      - name: Update maintenance variable
+        run: |
+          # Esto actualizaría una variable de entorno en GitHub
+          # Necesitas el GitHub CLI o la API
+          echo "Maintenance mode: ${{ github.event.inputs.maintenance }}"
+
+          # Usando GitHub CLI (necesitas token con permisos)
+          if ${{ github.event.inputs.maintenance }}; then
+            echo "Enabling maintenance..."
+            # gh variable set MAINTENANCE_ENABLED --body "true"
+          else
+            echo "Disabling maintenance..."
+            # gh variable set MAINTENANCE_ENABLED --body "false"
+          fi
