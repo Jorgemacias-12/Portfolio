@@ -4,7 +4,7 @@ import type { Locale } from "@/types";
 import { appendBaseUrl } from "@/utils";
 import schema from "@/data/schema.json";
 import Header from "@/components/Header.astro";
-import "@fontsource-variable/inter";
+import "@fontsource-variable/inter?display=swap";
 
 const { currentLocale } = Astro;
 
@@ -15,7 +15,7 @@ if (!currentLocale) {
 const { t } = getTranslation(currentLocale as Locale);
 ---
 
-<html title={t("site.title")} lang={currentLocale}>
+<html class="scroll-smooth" title={t("site.title")} lang={currentLocale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -47,31 +47,30 @@ const { t } = getTranslation(currentLocale as Locale);
     <meta property="og:description" content={t("site.description")} />
     <meta property="og:site_name" content={t("site.title")} />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+      />
+    </noscript>
+
     <script
       is:inline
       type="application/ld+json"
       set:html={JSON.stringify(schema)}
     />
-
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-
-    <link
-      rel="preload"
-      as="style"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-    />
-
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-    />
   </head>
   <body
     class="scroll-smooth transition-colors duration-300 bg-white dark:bg-dark-900 text-black dark:text-white"
   >
-    <Header />
+    <Header lang={currentLocale as Locale} />
     <slot />
   </body>
 </html>
@@ -90,7 +89,6 @@ const { t } = getTranslation(currentLocale as Locale);
 <style is:global>
   body {
     font-family: "Inter Variable", sans-serif;
-    scroll-behavior: smooth;
     min-height: 100vh;
     min-height: 100dvh;
   }
