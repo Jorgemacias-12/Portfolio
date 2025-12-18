@@ -146,8 +146,22 @@
           { "name": "MVVM", "icon": "dot-net" }
         ],
         "images": [
-          { "url": "/projects/nbtmap-1.png", "description": "" },
-          { "url": "/projects/nbtmap-2.png", "description": "" }
+          {
+            "url": "/projects/nbtmap-1.png",
+            "description": "Pantalla de inicio de NBTMap Explorer v0.0.1 con indicador de carga al 108%, mostrando la herramienta lista para explorar mapas de Minecraft."
+          },
+          {
+            "url": "/projects/nbtmap-2.png",
+            "description": "Versión 9.0.1 de NBTMap Explorer con interfaz actualizada, manteniendo el diseño de inicio y estado listo para uso."
+          },
+          {
+            "url": "/projects/nbtmap-3.png",
+            "description": "Interfaz principal del gestor de mapas mostrando lista completa de archivos del mundo Overworld (map_0 a map_99) con opciones de navegación y exportación."
+          },
+          {
+            "url": "/projects/nbtmap-4.png",
+            "description": "Vista detallada de NBTMap Explorer v0.01 con herramientas de búsqueda, propiedades de mapas y opciones de exportación FNG y visualización de datos NBT."
+          }
         ],
         "link": {
           "url": "https://github.com/Jorgemacias-12/NBTMap-Explorer",
@@ -235,10 +249,27 @@
       "version_caption": "Hecho con ❤️"
     },
     "carrousel": {
-      "images_indicator": "imágenes"
+      "no_preview": "Vista previa no disponible",
+      "images_indicator": "imágenes",
+      "open_gallery": "Abrir galería",
+      "image": "Imagen",
+      "image_gallery": "Galería de imágenes",
+      "image_controls": "Controles de imagen",
+      "zoom_in": "Acercar (+)",
+      "zoom_out": "Alejar (-)",
+      "rotate": "Rotar (R)",
+      "reset": "Restablecer",
+      "close": "Cerrar (Esc)",
+      "previous_image": "Imagen anterior",
+      "next_image": "Siguiente imagen",
+      "thumbnail_navigation": "Navegación por miniaturas"
     },
     "education": {
       "calification_caption": "Promedio"
+    },
+    "theme_toggler": {
+      "title": "Botón para cambiar de tema oscuro/claro",
+      "aria-label": "Botón que cambia el tema del portafolio entre oscuro/claro"
     }
   }
 }

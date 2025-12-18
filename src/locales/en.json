@@ -145,8 +145,22 @@
           { "name": "MVVM", "icon": "dot-net" }
         ],
         "images": [
-          { "url": "/projects/nbtmap-1.png", "description": "" },
-          { "url": "/projects/nbtmap-2.png", "description": "" }
+          {
+            "url": "/projects/nbtmap-1.png",
+            "description": "Startup screen of NBTMap Explorer v0.0.1 with 108% loading indicator, showing the tool ready to explore Minecraft maps."
+          },
+          {
+            "url": "/projects/nbtmap-2.png",
+            "description": "Version 9.0.1 of NBTMap Explorer with updated interface, maintaining the startup design and ready status."
+          },
+          {
+            "url": "/projects/nbtmap-3.png",
+            "description": "Main interface of the map manager showing complete list of Overworld files (map_0 to map_99) with navigation and export options."
+          },
+          {
+            "url": "/projects/nbtmap-4.png",
+            "description": "Detailed view of NBTMap Explorer v0.01 with search tools, map properties, and FNG export and NBT data viewing options."
+          }
         ],
         "link": {
           "url": "https://github.com/Jorgemacias-12/NBTMap-Explorer",
@@ -234,10 +248,27 @@
       "version_caption": "Made with ❤️"
     },
     "carrousel": {
-      "images_indicator": "images"
+      "no_preview": "Preview not available",
+      "images_indicator": "images",
+      "open_gallery": "Open gallery",
+      "image": "Image",
+      "image_gallery": "Image gallery",
+      "image_controls": "Image controls",
+      "zoom_in": "Zoom in (+)",
+      "zoom_out": "Zoom out (-)",
+      "rotate": "Rotate (R)",
+      "reset": "Reset",
+      "close": "Close (Esc)",
+      "previous_image": "Previous image",
+      "next_image": "Next image",
+      "thumbnail_navigation": "Thumbnail navigation"
     },
     "education": {
       "calification_caption": "GPA"
+    },
+    "theme_toggler": {
+      "title": "Dark/light theme toggle button",
+      "aria-label": "Button that toggles the portfolio theme between dark/light"
     }
   }
 }
