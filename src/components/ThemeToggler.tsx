@@ -1,9 +1,14 @@
 import { ICON_SIZE_IN_PX } from "@/config";
-import type { Theme } from "@/types";
+import { getTranslation } from "@/i18n";
+import type { Locale, Theme } from "@/types";
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export const ThemeToggler = () => {
+interface Props {
+  lang: Locale;
+}
+
+export const ThemeToggler = ({ lang }: Props) => {
   const [theme, setTheme] = useState<Theme>("dark");
   const [mounted, setMounted] = useState<boolean>(false);
 
@@ -41,14 +46,15 @@ export const ThemeToggler = () => {
     return <div className="w-10 h-10" />;
   }
 
-  // TODO: define i18n key for button title, aria-label
+  const { t } = getTranslation(lang);
+
   return (
     <button
       onClick={toggleTheme}
       className="p-2 rounded-lg bg-gray-100 dark:bg-dark-700 cursor-pointer  hover:bg-gray-300 transition-colors text-black dark:text-white hover:dark:bg-dark-600"
       type="button"
-      title=""
-      aria-label=""
+      title={t("components.theme_toggler.title")}
+      aria-label={t("components.theme_toggler.aria-label")}
     >
       {theme === "light" ? (
         <Moon size={ICON_SIZE_IN_PX} />
