@@ -6,6 +6,7 @@ export type TranslationKey = NestedKeyOf<LanguageType>;
 export type Theme = "light" | "dark";
 export type SectionVariant = "hero" | "normal";
 export type LinkItem = MenuItem;
+export type Direction = "next" | "prev" | "direct";
 
 export type TranslationObject = {
   locale: Locale;
@@ -19,7 +20,7 @@ export type NestedKeyOf<T extends Record<string, unknown>> = {
     : `${K}`;
 }[keyof T & string];
 
-export type ValueAtKey<
+export type ValueAtKey< 
   Obj extends object,
   Key extends string
 > = Key extends `${infer First}.${infer Rest}`
