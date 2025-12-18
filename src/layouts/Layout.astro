@@ -5,6 +5,7 @@ import { appendBaseUrl } from "@/utils";
 import schema from "@/data/schema.json";
 import Header from "@/components/Header.astro";
 import "@fontsource-variable/inter?display=swap";
+import "../../public/devicons.min.css";
 
 const { currentLocale } = Astro;
 
@@ -47,19 +48,14 @@ const { t } = getTranslation(currentLocale as Locale);
     <meta property="og:description" content={t("site.description")} />
     <meta property="og:site_name" content={t("site.title")} />
 
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-      media="print"
-      onload="this.media='all'"
+      rel="preload"
+      as="font"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/fonts/devicon.woff"
+      type="font/woff"
+      crossorigin
     />
-
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-      />
-    </noscript>
 
     <script
       is:inline
@@ -117,5 +113,27 @@ const { t } = getTranslation(currentLocale as Locale);
     body {
       scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
     }
+  }
+
+  @font-face {
+    font-family: "devicon";
+    src: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/fonts/devicon.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  [class^="devicon-"]:before,
+  [class*=" devicon-"]:before {
+    font-family: "devicon" !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
   }
 </style>
