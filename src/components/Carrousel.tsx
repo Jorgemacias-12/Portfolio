@@ -351,7 +351,7 @@ export const Carrousel = ({ images, locale }: Props) => {
               </section>
 
               <CarrouselButton
-                className="dark:bg-transparent hover:bg-red-800 dark:hover:bg-red-800 ring-0 focus:ring-transparent"
+                className="dark:bg-transparent hover:bg-red-500 hover:dark:bg-red-500 ring-0 focus:ring-transparent"
                 type="button"
                 onClick={closePreview}
                 aria-label={t("components.carrousel.close") || "Cerrar (Esc)"}
