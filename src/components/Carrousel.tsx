@@ -38,11 +38,13 @@ export const Carrousel = ({ images, locale }: Props) => {
   const { t } = getTranslation(locale as Locale);
 
   const [currentIndex, setCurrentIndex] = useState<number>(START_INDEX);
-  const [isOpen, setIsOpen] = useState<boolean>(DEFAULT_IS_OPEN);
+  const [isModalMounted, setIsModalMounted] =
+    useState<boolean>(DEFAULT_IS_OPEN);
+  const [isModalVisible, setIsModalVisible] =
+    useState<boolean>(DEFAULT_IS_OPEN);
   const [scale, setScale] = useState<number>(INITIAL_SCALE);
   const [rotation, setRotation] = useState<number>(INITIAL_ROTATION);
   const [isAnimating, setIsAnimating] = useState<boolean>(DEFAULT_IS_ANIMATING);
-  const [animateIn, setAnimateIn] = useState<boolean>(DEFAULT_IS_ANIMATING);
   const [direction, setDirection] = useState<Direction>(DEFAULT_DIRECTION);
   const [isImageLoading, setIsImageLoading] = useState<boolean>(
     DEFAULT_IS_IMAGE_LOADING
@@ -73,7 +75,7 @@ export const Carrousel = ({ images, locale }: Props) => {
     }, DEFAULT_TIMEOUT);
 
     return () => {
-      clearInterval(timeoutId);
+      clearTimeout(timeoutId);
     };
   }, [currentIndex]);
 
@@ -83,18 +85,10 @@ export const Carrousel = ({ images, locale }: Props) => {
   }, [currentIndex]);
 
   useEffect(() => {
-    document.documentElement.style.overflow = isOpen ? "hidden" : "unset";
-
-    if (isOpen) {
-      setIsOpen(true);
-      setTimeout(() => setAnimateIn(true), 20);
-      setTimeout(() => dialogRef.current?.focus(), 30);
-    } else {
-      setAnimateIn(false);
-      const timeout = setTimeout(() => setIsOpen(false), 300);
-      return () => clearTimeout(timeout);
-    }
-  }, [isOpen]);
+    document.documentElement.style.overflow = isModalMounted
+      ? "hidden"
+      : "unset";
+  }, [isModalMounted]);
 
   const goToPrevious = useCallback(() => {
     if (isAnimating) return;
@@ -147,10 +141,30 @@ export const Carrousel = ({ images, locale }: Props) => {
     setRotation(INITIAL_ROTATION);
   }, []);
 
-  const openPreview = useCallback(() => setIsOpen(true), []);
-  const closePreview = useCallback(() => setIsOpen(false), []);
+  const openPreview = useCallback(() => {
+    setIsModalMounted(true);
+
+    setTimeout(() => {
+      setIsModalVisible(true);
+      dialogRef.current?.focus();
+    }, 20);
+  }, []);
+
+  const closePreview = useCallback(() => {
+    setIsModalVisible(false);
+    setTimeout(() => {
+      setIsModalMounted(false);
+
+      setCurrentIndex(START_INDEX);
+      setScale(INITIAL_SCALE);
+      setRotation(INITIAL_ROTATION);
+      setIsImageLoading(DEFAULT_IS_IMAGE_LOADING);
+      setHasImageError(DEFAULT_HAS_IMAGE_ERROR);
+    }, 300);
+  }, []);
+
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isModalMounted) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
       switch (e.key) {
@@ -184,7 +198,15 @@ export const Carrousel = ({ images, locale }: Props) => {
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, goToPrevious, goToNext, closePreview, zoomIn, zoomOut, rotate]);
+  }, [
+    isModalMounted,
+    goToPrevious,
+    goToNext,
+    closePreview,
+    zoomIn,
+    zoomOut,
+    rotate,
+  ]);
 
   const retryImageLoad = useCallback(() => {
     setIsImageLoading(true);
@@ -195,12 +217,16 @@ export const Carrousel = ({ images, locale }: Props) => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (event.target === containerRef.current) {
-        setIsOpen(false);
+        closePreview();
       }
     };
-    document.addEventListener("mousedown", handleClickOutside);
+
+    if (isModalMounted) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [isModalMounted, closePreview]);
 
   if (!images || images.length === 0) {
     return (
@@ -242,23 +268,23 @@ export const Carrousel = ({ images, locale }: Props) => {
         )}
       </section>
 
-      {isOpen && (
+      {isModalMounted && (
         <section
           ref={containerRef}
           className={clsx(
             "fixed inset-0 z-50 bg-black/75 backdrop-blur-sm transition-opacity duration-300",
-            animateIn ? "opacity-100" : "opacity-0"
+            isModalVisible ? "opacity-100" : "opacity-0"
           )}
         >
           <dialog
             ref={dialogRef}
             tabIndex={-1}
-            open={isOpen}
+            open={isModalMounted}
             className={clsx(
               "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
-              "flex max-h-[90dvh] w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl flex-col justify-between overflow-hidden rounded-md border-none shadow-lg outline-[#3f474f] transition-all duration-200 dark:bg-dark-800 dark:text-white gap-2",
+              "flex max-h-[90dvh] w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl flex-col justify-between overflow-hidden rounded-md border-none shadow-lg outline-[#3f474f] transition-all duration-300 dark:bg-dark-800 dark:text-white gap-2",
               "p-2 m-0",
-              animateIn ? "scale-100 opacity-100" : "scale-95 opacity-0"
+              isModalVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"
             )}
           >
             <header className="flex justify-end items-center gap-2">
