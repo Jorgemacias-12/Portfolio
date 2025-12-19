@@ -59,8 +59,7 @@
       "categories": {
         "frontend": {
           "name": "Frontend",
-          "color": "from-blue-500 to-cyan-500",
-          "iconColor": "text-blue-500",
+          "color": "blue",
           "skills": [
             { "name": "Javascript", "icon": "javascript" },
             { "name": "Typescript", "icon": "typescript" },
@@ -74,8 +73,7 @@
         },
         "backend": {
           "name": "Backend",
-          "color": "from-green-500 to-emerald-500",
-          "iconColor": "text-green-500",
+          "color": "green",
           "skills": [
             { "name": "Python", "icon": "python" },
             { "name": "NodeJS", "icon": "nodejs" },
@@ -89,8 +87,7 @@
         },
         "tools": {
           "name": "Herramientas & DevOps",
-          "color": "from-orange-500 to-red-500",
-          "iconColor": "text-orange-500",
+          "color": "orange",
           "skills": [
             { "name": "Git", "icon": "git" },
             { "name": "CI/CD (Github Actions)", "icon": "githubactions" },
@@ -163,10 +160,12 @@
             "description": "Vista detallada de NBTMap Explorer v0.01 con herramientas de búsqueda, propiedades de mapas y opciones de exportación FNG y visualización de datos NBT."
           }
         ],
-        "link": {
-          "url": "https://github.com/Jorgemacias-12/NBTMap-Explorer",
-          "label": "Repositorio de GitHub"
-        }
+        "links": [
+          {
+            "url": "https://github.com/Jorgemacias-12/NBTMap-Explorer",
+            "label": "Repositorio de GitHub"
+          }
+        ]
       },
       {
         "name": "PonyCharacter Mod",
@@ -197,10 +196,12 @@
           { "url": "/projects/montecarlo-2.png", "description": "" },
           { "url": "/projects/montecarlo-3.png", "description": "" }
         ],
-        "link": {
-          "url": "https://github.com/Jorgemacias-12/Monte-Carlo-Global-Illumination-Demo",
-          "label": "Repositorio de GitHub"
-        }
+        "links": [
+          {
+            "url": "https://github.com/Jorgemacias-12/Monte-Carlo-Global-Illumination-Demo",
+            "label": "Repositorio de GitHub"
+          }
+        ]
       }
     ],
     "education": [
