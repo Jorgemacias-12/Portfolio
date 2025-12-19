@@ -1,6 +1,6 @@
 ---
 import type { SectionVariant } from "@/types";
-import { twMerge } from "tailwind-merge";
+import { clsx } from "clsx";
 
 interface Props {
   id?: string;
@@ -50,7 +50,7 @@ const normalContentClasses =
 ---
 
 <section
-  class={twMerge(
+  class={clsx(
     baseSectionClasses,
     variant === "hero" ? heroSectionClasses : normalSectionClasses,
     sectionWithOffset,
@@ -59,7 +59,7 @@ const normalContentClasses =
   id={shouldUseSectionId ? id : undefined}
 >
   <article
-    class={twMerge(
+    class={clsx(
       baseArticleClasses,
       variant === "hero" ? heroArticleClasses : normalArticleClasses
     )}
@@ -68,7 +68,7 @@ const normalContentClasses =
       title && optionalTitle && (
         <h2
           id={shouldUseTitleId ? id : undefined}
-          class={twMerge(
+          class={clsx(
             baseTitleClasses,
             variant === "hero" ? heroTitleClasses : normalTitleClasses,
             titleClass
