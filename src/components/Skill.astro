@@ -1,18 +1,18 @@
 ---
-import type { Skill as Props } from "@/types";
-import { twMerge } from "tailwind-merge";
+import type { Skill as Props, SkillVariant } from "@/types";
+import { clsx } from "clsx";
 
-const { icon, name, color } = Astro.props;
+const { icon, name, color, type = "card" } = Astro.props;
 
-const iconClassName = twMerge("text-xl", `devicon-${icon}-plain`, color);
+const variants: Record<SkillVariant, string> = {
+  card: "bg-gray-200 dark:bg-dark-800",
+  pill: `bg-${color}/10`,
+};
 ---
 
-<article
-  class="p-2 bg-gray-100 rounded-md dark:bg-dark-650 flex items-center gap-2"
->
-  <i class={iconClassName}></i>
-  <span
-    class="text-sm font-medium text-black dark:text-white group-hover:font-semibold transition-all"
+<article class={clsx("p-2 rounded-md flex items-center gap-2", variants[type])}>
+  <i class={clsx("text-xl", `devicon-${icon}-plain`, `text-${color}-500`)}></i>
+  <span class="text-sm font-medium text-black dark:text-white transition-all"
     >{name}</span
   >
 </article>
