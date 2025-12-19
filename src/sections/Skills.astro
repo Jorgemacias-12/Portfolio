@@ -17,7 +17,7 @@ const tools = t("sections_data.skills.categories.tools");
     <main class="flex flex-col gap-2">
       {
         frontend.skills.map(({ icon, name }) => {
-          return <Skill icon={icon} name={name} color={frontend.iconColor} />;
+          return <Skill icon={icon} name={name} color={frontend.color} />;
         })
       }
     </main>
@@ -29,7 +29,7 @@ const tools = t("sections_data.skills.categories.tools");
     <main class="flex flex-col gap-2">
       {
         backend.skills.map(({ icon, name }) => {
-          return <Skill icon={icon} name={name} color={backend.iconColor} />;
+          return <Skill icon={icon} name={name} color={backend.color} />;
         })
       }
     </main>
@@ -41,7 +41,7 @@ const tools = t("sections_data.skills.categories.tools");
     <main class="flex flex-col gap-2">
       {
         tools.skills.map(({ icon, name }) => {
-          return <Skill icon={icon} name={name} color={tools.iconColor} />;
+          return <Skill icon={icon} name={name} color={tools.color} />;
         })
       }
     </main>
