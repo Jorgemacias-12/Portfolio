@@ -74,7 +74,7 @@ export interface Project {
   description: string;
   tags: Skill[];
   images: Image[];
-  link: LinkItem;
+  links: LinkItem[];
 }
 
 export interface Education {
