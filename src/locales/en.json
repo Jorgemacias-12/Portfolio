@@ -56,187 +56,215 @@
     },
     "skills": {
       "categories": {
-        "frontend": {
-          "name": "Frontend",
-          "color": "blue",
-          "skills": [
-            { "name": "Javascript", "icon": "javascript" },
-            { "name": "Typescript", "icon": "typescript" },
-            { "name": "CSS", "icon": "css3" },
-            { "name": "HTML", "icon": "html5" },
-            { "name": "React", "icon": "react" },
-            { "name": "Astro", "icon": "astro" },
-            { "name": "WPF", "icon": "dot-net" },
-            { "name": "WinForms", "icon": "dotnetcore" }
+        "langs": {
+          "title": "Programming Languages",
+          "content": [
+            {
+              "name": "JavaScript",
+              "color": "green",
+              "icon": {
+                "name": "javascript",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "TypeScript",
+              "color": "green",
+              "icon": {
+                "name": "typescript",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "C#",
+              "color": "green",
+              "icon": {
+                "name": "csharp",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Python",
+              "color": "green",
+              "icon": {
+                "name": "python",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Lua",
+              "color": "green",
+              "icon": {
+                "name": "lua",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "PHP",
+              "color": "green",
+              "icon": {
+                "name": "php",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "SQL",
+              "color": "green",
+              "icon": {
+                "name": "mysql",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "HTML5",
+              "color": "green",
+              "icon": {
+                "name": "html5",
+                "isLucideIcon": false
+              }
+            }
           ]
         },
-        "backend": {
-          "name": "Backend",
-          "color": "green",
-          "skills": [
-            { "name": "Python", "icon": "python" },
-            { "name": "NodeJS", "icon": "nodejs" },
-            { "name": "Bun", "icon": "bun" },
-            { "name": "PHP", "icon": "php" },
-            { "name": "Laravel", "icon": "laravel" },
-            { "name": "C#", "icon": "csharp" },
-            { "name": "MySQL", "icon": "mysql" },
-            { "name": "SQL", "icon": "azuresqldatabase" }
+        "frameworks": {
+          "title": "Frameworks",
+          "content": [
+            {
+              "name": "React",
+              "color": "blue",
+              "icon": {
+                "name": "react",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Tailwind CSS",
+              "color": "blue",
+              "icon": {
+                "name": "tailwindcss",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Astro",
+              "color": "blue",
+              "icon": {
+                "name": "astro",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Laravel",
+              "color": "blue",
+              "icon": {
+                "name": "laravel",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Bun",
+              "color": "blue",
+              "icon": {
+                "name": "bun",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Node JS",
+              "color": "blue",
+              "icon": {
+                "name": "nodejs",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Windows Plaform Foundation (WPF)",
+              "color": "blue",
+              "icon": {
+                "name": "dot-net",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "WinForms",
+              "color": "blue",
+              "icon": {
+                "name": "dotnetcore",
+                "isLucideIcon": false
+              }
+            }
           ]
         },
         "tools": {
-          "name": "Herramientas & DevOps",
-          "color": "orange",
-          "skills": [
-            { "name": "Git", "icon": "git" },
-            { "name": "CI/CD (Github Actions)", "icon": "githubactions" },
-            { "name": "Vercel", "icon": "vercel" },
-            { "name": "GitHub", "icon": "github" },
-            { "name": "Nginx", "icon": "nginx" },
-            { "name": "Insomnia", "icon": "insomnia" },
-            { "name": "Visual Studio Code", "icon": "vscode" }
+          "title": "Development Tools",
+          "content": [
+            {
+              "name": "Git",
+              "color": "orange",
+              "icon": {
+                "name": "git",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "GitHub",
+              "color": "orange",
+              "icon": {
+                "name": "github",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "GitHub Actions",
+              "color": "orange",
+              "icon": {
+                "name": "githubactions",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Nginx",
+              "color": "orange",
+              "icon": {
+                "name": "nginx",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Linux",
+              "color": "orange",
+              "icon": {
+                "name": "linux",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Insomnia",
+              "color": "orange",
+              "icon": {
+                "name": "insomnia",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Visual Studio Code",
+              "color": "orange",
+              "icon": {
+                "name": "vscode",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Visual Studio",
+              "color": "orange",
+              "icon": {
+                "name": "visualstudio",
+                "isLucideIcon": false
+              }
+            }
           ]
         }
       }
-    },
-    "experiences": [
-      {
-        "role": "Software Developer (Backend & DevOps)",
-        "company": "SMCI",
-        "period": "December 24, 2024 - February 28, 2025",
-        "responsabilities": [
-          "Defined the project's tech stack based on requirements and future system needs.",
-          "Designed the system's foundational architecture to ensure clarity, modularity, and maintainability.",
-          "Implemented the backend foundation using FastAPI and Prisma ORM, establishing the initial data flow.",
-          "Configured CI/CD pipelines with GitHub Actions to automate testing and deployments.",
-          "Set up the AWS VPS for the project's deployment and runtime environment."
-        ],
-        "technologies": [
-          {
-            "name": "Python",
-            "icon": "python",
-            "color": "text-blue-500"
-          },
-          { "name": "FastAPI", "icon": "fastapi", "color": "text-green-500" },
-          {
-            "name": "Prisma ORM",
-            "icon": "prisma",
-            "color": "text-orange-500"
-          },
-          {
-            "name": "GitHub Actions",
-            "icon": "githubactions",
-            "color": "text-orange-500"
-          },
-          { "name": "GitHub", "icon": "github" }
-        ]
-      }
-    ],
-    "projects": [
-      {
-        "name": "NBTMap Explorer",
-        "description": "Desktop tool for exploring, previewing, and exporting Minecraft item maps directly from game files.",
-        "tags": [
-          { "name": "C#", "icon": "csharp" },
-          { "name": "WPF", "icon": "dotnetcore" },
-          { "name": "MVVM", "icon": "dot-net" }
-        ],
-        "images": [
-          {
-            "url": "/projects/nbtmap-1.png",
-            "description": "Startup screen of NBTMap Explorer v0.0.1 with 108% loading indicator, showing the tool ready to explore Minecraft maps."
-          },
-          {
-            "url": "/projects/nbtmap-2.png",
-            "description": "Version 9.0.1 of NBTMap Explorer with updated interface, maintaining the startup design and ready status."
-          },
-          {
-            "url": "/projects/nbtmap-3.png",
-            "description": "Main interface of the map manager showing complete list of Overworld files (map_0 to map_99) with navigation and export options."
-          },
-          {
-            "url": "/projects/nbtmap-4.png",
-            "description": "Detailed view of NBTMap Explorer v0.01 with search tools, map properties, and FNG export and NBT data viewing options."
-          }
-        ],
-        "links": [
-          {
-            "url": "https://github.com/Jorgemacias-12/NBTMap-Explorer",
-            "label": "GitHub Repository"
-          }
-        ]
-      },
-      {
-        "name": "PonyCharacter Mod",
-        "description": "Mod for The Binding of Isaac: Repentance+ that adds new characters and custom graphics.",
-        "tags": [
-          { "name": "Lua", "icon": "lua" },
-          { "name": "The Binding of Isaac Modding API", "icon": "lua" }
-        ],
-        "images": [
-          { "url": "/projects/ponycharacter-1.jpeg", "description": "" },
-          { "url": "/projects/ponycharacter-2.jpeg", "description": "" }
-        ],
-        "links": [
-          {
-            "url": "https://github.com/SweetyStorm/PonyCharacter",
-            "label": "GitHub Repository"
-          }
-        ]
-      },
-      {
-        "name": "Monte Carlo Global Illumination Demo",
-        "description": "3D OpenGL program that uses the Monte Carlo method to generate Global Illumination and explore advanced lighting techniques.",
-        "tags": [
-          { "name": "Python", "icon": "python", "category": "language" },
-          { "name": "OpenGL", "icon": "opengl", "category": "frontend" },
-          { "name": "GLSL", "icon": "c", "category": "frontend" }
-        ],
-        "images": [
-          { "url": "/projects/montecarlo-1.png", "description": "" },
-          { "url": "/projects/montecarlo-2.png", "description": "" },
-          { "url": "/projects/montecarlo-3.png", "description": "" }
-        ],
-        "links": [
-          {
-            "url": "https://github.com/Jorgemacias-12/Monte-Carlo-Global-Illumination-Demo",
-            "label": "GitHub Repository"
-          }
-        ]
-      }
-    ],
-    "education": [
-      {
-        "degree": "Computer Engineering",
-        "institution": "University of Guadalajara (UdeG)",
-        "campus": "CUCOSTA",
-        "startDate": "August 2021",
-        "endDate": "Present",
-        "gpa": "96.15/100",
-        "relevantProjects": [],
-        "courses": [],
-        "achievements": [],
-        "extracurricularActivities": [],
-        "schoolLink": "http://www.cuc.udg.mx/",
-        "finished": false,
-        "finished_caption": "Ongoing"
-      },
-      {
-        "degree": "Professional Technical Bachelor in Computer Science",
-        "institution": "National College of Professional Technical Education",
-        "campus": "Puerto Vallarta 075",
-        "startDate": "August 2018",
-        "endDate": "July 2021",
-        "gpa": "9.9/10",
-        "relevantProjects": [],
-        "courses": [],
-        "achievements": ["High grades"],
-        "extracurricularActivities": [],
-        "schoolLink": "https://www.conalep.edu.mx/",
-        "finished": true,
-        "finished_caption": "Completed"
-      }
-    ]
+    }
   },
   "components": {
     "header": {
@@ -272,6 +300,24 @@
     "theme_toggler": {
       "title": "Dark/light theme toggle button",
       "aria-label": "Button that toggles the portfolio theme between dark/light"
+    },
+    "project_status_badge": {
+      "status_labels": {
+        "active": "Active",
+        "maintenance": "Maintenance",
+        "completed": "Completed",
+        "paused": "Paused",
+        "planned": "Planned",
+        "in_evaluation": "In evaluation"
+      },
+      "status_tooltips": {
+        "active": "Project under active development.",
+        "maintenance": "Stable project receiving minor improvements or adjustments.",
+        "completed": "Finished project with no active development.",
+        "paused": "Project temporarily on hold.",
+        "planned": "Defined project, not started yet.",
+        "in_evaluation": "Idea or project under feasibility analysis."
+      }
     }
   }
 }
