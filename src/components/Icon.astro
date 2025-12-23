@@ -1,0 +1,31 @@
+---
+import * as lucideIcons from "lucide-astro";
+import type { Icon as Props } from "@/types";
+import clsx from "clsx";
+
+const {
+  name,
+  class: className = "",
+  isLucideIcon = false,
+  size = 24,
+} = Astro.props as Props;
+
+const toPascalCase = (str: string) => {
+  return str
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join("");
+};
+
+const LucideIcon = isLucideIcon
+  ? (lucideIcons as Record<string, any>)[toPascalCase(name)]
+  : null;
+---
+
+{
+  isLucideIcon && LucideIcon ? (
+    <LucideIcon size={size} class={className} />
+  ) : (
+    <i class={clsx(`devicon-${name}-plain`, className)} aria-hidden="true" />
+  )
+}
