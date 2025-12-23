@@ -57,45 +57,211 @@
     },
     "skills": {
       "categories": {
-        "frontend": {
-          "name": "Frontend",
-          "color": "blue",
-          "skills": [
-            { "name": "Javascript", "icon": "javascript" },
-            { "name": "Typescript", "icon": "typescript" },
-            { "name": "CSS", "icon": "css3" },
-            { "name": "HTML", "icon": "html5" },
-            { "name": "React", "icon": "react" },
-            { "name": "Astro", "icon": "astro" },
-            { "name": "WPF", "icon": "dot-net" },
-            { "name": "WinForms", "icon": "dotnetcore" }
+        "langs": {
+          "title": "Lenguajes de programación",
+          "content": [
+            {
+              "name": "JavaScript",
+              "color": "green",
+              "icon": {
+                "name": "javascript",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "TypeScript",
+              "color": "green",
+              "icon": {
+                "name": "typescript",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "C#",
+              "color": "green",
+              "icon": {
+                "name": "csharp",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Python",
+              "color": "green",
+              "icon": {
+                "name": "python",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Lua",
+              "color": "green",
+              "icon": {
+                "name": "lua",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "PHP",
+              "color": "green",
+              "icon": {
+                "name": "php",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "SQL",
+              "color": "green",
+              "icon": {
+                "name": "mysql",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "HTML5",
+              "color": "green",
+              "icon": {
+                "name": "html5",
+                "isLucideIcon": false
+              }
+            }
           ]
         },
-        "backend": {
-          "name": "Backend",
-          "color": "green",
-          "skills": [
-            { "name": "Python", "icon": "python" },
-            { "name": "NodeJS", "icon": "nodejs" },
-            { "name": "Bun", "icon": "bun" },
-            { "name": "PHP", "icon": "php" },
-            { "name": "Laravel", "icon": "laravel" },
-            { "name": "C#", "icon": "csharp" },
-            { "name": "MySQL", "icon": "mysql" },
-            { "name": "SQL", "icon": "azuresqldatabase" }
+        "frameworks": {
+          "title": "Frameworks",
+          "content": [
+            {
+              "name": "React",
+              "color": "blue",
+              "icon": {
+                "name": "react",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Tailwind CSS",
+              "color": "blue",
+              "icon": {
+                "name": "tailwindcss",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Astro",
+              "color": "blue",
+              "icon": {
+                "name": "astro",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Laravel",
+              "color": "blue",
+              "icon": {
+                "name": "laravel",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Bun",
+              "color": "blue",
+              "icon": {
+                "name": "bun",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Node JS",
+              "color": "blue",
+              "icon": {
+                "name": "nodejs",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Windows Presentation Foundation (WPF)",
+              "color": "blue",
+              "icon": {
+                "name": "dot-net",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "WinForms",
+              "color": "blue",
+              "icon": {
+                "name": "dotnetcore",
+                "isLucideIcon": false
+              }
+            }
           ]
         },
         "tools": {
-          "name": "Herramientas & DevOps",
-          "color": "orange",
-          "skills": [
-            { "name": "Git", "icon": "git" },
-            { "name": "CI/CD (Github Actions)", "icon": "githubactions" },
-            { "name": "Vercel", "icon": "vercel" },
-            { "name": "GitHub", "icon": "github" },
-            { "name": "Nginx", "icon": "nginx" },
-            { "name": "Insomnia", "icon": "insomnia" },
-            { "name": "Visual Studio Code", "icon": "vscode" }
+          "title": "Herramientas de desarrollo",
+          "content": [
+            {
+              "name": "Git",
+              "color": "orange",
+              "icon": {
+                "name": "git",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "GitHub",
+              "color": "orange",
+              "icon": {
+                "name": "github",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "GitHub Actions",
+              "color": "orange",
+              "icon": {
+                "name": "githubactions",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Nginx",
+              "color": "orange",
+              "icon": {
+                "name": "nginx",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Linux",
+              "color": "orange",
+              "icon": {
+                "name": "linux",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Insomnia",
+              "color": "orange",
+              "icon": {
+                "name": "insomnia",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Visual Studio Code",
+              "color": "orange",
+              "icon": {
+                "name": "vscode",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Visual Studio",
+              "color": "orange",
+              "icon": {
+                "name": "visualstudio",
+                "isLucideIcon": false
+              }
+            }
           ]
         }
       }
@@ -135,73 +301,169 @@
     ],
     "projects": [
       {
-        "name": "NBTMap Explorer",
-        "description": "Herramienta de escritorio para explorar, previsualizar y exportar mapas de ítems de Minecraft desde los archivos del juego.",
+        "name": "NBTMap-Explorer",
+        "description": "Aplicación de escritorio para convertir mapas de Minecraft (archivos NBT) directamente a imágenes PNG mediante un flujo de trabajo más amigable.",
+        "status": "active",
+        "context": {
+          "problem": "Mejorar una herramienta existente que dependía de múltiples herramientas externas y tenía un flujo de uso poco intuitivo.",
+          "role": "Arquitectura de software, selección de tecnologías y desarrollo del proyecto.",
+          "approach": "Aplicación de escritorio para Windows desarrollada con WPF y C# (.NET). Lectura directa de archivos NBT sin herramientas externas.",
+          "challenges": [
+            "Diseñar una arquitectura flexible para múltiples versiones de Minecraft",
+            "Tiempo y recursos limitados",
+            "Crear una interfaz clara para un proceso técnicamente complejo"
+          ],
+          "learnings": [
+            "Diseño de aplicaciones de escritorio con WPF",
+            "Procesamiento de archivos binarios",
+            "Pruebas de aplicaciones en C#",
+            "Internacionalización (i18n) en .NET"
+          ]
+        },
         "tags": [
-          { "name": "C#", "icon": "csharp" },
-          { "name": "WPF", "icon": "dotnetcore" },
-          { "name": "MVVM", "icon": "dot-net" }
+          {
+            "name": "C#",
+            "icon": {
+              "name": "csharp",
+              "isLucideIcon": false
+            },
+            "color": "blue"
+          },
+          {
+            "name": "WPF",
+            "icon": { "name": "dotnetcore", "isLucideIcon": false },
+            "color": "blue"
+          },
+          {
+            "name": ".NET",
+            "icon": { "name": "dot-net", "isLucideIcon": false },
+            "color": "blue"
+          }
         ],
         "images": [
           {
             "url": "/projects/nbtmap-1.png",
-            "description": "Pantalla de inicio de NBTMap Explorer v0.0.1 con indicador de carga al 108%, mostrando la herramienta lista para explorar mapas de Minecraft."
+            "description": "Vista principal de la aplicación."
           },
-          {
-            "url": "/projects/nbtmap-2.png",
-            "description": "Versión 9.0.1 de NBTMap Explorer con interfaz actualizada, manteniendo el diseño de inicio y estado listo para uso."
-          },
-          {
-            "url": "/projects/nbtmap-3.png",
-            "description": "Interfaz principal del gestor de mapas mostrando lista completa de archivos del mundo Overworld (map_0 a map_99) con opciones de navegación y exportación."
-          },
-          {
-            "url": "/projects/nbtmap-4.png",
-            "description": "Vista detallada de NBTMap Explorer v0.01 con herramientas de búsqueda, propiedades de mapas y opciones de exportación FNG y visualización de datos NBT."
-          }
+          { "url": "/projects/nbtmap-2.png", "description": "" },
+          { "url": "/projects/nbtmap-3.png", "description": "" },
+          { "url": "/projects/nbtmap-4.png", "description": "" }
         ],
         "links": [
           {
-            "url": "https://github.com/Jorgemacias-12/NBTMap-Explorer",
-            "label": "Repositorio de GitHub"
+            "label": "Proyecto de referencia",
+            "url": "https://github.com/Shokuno/minecraft-map-to-png-tool"
           }
         ]
       },
+
       {
         "name": "PonyCharacter Mod",
-        "description": "Mod para The Binding of Isaac: Repentance+ que agrega nuevos personajes y gráficos personalizados.",
+        "description": "Mod para The Binding of Isaac enfocado en la limpieza del código, mantenimiento y mejora de la calidad.",
+        "status": "completed",
+        "context": {
+          "problem": "Apoyar a un amigo que estaba iniciando en el modding mientras se mejoraba una base de código existente.",
+          "role": "Refactorización de código, limpieza y aplicación de buenas prácticas.",
+          "approach": "Desarrollo utilizando la API oficial del juego y el lenguaje Lua.",
+          "challenges": [
+            "Entender una base de código sin documentación",
+            "Refactorizar sin romper el comportamiento existente"
+          ],
+          "learnings": [
+            "Modding de videojuegos",
+            "Depuración dentro de un entorno de juego",
+            "Lectura de documentación técnica"
+          ]
+        },
         "tags": [
-          { "name": "Lua", "icon": "lua" },
-          { "name": "The Binding of Isaac Modding API", "icon": "lua" }
+          {
+            "name": "Lua",
+            "icon": { "name": "lua", "isLucideIcon": false }
+          },
+          {
+            "name": "Game Modding",
+            "icon": { "name": "gamepad", "isLucideIcon": true }
+          }
         ],
         "images": [
           { "url": "/projects/ponycharacter-1.jpeg", "description": "" },
           { "url": "/projects/ponycharacter-2.jpeg", "description": "" }
         ],
-        "link": {
-          "url": "https://github.com/SweetyStorm/PonyCharacter",
-          "label": "Repositorio de GitHub"
-        }
+        "links": []
       },
+
       {
         "name": "Monte Carlo Global Illumination Demo",
-        "description": "Programa 3D en OpenGL que utiliza el método Monte Carlo para generar Global Illumination y explorar técnicas de iluminación avanzada.",
+        "description": "Demo experimental que explora la iluminación global en un entorno 3D utilizando el método de Monte Carlo.",
+        "status": "completed",
+        "context": {
+          "problem": "Proyecto académico enfocado en investigar aplicaciones prácticas del método de Monte Carlo.",
+          "role": "Investigación e implementación completa del proyecto.",
+          "approach": "Python con OpenGL para el entorno 3D y GLSL para shaders.",
+          "challenges": [
+            "Configurar el entorno de ejecución con Python y OpenGL",
+            "Problemas con cámara y coordenadas",
+            "No lograr implementar completamente el sistema de iluminación"
+          ],
+          "learnings": [
+            "Fundamentos de renderizado 3D",
+            "Desarrollo de shaders con GLSL",
+            "Gestión del alcance técnico"
+          ]
+        },
         "tags": [
-          { "name": "Python", "icon": "python", "category": "language" },
-          { "name": "OpenGL", "icon": "opengl", "category": "frontend" },
-          { "name": "GLSL", "icon": "c", "category": "frontend" }
+          {
+            "name": "Python",
+            "icon": { "name": "python", "isLucideIcon": false }
+          },
+          {
+            "name": "OpenGL",
+            "icon": { "name": "opengl", "isLucideIcon": false }
+          },
+          {
+            "name": "GLSL",
+            "icon": { "name": "shader", "isLucideIcon": true }
+          }
         ],
         "images": [
           { "url": "/projects/montecarlo-1.png", "description": "" },
           { "url": "/projects/montecarlo-2.png", "description": "" },
           { "url": "/projects/montecarlo-3.png", "description": "" }
         ],
-        "links": [
+        "links": []
+      },
+
+      {
+        "name": "Herramienta Educativa tipo PSeInt",
+        "description": "Herramienta educativa inspirada en PSeInt con una interfaz moderna y ejecución paso a paso.",
+        "status": "planned",
+        "context": {
+          "problem": "Crear una alternativa moderna para la enseñanza de programación estructurada.",
+          "role": "Diseño del lenguaje, definición del MVP y co-desarrollo.",
+          "approach": "Lenguaje inspirado en PSeInt, parser, intérprete y UI enfocada en estudiantes.",
+          "challenges": [
+            "Mantener la simplicidad del lenguaje",
+            "Diseñar mensajes de error pedagógicos",
+            "Balancear UX con objetivos educativos"
+          ],
+          "learnings": [
+            "Diseño de lenguajes",
+            "Parsers e intérpretes",
+            "UX educativa"
+          ]
+        },
+        "tags": [
           {
-            "url": "https://github.com/Jorgemacias-12/Monte-Carlo-Global-Illumination-Demo",
-            "label": "Repositorio de GitHub"
+            "name": "Diseño de Lenguajes",
+            "icon": { "name": "book", "isLucideIcon": true }
+          },
+          {
+            "name": "Educación",
+            "icon": { "name": "graduation-cap", "isLucideIcon": true }
           }
-        ]
+        ],
+        "images": [],
+        "links": []
       }
     ],
     "education": [
@@ -271,6 +533,24 @@
     "theme_toggler": {
       "title": "Botón para cambiar de tema oscuro/claro",
       "aria-label": "Botón que cambia el tema del portafolio entre oscuro/claro"
+    },
+    "project_status_badge": {
+      "status_labels": {
+        "active": "Activo",
+        "maintenance": "Mantenimiento",
+        "completed": "Completado",
+        "paused": "Pausado",
+        "planned": "Planeado",
+        "in_evaluation": "En evaluación"
+      },
+      "status_tooltips": {
+        "active": "Proyecto en desarrollo activo.",
+        "maintenance": "Proyecto estable que recibe mejoras o ajustes menores.",
+        "completed": "Proyecto finalizado sin desarrollo activo.",
+        "paused": "Proyecto detenido temporalmente.",
+        "planned": "Proyecto definido, aún no iniciado.",
+        "in_evaluation": "Idea o proyecto en análisis de viabilidad."
+      }
     }
   }
 }
