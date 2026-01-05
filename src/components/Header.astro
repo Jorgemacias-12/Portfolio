@@ -31,7 +31,7 @@ const lang = currentLocale;
     <ul class="flex items-center gap-4">
       {
         sections.map((el) => {
-          return <Link isForElement {...el} />;
+          return <Link isForMenu {...el} />;
         })
       }
     </ul>
@@ -146,18 +146,25 @@ const lang = currentLocale;
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
+    const SWIPE_MIN_DISTANCE = 80;
+    const EDGE_ZONE_WIDTH = 50;
+    const SWIPE_PREVENTION_DISTANCE = 10;
+    const MENU_ANIMATION_TIME = 300;
+
+    let isMenuOpen = false;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+    let isSwipingHorizontally = false;
+    let isTouchInEdgeZone = false;
+
     const headerEl = document.getElementById("header");
     const mobileMenu = document.getElementById("mobile-menu");
     const menuContent = document.getElementById("mobile-menu-content");
     const menuButtons = document.querySelectorAll(".menu-opener");
     const menuIcons = document.querySelectorAll(".lucide.lucide-menu");
     const closeIcons = document.querySelectorAll(".lucide.lucide-x");
-
-    let isMenuOpen = false;
-    let touchStartX = 0;
-    let touchStartY = 0;
-    let isSwipingHorizontally = false;
-    const swipeThreshold = 80;
 
     const glassClasses = [
       "fixed",
@@ -170,6 +177,120 @@ const lang = currentLocale;
       "dark:bg-dark-800/80",
       "dark:border-b-[#070708]/50",
     ];
+
+    const resetTouchState = () => {
+      touchStartX = 0;
+      touchStartY = 0;
+      touchEndX = 0;
+      touchEndY = 0;
+      isSwipingHorizontally = false;
+      isTouchInEdgeZone = false;
+    };
+
+    const toggleMenu = (shouldOpen) => {
+      if (typeof shouldOpen === "boolean") {
+        if (shouldOpen === isMenuOpen) return;
+        isMenuOpen = shouldOpen;
+      } else {
+        isMenuOpen = !isMenuOpen;
+      }
+
+      menuIcons.forEach((icon) => icon.classList.toggle("hidden", isMenuOpen));
+      closeIcons.forEach((icon) =>
+        icon.classList.toggle("hidden", !isMenuOpen)
+      );
+
+      if (isMenuOpen) {
+        mobileMenu.style.display = "block";
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            menuContent.classList.remove("-translate-x-full");
+          });
+        });
+      } else {
+        menuContent.classList.add("-translate-x-full");
+        setTimeout(() => {
+          mobileMenu.style.display = "none";
+        }, MENU_ANIMATION_TIME);
+      }
+
+      document.documentElement.style.overflow = isMenuOpen ? "hidden" : "";
+    };
+
+    const handleTouchStart = (e) => {
+      if (window.innerWidth >= 768) return;
+
+      const touchX = e.touches[0].clientX;
+      touchStartX = touchX;
+      touchStartY = e.touches[0].clientY;
+
+      isTouchInEdgeZone = !isMenuOpen && touchX <= EDGE_ZONE_WIDTH;
+      isSwipingHorizontally = false;
+    };
+
+    const handleTouchMove = (e) => {
+      if (window.innerWidth >= 768) return;
+
+      if (!isMenuOpen && !isTouchInEdgeZone) {
+        return;
+      }
+
+      const touchX = e.touches[0].clientX;
+      const touchY = e.touches[0].clientY;
+      const diffX = touchX - touchStartX;
+      const diffY = touchY - touchStartY;
+
+      if (!isSwipingHorizontally) {
+        const isHorizontal = Math.abs(diffX) > Math.abs(diffY);
+        const hasEnoughHorizontalMovement =
+          Math.abs(diffX) > SWIPE_PREVENTION_DISTANCE;
+
+        if (isHorizontal && hasEnoughHorizontalMovement) {
+          isSwipingHorizontally = true;
+        } else if (
+          !isHorizontal &&
+          Math.abs(diffY) > SWIPE_PREVENTION_DISTANCE
+        ) {
+          resetTouchState();
+          return;
+        }
+      }
+
+      if (
+        isSwipingHorizontally &&
+        Math.abs(diffX) > SWIPE_PREVENTION_DISTANCE
+      ) {
+        e.preventDefault();
+      }
+    };
+
+    const handleTouchEnd = (e) => {
+      if (window.innerWidth >= 768) return;
+
+      if (touchStartX === 0 || !isSwipingHorizontally) {
+        resetTouchState();
+        return;
+      }
+
+      touchEndX = e.changedTouches[0].clientX;
+      const diffX = touchEndX - touchStartX;
+
+      if (Math.abs(diffX) > SWIPE_MIN_DISTANCE) {
+        if (diffX > 0 && !isMenuOpen && isTouchInEdgeZone) {
+          toggleMenu(true);
+        } else if (diffX < 0 && isMenuOpen) {
+          toggleMenu(false);
+        }
+      }
+
+      resetTouchState();
+    };
+
+    const handleClickOutside = (e) => {
+      if (isMenuOpen && e.target === mobileMenu) {
+        toggleMenu(false);
+      }
+    };
 
     const headerObserver = new IntersectionObserver(
       (entries) => {
@@ -196,87 +317,14 @@ const lang = currentLocale;
     triggerElement.style.width = "100%";
     triggerElement.style.pointerEvents = "none";
     document.body.prepend(triggerElement);
+
     headerObserver.observe(triggerElement);
-
-    const toggleMenu = (shouldOpen) => {
-      if (typeof shouldOpen === "boolean") {
-        if (shouldOpen === isMenuOpen) return;
-        isMenuOpen = shouldOpen;
-      } else {
-        isMenuOpen = !isMenuOpen;
-      }
-
-      menuIcons.forEach((icon) => icon.classList.toggle("hidden", isMenuOpen));
-      closeIcons.forEach((icon) =>
-        icon.classList.toggle("hidden", !isMenuOpen)
-      );
-
-      if (isMenuOpen) {
-        mobileMenu.style.display = "block";
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            menuContent.classList.remove("-translate-x-full");
-          });
-        });
-      } else {
-        menuContent.classList.add("-translate-x-full");
-        setTimeout(() => {
-          mobileMenu.style.display = "none";
-        }, 300);
-      }
-
-      document.documentElement.style.overflow = isMenuOpen ? "hidden" : "";
-    };
-
-    const handleTouchStart = (e) => {
-      if (window.innerWidth >= 768) return;
-
-      touchStartX = e.touches[0].clientX;
-      touchStartY = e.touches[0].clientY;
-      isSwipingHorizontally = false;
-    };
-
-    const handleTouchMove = (e) => {
-      if (window.innerWidth >= 768) return;
-
-      const touchX = e.touches[0].clientX;
-      const touchY = e.touches[0].clientY;
-      const diffX = touchX - touchStartX;
-      const diffY = touchY - touchStartY;
-
-      if (!isSwipingHorizontally) {
-        if (Math.abs(diffX) > Math.abs(diffY)) {
-          isSwipingHorizontally = true;
-        }
-      }
-
-      if (isSwipingHorizontally && Math.abs(diffX) > 10) {
-        e.preventDefault();
-      }
-    };
-
-    const handleTouchEnd = (e) => {
-      if (window.innerWidth >= 768) return;
-
-      const touchEndX = e.changedTouches[0].clientX;
-      const diffX = touchEndX - touchStartX;
-
-      if (Math.abs(diffX) > swipeThreshold) {
-        if (diffX > 0 && !isMenuOpen) {
-          toggleMenu(true);
-        } else if (diffX < 0 && isMenuOpen) {
-          toggleMenu(false);
-        }
-      }
-    };
 
     menuButtons.forEach((btn) =>
       btn.addEventListener("click", () => toggleMenu())
     );
-    mobileMenu.addEventListener(
-      "click",
-      (e) => e.target === mobileMenu && toggleMenu(false)
-    );
+
+    mobileMenu.addEventListener("click", handleClickOutside);
 
     document.addEventListener("touchstart", handleTouchStart, {
       passive: false,
@@ -284,11 +332,17 @@ const lang = currentLocale;
     document.addEventListener("touchmove", handleTouchMove, { passive: false });
     document.addEventListener("touchend", handleTouchEnd, { passive: true });
 
-    window.addEventListener("beforeunload", () => {
+    const cleanup = () => {
       headerObserver.unobserve(triggerElement);
       document.removeEventListener("touchstart", handleTouchStart);
       document.removeEventListener("touchmove", handleTouchMove);
       document.removeEventListener("touchend", handleTouchEnd);
-    });
+      mobileMenu.removeEventListener("click", handleClickOutside);
+      menuButtons.forEach((btn) => {
+        btn.removeEventListener("click", () => toggleMenu());
+      });
+    };
+
+    window.addEventListener("beforeunload", cleanup);
   });
 </script>
