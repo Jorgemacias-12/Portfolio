@@ -1,16 +1,17 @@
 ---
 import type { LinkComponentProps as Props } from "@/types";
 import { appendBaseUrl } from "@/utils";
+import Icon from "./Icon.astro";
+import clsx from "clsx";
 
-const { label, url, isForMenu, isForElement } = Astro.props;
+const { label, url, isForMenu, isForElement, isLastElement, icon } =
+  Astro.props;
 
-const internalUrl = isForElement
-  ? appendBaseUrl(`#${url}`)
-  : appendBaseUrl(url);
+const internalUrl = isForMenu ? appendBaseUrl(`#${url}`) : appendBaseUrl(url);
 ---
 
 {
-  isForMenu ? (
+  isForMenu && (
     <li>
       <a
         class="link flex flex-1 w-full p-2 rounded-md text-sm hover:bg-accent-600 hover:text-white dark:hover:bg-accent-500"
@@ -21,36 +22,26 @@ const internalUrl = isForElement
         {label}
       </a>
     </li>
-  ) : (
-    <li>
-      <a
-        class="link flex flex-1 w-full rounded text-sm dark:text-gray-300 text-gray-600 hover:bg-gray-200 p-2 transition-colors duration-200 hover:text-accent-600 hover:dark:bg-dark-600 hover:dark:text-accent-500"
-        aria-label={label}
-        data-url={url}
-        href={internalUrl}
-      >
-        {label}
-      </a>
-    </li>
   )
 }
 
-<script>
-  const handleClick = (e: Event) => {
-    const url = (e.target as HTMLLinkElement).getAttribute("data-url");
+{
+  isForElement && (
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href={url}
+      class={clsx(
+        "inline-flex gap-2 items-center rounded-md p-2 transition-colors duration-200",
+        isLastElement
+          ? "border border-gray-200 dark:border-dark-600 hover:border-accent-700 dark:hover:border-accent-500"
+          : "bg-accent-700 dark:bg-accent-500 text-white dark:hover:bg-accent-500/50 hover:bg-accent-700/50"
+      )}
+    >
+      {icon && <Icon {...icon} />}
+      {label}
+    </a>
+  )
+}
 
-    if (!url) throw new Error("No data-url for this component");
-
-    if (!url.includes("/")) return;
-
-    e.preventDefault();
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
-
-    window.history.pushState(null, document.title, window.location.pathname);
-  };
-
-  const links = document.querySelectorAll(".link");
-
-  links.forEach((e) => e.addEventListener("click", handleClick));
-</script>
+<style></style>
