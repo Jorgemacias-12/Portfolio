@@ -1,0 +1,32 @@
+---
+import { getTranslation } from "@/i18n";
+import type { ProjectStatus } from "@/types";
+import type { Locale } from "@/types";
+import {
+  baseBadgeClasses,
+  projectStatusBadgeClasses,
+  projectStatusLabelKeys,
+  projectStatusTooltipKeys,
+} from "@/constants";
+import clsx from "clsx";
+
+interface Props {
+  status: ProjectStatus;
+}
+
+const locale = Astro.currentLocale as Locale;
+
+const { t } = getTranslation(locale);
+
+const { status } = Astro.props;
+
+const label = t(projectStatusLabelKeys[status]);
+const tooltip = t(projectStatusTooltipKeys[status]);
+---
+
+<span
+  class={clsx(baseBadgeClasses, projectStatusBadgeClasses[status])}
+  title={tooltip as string}
+>
+  {label}
+</span>
