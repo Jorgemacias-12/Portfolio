@@ -9,7 +9,7 @@ const { t } = getTranslation(currentLocale as Locale);
 const experiences = t("sections_data.experiences");
 ---
 
-<main class="">
+<main class="flex flex-col md:flex-row gap-2">
   {
     experiences.map((props) => {
       return <Experience {...props} />;
