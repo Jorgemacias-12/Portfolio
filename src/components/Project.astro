@@ -1,47 +1,50 @@
 ---
 import type { Locale, Project as Props } from "@/types";
 import { Carrousel } from "./Carrousel";
+import ProjectStatusBadge from "./ProjectStatusBadge.astro";
 import Skill from "./Skill.astro";
-import { ExternalLink } from "@lucide/astro";
+import Link from "./Link.astro";
+import clsx from "clsx";
 
 const locale = Astro.currentLocale as Locale;
 
-const { description, images, link, name, tags } = Astro.props;
+const { description, images, links, name, status, tags, demo_link, repo_link } =
+  Astro.props;
 ---
 
 <article
-  class="flex flex-col gap-2 bg-gray-100 shadow-md dark:bg-dark-800 p-2 rounded-lg transition-colors duration-200"
+  class="flex flex-col gap-4 bg-gray-100 shadow-md dark:bg-dark-800 p-2 rounded-lg transition-colors duration-200"
 >
   <header class="flex flex-col gap-2">
-    <Carrousel locale={locale} images={images} client:only />
-    <h3
-      class="text-2xl text-balance font-semibold text-accent-600 dark:text-accent-500"
-    >
-      {name}
-    </h3>
-    <p class="text-sm text-gray-700 dark:text-gray-100/50">{description}</p>
+    {
+      images && (
+        <Carrousel client:only="react" images={images} locale={locale} />
+      )
+    }
+
+    <section class="flex flex-wrap items-center gap-2">
+      <h3
+        class="text-2xl text-balance font-semibold text-accent-600 dark:text-accent-500"
+      >
+        {name}
+      </h3>
+
+      <ProjectStatusBadge status={status} />
+    </section>
   </header>
+  <main class="flex flex-col gap-2">
+    <p class="text-sm text-gray-500 dark:text-gray-100/60">{description}</p>
 
-  <main>
-    <p class="text-sm text-gray-700 dark:text-gray-100/50"></p>
-
-    <section class="flex flex-wrap gap-2 items-center">
+    <section class="flex flex-wrap gap-2">
       {
         tags.map((props) => {
-          return <Skill {...props} />;
+          return <Skill type="pill" color={props.color} {...props} />;
         })
       }
     </section>
   </main>
-
-  <footer class="flex">
-    <a
-      target="_blank"
-      class="flex items-center gap-2 text-sm text-center mx-auto"
-      href={link.url}
-    >
-      <ExternalLink size={20} />
-      {link.label}
-    </a>
+  <footer class={clsx("flex gap-2", links !== undefined && "flex-wrap")}>
+    {repo_link && <Link isForElement {...repo_link} />}
+    {demo_link && <Link isLastElement isForElement {...demo_link} />}
   </footer>
 </article>
