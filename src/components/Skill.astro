@@ -1,23 +1,32 @@
 ---
 import type { Skill as Props, SkillVariant } from "@/types";
-import { clsx } from "clsx";
+import clsx from "clsx";
+import Icon from "./Icon.astro";
 
 const { icon, name, color, type = "card" } = Astro.props;
 
-const variants: Record<SkillVariant, string> = {
-  card: "bg-gray-100 dark:bg-dark-800",
-  pill: `bg-${color}/10`,
+const cardStylesForVariant: Record<SkillVariant, string> = {
+  card: "p-2 rounded-md flex items-center gap-2 bg-gray-100 dark:bg-dark-800",
+  pill: clsx(
+    "p-2 rounded-full flex items-center gap-1",
+    `bg-${color}-500/10 dark:bg-${color}-500/50`
+  ),
+};
+
+const iconStylesForVariant: Record<SkillVariant, string> = {
+  card: `text-lg text-${color}-600 dark:text-${color}-300`,
+  pill: `text-${color}-800 dark:text-${color}-400`,
+};
+
+const textStylesForVariant: Record<SkillVariant, string> = {
+  card: "",
+  pill: `text-xs font-medium text-${color}-800 dark:text-${color}-400`,
 };
 ---
 
-<article class={clsx("p-2 rounded-md flex items-center gap-2", variants[type])}>
-  <i
-    class={clsx(
-      "text-xl flex items-center justify-center",
-      `devicon-${icon}-plain`,
-      `text-${color}-500`
-    )}></i>
-  <span class="text-sm font-medium text-black dark:text-white transition-all"
-    >{name}</span
-  >
+<article class={cardStylesForVariant[type]}>
+  <Icon class={iconStylesForVariant[type]} {...icon} />
+  <span class={textStylesForVariant[type]}>
+    {name}
+  </span>
 </article>
