@@ -264,7 +264,278 @@
           ]
         }
       }
-    }
+    },
+    "experiences": [
+      {
+        "role": "Full Stack Developer",
+        "company": "SMCI",
+        "period": "December 2024 – February 2025",
+        "responsibilities": [
+          "Participated in the development of a software solution for the public transportation sector, focused on real-time communication between embedded devices and a web-based management platform.",
+          "Developed a REST API for data reception, validation, and processing.",
+          "Automated the deployment process for both backend and frontend services on the server.",
+          "Collaborated in fixing issues within the web dashboard.",
+          "Assisted in resolving React and TypeScript-related issues, particularly around typing and code structure.",
+          "Contributed to the implementation of role- and permission-based access control."
+        ],
+        "technologies": [
+          {
+            "name": "REST API",
+            "icon": { "name": "server", "isLucideIcon": true },
+            "color": "blue"
+          },
+          { "name": "React", "icon": { "name": "react" }, "color": "cyan" },
+          {
+            "name": "TypeScript",
+            "icon": { "name": "typescript" },
+            "color": "blue"
+          },
+          { "name": "Git", "icon": { "name": "git" }, "color": "orange" },
+          {
+            "name": "CI/CD",
+            "icon": { "name": "workflow", "isLucideIcon": true },
+            "color": "violet"
+          }
+        ]
+      },
+      {
+        "role": "Frontend Developer Trainee",
+        "company": "DEVOCAMP",
+        "period": "July 2022 – September 2023",
+        "responsibilities": [
+          "Participated in a frontend development training program applying HTML5, CSS, and JavaScript fundamentals.",
+          "Worked on guided exercises and projects focused on basic frontend best practices.",
+          "Worked under the SCRUM methodology using task boards for task management and progress tracking.",
+          "Participated in daily meetings for coordination and progress communication.",
+          "Strengthened collaborative work, task organization, and the use of project management tools."
+        ],
+        "technologies": [
+          { "name": "HTML5", "icon": { "name": "html5" }, "color": "orange" },
+          { "name": "CSS", "icon": { "name": "css3" }, "color": "blue" },
+          {
+            "name": "JavaScript",
+            "icon": { "name": "javascript" },
+            "color": "yellow"
+          },
+          {
+            "name": "SCRUM",
+            "icon": { "name": "users", "isLucideIcon": true },
+            "color": "rose"
+          },
+          { "name": "Trello", "icon": { "name": "trello" }, "color": "blue" }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "NBTMap Explorer",
+        "description": "Desktop application developed in C# to explore, visualize, and export Minecraft item maps (map_*.dat) from NBT files, without requiring Minecraft to run or the use of mods.",
+        "status": "active",
+        "context": {
+          "problem": "Minecraft item maps are stored in NBT files that are not easily readable or viewable outside the game, making analysis or reuse difficult.",
+          "role": "Lead developer responsible for application logic, NBT parsing, map rendering, and overall architecture. The UI prototype was designed in collaboration with a designer.",
+          "approach": "Design and implementation of a WPF desktop application following the MVVM pattern to read and process NBT data, interpret map information, and export it as images.",
+          "challenges": [
+            "Understanding and correctly parsing the NBT data structure",
+            "Rendering maps with correct scaling and color interpretation",
+            "Detecting Minecraft installations and world paths on Windows"
+          ],
+          "learnings": [
+            "Working with binary formats and complex data structures",
+            "Practical application of the MVVM pattern in WPF",
+            "Clear separation of concerns between UI and business logic"
+          ]
+        },
+        "tags": [
+          {
+            "name": "C#",
+            "icon": { "name": "csharp" },
+            "color": "green",
+            "type": "pill"
+          },
+          {
+            "name": ".NET",
+            "icon": { "name": "dotnetcore" },
+            "color": "blue",
+            "type": "pill"
+          },
+          {
+            "name": "WPF",
+            "icon": { "name": "dot-net" },
+            "color": "blue",
+            "type": "pill"
+          },
+          {
+            "name": "MVVM",
+            "icon": { "name": "layers", "isLucideIcon": true },
+            "color": "rose",
+            "type": "pill"
+          },
+          {
+            "name": "NBT Parsing",
+            "icon": { "name": "file-code", "isLucideIcon": true },
+            "color": "rose",
+            "type": "pill"
+          }
+        ],
+        "images": [
+          {
+            "url": "/projects/nbtmap-1.png",
+            "description": "Splash screen design (light variant). Initial screen with loading animation and Minecraft installation detection."
+          },
+          {
+            "url": "/projects/nbtmap-2.png",
+            "description": "Splash screen design (dark variant). Alternative version focused on a consistent dark mode visual experience."
+          },
+          {
+            "url": "/projects/nbtmap-3.png",
+            "description": "Main window design (light variant). View intended to list available maps, preview them, and allow export."
+          },
+          {
+            "url": "/projects/nbtmap-4.png",
+            "description": "Main window design (dark variant). Representation of the main workflow focused on map exploration and export."
+          }
+        ],
+        "repo_link": {
+          "label": "GitHub Repository",
+          "url": "https://github.com/Jorgemacias-12/NBTMap-Explorer",
+          "icon": { "name": "github" }
+        }
+      },
+      {
+        "name": "Pony the Dragon! [REP+]",
+        "description": "Full mod for The Binding of Isaac: Rebirth (Repentance+) introducing a new playable character with custom items, original mechanics, and compatibility with other mods.",
+        "status": "completed",
+        "context": {
+          "problem": "Create a fully functional and coherent character within The Binding of Isaac mod ecosystem, maintaining compatibility, balance, and code quality.",
+          "role": "Code cleanup, testing support, and project maintenance.",
+          "approach": "Mod developed in Lua using the game's official API, following engine conventions and ensuring compatibility with popular mods.",
+          "challenges": [
+            "Maintaining compatibility with other mods",
+            "Understanding and working on an existing codebase",
+            "Debugging within the game environment"
+          ],
+          "learnings": [
+            "Video game modding",
+            "Using game-specific APIs",
+            "Testing and debugging in non-traditional environments",
+            "Reading and understanding external codebases"
+          ]
+        },
+        "tags": [
+          {
+            "name": "Lua",
+            "icon": { "name": "lua" },
+            "color": "green"
+          },
+          {
+            "name": "Game Modding",
+            "icon": { "name": "gamepad", "isLucideIcon": true },
+            "color": "rose"
+          },
+          {
+            "name": "The Binding of Isaac",
+            "icon": { "name": "skull", "isLucideIcon": true },
+            "color": "rose"
+          }
+        ],
+        "images": [
+          {
+            "url": "/projects/ponycharacter-1.jpeg",
+            "description": "Pony the Dragon character with multiple visual styles depending on the item used during the current run."
+          },
+          {
+            "url": "/projects/ponycharacter-2.jpeg",
+            "description": "Pony the Dragon character running inside the game."
+          }
+        ],
+        "repo_link": {
+          "label": "GitHub Repository",
+          "url": "https://github.com/SweetyStorm/PonyCharacter",
+          "icon": { "name": "github" }
+        }
+      },
+      {
+        "name": "Monte Carlo Global Illumination Demo",
+        "description": "Academic demo exploring the use of the Monte Carlo method to approximate global illumination in a 3D environment.",
+        "status": "paused",
+        "context": {
+          "problem": "Demonstrate practical applications of the Monte Carlo method beyond classic examples such as PI calculation, focusing on computer graphics.",
+          "role": "Research, design, and full implementation of the project as a university assignment.",
+          "approach": "Implementation of a 3D environment using Python and OpenGL, with shaders written in GLSL and support from libraries such as NumPy and pygame for math handling and rendering setup.",
+          "challenges": [
+            "Runtime environment setup and stability",
+            "Performance issues during execution",
+            "Shader development and debugging",
+            "Academic time constraints"
+          ],
+          "learnings": [
+            "Shader fundamentals and GLSL",
+            "Basic 3D graphics concepts",
+            "Understanding the limits of academic project scope"
+          ]
+        },
+        "tags": [
+          {
+            "name": "Python",
+            "icon": { "name": "python" },
+            "color": "blue"
+          },
+          {
+            "name": "OpenGL",
+            "icon": { "name": "opengl" },
+            "color": "green"
+          },
+          {
+            "name": "GLSL",
+            "icon": { "name": "code", "isLucideIcon": true },
+            "color": "violet"
+          }
+        ],
+        "images": [
+          {
+            "url": "/projects/montecarlo-1.png",
+            "description": "3D scene used for rendering and lighting experiments."
+          }
+        ],
+        "repo_link": {
+          "label": "GitHub Repository",
+          "url": "https://github.com/Jorgemacias-12/Monte-Carlo-Global-Illumination-Demo"
+        }
+      }
+    ],
+    "education": [
+      {
+        "degree": "Ingeniería en Computación",
+        "institution": "Universidad de Guadalajara (UdeG)",
+        "campus": "CUCOSTA",
+        "startDate": "Agosto 2021",
+        "endDate": "Actual",
+        "gpa": "96.15/100",
+        "relevantProjects": [],
+        "courses": [],
+        "achievements": [],
+        "extracurricularActivities": [],
+        "schoolLink": "http://www.cuc.udg.mx/",
+        "finished": false,
+        "finished_caption": "En curso"
+      },
+      {
+        "degree": "Profesional Técnico Bachiller en Informática",
+        "institution": "Colegio Nacional de Educación Profesional Técnica ",
+        "campus": "Puerto Vallarta 075",
+        "startDate": "Agosto 2018",
+        "endDate": "Julio 2021",
+        "gpa": "9.9/10",
+        "relevantProjects": [],
+        "courses": [],
+        "achievements": ["Promedios altos"],
+        "extracurricularActivities": [],
+        "schoolLink": "https://www.conalep.edu.mx/",
+        "finished": true,
+        "finished_caption": "Terminado"
+      }
+    ]
   },
   "components": {
     "header": {

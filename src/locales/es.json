@@ -268,202 +268,241 @@
     },
     "experiences": [
       {
-        "role": "Desarrollador de Software (Backend & DevOps)",
+        "role": "Desarrollador Full Stack",
         "company": "SMCI",
-        "period": "24 de Diciembre 2024 - 28 de febrero de 2025",
-        "responsabilities": [
-          "Definí el stack tecnológico del proyecto en función de los requisitos y necesidades futuras del sistema.",
-          "Diseñé la arquitectura base del sistema para asegurar claridad, modularidad y mantenibilidad.",
-          "Implementé la base del backend con FastAPI y Prisma ORM, definiendo el flujo inicial de datos.",
-          "Configuré pipelines de CI/CD con GitHub Actions para automatizar pruebas y despliegues.",
-          "Configuré el VPS en AWS para el despliegue y ejecución del proyecto."
+        "period": "Diciembre 2024 – Febrero 2025",
+        "responsibilities": [
+          "Participación en el desarrollo de una solución de software para el sector de transporte público, enfocada en la comunicación en tiempo real entre dispositivos embebidos y una plataforma web de gestión.",
+          "Desarrollo de una API REST para la recepción, validación y procesamiento de datos.",
+          "Automatización del proceso de despliegue del backend y frontend en servidor.",
+          "Colaboración en la corrección de incidencias del dashboard web.",
+          "Apoyo en la resolución de problemas relacionados con React y TypeScript, especialmente en temas de tipado y estructura del código.",
+          "Contribución a la implementación de control de acceso basado en roles y permisos."
         ],
         "technologies": [
           {
-            "name": "Python",
-            "icon": "python",
-            "color": "text-blue-500"
+            "name": "REST API",
+            "icon": { "name": "server", "isLucideIcon": true },
+            "color": "blue"
           },
-          { "name": "FastAPI", "icon": "fastapi", "color": "text-green-500" },
+          { "name": "React", "icon": { "name": "react" }, "color": "cyan" },
           {
-            "name": "Prisma ORM",
-            "icon": "prisma",
-            "color": "text-orange-500"
+            "name": "TypeScript",
+            "icon": { "name": "typescript" },
+            "color": "blue"
+          },
+          { "name": "Git", "icon": { "name": "git" }, "color": "orange" },
+          {
+            "name": "CI/CD",
+            "icon": { "name": "workflow", "isLucideIcon": true },
+            "color": "violet"
+          }
+        ]
+      },
+      {
+        "role": "Desarrollador Frontend Trainee",
+        "company": "DEVOCAMP",
+        "period": "Julio 2022 – Septiembre 2023",
+        "responsibilities": [
+          "Participación en un programa de formación en desarrollo frontend aplicando fundamentos de HTML5, CSS y JavaScript.",
+          "Desarrollo de ejercicios y proyectos guiados enfocados en buenas prácticas básicas de frontend.",
+          "Trabajo bajo metodología SCRUM utilizando tableros de trabajo para la gestión y seguimiento de tareas.",
+          "Participación en reuniones diarias (dailies) para la coordinación y comunicación del progreso.",
+          "Refuerzo del trabajo colaborativo y la organización de tareas utilizando herramientas de gestión."
+        ],
+        "technologies": [
+          { "name": "HTML5", "icon": { "name": "html5" }, "color": "orange" },
+          { "name": "CSS", "icon": { "name": "css3" }, "color": "blue" },
+          {
+            "name": "JavaScript",
+            "icon": { "name": "javascript" },
+            "color": "yellow"
           },
           {
-            "name": "GitHub Actions",
-            "icon": "githubactions",
-            "color": "text-orange-500"
+            "name": "SCRUM",
+            "icon": { "name": "users", "isLucideIcon": true },
+            "color": "rose"
           },
-          { "name": "GitHub", "icon": "github" }
+          { "name": "Trello", "icon": { "name": "trello" }, "color": "blue" }
         ]
       }
     ],
     "projects": [
       {
-        "name": "NBTMap-Explorer",
-        "description": "Aplicación de escritorio para convertir mapas de Minecraft (archivos NBT) directamente a imágenes PNG mediante un flujo de trabajo más amigable.",
+        "name": "NBTMap Explorer",
+        "description": "Aplicación de escritorio desarrollada en C# para explorar, visualizar y exportar mapas de ítems de Minecraft (map_*.dat) a partir de archivos NBT, sin necesidad de ejecutar Minecraft ni usar mods.",
         "status": "active",
         "context": {
-          "problem": "Mejorar una herramienta existente que dependía de múltiples herramientas externas y tenía un flujo de uso poco intuitivo.",
-          "role": "Arquitectura de software, selección de tecnologías y desarrollo del proyecto.",
-          "approach": "Aplicación de escritorio para Windows desarrollada con WPF y C# (.NET). Lectura directa de archivos NBT sin herramientas externas.",
+          "problem": "Los mapas de ítems de Minecraft se almacenan en archivos NBT que no son fácilmente legibles ni visualizables fuera del juego, lo que dificulta su análisis o reutilización.",
+          "role": "Desarrollador principal encargado de la lógica de la aplicación, parsing de NBT, renderizado de mapas y arquitectura general. El prototipo de la UI fue diseñado en colaboración con un diseñador.",
+          "approach": "Diseño e implementación de una aplicación de escritorio en WPF siguiendo el patrón MVVM para leer y procesar datos NBT, interpretar la información de los mapas y exportarlos como imágenes.",
           "challenges": [
-            "Diseñar una arquitectura flexible para múltiples versiones de Minecraft",
-            "Tiempo y recursos limitados",
-            "Crear una interfaz clara para un proceso técnicamente complejo"
+            "Comprender y parsear correctamente la estructura de datos NBT",
+            "Renderizar los mapas respetando escalado y colores",
+            "Detectar instalaciones de Minecraft y rutas de mundos en Windows"
           ],
           "learnings": [
-            "Diseño de aplicaciones de escritorio con WPF",
-            "Procesamiento de archivos binarios",
-            "Pruebas de aplicaciones en C#",
-            "Internacionalización (i18n) en .NET"
+            "Trabajo con formatos binarios y estructuras de datos",
+            "Aplicación práctica del patrón MVVM en WPF",
+            "Separación de responsabilidades entre UI y lógica de negocio"
           ]
         },
         "tags": [
           {
             "name": "C#",
-            "icon": {
-              "name": "csharp",
-              "isLucideIcon": false
-            },
-            "color": "blue"
-          },
-          {
-            "name": "WPF",
-            "icon": { "name": "dotnetcore", "isLucideIcon": false },
-            "color": "blue"
+            "icon": { "name": "csharp" },
+            "color": "green",
+            "type": "pill"
           },
           {
             "name": ".NET",
-            "icon": { "name": "dot-net", "isLucideIcon": false },
-            "color": "blue"
+            "icon": { "name": "dotnetcore" },
+            "color": "blue",
+            "type": "pill"
+          },
+          {
+            "name": "WPF",
+            "icon": { "name": "dot-net" },
+            "color": "blue",
+            "type": "pill"
+          },
+          {
+            "name": "MVVM",
+            "icon": { "name": "layers", "isLucideIcon": true },
+            "color": "rose",
+            "type": "pill"
+          },
+          {
+            "name": "NBT Parsing",
+            "icon": { "name": "file-code", "isLucideIcon": true },
+            "color": "rose",
+            "type": "pill"
           }
         ],
         "images": [
           {
             "url": "/projects/nbtmap-1.png",
-            "description": "Vista principal de la aplicación."
+            "description": "Diseño de splash screen (variante clara). Pantalla inicial con animación de carga y detección de instalaciones de Minecraft."
           },
-          { "url": "/projects/nbtmap-2.png", "description": "" },
-          { "url": "/projects/nbtmap-3.png", "description": "" },
-          { "url": "/projects/nbtmap-4.png", "description": "" }
-        ],
-        "links": [
           {
-            "label": "Proyecto de referencia",
-            "url": "https://github.com/Shokuno/minecraft-map-to-png-tool"
+            "url": "/projects/nbtmap-2.png",
+            "description": "Diseño de splash screen (variante oscura). Versión alternativa enfocada en una experiencia visual consistente en modo oscuro."
+          },
+          {
+            "url": "/projects/nbtmap-3.png",
+            "description": "Diseño de la ventana principal (variante clara). Vista destinada a listar mapas disponibles, previsualizarlos y permitir su exportación."
+          },
+          {
+            "url": "/projects/nbtmap-4.png",
+            "description": "Diseño de la ventana principal (variante oscura). Representación del flujo principal del proyecto con enfoque en exploración y exportación de mapas."
           }
-        ]
+        ],
+        "repo_link": {
+          "label": "Repositorio en GitHub",
+          "url": "https://github.com/Jorgemacias-12/NBTMap-Explorer",
+          "icon": { "name": "github" }
+        }
       },
-
       {
-        "name": "PonyCharacter Mod",
-        "description": "Mod para The Binding of Isaac enfocado en la limpieza del código, mantenimiento y mejora de la calidad.",
+        "name": "Pony the Dragon! [REP+]",
+        "description": "Mod completo para The Binding of Isaac: Rebirth (Repentance+) que introduce un nuevo personaje jugable con ítems, mecánicas originales y compatibilidad con otros mods.",
         "status": "completed",
         "context": {
-          "problem": "Apoyar a un amigo que estaba iniciando en el modding mientras se mejoraba una base de código existente.",
-          "role": "Refactorización de código, limpieza y aplicación de buenas prácticas.",
-          "approach": "Desarrollo utilizando la API oficial del juego y el lenguaje Lua.",
+          "problem": "Crear un personaje completamente funcional y coherente dentro del ecosistema de mods de The Binding of Isaac, manteniendo compatibilidad, balance y calidad de código.",
+          "role": "Limpieza de código, apoyo en testing y mantenimiento del proyecto.",
+          "approach": "Mod desarrollado en Lua utilizando la API oficial del juego, siguiendo las convenciones del motor y asegurando compatibilidad con otros mods populares.",
           "challenges": [
-            "Entender una base de código sin documentación",
-            "Refactorizar sin romper el comportamiento existente"
+            "Mantener compatibilidad con otros mods",
+            "Entender y trabajar sobre una base de código existente",
+            "Depuración dentro del entorno del juego"
           ],
           "learnings": [
             "Modding de videojuegos",
-            "Depuración dentro de un entorno de juego",
-            "Lectura de documentación técnica"
+            "Uso de APIs específicas de juegos",
+            "Testing y debugging en entornos no tradicionales",
+            "Lectura y comprensión de código ajeno"
           ]
         },
         "tags": [
           {
             "name": "Lua",
-            "icon": { "name": "lua", "isLucideIcon": false }
+            "icon": { "name": "lua" },
+            "color": "green"
           },
           {
             "name": "Game Modding",
-            "icon": { "name": "gamepad", "isLucideIcon": true }
+            "icon": { "name": "gamepad", "isLucideIcon": true },
+            "color": "rose"
+          },
+          {
+            "name": "The Binding of Isaac",
+            "icon": { "name": "skull", "isLucideIcon": true },
+            "color": "rose"
           }
         ],
         "images": [
-          { "url": "/projects/ponycharacter-1.jpeg", "description": "" },
-          { "url": "/projects/ponycharacter-2.jpeg", "description": "" }
+          {
+            "url": "/projects/ponycharacter-1.jpeg",
+            "description": "Personaje Pony the Dragon con multiples estilos dependiendo el item usado en la run actual."
+          },
+          {
+            "url": "/projects/ponycharacter-2.jpeg",
+            "description": "Personaje Pony the Dragon en ejecución dentro del juego."
+          }
         ],
-        "links": []
+        "repo_link": {
+          "label": "Repositorio en GitHub",
+          "url": "https://github.com/SweetyStorm/PonyCharacter",
+          "icon": { "name": "github" }
+        }
       },
-
       {
         "name": "Monte Carlo Global Illumination Demo",
-        "description": "Demo experimental que explora la iluminación global en un entorno 3D utilizando el método de Monte Carlo.",
-        "status": "completed",
+        "description": "Demo académico que explora el uso del método de Monte Carlo para aproximar iluminación global en un entorno 3D.",
+        "status": "paused",
         "context": {
-          "problem": "Proyecto académico enfocado en investigar aplicaciones prácticas del método de Monte Carlo.",
-          "role": "Investigación e implementación completa del proyecto.",
-          "approach": "Python con OpenGL para el entorno 3D y GLSL para shaders.",
+          "problem": "Demostrar aplicaciones prácticas del método de Monte Carlo más allá de ejemplos clásicos como el cálculo de PI, orientándolo a gráficos por computadora.",
+          "role": "Investigación, diseño e implementación completa del proyecto como trabajo universitario.",
+          "approach": "Implementación de un entorno 3D utilizando Python y OpenGL, con shaders escritos en GLSL y apoyo de librerías como NumPy y pygame para el manejo matemático y la ventana de renderizado.",
           "challenges": [
-            "Configurar el entorno de ejecución con Python y OpenGL",
-            "Problemas con cámara y coordenadas",
-            "No lograr implementar completamente el sistema de iluminación"
+            "Configuración y estabilidad del entorno de ejecución",
+            "Problemas de rendimiento en tiempo de ejecución",
+            "Desarrollo y depuración de shaders",
+            "Limitaciones de tiempo del proyecto académico"
           ],
           "learnings": [
-            "Fundamentos de renderizado 3D",
-            "Desarrollo de shaders con GLSL",
-            "Gestión del alcance técnico"
+            "Fundamentos de shaders y GLSL",
+            "Conceptos básicos de gráficos 3D",
+            "Reconocimiento de los límites del alcance académico en proyectos técnicos"
           ]
         },
         "tags": [
           {
             "name": "Python",
-            "icon": { "name": "python", "isLucideIcon": false }
+            "icon": { "name": "python" },
+            "color": "blue"
           },
           {
             "name": "OpenGL",
-            "icon": { "name": "opengl", "isLucideIcon": false }
+            "icon": { "name": "opengl" },
+            "color": "green"
           },
           {
             "name": "GLSL",
-            "icon": { "name": "shader", "isLucideIcon": true }
+            "icon": { "name": "code", "isLucideIcon": true },
+            "color": "violet"
           }
         ],
         "images": [
-          { "url": "/projects/montecarlo-1.png", "description": "" },
-          { "url": "/projects/montecarlo-2.png", "description": "" },
-          { "url": "/projects/montecarlo-3.png", "description": "" }
-        ],
-        "links": []
-      },
-
-      {
-        "name": "Herramienta Educativa tipo PSeInt",
-        "description": "Herramienta educativa inspirada en PSeInt con una interfaz moderna y ejecución paso a paso.",
-        "status": "planned",
-        "context": {
-          "problem": "Crear una alternativa moderna para la enseñanza de programación estructurada.",
-          "role": "Diseño del lenguaje, definición del MVP y co-desarrollo.",
-          "approach": "Lenguaje inspirado en PSeInt, parser, intérprete y UI enfocada en estudiantes.",
-          "challenges": [
-            "Mantener la simplicidad del lenguaje",
-            "Diseñar mensajes de error pedagógicos",
-            "Balancear UX con objetivos educativos"
-          ],
-          "learnings": [
-            "Diseño de lenguajes",
-            "Parsers e intérpretes",
-            "UX educativa"
-          ]
-        },
-        "tags": [
           {
-            "name": "Diseño de Lenguajes",
-            "icon": { "name": "book", "isLucideIcon": true }
-          },
-          {
-            "name": "Educación",
-            "icon": { "name": "graduation-cap", "isLucideIcon": true }
+            "url": "/projects/montecarlo-1.png",
+            "description": "Escena 3D utilizada para pruebas de renderizado e iluminación."
           }
         ],
-        "images": [],
-        "links": []
+        "repo_link": {
+          "label": "Repositorio en GitHub",
+          "url": "https://github.com/Jorgemacias-12/Monte-Carlo-Global-Illumination-Demo"
+        }
       }
     ],
     "education": [
