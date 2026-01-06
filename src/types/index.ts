@@ -8,6 +8,13 @@ export type SectionVariant = "hero" | "normal";
 export type LinkItem = MenuItem;
 export type Direction = "next" | "prev" | "direct";
 export type SkillVariant = "card" | "pill";
+export type ProjectStatus =
+  | "active"
+  | "maintenance"
+  | "completed"
+  | "paused"
+  | "planned"
+  | "in_evaluation";
 
 export type TranslationObject = {
   locale: Locale;
@@ -42,16 +49,18 @@ export interface AstroComponent {
 export interface MenuItem {
   label: string;
   url: string;
+  icon?: Icon;
 }
 
 export type LinkComponentProps = MenuItem & {
   isForMenu?: boolean;
   isForElement?: boolean;
+  isLastElement?: boolean;
 };
 
 export interface Skill {
   name: string;
-  icon: string;
+  icon: Icon;
   color?: string;
   type?: SkillVariant;
 }
@@ -60,7 +69,7 @@ export interface Experience {
   role: string;
   company: string;
   period: string;
-  responsabilities: string[];
+  responsibilities: string[];
   technologies: Skill[];
 }
 
@@ -69,12 +78,31 @@ export interface Image {
   description: string;
 }
 
+export interface ProjectContext {
+  problem: string;
+  role: string;
+  approach: string;
+  challenges?: string[];
+  learnings?: string[];
+}
+
 export interface Project {
   name: string;
   description: string;
+  status: ProjectStatus;
+  context: ProjectContext;
   tags: Skill[];
   images: Image[];
-  links: LinkItem[];
+  demo_link?: LinkItem;
+  repo_link: LinkItem;
+  links?: LinkItem[];
+}
+
+export interface Icon {
+  name: string;
+  size?: number;
+  class?: string;
+  isLucideIcon?: boolean;
 }
 
 export interface Education {
