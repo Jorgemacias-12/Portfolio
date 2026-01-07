@@ -67,11 +67,11 @@ export default {
   safelist: [
     {
       pattern:
-        /text-(blue|green|orange|red|yellow|purple|pink|indigo|rose|violet)-(50|100|200|300|400|500|600|700|800|900)/,
+        /text-(blue|green|orange|red|yellow|purple|pink|indigo|rose|violet|cyan)-(50|100|200|300|400|500|600|700|800|900)/,
     },
     {
       pattern:
-        /bg-(blue|green|orange|red|yellow|purple|pink|indigo|rose|violet)-(50|100|200|300|400|500|600|700|800|900)/,
+        /bg-(blue|green|orange|red|yellow|purple|pink|indigo|rose|violet|cyan)-(50|100|200|300|400|500|600|700|800|900)/,
     },
   ],
 };
