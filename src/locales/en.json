@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Jorge Macias | Software Developer",
-    "description": "Software developer specialized in frontend, backend, and desktop applications. Explore my projects and portfolio.",
+    "description": "Software developer specialized in frontend, backend and desktop applications. Explore my projects and portfolio.",
     "keywords": [
       "Jorge Macias",
       "Jorge Antonio Macias Zambrano",
@@ -35,7 +35,7 @@
       "url": "skills"
     },
     {
-      "label": "Experience",
+      "label": "Professional Experience",
       "url": "experience"
     },
     {
@@ -49,10 +49,10 @@
   ],
   "sections_data": {
     "about": {
-      "greeting": "Hello, I'm",
+      "greeting": "Hello, I am",
       "short_name": "Jorge Macias",
       "position": "Fullstack Engineer",
-      "tagline": "Building thoughtful, functional experiences driven by curiosity and continuous learning."
+      "tagline": "Creating functional and well-thought experiences, guided by curiosity and continuous learning."
     },
     "skills": {
       "categories": {
@@ -177,7 +177,7 @@
               }
             },
             {
-              "name": "Windows Plaform Foundation (WPF)",
+              "name": "Windows Presentation Foundation (WPF)",
               "color": "blue",
               "icon": {
                 "name": "dot-net",
@@ -271,12 +271,12 @@
         "company": "SMCI",
         "period": "December 2024 – February 2025",
         "responsibilities": [
-          "Participated in the development of a software solution for the public transportation sector, focused on real-time communication between embedded devices and a web-based management platform.",
-          "Developed a REST API for data reception, validation, and processing.",
-          "Automated the deployment process for both backend and frontend services on the server.",
-          "Collaborated in fixing issues within the web dashboard.",
-          "Assisted in resolving React and TypeScript-related issues, particularly around typing and code structure.",
-          "Contributed to the implementation of role- and permission-based access control."
+          "Participation in the development of a software solution for the public transport sector, focused on real-time communication between embedded devices and a web management platform.",
+          "Development of a REST API for receiving, validating and processing data.",
+          "Automation of the deployment process for backend and frontend on the server.",
+          "Collaboration in fixing issues on the web dashboard.",
+          "Support in resolving problems related to React and TypeScript, especially regarding typing and code structure.",
+          "Contribution to the implementation of role-based access control and permissions."
         ],
         "technologies": [
           {
@@ -303,11 +303,11 @@
         "company": "DEVOCAMP",
         "period": "July 2022 – September 2023",
         "responsibilities": [
-          "Participated in a frontend development training program applying HTML5, CSS, and JavaScript fundamentals.",
-          "Worked on guided exercises and projects focused on basic frontend best practices.",
-          "Worked under the SCRUM methodology using task boards for task management and progress tracking.",
-          "Participated in daily meetings for coordination and progress communication.",
-          "Strengthened collaborative work, task organization, and the use of project management tools."
+          "Participation in a frontend development training program applying HTML5, CSS and JavaScript fundamentals.",
+          "Development of guided exercises and projects focused on basic frontend best practices.",
+          "Work under SCRUM methodology using work boards for task management and tracking.",
+          "Participation in daily meetings (dailies) for progress coordination and communication.",
+          "Reinforcement of collaborative work and task organization using management tools."
         ],
         "technologies": [
           { "name": "HTML5", "icon": { "name": "html5" }, "color": "orange" },
@@ -329,21 +329,21 @@
     "projects": [
       {
         "name": "NBTMap Explorer",
-        "description": "Desktop application developed in C# to explore, visualize, and export Minecraft item maps (map_*.dat) from NBT files, without requiring Minecraft to run or the use of mods.",
+        "description": "Desktop application developed in C# to explore, visualize and export Minecraft item maps (map_*.dat) from NBT files, without needing to run Minecraft or use mods.",
         "status": "active",
         "context": {
-          "problem": "Minecraft item maps are stored in NBT files that are not easily readable or viewable outside the game, making analysis or reuse difficult.",
-          "role": "Lead developer responsible for application logic, NBT parsing, map rendering, and overall architecture. The UI prototype was designed in collaboration with a designer.",
-          "approach": "Design and implementation of a WPF desktop application following the MVVM pattern to read and process NBT data, interpret map information, and export it as images.",
+          "problem": "Minecraft item maps are stored in NBT files that are not easily readable or viewable outside the game, making their analysis or reuse difficult.",
+          "role": "Lead developer responsible for application logic, NBT parsing, map rendering and overall architecture. The UI prototype was designed in collaboration with a designer.",
+          "approach": "Design and implementation of a desktop application in WPF following the MVVM pattern to read and process NBT data, interpret map information and export them as images.",
           "challenges": [
-            "Understanding and correctly parsing the NBT data structure",
-            "Rendering maps with correct scaling and color interpretation",
-            "Detecting Minecraft installations and world paths on Windows"
+            "Correctly understanding and parsing the NBT data structure",
+            "Rendering maps respecting scaling and colors",
+            "Detecting Minecraft installations and world paths in Windows"
           ],
           "learnings": [
-            "Working with binary formats and complex data structures",
+            "Working with binary formats and data structures",
             "Practical application of the MVVM pattern in WPF",
-            "Clear separation of concerns between UI and business logic"
+            "Separation of responsibilities between UI and business logic"
           ]
         },
         "tags": [
@@ -389,11 +389,11 @@
           },
           {
             "url": "/projects/nbtmap-3.png",
-            "description": "Main window design (light variant). View intended to list available maps, preview them, and allow export."
+            "description": "Main window design (light variant). View intended to list available maps, preview them and allow their export."
           },
           {
             "url": "/projects/nbtmap-4.png",
-            "description": "Main window design (dark variant). Representation of the main workflow focused on map exploration and export."
+            "description": "Main window design (dark variant). Representation of the main project flow with focus on map exploration and export."
           }
         ],
         "repo_link": {
@@ -404,12 +404,12 @@
       },
       {
         "name": "Pony the Dragon! [REP+]",
-        "description": "Full mod for The Binding of Isaac: Rebirth (Repentance+) introducing a new playable character with custom items, original mechanics, and compatibility with other mods.",
+        "description": "Complete mod for The Binding of Isaac: Rebirth (Repentance+) that introduces a new playable character with original items, mechanics and compatibility with other mods.",
         "status": "completed",
         "context": {
-          "problem": "Create a fully functional and coherent character within The Binding of Isaac mod ecosystem, maintaining compatibility, balance, and code quality.",
-          "role": "Code cleanup, testing support, and project maintenance.",
-          "approach": "Mod developed in Lua using the game's official API, following engine conventions and ensuring compatibility with popular mods.",
+          "problem": "Creating a fully functional and coherent character within The Binding of Isaac mod ecosystem, maintaining compatibility, balance and code quality.",
+          "role": "Code cleanup, testing support and project maintenance.",
+          "approach": "Mod developed in Lua using the game's official API, following engine conventions and ensuring compatibility with other popular mods.",
           "challenges": [
             "Maintaining compatibility with other mods",
             "Understanding and working on an existing codebase",
@@ -417,9 +417,9 @@
           ],
           "learnings": [
             "Video game modding",
-            "Using game-specific APIs",
+            "Usage of game-specific APIs",
             "Testing and debugging in non-traditional environments",
-            "Reading and understanding external codebases"
+            "Reading and understanding others' code"
           ]
         },
         "tags": [
@@ -442,11 +442,11 @@
         "images": [
           {
             "url": "/projects/ponycharacter-1.jpeg",
-            "description": "Pony the Dragon character with multiple visual styles depending on the item used during the current run."
+            "description": "Pony the Dragon character with multiple styles depending on the item used in the current run."
           },
           {
             "url": "/projects/ponycharacter-2.jpeg",
-            "description": "Pony the Dragon character running inside the game."
+            "description": "Pony the Dragon character in action within the game."
           }
         ],
         "repo_link": {
@@ -460,19 +460,19 @@
         "description": "Academic demo exploring the use of the Monte Carlo method to approximate global illumination in a 3D environment.",
         "status": "paused",
         "context": {
-          "problem": "Demonstrate practical applications of the Monte Carlo method beyond classic examples such as PI calculation, focusing on computer graphics.",
-          "role": "Research, design, and full implementation of the project as a university assignment.",
-          "approach": "Implementation of a 3D environment using Python and OpenGL, with shaders written in GLSL and support from libraries such as NumPy and pygame for math handling and rendering setup.",
+          "problem": "Demonstrate practical applications of the Monte Carlo method beyond classic examples like PI calculation, orienting it towards computer graphics.",
+          "role": "Research, design and complete implementation of the project as university work.",
+          "approach": "Implementation of a 3D environment using Python and OpenGL, with shaders written in GLSL and support from libraries like NumPy and pygame for mathematical handling and the rendering window.",
           "challenges": [
-            "Runtime environment setup and stability",
-            "Performance issues during execution",
+            "Configuration and stability of the execution environment",
+            "Performance issues at runtime",
             "Shader development and debugging",
-            "Academic time constraints"
+            "Time limitations of the academic project"
           ],
           "learnings": [
-            "Shader fundamentals and GLSL",
+            "Shader and GLSL fundamentals",
             "Basic 3D graphics concepts",
-            "Understanding the limits of academic project scope"
+            "Recognition of academic scope limitations in technical projects"
           ]
         },
         "tags": [
@@ -495,7 +495,7 @@
         "images": [
           {
             "url": "/projects/montecarlo-1.png",
-            "description": "3D scene used for rendering and lighting experiments."
+            "description": "3D scene used for rendering and lighting tests."
           }
         ],
         "repo_link": {
@@ -506,11 +506,11 @@
     ],
     "education": [
       {
-        "degree": "Ingeniería en Computación",
-        "institution": "Universidad de Guadalajara (UdeG)",
+        "degree": "Computer Engineering",
+        "institution": "University of Guadalajara (UdeG)",
         "campus": "CUCOSTA",
-        "startDate": "Agosto 2021",
-        "endDate": "Actual",
+        "startDate": "August 2021",
+        "endDate": "Present",
         "gpa": "96.15/100",
         "relevantProjects": [],
         "courses": [],
@@ -518,34 +518,34 @@
         "extracurricularActivities": [],
         "schoolLink": "http://www.cuc.udg.mx/",
         "finished": false,
-        "finished_caption": "En curso"
+        "finished_caption": "In progress"
       },
       {
-        "degree": "Profesional Técnico Bachiller en Informática",
-        "institution": "Colegio Nacional de Educación Profesional Técnica ",
+        "degree": "Professional Technical Bachelor in Computer Science",
+        "institution": "National College of Professional Technical Education",
         "campus": "Puerto Vallarta 075",
-        "startDate": "Agosto 2018",
-        "endDate": "Julio 2021",
+        "startDate": "August 2018",
+        "endDate": "July 2021",
         "gpa": "9.9/10",
         "relevantProjects": [],
         "courses": [],
-        "achievements": ["Promedios altos"],
+        "achievements": ["High averages"],
         "extracurricularActivities": [],
         "schoolLink": "https://www.conalep.edu.mx/",
         "finished": true,
-        "finished_caption": "Terminado"
+        "finished_caption": "Completed"
       }
     ]
   },
   "components": {
     "header": {
       "title": "Portfolio",
-      "home_url": "/en",
-      "languageUrl": "/",
-      "languageCaption": "ES",
-      "flagUrl": "/mexico.svg",
-      "menu_opener_title": "button that opens the mobile menu",
-      "avatarAlt": "Toothless avatar of me",
+      "menu_opener_title": "Button to open mobile menu",
+      "home_url": "/",
+      "languageUrl": "/en",
+      "languageCaption": "EN",
+      "flagUrl": "/usa.svg",
+      "avatarAlt": "Chimuelo avatar for me",
       "version_title": "version",
       "version_caption": "Made with ❤️"
     },
@@ -568,12 +568,12 @@
     "education": {
       "calification_caption": "GPA",
       "school_link_caption": "Visit website",
-      "is_finished_caption": "finished",
-      "is_not_finished_caption": "ongoing"
+      "is_finished_caption": "completed",
+      "is_not_finished_caption": "in progress"
     },
     "theme_toggler": {
-      "title": "Dark/light theme toggle button",
-      "aria-label": "Button that toggles the portfolio theme between dark/light"
+      "title": "Button to switch dark/light theme",
+      "aria-label": "Button that changes the portfolio theme between dark/light"
     },
     "project_status_badge": {
       "status_labels": {
@@ -585,11 +585,11 @@
         "in_evaluation": "In evaluation"
       },
       "status_tooltips": {
-        "active": "Project under active development.",
+        "active": "Project in active development.",
         "maintenance": "Stable project receiving minor improvements or adjustments.",
         "completed": "Finished project with no active development.",
-        "paused": "Project temporarily on hold.",
-        "planned": "Defined project, not started yet.",
+        "paused": "Project temporarily stopped.",
+        "planned": "Project defined, not yet started.",
         "in_evaluation": "Idea or project under feasibility analysis."
       }
     }
