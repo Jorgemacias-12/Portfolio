@@ -567,7 +567,10 @@
       "thumbnail_navigation": "Navegación por miniaturas"
     },
     "education": {
-      "calification_caption": "Promedio"
+      "calification_caption": "Promedio",
+      "school_link_caption": "Visitiar sitio web",
+      "is_finished_caption": "terminado",
+      "is_not_finished_caption": "en curso"
     },
     "theme_toggler": {
       "title": "Botón para cambiar de tema oscuro/claro",

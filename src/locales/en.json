@@ -566,7 +566,10 @@
       "thumbnail_navigation": "Thumbnail navigation"
     },
     "education": {
-      "calification_caption": "GPA"
+      "calification_caption": "GPA",
+      "school_link_caption": "Visit website",
+      "is_finished_caption": "finished",
+      "is_not_finished_caption": "ongoing"
     },
     "theme_toggler": {
       "title": "Dark/light theme toggle button",
