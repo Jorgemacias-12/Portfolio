@@ -3,7 +3,9 @@ import { getTranslation } from "@/i18n";
 import type { Locale } from "@/types";
 import type { Education as Props } from "@/types";
 import { Building, MapPin, Calendar } from "@lucide/astro";
-import { ExternalLink, Star } from "lucide-astro";
+import { ExternalLink, GraduationCap, Star } from "lucide-astro";
+import Link from "./Link.astro";
+import clsx from "clsx";
 
 const { t } = getTranslation(Astro.currentLocale as Locale);
 const {
@@ -19,57 +21,69 @@ const {
 ---
 
 <article
-  class="flex justify-between relative flex-col gap-4 bg-gray-100 shadow-md dark:bg-dark-800 p-2 rounded-lg transition-colors duration-200"
+  class="flex flex-col gap-4 bg-gray-100 shadow-md dark:bg-dark-800 p-2 rounded-lg transition-colors duration-200 w-full"
 >
-  <header class="flex flex-col gap-2">
-    <h3
-      class="text-2xl text-balance truncate font-semibold text-accent-600 dark:text-accent-500"
-    >
-      {degree}
-    </h3>
+  <header class="flex gap-4 items-center">
+    <span class="w-12 h-12 flex items-center justify-center">
+      <GraduationCap size={32} />
+    </span>
+
+    <section>
+      <h3 class="text-xl font-bold">{degree}</h3>
+    </section>
   </header>
+  <main class="flex flex-col gap-4 p-2">
+    <section class="flex gap-2 items-center">
+      <div
+        class="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium bg-accent-100 text-accent-700 ring-accent-200 dark:bg-accent-500/10 dark:text-accent-400 dark:ring-accent-500/20"
+      >
+        <Star size={18} />
+        <span>{gpa}</span>
+      </div>
 
-  <main class="flex flex-col gap-2 pl-2">
-    <section
-      class="flex gap-2 items-center text-gray-700 dark:text-gray-100/50"
-    >
-      <Building />
-      <p class="text-sm">
-        {institution}
-      </p>
-    </section>
-    <section
-      class="flex gap-2 items-center text-gray-700 dark:text-gray-100/50"
-    >
-      <MapPin />
-      <p class="text-sm">
-        {campus}
-      </p>
-    </section>
-    <section
-      class="flex gap-2 items-center text-gray-700 dark:text-gray-100/50"
-    >
-      <Calendar />
-      <p class="text-sm">
-        {startDate} - {endDate}
-      </p>
+      <span
+        class={clsx(
+          finished
+            ? "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium bg-emerald-100 text-emerald-700 ring-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-400 dark:ring-emerald-500/20"
+            : "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium bg-amber-100 text-amber-700 ring-amber-200 dark:bg-amber-500/10 dark:text-amber-400 dark:ring-amber-500/20"
+        )}
+      >
+        {
+          finished
+            ? t("components.education.is_finished_caption")
+            : t("components.education.is_not_finished_caption")
+        }
+      </span>
     </section>
 
-    <section
-      class="bg-accent-500/10 mt-2 rounded-lg px-2 py-1 flex items-centter gap-2"
-    >
-      <Star class="text-accent-500" />
-      <p class="font-semibold">{gpa}</p>
+    <section class="flex flex-col gap-4">
+      <div
+        class="flex gap-2 items-center text-sm text-gray-500 dark:text-gray-100/60"
+      >
+        <Building />
+        <span>{institution}</span>
+      </div>
+
+      <div
+        class="flex gap-1 items-center text-sm text-gray-500 dark:text-gray-100/60"
+      >
+        <MapPin />
+        <span>{campus}</span>
+      </div>
+
+      <div
+        class="flex gap-1 items-center text-sm text-gray-500 dark:text-gray-100/60"
+      >
+        <Calendar />
+        <span>{startDate} - {endDate}</span>
+      </div>
     </section>
   </main>
-  <footer class="flex justify-center">
-    <a
-      class="mx-auto flex items-center gap-2 text-sm text-gray-700 dark:text-gray-100/50"
-      target="_blank"
-      href={schoolLink}
-    >
-      <ExternalLink size={24} />
-      {schoolLink}
-    </a>
+  <footer class="p-2">
+    <Link
+      isForElement
+      label={t("components.education.school_link_caption")}
+      url={schoolLink}
+    />
   </footer>
 </article>
