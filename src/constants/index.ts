@@ -1,4 +1,4 @@
-import type { ProjectStatus, TranslationKey } from "@/types";
+import type { ProjectStatus, SocialNetwork, TranslationKey } from "@/types";
 
 export const projectStatusLabelKeys: Record<ProjectStatus, TranslationKey> = {
   active: "components.project_status_badge.status_labels.active",
@@ -47,3 +47,24 @@ export const projectStatusBadgeClasses: Record<ProjectStatus, string> = {
     "bg-cyan-100 text-cyan-700 ring-cyan-200 " +
     "dark:bg-cyan-500/10 dark:text-cyan-400 dark:ring-cyan-500/20",
 };
+
+export const socialNetworks: SocialNetwork[] = [
+  {
+    label: "GitHub",
+    icon: {
+      name: "github",
+      isLucideIcon: false,
+      size: 32,
+    },
+    url: "https://github.com/Jorgemacias-12",
+  },
+  {
+    label: "LinkedIn",
+    icon: {
+      name: "linkedin",
+      isLucideIcon: false,
+      size: 32,
+    },
+    url: "https://www.linkedin.com/in/jamz3/",
+  },
+];
