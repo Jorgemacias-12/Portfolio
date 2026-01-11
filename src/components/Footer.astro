@@ -1,0 +1,98 @@
+---
+import { socialNetworks } from "@/constants";
+import { getTranslation } from "@/i18n";
+import type { Locale } from "@/types";
+import SocialLink from "./SocialLink.astro";
+import { Mail } from "lucide-astro";
+
+const { t } = getTranslation(Astro.currentLocale as Locale);
+---
+
+<footer class="relative mt-32 pt-24 pb-12 border-t dark:border-dark-500">
+  <div class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+  <section class="relative mx-auto max-w-6xl px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-16 mb-16">
+      <div class="space-y-6">
+        <div>
+          <h2 class="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+            {t("components.footer.contact_me_caption")}
+          </h2>
+          <p
+            class="text-lg text-gray-500 dark:text-gray-100/60 leading-relaxed max-w-sm"
+          >
+            {t("components.footer.contact_paragraph")}
+          </p>
+        </div>
+
+        <a
+          id="email-link"
+          class="inline-flex gap-2 p-4 rounded-lg bg-accent-500/10 hover:bg-accent-500/20 mt-4 duration-300 transition-all font-semibold text-accent-700 dark:text-accent-500"
+        >
+          <Mail />
+          <span id="text-content"
+            >{t("components.footer.contact_link_loading")}</span
+          >
+        </a>
+        <!-- <a
+          href="mailto:hello@example.com"
+          class="inline-flex items-center gap-3 px-6 py-3 rounded-lg bg-accent/10 hover:bg-accent/20 text-accent font-semibold transition-all duration-300 hover:translate-x-1"
+          ><i
+            class="devicon-devicon-plain colored"
+            style="--devicon-color: currentColor;"></i>hello@example.com</a
+        > -->
+      </div>
+
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-xl font-semibold text-foreground mb-6">
+            {t("components.footer.follow_me_caption")}
+          </h3>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {
+              socialNetworks.map((s) => {
+                return <SocialLink {...s} />;
+              })
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t dark:border-dark-500 border-border my-12"></div>
+
+    <div
+      class="flex flex-col sm:flex-row justify-between items-center gap-6 text-sm text-gray-500 dark:text-gray-100/60"
+    >
+      <p>
+        &copy; {new Date().getFullYear()}
+        {t("components.footer.copyright_notice")}
+      </p>
+
+      <p>
+        {t("components.footer.builded_with_caption")}
+      </p>
+
+      <p>
+        {t("components.header.version_title")}
+        {import.meta.env.PUBLIC_VERSION}
+      </p>
+    </div>
+  </section>
+</footer>
+
+<script is:inline>
+  const DOMContentLoaded = () => {
+    const email = "jorgeantoniomaciaszambrano@gmail.com";
+
+    setTimeout(() => {
+      const emailEl = document.getElementById("email-link");
+      const textEl = document.getElementById("text-content");
+
+      emailEl.setAttribute("href", `mailto:${email}`);
+      textEl.textContent = email;
+    }, 2000);
+  };
+
+  document.addEventListener("DOMContentLoaded", DOMContentLoaded);
+</script>
