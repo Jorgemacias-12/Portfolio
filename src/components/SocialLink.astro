@@ -1,0 +1,16 @@
+---
+import type { SocialNetwork as Props } from "@/types";
+import Icon from "./Icon.astro";
+
+const { icon, label, url } = Astro.props;
+---
+
+<a
+  class="flex flex-col p-4 rounded-lg items-center justify-center border border-accent-700 text-accent-700 hover:bg-accent-700/10 dark:text-accent-400 dark:hover:bg-accent-500/20 transition-all duration-300"
+  rel="noopener noreferrer"
+  target="_blank"
+  href={url}
+>
+  <Icon {...icon} />
+  <span>{label}</span>
+</a>
