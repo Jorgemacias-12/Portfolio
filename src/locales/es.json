@@ -593,6 +593,14 @@
         "planned": "Proyecto definido, aún no iniciado.",
         "in_evaluation": "Idea o proyecto en análisis de viabilidad."
       }
+    },
+    "footer": {
+      "contact_me_caption": "Contáctame",
+      "contact_paragraph": "Si deseas contactarme o comunicarte con migo para discutir oportunidades o solo para decir ¡hola!",
+      "follow_me_caption": "Sigueme",
+      "copyright_notice": "Todos los derechos reservados",
+      "contact_link_loading": "cargando...",
+      "builded_with_caption": "Hecho con ❤️"
     }
   }
 }

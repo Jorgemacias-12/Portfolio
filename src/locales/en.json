@@ -592,6 +592,14 @@
         "planned": "Project defined, not yet started.",
         "in_evaluation": "Idea or project under feasibility analysis."
       }
+    },
+    "footer": {
+      "contact_me_caption": "Get In Touch",
+      "contact_paragraph": "Feel free to reach out to discuss,opportunities or just to say hello!",
+      "follow_me_caption": "Follow me",
+      "copyright_notice": "All rights reserved",
+      "contact_link_loading": "loading...",
+      "builded_with_caption": "Made with ❤️"
     }
   }
 }
