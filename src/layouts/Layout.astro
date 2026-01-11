@@ -5,6 +5,7 @@ import { appendBaseUrl } from "@/utils";
 import schema from "@/data/schema.json";
 import Header from "@/components/Header.astro";
 import "@fontsource-variable/inter?display=swap";
+import Footer from "@/components/Footer.astro";
 
 const { currentLocale } = Astro;
 
@@ -69,6 +70,7 @@ const { t } = getTranslation(currentLocale as Locale);
   >
     <Header lang={currentLocale as Locale} />
     <slot />
+    <Footer />
   </body>
 </html>
 
