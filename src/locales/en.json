@@ -542,9 +542,9 @@
       "title": "Portfolio",
       "menu_opener_title": "Button to open mobile menu",
       "home_url": "/",
-      "languageUrl": "/en",
-      "languageCaption": "EN",
-      "flagUrl": "/usa.svg",
+      "languageUrl": "/",
+      "languageCaption": "ES",
+      "flagUrl": "/mexico.svg",
       "avatarAlt": "Chimuelo avatar for me",
       "version_title": "version",
       "version_caption": "Made with ❤️"
