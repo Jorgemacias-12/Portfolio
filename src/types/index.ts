@@ -115,3 +115,9 @@ export interface Education {
   schoolLink: string;
   finished: boolean;
 }
+
+export interface SocialNetwork {
+  url: string;
+  label: string;
+  icon: Icon;
+}
