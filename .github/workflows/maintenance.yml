@@ -1,0 +1,35 @@
+name: Deploy maintenance page
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "m*"
+
+jobs:
+  deploy-maintenance:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Delete previous deployments
+        uses: strumwolf/delete-deployment-environment@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: github-pages
+          onlyRemoveDeployments: true
+
+      - name: Checkout maintenance branch
+        uses: actions/checkout@v4
+        with:
+          ref: maintenance
+          fetch-depth: 0
+
+      - name: Deploy to github pages
+        uses: actions/deploy-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN}}
+          clean: true
