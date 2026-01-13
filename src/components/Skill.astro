@@ -6,7 +6,7 @@ import Icon from "./Icon.astro";
 const { icon, name, color, type = "card" } = Astro.props;
 
 const cardStylesForVariant: Record<SkillVariant, string> = {
-  card: "p-2 rounded-md flex items-center gap-2 bg-gray-100 dark:bg-dark-800",
+  card: "p-2 rounded-md flex items-center gap-2 bg-gray-100 dark:bg-dark-700",
   pill: clsx(
     "p-2 rounded-full flex items-center gap-1",
     `bg-${color}-500/10 dark:bg-${color}-500/50`
