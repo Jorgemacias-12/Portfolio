@@ -5,6 +5,7 @@ import { appendBaseUrl } from "@/utils";
 import schema from "@/data/schema.json";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import "@/styles/index.css";
 
 if (!Astro.currentLocale) {
   throw new Error("Locale not provided or default didn't load properly");
@@ -47,8 +48,12 @@ const { t } = getTranslation(Astro.currentLocale as Locale);
       content="19ev_yaCk6dZ5MoTvVU8Uf9AZ6S69Tt1U2PrMc-N170"
     />
 
-    <link rel="stylesheet" href="/index.css" />
-    <link rel="stylesheet" href="/devicon.min.css" />
+    <link
+      rel="stylesheet"
+      href="/devicon.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
 
     <script>
       (function () {
