@@ -1,0 +1,18 @@
+---
+import clsx from "clsx";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<article
+  class={clsx(
+    "bg-gray-100 dark:bg-dark-700 transition-colors duration-300 p-2 rounded-lg w-full",
+    className
+  )}
+>
+  <slot />
+</article>
