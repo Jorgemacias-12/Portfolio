@@ -1,0 +1,53 @@
+body {
+  font-family: "Inter Variable", sans-serif, system-ui;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+body {
+  --sb-track-color: #000000;
+  --sb-thumb-color: #ff5c00;
+  --sb-size: 6px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+@font-face {
+  font-family: "devicon";
+  src: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/fonts/devicon.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+[class^="devicon-"]:before,
+[class*=" devicon-"]:before {
+  font-family: "devicon" !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+}
