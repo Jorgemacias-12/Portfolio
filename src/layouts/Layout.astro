@@ -4,33 +4,26 @@ import type { Locale } from "@/types";
 import { appendBaseUrl } from "@/utils";
 import schema from "@/data/schema.json";
 import Header from "@/components/Header.astro";
-import "@fontsource-variable/inter?display=swap";
 import Footer from "@/components/Footer.astro";
 
-const { currentLocale } = Astro;
-
-if (!currentLocale) {
+if (!Astro.currentLocale) {
   throw new Error("Locale not provided or default didn't load properly");
 }
 
-const { t } = getTranslation(currentLocale as Locale);
+const { t } = getTranslation(Astro.currentLocale as Locale);
 ---
 
-<html class="scroll-smooth" title={t("site.title")} lang={currentLocale}>
+<!doctype html>
+<html class="scroll-smooth" lang={Astro.currentLocale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{t("site.title")}</title>
+
     <link href="https://jorgemacias.dev/" rel="canonical" />
     <meta name="description" content={t("site.description")} />
     <meta name="keywords" content={t("site.keywords").join(", ")} />
     <meta name="author" content={t("site.author")} />
-
-    <meta name="robots" content="index, follow" />
-    <meta
-      name="google-site-verification"
-      content="19ev_yaCk6dZ5MoTvVU8Uf9AZ6S69Tt1U2PrMc-N170"
-    />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={t("site.title")} />
@@ -48,16 +41,25 @@ const { t } = getTranslation(currentLocale as Locale);
     <meta property="og:description" content={t("site.description")} />
     <meta property="og:site_name" content={t("site.title")} />
 
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <link
-      rel="preload"
-      as="font"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/fonts/devicon.woff"
-      type="font/woff"
-      crossorigin
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="google-site-verification"
+      content="19ev_yaCk6dZ5MoTvVU8Uf9AZ6S69Tt1U2PrMc-N170"
     />
 
+    <link rel="stylesheet" href="/index.css" />
     <link rel="stylesheet" href="/devicon.min.css" />
+
+    <script>
+      (function () {
+        document.documentElement.classList.toggle(
+          "dark",
+          localStorage.theme === "dark" ||
+            (!("theme" in localStorage) &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches)
+        );
+      })();
+    </script>
 
     <script
       is:inline
@@ -66,77 +68,10 @@ const { t } = getTranslation(currentLocale as Locale);
     />
   </head>
   <body
-    class="scroll-smooth transition-colors duration-300 bg-white dark:bg-dark-900 text-black dark:text-white"
+    class="transition-colors duration-300 bg-white dark:bg-dark-800 text-black dark:text-white"
   >
-    <Header lang={currentLocale as Locale} />
+    <Header />
     <slot />
     <Footer />
   </body>
 </html>
-
-<script>
-  (function () {
-    document.documentElement.classList.toggle(
-      "dark",
-      localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-    );
-  })();
-</script>
-
-<style is:global>
-  body {
-    font-family: "Inter Variable", sans-serif;
-    min-height: 100vh;
-    min-height: 100dvh;
-  }
-
-  body {
-    --sb-track-color: #000000;
-    --sb-thumb-color: #ff5c00;
-    --sb-size: 6px;
-  }
-
-  body::-webkit-scrollbar {
-    width: var(--sb-size);
-  }
-
-  body::-webkit-scrollbar-track {
-    background: var(--sb-track-color);
-    border-radius: 3px;
-  }
-
-  body::-webkit-scrollbar-thumb {
-    background: var(--sb-thumb-color);
-    border-radius: 3px;
-  }
-
-  @supports not selector(::-webkit-scrollbar) {
-    body {
-      scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-    }
-  }
-
-  @font-face {
-    font-family: "devicon";
-    src: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/fonts/devicon.woff")
-      format("woff");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  [class^="devicon-"]:before,
-  [class*=" devicon-"]:before {
-    font-family: "devicon" !important;
-    font-style: normal;
-    font-weight: normal !important;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: inline-block;
-  }
-</style>
