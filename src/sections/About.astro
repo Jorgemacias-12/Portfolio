@@ -32,9 +32,11 @@ const { t } = getTranslation(currentLocale as Locale);
     <img
       class="rounded-full"
       src="/JAMZ-p.jpg"
-      alt=""
+      alt={t("sections_data.about.pfp_alt")}
       width="192"
       height="192"
+      loading="eager"
+      fetchpriority="high"
     />
   </div>
 </section>
