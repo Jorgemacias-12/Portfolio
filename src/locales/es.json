@@ -53,7 +53,8 @@
       "greeting": "Hola, yo soy",
       "short_name": "Jorge Macias",
       "position": "Ingeniero Fullstack",
-      "tagline": "Creando experiencias funcionales y bien pensadas, guiadas por la curiosidad y el aprendizaje constante."
+      "tagline": "Creando experiencias funcionales y bien pensadas, guiadas por la curiosidad y el aprendizaje constante.",
+      "pfp_alt": "Foto de Jorge Macias"
     },
     "skills": {
       "categories": {

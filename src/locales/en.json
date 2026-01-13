@@ -52,7 +52,8 @@
       "greeting": "Hello, I am",
       "short_name": "Jorge Macias",
       "position": "Fullstack Engineer",
-      "tagline": "Creating functional and well-thought experiences, guided by curiosity and continuous learning."
+      "tagline": "Creating functional and well-thought experiences, guided by curiosity and continuous learning.",
+      "pfp_alt": "Jorge Macia's photo"
     },
     "skills": {
       "categories": {
