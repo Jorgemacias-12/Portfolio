@@ -3,9 +3,10 @@ import { getTranslation } from "@/i18n";
 import type { Locale } from "@/types";
 import type { Education as Props } from "@/types";
 import { Building, MapPin, Calendar } from "@lucide/astro";
-import { ExternalLink, GraduationCap, Star } from "lucide-astro";
+import { GraduationCap, Star } from "lucide-astro";
 import Link from "./Link.astro";
 import clsx from "clsx";
+import Card from "./Card.astro";
 
 const { t } = getTranslation(Astro.currentLocale as Locale);
 const {
@@ -20,9 +21,7 @@ const {
 } = Astro.props;
 ---
 
-<article
-  class="flex flex-col gap-4 bg-gray-100 shadow-md dark:bg-dark-800 p-2 rounded-lg transition-colors duration-200 w-full"
->
+<Card class="flex flex-col gap-4">
   <header class="flex gap-4 items-center">
     <span class="w-12 h-12 flex items-center justify-center">
       <GraduationCap size={32} />
@@ -86,4 +85,4 @@ const {
       url={schoolLink}
     />
   </footer>
-</article>
+</Card>

@@ -2,13 +2,12 @@
 import type { Experience as Props } from "@/types";
 import { Briefcase } from "lucide-astro";
 import Skill from "./Skill.astro";
+import Card from "./Card.astro";
 
 const { company, period, responsibilities, role, technologies } = Astro.props;
 ---
 
-<article
-  class="flex flex-col gap-4 bg-gray-100 shadow-md dark:bg-dark-800 p-2 rounded-lg transition-colors duration-200 w-full"
->
+<Card>
   <header class="flex gap-4 items-center">
     <span class="w-12 h-12 flex items-center justify-center">
       <Briefcase size={32} />
@@ -39,4 +38,4 @@ const { company, period, responsibilities, role, technologies } = Astro.props;
       })
     }
   </footer>
-</article>
+</Card>

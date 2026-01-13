@@ -5,6 +5,7 @@ import ProjectStatusBadge from "./ProjectStatusBadge.astro";
 import Skill from "./Skill.astro";
 import Link from "./Link.astro";
 import clsx from "clsx";
+import Card from "./Card.astro";
 
 const locale = Astro.currentLocale as Locale;
 
@@ -12,9 +13,7 @@ const { description, images, links, name, status, tags, demo_link, repo_link } =
   Astro.props;
 ---
 
-<article
-  class="flex flex-col gap-4 bg-gray-100 shadow-md dark:bg-dark-800 p-2 rounded-lg transition-colors duration-200"
->
+<Card class="flex flex-col gap-4">
   <header class="flex flex-col gap-2">
     {
       images && (
@@ -47,4 +46,4 @@ const { description, images, links, name, status, tags, demo_link, repo_link } =
     {repo_link && <Link isForElement {...repo_link} />}
     {demo_link && <Link isLastElement isForElement {...demo_link} />}
   </footer>
-</article>
+</Card>
