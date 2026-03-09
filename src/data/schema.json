@@ -1,11 +1,58 @@
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Jorge Antonio Macias Zambrano",
-  "url": "https://jorgemacias.dev",
-  "jobTitle": "Desarrollador de Software",
-  "sameAs": [
-    "https://github.com/Jorgemacias-12",
-    "https://linkedin.com/in/jamz3"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://jorgemacias.dev/#person",
+      "name": "Jorge Antonio Macias Zambrano",
+      "url": "https://jorgemacias.dev",
+      "image": "https://jorgemacias.dev/profile.jpg",
+      "jobTitle": "Software Developer",
+      "description": "Desarrollador de software especializado en desarrollo web moderno, performance y arquitecturas escalables.",
+      "sameAs": [
+        "https://github.com/Jorgemacias-12",
+        "https://linkedin.com/in/jamz3"
+      ],
+      "knowsAbout": [
+        "Web Development",
+        "JavaScript",
+        "TypeScript",
+        "Astro",
+        "Node.js",
+        "Frontend Development",
+        "Software Architecture",
+        "SEO",
+        "Performance Optimization"
+      ],
+      "knowsLanguage": ["Spanish", "English"],
+      "mainEntityOfPage": {
+        "@id": "https://jorgemacias.dev"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://jorgemacias.dev/#website",
+      "url": "https://jorgemacias.dev",
+      "name": "Jorge Macias Portfolio",
+      "description": "Portfolio profesional de Jorge Macias, desarrollador de software.",
+      "publisher": {
+        "@id": "https://jorgemacias.dev/#person"
+      },
+      "inLanguage": "es"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://jorgemacias.dev/#webpage",
+      "url": "https://jorgemacias.dev",
+      "name": "Jorge Macias - Software Developer",
+      "isPartOf": {
+        "@id": "https://jorgemacias.dev/#website"
+      },
+      "about": {
+        "@id": "https://jorgemacias.dev/#person"
+      },
+      "description": "Portfolio y proyectos de Jorge Macias, desarrollador de software.",
+      "inLanguage": "es"
+    }
   ]
 }
