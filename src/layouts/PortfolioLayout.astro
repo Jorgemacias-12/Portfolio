@@ -4,6 +4,7 @@ import Header from "@/components/astro/Header.astro";
 import type { Locale } from "@/types";
 import { appendBaseUrl, getTranslation } from "@/utils";
 import about_me_schema from "@/seo/me.ld.json";
+import "@/styles/global.css";
 
 if (!Astro.currentLocale) {
   throw new Error("Locale not provided or default didn't load properly");
