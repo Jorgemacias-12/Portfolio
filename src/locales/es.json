@@ -1,0 +1,607 @@
+{
+  "site": {
+    "title": "Jorge Macias | Desarrollador de Software",
+    "description": "Desarrollador de software especializado en frontend, backend y aplicaciones de escritorio. Explora mis proyectos y portafolio.",
+    "keywords": [
+      "Jorge Macias",
+      "Jorge Antonio Macias Zambrano",
+      "Jorge Macias portfolio",
+      "desarrollador web",
+      "frontend developer",
+      "React developer",
+      "web developer Puerto Vallarta",
+      "software engineer Puerto Vallarta",
+      "developer portfolio",
+      "web development projects",
+      "React applications",
+      "TypeScript",
+      "JavaScript",
+      "WPF",
+      "C#",
+      "Astro",
+      "Tailwind",
+      "tech portfolio"
+    ],
+    "author": "Jorge Antonio Macias Zambrano",
+    "author_shortname": "Jorge Macias"
+  },
+  "sections": [
+    {
+      "label": "Acerca de Mí",
+      "url": "about"
+    },
+    {
+      "label": "Habilidades",
+      "url": "skills"
+    },
+    {
+      "label": "Experiencia Profesional",
+      "url": "experience"
+    },
+    {
+      "label": "Proyectos",
+      "url": "projects"
+    },
+
+    {
+      "label": "Educación",
+      "url": "education"
+    }
+  ],
+  "sections_data": {
+    "about": {
+      "greeting": "Hola, yo soy",
+      "short_name": "Jorge Macias",
+      "position": "Ingeniero Fullstack",
+      "tagline": "Creando experiencias funcionales y bien pensadas, guiadas por la curiosidad y el aprendizaje constante.",
+      "pfp_alt": "Foto de Jorge Macias"
+    },
+    "skills": {
+      "categories": {
+        "langs": {
+          "title": "Lenguajes de programación",
+          "content": [
+            {
+              "name": "JavaScript",
+              "color": "green",
+              "icon": {
+                "name": "javascript",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "TypeScript",
+              "color": "green",
+              "icon": {
+                "name": "typescript",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "C#",
+              "color": "green",
+              "icon": {
+                "name": "csharp",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Python",
+              "color": "green",
+              "icon": {
+                "name": "python",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Lua",
+              "color": "green",
+              "icon": {
+                "name": "lua",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "PHP",
+              "color": "green",
+              "icon": {
+                "name": "php",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "SQL",
+              "color": "green",
+              "icon": {
+                "name": "mysql",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "HTML5",
+              "color": "green",
+              "icon": {
+                "name": "html5",
+                "isLucideIcon": false
+              }
+            }
+          ]
+        },
+        "frameworks": {
+          "title": "Frameworks",
+          "content": [
+            {
+              "name": "React",
+              "color": "blue",
+              "icon": {
+                "name": "react",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Tailwind CSS",
+              "color": "blue",
+              "icon": {
+                "name": "tailwindcss",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Astro",
+              "color": "blue",
+              "icon": {
+                "name": "astro",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Laravel",
+              "color": "blue",
+              "icon": {
+                "name": "laravel",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Bun",
+              "color": "blue",
+              "icon": {
+                "name": "bun",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Node JS",
+              "color": "blue",
+              "icon": {
+                "name": "nodejs",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Windows Presentation Foundation (WPF)",
+              "color": "blue",
+              "icon": {
+                "name": "dot-net",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "WinForms",
+              "color": "blue",
+              "icon": {
+                "name": "dotnetcore",
+                "isLucideIcon": false
+              }
+            }
+          ]
+        },
+        "tools": {
+          "title": "Herramientas de desarrollo",
+          "content": [
+            {
+              "name": "Git",
+              "color": "orange",
+              "icon": {
+                "name": "git",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "GitHub",
+              "color": "orange",
+              "icon": {
+                "name": "github",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "GitHub Actions",
+              "color": "orange",
+              "icon": {
+                "name": "githubactions",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Nginx",
+              "color": "orange",
+              "icon": {
+                "name": "nginx",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Linux",
+              "color": "orange",
+              "icon": {
+                "name": "linux",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Insomnia",
+              "color": "orange",
+              "icon": {
+                "name": "insomnia",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Visual Studio Code",
+              "color": "orange",
+              "icon": {
+                "name": "vscode",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Visual Studio",
+              "color": "orange",
+              "icon": {
+                "name": "visualstudio",
+                "isLucideIcon": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    "experiences": [
+      {
+        "role": "Desarrollador Full Stack",
+        "company": "SMCI",
+        "period": "Diciembre 2024 – Febrero 2025",
+        "responsibilities": [
+          "Participación en el desarrollo de una solución de software para el sector de transporte público, enfocada en la comunicación en tiempo real entre dispositivos embebidos y una plataforma web de gestión.",
+          "Desarrollo de una API REST para la recepción, validación y procesamiento de datos.",
+          "Automatización del proceso de despliegue del backend y frontend en servidor.",
+          "Colaboración en la corrección de incidencias del dashboard web.",
+          "Apoyo en la resolución de problemas relacionados con React y TypeScript, especialmente en temas de tipado y estructura del código.",
+          "Contribución a la implementación de control de acceso basado en roles y permisos."
+        ],
+        "technologies": [
+          {
+            "name": "REST API",
+            "icon": { "name": "server", "isLucideIcon": true },
+            "color": "blue"
+          },
+          { "name": "React", "icon": { "name": "react" }, "color": "cyan" },
+          {
+            "name": "TypeScript",
+            "icon": { "name": "typescript" },
+            "color": "blue"
+          },
+          { "name": "Git", "icon": { "name": "git" }, "color": "orange" },
+          {
+            "name": "CI/CD",
+            "icon": { "name": "workflow", "isLucideIcon": true },
+            "color": "violet"
+          }
+        ]
+      },
+      {
+        "role": "Desarrollador Frontend Trainee",
+        "company": "DEVOCAMP",
+        "period": "Julio 2022 – Septiembre 2023",
+        "responsibilities": [
+          "Participación en un programa de formación en desarrollo frontend aplicando fundamentos de HTML5, CSS y JavaScript.",
+          "Desarrollo de ejercicios y proyectos guiados enfocados en buenas prácticas básicas de frontend.",
+          "Trabajo bajo metodología SCRUM utilizando tableros de trabajo para la gestión y seguimiento de tareas.",
+          "Participación en reuniones diarias (dailies) para la coordinación y comunicación del progreso.",
+          "Refuerzo del trabajo colaborativo y la organización de tareas utilizando herramientas de gestión."
+        ],
+        "technologies": [
+          { "name": "HTML5", "icon": { "name": "html5" }, "color": "orange" },
+          { "name": "CSS", "icon": { "name": "css3" }, "color": "blue" },
+          {
+            "name": "JavaScript",
+            "icon": { "name": "javascript" },
+            "color": "yellow"
+          },
+          {
+            "name": "SCRUM",
+            "icon": { "name": "users", "isLucideIcon": true },
+            "color": "rose"
+          },
+          { "name": "Trello", "icon": { "name": "trello" }, "color": "blue" }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "NBTMap Explorer",
+        "description": "Aplicación de escritorio desarrollada en C# para explorar, visualizar y exportar mapas de ítems de Minecraft (map_*.dat) a partir de archivos NBT, sin necesidad de ejecutar Minecraft ni usar mods.",
+        "status": "active",
+        "context": {
+          "problem": "Los mapas de ítems de Minecraft se almacenan en archivos NBT que no son fácilmente legibles ni visualizables fuera del juego, lo que dificulta su análisis o reutilización.",
+          "role": "Desarrollador principal encargado de la lógica de la aplicación, parsing de NBT, renderizado de mapas y arquitectura general. El prototipo de la UI fue diseñado en colaboración con un diseñador.",
+          "approach": "Diseño e implementación de una aplicación de escritorio en WPF siguiendo el patrón MVVM para leer y procesar datos NBT, interpretar la información de los mapas y exportarlos como imágenes.",
+          "challenges": [
+            "Comprender y parsear correctamente la estructura de datos NBT",
+            "Renderizar los mapas respetando escalado y colores",
+            "Detectar instalaciones de Minecraft y rutas de mundos en Windows"
+          ],
+          "learnings": [
+            "Trabajo con formatos binarios y estructuras de datos",
+            "Aplicación práctica del patrón MVVM en WPF",
+            "Separación de responsabilidades entre UI y lógica de negocio"
+          ]
+        },
+        "tags": [
+          {
+            "name": "C#",
+            "icon": { "name": "csharp" },
+            "color": "green",
+            "type": "pill"
+          },
+          {
+            "name": ".NET",
+            "icon": { "name": "dotnetcore" },
+            "color": "blue",
+            "type": "pill"
+          },
+          {
+            "name": "WPF",
+            "icon": { "name": "dot-net" },
+            "color": "blue",
+            "type": "pill"
+          },
+          {
+            "name": "MVVM",
+            "icon": { "name": "layers", "isLucideIcon": true },
+            "color": "rose",
+            "type": "pill"
+          },
+          {
+            "name": "NBT Parsing",
+            "icon": { "name": "file-code", "isLucideIcon": true },
+            "color": "rose",
+            "type": "pill"
+          }
+        ],
+        "images": [
+          {
+            "url": "/projects/nbtmap-1.png",
+            "description": "Diseño de splash screen (variante clara). Pantalla inicial con animación de carga y detección de instalaciones de Minecraft."
+          },
+          {
+            "url": "/projects/nbtmap-2.png",
+            "description": "Diseño de splash screen (variante oscura). Versión alternativa enfocada en una experiencia visual consistente en modo oscuro."
+          },
+          {
+            "url": "/projects/nbtmap-3.png",
+            "description": "Diseño de la ventana principal (variante clara). Vista destinada a listar mapas disponibles, previsualizarlos y permitir su exportación."
+          },
+          {
+            "url": "/projects/nbtmap-4.png",
+            "description": "Diseño de la ventana principal (variante oscura). Representación del flujo principal del proyecto con enfoque en exploración y exportación de mapas."
+          }
+        ],
+        "repo_link": {
+          "label": "Repositorio en GitHub",
+          "url": "https://github.com/Jorgemacias-12/NBTMap-Explorer",
+          "icon": { "name": "github" }
+        }
+      },
+      {
+        "name": "Pony the Dragon! [REP+]",
+        "description": "Mod completo para The Binding of Isaac: Rebirth (Repentance+) que introduce un nuevo personaje jugable con ítems, mecánicas originales y compatibilidad con otros mods.",
+        "status": "completed",
+        "context": {
+          "problem": "Crear un personaje completamente funcional y coherente dentro del ecosistema de mods de The Binding of Isaac, manteniendo compatibilidad, balance y calidad de código.",
+          "role": "Limpieza de código, apoyo en testing y mantenimiento del proyecto.",
+          "approach": "Mod desarrollado en Lua utilizando la API oficial del juego, siguiendo las convenciones del motor y asegurando compatibilidad con otros mods populares.",
+          "challenges": [
+            "Mantener compatibilidad con otros mods",
+            "Entender y trabajar sobre una base de código existente",
+            "Depuración dentro del entorno del juego"
+          ],
+          "learnings": [
+            "Modding de videojuegos",
+            "Uso de APIs específicas de juegos",
+            "Testing y debugging en entornos no tradicionales",
+            "Lectura y comprensión de código ajeno"
+          ]
+        },
+        "tags": [
+          {
+            "name": "Lua",
+            "icon": { "name": "lua" },
+            "color": "green"
+          },
+          {
+            "name": "Game Modding",
+            "icon": { "name": "gamepad", "isLucideIcon": true },
+            "color": "rose"
+          },
+          {
+            "name": "The Binding of Isaac",
+            "icon": { "name": "skull", "isLucideIcon": true },
+            "color": "rose"
+          }
+        ],
+        "images": [
+          {
+            "url": "/projects/ponycharacter-1.jpeg",
+            "description": "Personaje Pony the Dragon con multiples estilos dependiendo el item usado en la run actual."
+          },
+          {
+            "url": "/projects/ponycharacter-2.jpeg",
+            "description": "Personaje Pony the Dragon en ejecución dentro del juego."
+          }
+        ],
+        "repo_link": {
+          "label": "Repositorio en GitHub",
+          "url": "https://github.com/SweetyStorm/PonyCharacter",
+          "icon": { "name": "github" }
+        }
+      },
+      {
+        "name": "Monte Carlo Global Illumination Demo",
+        "description": "Demo académico que explora el uso del método de Monte Carlo para aproximar iluminación global en un entorno 3D.",
+        "status": "paused",
+        "context": {
+          "problem": "Demostrar aplicaciones prácticas del método de Monte Carlo más allá de ejemplos clásicos como el cálculo de PI, orientándolo a gráficos por computadora.",
+          "role": "Investigación, diseño e implementación completa del proyecto como trabajo universitario.",
+          "approach": "Implementación de un entorno 3D utilizando Python y OpenGL, con shaders escritos en GLSL y apoyo de librerías como NumPy y pygame para el manejo matemático y la ventana de renderizado.",
+          "challenges": [
+            "Configuración y estabilidad del entorno de ejecución",
+            "Problemas de rendimiento en tiempo de ejecución",
+            "Desarrollo y depuración de shaders",
+            "Limitaciones de tiempo del proyecto académico"
+          ],
+          "learnings": [
+            "Fundamentos de shaders y GLSL",
+            "Conceptos básicos de gráficos 3D",
+            "Reconocimiento de los límites del alcance académico en proyectos técnicos"
+          ]
+        },
+        "tags": [
+          {
+            "name": "Python",
+            "icon": { "name": "python" },
+            "color": "blue"
+          },
+          {
+            "name": "OpenGL",
+            "icon": { "name": "opengl" },
+            "color": "green"
+          },
+          {
+            "name": "GLSL",
+            "icon": { "name": "code", "isLucideIcon": true },
+            "color": "violet"
+          }
+        ],
+        "images": [
+          {
+            "url": "/projects/montecarlo-1.png",
+            "description": "Escena 3D utilizada para pruebas de renderizado e iluminación."
+          }
+        ],
+        "repo_link": {
+          "label": "Repositorio en GitHub",
+          "url": "https://github.com/Jorgemacias-12/Monte-Carlo-Global-Illumination-Demo"
+        }
+      }
+    ],
+    "education": [
+      {
+        "degree": "Ingeniería en Computación",
+        "institution": "Universidad de Guadalajara (UdeG)",
+        "campus": "CUCOSTA",
+        "startDate": "Agosto 2021",
+        "endDate": "Actual",
+        "gpa": "96.15/100",
+        "relevantProjects": [],
+        "courses": [],
+        "achievements": [],
+        "extracurricularActivities": [],
+        "schoolLink": "http://www.cuc.udg.mx/",
+        "finished": false,
+        "finished_caption": "En curso"
+      },
+      {
+        "degree": "Profesional Técnico Bachiller en Informática",
+        "institution": "Colegio Nacional de Educación Profesional Técnica ",
+        "campus": "Puerto Vallarta 075",
+        "startDate": "Agosto 2018",
+        "endDate": "Julio 2021",
+        "gpa": "9.9/10",
+        "relevantProjects": [],
+        "courses": [],
+        "achievements": ["Promedios altos"],
+        "extracurricularActivities": [],
+        "schoolLink": "https://www.conalep.edu.mx/",
+        "finished": true,
+        "finished_caption": "Terminado"
+      }
+    ]
+  },
+  "components": {
+    "header": {
+      "title": "Portafolio",
+      "menu_opener_title": "Botón para abrir menú móvil",
+      "home_url": "/",
+      "languageUrl": "/en",
+      "languageCaption": "EN",
+      "flagUrl": "/usa.svg",
+      "avatarAlt": "Avatar de chimuelo para mí",
+      "version_title": "versión",
+      "version_caption": "Hecho con ❤️"
+    },
+    "carrousel": {
+      "no_preview": "Vista previa no disponible",
+      "images_indicator": "imágenes",
+      "open_gallery": "Abrir galería",
+      "image": "Imagen",
+      "image_gallery": "Galería de imágenes",
+      "image_controls": "Controles de imagen",
+      "zoom_in": "Acercar (+)",
+      "zoom_out": "Alejar (-)",
+      "rotate": "Rotar (R)",
+      "reset": "Restablecer",
+      "close": "Cerrar (Esc)",
+      "previous_image": "Imagen anterior",
+      "next_image": "Siguiente imagen",
+      "thumbnail_navigation": "Navegación por miniaturas"
+    },
+    "education": {
+      "calification_caption": "Promedio",
+      "school_link_caption": "Visitiar sitio web",
+      "is_finished_caption": "terminado",
+      "is_not_finished_caption": "en curso"
+    },
+    "theme_toggler": {
+      "title": "Botón para cambiar de tema oscuro/claro",
+      "aria-label": "Botón que cambia el tema del portafolio entre oscuro/claro"
+    },
+    "project_status_badge": {
+      "status_labels": {
+        "active": "Activo",
+        "maintenance": "Mantenimiento",
+        "completed": "Completado",
+        "paused": "Pausado",
+        "planned": "Planeado",
+        "in_evaluation": "En evaluación"
+      },
+      "status_tooltips": {
+        "active": "Proyecto en desarrollo activo.",
+        "maintenance": "Proyecto estable que recibe mejoras o ajustes menores.",
+        "completed": "Proyecto finalizado sin desarrollo activo.",
+        "paused": "Proyecto detenido temporalmente.",
+        "planned": "Proyecto definido, aún no iniciado.",
+        "in_evaluation": "Idea o proyecto en análisis de viabilidad."
+      }
+    },
+    "footer": {
+      "contact_me_caption": "Contáctame",
+      "contact_paragraph": "Si deseas contactarme o comunicarte con migo para discutir oportunidades o solo para decir ¡hola!",
+      "follow_me_caption": "Sigueme",
+      "copyright_notice": "Todos los derechos reservados",
+      "contact_link_loading": "cargando...",
+      "builded_with_caption": "Hecho con ❤️"
+    }
+  }
+}

@@ -1,0 +1,606 @@
+{
+  "site": {
+    "title": "Jorge Macias | Software Developer",
+    "description": "Software developer specialized in frontend, backend and desktop applications. Explore my projects and portfolio.",
+    "keywords": [
+      "Jorge Macias",
+      "Jorge Antonio Macias Zambrano",
+      "Jorge Macias portfolio",
+      "web developer",
+      "frontend developer",
+      "React developer",
+      "web developer Puerto Vallarta",
+      "software engineer Puerto Vallarta",
+      "developer portfolio",
+      "web development projects",
+      "React applications",
+      "TypeScript",
+      "JavaScript",
+      "WPF",
+      "C#",
+      "Astro",
+      "Tailwind",
+      "tech portfolio"
+    ],
+    "author": "Jorge Antonio Macias Zambrano",
+    "author_shortname": "Jorge Macias"
+  },
+  "sections": [
+    {
+      "label": "About Me",
+      "url": "about"
+    },
+    {
+      "label": "Skills",
+      "url": "skills"
+    },
+    {
+      "label": "Professional Experience",
+      "url": "experience"
+    },
+    {
+      "label": "Projects",
+      "url": "projects"
+    },
+    {
+      "label": "Education",
+      "url": "education"
+    }
+  ],
+  "sections_data": {
+    "about": {
+      "greeting": "Hello, I am",
+      "short_name": "Jorge Macias",
+      "position": "Fullstack Engineer",
+      "tagline": "Creating functional and well-thought experiences, guided by curiosity and continuous learning.",
+      "pfp_alt": "Jorge Macia's photo"
+    },
+    "skills": {
+      "categories": {
+        "langs": {
+          "title": "Programming Languages",
+          "content": [
+            {
+              "name": "JavaScript",
+              "color": "green",
+              "icon": {
+                "name": "javascript",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "TypeScript",
+              "color": "green",
+              "icon": {
+                "name": "typescript",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "C#",
+              "color": "green",
+              "icon": {
+                "name": "csharp",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Python",
+              "color": "green",
+              "icon": {
+                "name": "python",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Lua",
+              "color": "green",
+              "icon": {
+                "name": "lua",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "PHP",
+              "color": "green",
+              "icon": {
+                "name": "php",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "SQL",
+              "color": "green",
+              "icon": {
+                "name": "mysql",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "HTML5",
+              "color": "green",
+              "icon": {
+                "name": "html5",
+                "isLucideIcon": false
+              }
+            }
+          ]
+        },
+        "frameworks": {
+          "title": "Frameworks",
+          "content": [
+            {
+              "name": "React",
+              "color": "blue",
+              "icon": {
+                "name": "react",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Tailwind CSS",
+              "color": "blue",
+              "icon": {
+                "name": "tailwindcss",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Astro",
+              "color": "blue",
+              "icon": {
+                "name": "astro",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Laravel",
+              "color": "blue",
+              "icon": {
+                "name": "laravel",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Bun",
+              "color": "blue",
+              "icon": {
+                "name": "bun",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Node JS",
+              "color": "blue",
+              "icon": {
+                "name": "nodejs",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Windows Presentation Foundation (WPF)",
+              "color": "blue",
+              "icon": {
+                "name": "dot-net",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "WinForms",
+              "color": "blue",
+              "icon": {
+                "name": "dotnetcore",
+                "isLucideIcon": false
+              }
+            }
+          ]
+        },
+        "tools": {
+          "title": "Development Tools",
+          "content": [
+            {
+              "name": "Git",
+              "color": "orange",
+              "icon": {
+                "name": "git",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "GitHub",
+              "color": "orange",
+              "icon": {
+                "name": "github",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "GitHub Actions",
+              "color": "orange",
+              "icon": {
+                "name": "githubactions",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Nginx",
+              "color": "orange",
+              "icon": {
+                "name": "nginx",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Linux",
+              "color": "orange",
+              "icon": {
+                "name": "linux",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Insomnia",
+              "color": "orange",
+              "icon": {
+                "name": "insomnia",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Visual Studio Code",
+              "color": "orange",
+              "icon": {
+                "name": "vscode",
+                "isLucideIcon": false
+              }
+            },
+            {
+              "name": "Visual Studio",
+              "color": "orange",
+              "icon": {
+                "name": "visualstudio",
+                "isLucideIcon": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    "experiences": [
+      {
+        "role": "Full Stack Developer",
+        "company": "SMCI",
+        "period": "December 2024 – February 2025",
+        "responsibilities": [
+          "Participation in the development of a software solution for the public transport sector, focused on real-time communication between embedded devices and a web management platform.",
+          "Development of a REST API for receiving, validating and processing data.",
+          "Automation of the deployment process for backend and frontend on the server.",
+          "Collaboration in fixing issues on the web dashboard.",
+          "Support in resolving problems related to React and TypeScript, especially regarding typing and code structure.",
+          "Contribution to the implementation of role-based access control and permissions."
+        ],
+        "technologies": [
+          {
+            "name": "REST API",
+            "icon": { "name": "server", "isLucideIcon": true },
+            "color": "blue"
+          },
+          { "name": "React", "icon": { "name": "react" }, "color": "cyan" },
+          {
+            "name": "TypeScript",
+            "icon": { "name": "typescript" },
+            "color": "blue"
+          },
+          { "name": "Git", "icon": { "name": "git" }, "color": "orange" },
+          {
+            "name": "CI/CD",
+            "icon": { "name": "workflow", "isLucideIcon": true },
+            "color": "violet"
+          }
+        ]
+      },
+      {
+        "role": "Frontend Developer Trainee",
+        "company": "DEVOCAMP",
+        "period": "July 2022 – September 2023",
+        "responsibilities": [
+          "Participation in a frontend development training program applying HTML5, CSS and JavaScript fundamentals.",
+          "Development of guided exercises and projects focused on basic frontend best practices.",
+          "Work under SCRUM methodology using work boards for task management and tracking.",
+          "Participation in daily meetings (dailies) for progress coordination and communication.",
+          "Reinforcement of collaborative work and task organization using management tools."
+        ],
+        "technologies": [
+          { "name": "HTML5", "icon": { "name": "html5" }, "color": "orange" },
+          { "name": "CSS", "icon": { "name": "css3" }, "color": "blue" },
+          {
+            "name": "JavaScript",
+            "icon": { "name": "javascript" },
+            "color": "yellow"
+          },
+          {
+            "name": "SCRUM",
+            "icon": { "name": "users", "isLucideIcon": true },
+            "color": "rose"
+          },
+          { "name": "Trello", "icon": { "name": "trello" }, "color": "blue" }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "NBTMap Explorer",
+        "description": "Desktop application developed in C# to explore, visualize and export Minecraft item maps (map_*.dat) from NBT files, without needing to run Minecraft or use mods.",
+        "status": "active",
+        "context": {
+          "problem": "Minecraft item maps are stored in NBT files that are not easily readable or viewable outside the game, making their analysis or reuse difficult.",
+          "role": "Lead developer responsible for application logic, NBT parsing, map rendering and overall architecture. The UI prototype was designed in collaboration with a designer.",
+          "approach": "Design and implementation of a desktop application in WPF following the MVVM pattern to read and process NBT data, interpret map information and export them as images.",
+          "challenges": [
+            "Correctly understanding and parsing the NBT data structure",
+            "Rendering maps respecting scaling and colors",
+            "Detecting Minecraft installations and world paths in Windows"
+          ],
+          "learnings": [
+            "Working with binary formats and data structures",
+            "Practical application of the MVVM pattern in WPF",
+            "Separation of responsibilities between UI and business logic"
+          ]
+        },
+        "tags": [
+          {
+            "name": "C#",
+            "icon": { "name": "csharp" },
+            "color": "green",
+            "type": "pill"
+          },
+          {
+            "name": ".NET",
+            "icon": { "name": "dotnetcore" },
+            "color": "blue",
+            "type": "pill"
+          },
+          {
+            "name": "WPF",
+            "icon": { "name": "dot-net" },
+            "color": "blue",
+            "type": "pill"
+          },
+          {
+            "name": "MVVM",
+            "icon": { "name": "layers", "isLucideIcon": true },
+            "color": "rose",
+            "type": "pill"
+          },
+          {
+            "name": "NBT Parsing",
+            "icon": { "name": "file-code", "isLucideIcon": true },
+            "color": "rose",
+            "type": "pill"
+          }
+        ],
+        "images": [
+          {
+            "url": "/projects/nbtmap-1.png",
+            "description": "Splash screen design (light variant). Initial screen with loading animation and Minecraft installation detection."
+          },
+          {
+            "url": "/projects/nbtmap-2.png",
+            "description": "Splash screen design (dark variant). Alternative version focused on a consistent dark mode visual experience."
+          },
+          {
+            "url": "/projects/nbtmap-3.png",
+            "description": "Main window design (light variant). View intended to list available maps, preview them and allow their export."
+          },
+          {
+            "url": "/projects/nbtmap-4.png",
+            "description": "Main window design (dark variant). Representation of the main project flow with focus on map exploration and export."
+          }
+        ],
+        "repo_link": {
+          "label": "GitHub Repository",
+          "url": "https://github.com/Jorgemacias-12/NBTMap-Explorer",
+          "icon": { "name": "github" }
+        }
+      },
+      {
+        "name": "Pony the Dragon! [REP+]",
+        "description": "Complete mod for The Binding of Isaac: Rebirth (Repentance+) that introduces a new playable character with original items, mechanics and compatibility with other mods.",
+        "status": "completed",
+        "context": {
+          "problem": "Creating a fully functional and coherent character within The Binding of Isaac mod ecosystem, maintaining compatibility, balance and code quality.",
+          "role": "Code cleanup, testing support and project maintenance.",
+          "approach": "Mod developed in Lua using the game's official API, following engine conventions and ensuring compatibility with other popular mods.",
+          "challenges": [
+            "Maintaining compatibility with other mods",
+            "Understanding and working on an existing codebase",
+            "Debugging within the game environment"
+          ],
+          "learnings": [
+            "Video game modding",
+            "Usage of game-specific APIs",
+            "Testing and debugging in non-traditional environments",
+            "Reading and understanding others' code"
+          ]
+        },
+        "tags": [
+          {
+            "name": "Lua",
+            "icon": { "name": "lua" },
+            "color": "green"
+          },
+          {
+            "name": "Game Modding",
+            "icon": { "name": "gamepad", "isLucideIcon": true },
+            "color": "rose"
+          },
+          {
+            "name": "The Binding of Isaac",
+            "icon": { "name": "skull", "isLucideIcon": true },
+            "color": "rose"
+          }
+        ],
+        "images": [
+          {
+            "url": "/projects/ponycharacter-1.jpeg",
+            "description": "Pony the Dragon character with multiple styles depending on the item used in the current run."
+          },
+          {
+            "url": "/projects/ponycharacter-2.jpeg",
+            "description": "Pony the Dragon character in action within the game."
+          }
+        ],
+        "repo_link": {
+          "label": "GitHub Repository",
+          "url": "https://github.com/SweetyStorm/PonyCharacter",
+          "icon": { "name": "github" }
+        }
+      },
+      {
+        "name": "Monte Carlo Global Illumination Demo",
+        "description": "Academic demo exploring the use of the Monte Carlo method to approximate global illumination in a 3D environment.",
+        "status": "paused",
+        "context": {
+          "problem": "Demonstrate practical applications of the Monte Carlo method beyond classic examples like PI calculation, orienting it towards computer graphics.",
+          "role": "Research, design and complete implementation of the project as university work.",
+          "approach": "Implementation of a 3D environment using Python and OpenGL, with shaders written in GLSL and support from libraries like NumPy and pygame for mathematical handling and the rendering window.",
+          "challenges": [
+            "Configuration and stability of the execution environment",
+            "Performance issues at runtime",
+            "Shader development and debugging",
+            "Time limitations of the academic project"
+          ],
+          "learnings": [
+            "Shader and GLSL fundamentals",
+            "Basic 3D graphics concepts",
+            "Recognition of academic scope limitations in technical projects"
+          ]
+        },
+        "tags": [
+          {
+            "name": "Python",
+            "icon": { "name": "python" },
+            "color": "blue"
+          },
+          {
+            "name": "OpenGL",
+            "icon": { "name": "opengl" },
+            "color": "green"
+          },
+          {
+            "name": "GLSL",
+            "icon": { "name": "code", "isLucideIcon": true },
+            "color": "violet"
+          }
+        ],
+        "images": [
+          {
+            "url": "/projects/montecarlo-1.png",
+            "description": "3D scene used for rendering and lighting tests."
+          }
+        ],
+        "repo_link": {
+          "label": "GitHub Repository",
+          "url": "https://github.com/Jorgemacias-12/Monte-Carlo-Global-Illumination-Demo"
+        }
+      }
+    ],
+    "education": [
+      {
+        "degree": "Computer Engineering",
+        "institution": "University of Guadalajara (UdeG)",
+        "campus": "CUCOSTA",
+        "startDate": "August 2021",
+        "endDate": "Present",
+        "gpa": "96.15/100",
+        "relevantProjects": [],
+        "courses": [],
+        "achievements": [],
+        "extracurricularActivities": [],
+        "schoolLink": "http://www.cuc.udg.mx/",
+        "finished": false,
+        "finished_caption": "In progress"
+      },
+      {
+        "degree": "Professional Technical Bachelor in Computer Science",
+        "institution": "National College of Professional Technical Education",
+        "campus": "Puerto Vallarta 075",
+        "startDate": "August 2018",
+        "endDate": "July 2021",
+        "gpa": "9.9/10",
+        "relevantProjects": [],
+        "courses": [],
+        "achievements": ["High averages"],
+        "extracurricularActivities": [],
+        "schoolLink": "https://www.conalep.edu.mx/",
+        "finished": true,
+        "finished_caption": "Completed"
+      }
+    ]
+  },
+  "components": {
+    "header": {
+      "title": "Portfolio",
+      "menu_opener_title": "Button to open mobile menu",
+      "home_url": "/",
+      "languageUrl": "/",
+      "languageCaption": "ES",
+      "flagUrl": "/mexico.svg",
+      "avatarAlt": "Chimuelo avatar for me",
+      "version_title": "version",
+      "version_caption": "Made with ❤️"
+    },
+    "carrousel": {
+      "no_preview": "Preview not available",
+      "images_indicator": "images",
+      "open_gallery": "Open gallery",
+      "image": "Image",
+      "image_gallery": "Image gallery",
+      "image_controls": "Image controls",
+      "zoom_in": "Zoom in (+)",
+      "zoom_out": "Zoom out (-)",
+      "rotate": "Rotate (R)",
+      "reset": "Reset",
+      "close": "Close (Esc)",
+      "previous_image": "Previous image",
+      "next_image": "Next image",
+      "thumbnail_navigation": "Thumbnail navigation"
+    },
+    "education": {
+      "calification_caption": "GPA",
+      "school_link_caption": "Visit website",
+      "is_finished_caption": "completed",
+      "is_not_finished_caption": "in progress"
+    },
+    "theme_toggler": {
+      "title": "Button to switch dark/light theme",
+      "aria-label": "Button that changes the portfolio theme between dark/light"
+    },
+    "project_status_badge": {
+      "status_labels": {
+        "active": "Active",
+        "maintenance": "Maintenance",
+        "completed": "Completed",
+        "paused": "Paused",
+        "planned": "Planned",
+        "in_evaluation": "In evaluation"
+      },
+      "status_tooltips": {
+        "active": "Project in active development.",
+        "maintenance": "Stable project receiving minor improvements or adjustments.",
+        "completed": "Finished project with no active development.",
+        "paused": "Project temporarily stopped.",
+        "planned": "Project defined, not yet started.",
+        "in_evaluation": "Idea or project under feasibility analysis."
+      }
+    },
+    "footer": {
+      "contact_me_caption": "Get In Touch",
+      "contact_paragraph": "Feel free to reach out to discuss,opportunities or just to say hello!",
+      "follow_me_caption": "Follow me",
+      "copyright_notice": "All rights reserved",
+      "contact_link_loading": "loading...",
+      "builded_with_caption": "Made with ❤️"
+    }
+  }
+}
