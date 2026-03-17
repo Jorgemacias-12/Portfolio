@@ -5,6 +5,8 @@ import compress from "astro-compress";
 
 import react from "@astrojs/react";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.jorgemacias.dev/",
@@ -18,5 +20,5 @@ export default defineConfig({
     },
   },
 
-  integrations: [compress(), react()],
+  integrations: [compress(), react(), sitemap()],
 });
