@@ -1,0 +1,77 @@
+---
+import Footer from "@/components/astro/Footer.astro";
+import Header from "@/components/astro/Header.astro";
+import type { Locale } from "@/types";
+import { appendBaseUrl, getTranslation } from "@/utils";
+import about_me_schema from "@/seo/me.ld.json";
+
+if (!Astro.currentLocale) {
+  throw new Error("Locale not provided or default didn't load properly");
+}
+
+const { t } = getTranslation(Astro.currentLocale as Locale);
+---
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{t("site.title")}</title>
+
+    <link rel="me" href="https://github.com/Jorgemacias-12" />
+    <link rel="me" href="https://linkedin.com/in/jamz3" />
+    <link rel="canonical" href={Astro.url.href} />
+    <meta name="description" content={t("site.description")} />
+    <meta name="keywords" content={t("site.keywords").join(", ")} />
+    <meta name="author" content={t("site.author")} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={t("site.title")} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:image" content={appendBaseUrl("/og-image.jpg")} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content={`Portafolio de ${t("site.author")}`}
+    />
+    <meta property="og:description" content={t("site.description")} />
+    <meta property="og:site_name" content={t("site.title")} />
+
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="google-site-verification"
+      content="19ev_yaCk6dZ5MoTvVU8Uf9AZ6S69Tt1U2PrMc-N170"
+    />
+
+    <link rel="alternate" hreflang="es" href="https://jorgemacias.dev/" />
+    <link rel="alternate" hreflang="en" href="https://jorgemacias.dev/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://jorgemacias.dev" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={t("site.title")} />
+    <meta name="twitter:description" content={t("site.description")} />
+    <meta name="twitter:image" content={appendBaseUrl("/og-image.jpg")} />
+
+    <script>
+      (function () {
+        document.documentElement.classList.toggle(
+          "dark",
+          localStorage.theme === "dark" ||
+            (!("theme" in localStorage) &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches),
+        );
+      })();
+    </script>
+
+    <script type="application/json" set:html={about_me_schema} />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
