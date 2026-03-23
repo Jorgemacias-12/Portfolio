@@ -1,0 +1,64 @@
+name: Deploy to Github Pages
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions: write-all
+
+    steps:
+      - name: Delete previous deployment
+        uses: strumwolf/delete-deployment-environment@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: github-pages
+          onlyRemoveDeployments: true
+
+  build:
+    needs: cleanup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set environment variables
+        run: |
+          TAG=$(git describe --tags --abbrev=0)
+          COMMIT=$(git rev-parse --short HEAD)
+          VERSION="${TAG}+${COMMIT}"
+
+          # Inicializar archivo .env con VERSION
+          echo "PUBLIC_VERSION=$VERSION" > .env
+
+          # Verificar si PUBLIC_DOMAIN está definido como variable de entorno/secreto
+          if [ -n "${{ vars.PUBLIC_DOMAIN || secrets.PUBLIC_DOMAIN }}" ]; then
+            echo "PUBLIC_DOMAIN está definido, no se establece PUBLIC_BASE_URL"
+          else
+            echo "PUBLIC_BASE_URL=/${{ github.event.repository.name }}" >> .env
+          fi
+
+      - name: Install, build, and upload site
+        uses: withastro/action@v3
+        with:
+          package-manager: bun@latest
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
