@@ -1,1 +1,65 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  --color-dark-900: #000000;
+  --color-dark-850: #0a0a0a;
+  --color-dark-800: #121416;
+  --color-dark-750: #141619;
+  --color-dark-700: #1a1d21;
+  --color-dark-650: #202327;
+  --color-dark-600: #2c3036;
+  --color-dark-550: #373c43;
+  --color-dark-500: #444b54;
+  --color-dark-450: #525965;
+  --color-dark-400: #646b75;
+  --color-dark-350: #7a828c;
+  --color-dark-300: #959da8;
+  --color-dark-250: #b1bac4;
+  --color-dark-200: #ced4db;
+  --color-dark-150: #e1e7ef;
+  --color-dark-100: #f0f3f8;
+  --color-dark-50: #f9fbff;
+
+  --color-accent-950: #2a0c00;
+  --color-accent-900: #3a1500;
+  --color-accent-850: #4a1d00;
+  --color-accent-800: #5a2600;
+  --color-accent-750: #6a2e00;
+  --color-accent-700: #7a3600;
+  --color-accent-650: #8a3e00;
+  --color-accent-600: #9a4600;
+  --color-accent-550: #aa4e00;
+  --color-accent-500: #ff5c00;
+  --color-accent-450: #ff6f1a;
+  --color-accent-400: #ff8333;
+  --color-accent-350: #ff974d;
+  --color-accent-300: #ffab66;
+  --color-accent-250: #ffbf80;
+  --color-accent-200: #ffd399;
+  --color-accent-150: #ffe7b3;
+  --color-accent-100: #fff3cc;
+  --color-accent-50: #fff9e6;
+}
+
+:root {
+  font-family: "Geist Mono Variable", monospace;
+}
+
+body {
+  min-height: 100dvh;
+  transition: background-color 0.5s ease-in;
+  @apply bg-white dark:bg-black text-black dark:text-white;
+}
