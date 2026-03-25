@@ -1,0 +1,44 @@
+---
+import type { LinkComponentProps as Props } from "@/types";
+import { appendBaseUrl } from "@/utils";
+import clsx from "clsx";
+
+const { label, url, icon, isForMenu, isForElement, isLastElement } =
+  Astro.props;
+
+const internalUrl = isForMenu ? appendBaseUrl(`#${url}`) : appendBaseUrl(url);
+---
+
+{
+  isForMenu && (
+    <li>
+      <a
+        class="link flex flex-1 w-full p-2 rounded-md text-sm hover:bg-accent-600 hover:text-white dark:hover:bg-accent-500"
+        aria-label={label}
+        data-url={url}
+        href={internalUrl}
+      >
+        {label}
+      </a>
+    </li>
+  )
+}
+
+{
+  isForElement && (
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href={url}
+      class={clsx(
+        "inline-flex gap-2 items-center rounded-md p-2 transition-colors duration-200",
+        isLastElement
+          ? "border border-gray-200 dark:border-dark-600 hover:border-accent-700 dark:hover:border-accent-500"
+          : "bg-accent-700 dark:bg-accent-500 text-white dark:hover:bg-accent-500/50 hover:bg-accent-700/50",
+      )}
+    >
+      {/* {icon && <Icon {...icon} />} */}
+      {label}
+    </a>
+  )
+}
