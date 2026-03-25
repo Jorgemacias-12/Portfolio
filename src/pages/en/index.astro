@@ -1,5 +1,25 @@
 ---
+import Section from "@/components/astro/Section.astro";
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+import { portfolioSections } from "@/sections";
+import type { Locale, SectionKey } from "@/types";
+import { getTranslation } from "@/utils";
+
+const { t } = getTranslation(Astro.currentLocale as Locale);
 ---
 
-<PortfolioLayout />
+<PortfolioLayout>
+  {
+    portfolioSections.map(async ({ key, loader, showTitle }) => {
+      const Component = (await loader()).default;
+
+      const label = t(`sections.${key}.label`);
+
+      return (
+        <Section id={key} showTitle={showTitle} title={label} variant="normal">
+          <Component />
+        </Section>
+      );
+    })
+  }
+</PortfolioLayout>
