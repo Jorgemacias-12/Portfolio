@@ -52,14 +52,74 @@
   --color-accent-150: #ffe7b3;
   --color-accent-100: #fff3cc;
   --color-accent-50: #fff9e6;
+
+  --header-height: 72px;
 }
 
 :root {
   font-family: "Geist Mono Variable", monospace;
 }
 
+html {
+  scroll-padding-top: var(--header-height);
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100dvh;
   transition: background-color 0.5s ease-in;
   @apply bg-white dark:bg-black text-black dark:text-white;
+}
+
+.typewriter {
+  --characters: 1;
+  --duration: 2s;
+
+  @apply [--cursor-color:theme(colors.accent.600)] 
+         dark:[--cursor-color:theme(colors.accent.500)];
+
+  display: inline-block;
+  width: fit-content;
+
+  font-family: monospace;
+  white-space: nowrap;
+
+  border-right: 2px solid var(--cursor-color);
+
+  padding-right: 0.2rem;
+
+  animation:
+    typing var(--duration) steps(var(--characters)) forwards,
+    blink 0.7s step-end infinite;
+}
+
+.gradient-text {
+  background: var(--gradient);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+  color: transparent;
+
+  display: inline-block;
+}
+
+@keyframes typing {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-color: var(--cursor-color);
+  }
+  50% {
+    border-color: transparent;
+  }
 }
