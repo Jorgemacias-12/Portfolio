@@ -1,65 +1,70 @@
 {
   "site": {
     "title": "Jorge Macias | Desarrollador de Software",
-    "description": "Desarrollador de software especializado en frontend, backend y aplicaciones de escritorio. Explora mi portafolio, conoce mis proyectos y descubre cómo construyo soluciones funcionales y optimizadas.",
+    "description": "Desarrollador de software especializado en frontend, backend y aplicaciones de escritorio. Explora mi portafolio, revisa mis proyectos y descubre cómo construyo soluciones funcionales y optimizadas.",
     "keywords": [
       "Jorge Macias",
       "Jorge Antonio Macias Zambrano",
-      "Jorge Macias portfolio",
+      "Portafolio de Jorge Macias",
       "desarrollador web",
-      "frontend developer",
-      "React developer",
-      "web developer Puerto Vallarta",
-      "software engineer Puerto Vallarta",
-      "developer portfolio",
-      "web development projects",
-      "React applications",
+      "desarrollador frontend",
+      "desarrollador React",
+      "desarrollador web Puerto Vallarta",
+      "ingeniero de software Puerto Vallarta",
+      "portafolio de desarrollador",
+      "proyectos de desarrollo web",
+      "aplicaciones React",
       "TypeScript",
       "JavaScript",
       "WPF",
       "C#",
       "Astro",
       "Tailwind",
-      "tech portfolio"
+      "portafolio técnico"
     ],
     "author": "Jorge Antonio Macias Zambrano",
     "author_shortname": "Jorge Macias"
   },
-  "sections": [
-    {
-      "label": "Acerca de Mí",
+  "sections": {
+    "about": {
+      "label": "Sobre mí",
       "url": "about"
     },
-    {
+    "skills": {
       "label": "Habilidades",
       "url": "skills"
     },
-    {
+    "experiences": {
       "label": "Experiencia Profesional",
-      "url": "experience"
+      "url": "experiences"
     },
-    {
+    "projects": {
       "label": "Proyectos",
       "url": "projects"
     },
-
-    {
+    "education": {
       "label": "Educación",
       "url": "education"
     }
-  ],
+  },
   "sections_data": {
     "about": {
-      "greeting": "Hola, yo soy",
+      "greeting": "Hola, soy",
       "short_name": "Jorge Macias",
-      "position": "Ingeniero Fullstack",
-      "tagline": "Creando experiencias funcionales y bien pensadas, guiadas por la curiosidad y el aprendizaje constante.",
+      "position": "Desarrollador Full Stack",
+      "stack": "TypeScript • React • Astro • C#",
+      "stack_variations": [
+        "C# • Escritorio • WPF",
+        "Análisis binario • Bajo nivel",
+        "Modding de juegos • Lua"
+      ],
+      "tagline": "Construyendo software funcional y bien pensado, guiado por la curiosidad y el aprendizaje continuo.",
       "pfp_alt": "Foto de Jorge Macias"
     },
     "skills": {
       "categories": {
         "langs": {
-          "title": "Lenguajes de programación",
+          "title": "Lenguajes de Programación",
           "content": [
             {
               "name": "JavaScript",
@@ -197,7 +202,7 @@
           ]
         },
         "tools": {
-          "title": "Herramientas de desarrollo",
+          "title": "Herramientas de Desarrollo",
           "content": [
             {
               "name": "Git",
@@ -273,12 +278,12 @@
         "company": "SMCI",
         "period": "Diciembre 2024 – Febrero 2025",
         "responsibilities": [
-          "Participación en el desarrollo de una solución de software para el sector de transporte público, enfocada en la comunicación en tiempo real entre dispositivos embebidos y una plataforma web de gestión.",
+          "Participación en el desarrollo de una solución de software para el sector del transporte público, enfocada en la comunicación en tiempo real entre dispositivos embebidos y una plataforma de gestión web.",
           "Desarrollo de una API REST para la recepción, validación y procesamiento de datos.",
-          "Automatización del proceso de despliegue del backend y frontend en servidor.",
-          "Colaboración en la corrección de incidencias del dashboard web.",
-          "Apoyo en la resolución de problemas relacionados con React y TypeScript, especialmente en temas de tipado y estructura del código.",
-          "Contribución a la implementación de control de acceso basado en roles y permisos."
+          "Automatización del proceso de despliegue del backend y frontend en el servidor.",
+          "Colaboración en la corrección de problemas en el panel web.",
+          "Apoyo en la resolución de problemas relacionados con React y TypeScript, especialmente en tipado y estructura de código.",
+          "Contribución en la implementación de control de acceso basado en roles y permisos."
         ],
         "technologies": [
           {
@@ -306,10 +311,10 @@
         "period": "Julio 2022 – Septiembre 2023",
         "responsibilities": [
           "Participación en un programa de formación en desarrollo frontend aplicando fundamentos de HTML5, CSS y JavaScript.",
-          "Desarrollo de ejercicios y proyectos guiados enfocados en buenas prácticas básicas de frontend.",
+          "Desarrollo de ejercicios guiados y proyectos enfocados en buenas prácticas básicas de frontend.",
           "Trabajo bajo metodología SCRUM utilizando tableros de trabajo para la gestión y seguimiento de tareas.",
-          "Participación en reuniones diarias (dailies) para la coordinación y comunicación del progreso.",
-          "Refuerzo del trabajo colaborativo y la organización de tareas utilizando herramientas de gestión."
+          "Participación en reuniones diarias (dailies) para la coordinación del avance y la comunicación.",
+          "Reforzamiento del trabajo colaborativo y la organización de tareas mediante herramientas de gestión."
         ],
         "technologies": [
           { "name": "HTML5", "icon": { "name": "html5" }, "color": "orange" },
@@ -331,15 +336,15 @@
     "projects": [
       {
         "name": "NBTMap Explorer",
-        "description": "Aplicación de escritorio desarrollada en C# para explorar, visualizar y exportar mapas de ítems de Minecraft (map_*.dat) a partir de archivos NBT, sin necesidad de ejecutar Minecraft ni usar mods.",
+        "description": "Aplicación de escritorio desarrollada en C# para explorar, visualizar y exportar mapas de objetos de Minecraft (map_*.dat) desde archivos NBT, sin necesidad de ejecutar Minecraft o usar mods.",
         "status": "active",
         "context": {
-          "problem": "Los mapas de ítems de Minecraft se almacenan en archivos NBT que no son fácilmente legibles ni visualizables fuera del juego, lo que dificulta su análisis o reutilización.",
-          "role": "Desarrollador principal encargado de la lógica de la aplicación, parsing de NBT, renderizado de mapas y arquitectura general. El prototipo de la UI fue diseñado en colaboración con un diseñador.",
+          "problem": "Los mapas de objetos de Minecraft se almacenan en archivos NBT que no son fácilmente legibles ni visualizables fuera del juego, dificultando su análisis o reutilización.",
+          "role": "Desarrollador principal encargado de la lógica de la aplicación, análisis de NBT, renderizado de mapas y arquitectura general. El prototipo de UI se diseñó en colaboración con un diseñador.",
           "approach": "Diseño e implementación de una aplicación de escritorio en WPF siguiendo el patrón MVVM para leer y procesar datos NBT, interpretar la información de los mapas y exportarlos como imágenes.",
           "challenges": [
-            "Comprender y parsear correctamente la estructura de datos NBT",
-            "Renderizar los mapas respetando escalado y colores",
+            "Comprender y analizar correctamente la estructura de datos NBT",
+            "Renderizar los mapas respetando la escala y los colores",
             "Detectar instalaciones de Minecraft y rutas de mundos en Windows"
           ],
           "learnings": [
@@ -374,7 +379,7 @@
             "type": "pill"
           },
           {
-            "name": "NBT Parsing",
+            "name": "Análisis NBT",
             "icon": { "name": "file-code", "isLucideIcon": true },
             "color": "rose",
             "type": "pill"
@@ -383,45 +388,45 @@
         "images": [
           {
             "url": "/projects/nbtmap-1.png",
-            "description": "Diseño de splash screen (variante clara). Pantalla inicial con animación de carga y detección de instalaciones de Minecraft."
+            "description": "Diseño de pantalla de carga (variante clara). Pantalla inicial con animación de carga y detección de la instalación de Minecraft."
           },
           {
             "url": "/projects/nbtmap-2.png",
-            "description": "Diseño de splash screen (variante oscura). Versión alternativa enfocada en una experiencia visual consistente en modo oscuro."
+            "description": "Diseño de pantalla de carga (variante oscura). Versión alternativa enfocada en una experiencia visual consistente en modo oscuro."
           },
           {
             "url": "/projects/nbtmap-3.png",
-            "description": "Diseño de la ventana principal (variante clara). Vista destinada a listar mapas disponibles, previsualizarlos y permitir su exportación."
+            "description": "Diseño de ventana principal (variante clara). Vista destinada a listar los mapas disponibles, previsualizarlos y permitir su exportación."
           },
           {
             "url": "/projects/nbtmap-4.png",
-            "description": "Diseño de la ventana principal (variante oscura). Representación del flujo principal del proyecto con enfoque en exploración y exportación de mapas."
+            "description": "Diseño de ventana principal (variante oscura). Representación del flujo principal del proyecto con enfoque en la exploración y exportación de mapas."
           }
         ],
         "repo_link": {
-          "label": "Repositorio en GitHub",
+          "label": "Repositorio de GitHub",
           "url": "https://github.com/Jorgemacias-12/NBTMap-Explorer",
           "icon": { "name": "github" }
         }
       },
       {
         "name": "Pony the Dragon! [REP+]",
-        "description": "Mod completo para The Binding of Isaac: Rebirth (Repentance+) que introduce un nuevo personaje jugable con ítems, mecánicas originales y compatibilidad con otros mods.",
+        "description": "Mod completo para The Binding of Isaac: Rebirth (Repentance+) que introduce un nuevo personaje jugable con objetos, mecánicas y compatibilidad originales con otros mods.",
         "status": "completed",
         "context": {
-          "problem": "Crear un personaje completamente funcional y coherente dentro del ecosistema de mods de The Binding of Isaac, manteniendo compatibilidad, balance y calidad de código.",
-          "role": "Limpieza de código, apoyo en testing y mantenimiento del proyecto.",
-          "approach": "Mod desarrollado en Lua utilizando la API oficial del juego, siguiendo las convenciones del motor y asegurando compatibilidad con otros mods populares.",
+          "problem": "Crear un personaje completamente funcional y coherente dentro del ecosistema de mods de The Binding of Isaac, manteniendo compatibilidad, equilibrio y calidad de código.",
+          "role": "Limpieza de código, soporte en pruebas y mantenimiento del proyecto.",
+          "approach": "Mod desarrollado en Lua utilizando la API oficial del juego, siguiendo las convenciones del motor y asegurando la compatibilidad con otros mods populares.",
           "challenges": [
-            "Mantener compatibilidad con otros mods",
-            "Entender y trabajar sobre una base de código existente",
+            "Mantener la compatibilidad con otros mods",
+            "Comprender y trabajar en una base de código existente",
             "Depuración dentro del entorno del juego"
           ],
           "learnings": [
             "Modding de videojuegos",
             "Uso de APIs específicas de juegos",
-            "Testing y debugging en entornos no tradicionales",
-            "Lectura y comprensión de código ajeno"
+            "Pruebas y depuración en entornos no tradicionales",
+            "Lectura y comprensión de código de otros"
           ]
         },
         "tags": [
@@ -431,7 +436,7 @@
             "color": "green"
           },
           {
-            "name": "Game Modding",
+            "name": "Modding de Juegos",
             "icon": { "name": "gamepad", "isLucideIcon": true },
             "color": "rose"
           },
@@ -444,27 +449,27 @@
         "images": [
           {
             "url": "/projects/ponycharacter-1.jpeg",
-            "description": "Personaje Pony the Dragon con multiples estilos dependiendo el item usado en la run actual."
+            "description": "Personaje Pony the Dragon con múltiples estilos dependiendo del objeto usado en la partida actual."
           },
           {
             "url": "/projects/ponycharacter-2.jpeg",
-            "description": "Personaje Pony the Dragon en ejecución dentro del juego."
+            "description": "Personaje Pony the Dragon en acción dentro del juego."
           }
         ],
         "repo_link": {
-          "label": "Repositorio en GitHub",
+          "label": "Repositorio de GitHub",
           "url": "https://github.com/SweetyStorm/PonyCharacter",
           "icon": { "name": "github" }
         }
       },
       {
-        "name": "Monte Carlo Global Illumination Demo",
-        "description": "Demo académico que explora el uso del método de Monte Carlo para aproximar iluminación global en un entorno 3D.",
+        "name": "Demo de Iluminación Global Monte Carlo",
+        "description": "Demostración académica explorando el uso del método de Monte Carlo para aproximar la iluminación global en un entorno 3D.",
         "status": "paused",
         "context": {
-          "problem": "Demostrar aplicaciones prácticas del método de Monte Carlo más allá de ejemplos clásicos como el cálculo de PI, orientándolo a gráficos por computadora.",
+          "problem": "Demostrar aplicaciones prácticas del método de Monte Carlo más allá de ejemplos clásicos como el cálculo de PI, orientándolo hacia gráficos por computadora.",
           "role": "Investigación, diseño e implementación completa del proyecto como trabajo universitario.",
-          "approach": "Implementación de un entorno 3D utilizando Python y OpenGL, con shaders escritos en GLSL y apoyo de librerías como NumPy y pygame para el manejo matemático y la ventana de renderizado.",
+          "approach": "Implementación de un entorno 3D usando Python y OpenGL, con shaders escritos en GLSL y soporte de bibliotecas como NumPy y pygame para el manejo matemático y la ventana de renderizado.",
           "challenges": [
             "Configuración y estabilidad del entorno de ejecución",
             "Problemas de rendimiento en tiempo de ejecución",
@@ -474,7 +479,7 @@
           "learnings": [
             "Fundamentos de shaders y GLSL",
             "Conceptos básicos de gráficos 3D",
-            "Reconocimiento de los límites del alcance académico en proyectos técnicos"
+            "Reconocimiento de las limitaciones del alcance académico en proyectos técnicos"
           ]
         },
         "tags": [
@@ -501,7 +506,7 @@
           }
         ],
         "repo_link": {
-          "label": "Repositorio en GitHub",
+          "label": "Repositorio de GitHub",
           "url": "https://github.com/Jorgemacias-12/Monte-Carlo-Global-Illumination-Demo"
         }
       }
@@ -512,7 +517,7 @@
         "institution": "Universidad de Guadalajara (UdeG)",
         "campus": "CUCOSTA",
         "startDate": "Agosto 2021",
-        "endDate": "Actual",
+        "endDate": "Presente",
         "gpa": "96.15/100",
         "relevantProjects": [],
         "courses": [],
@@ -523,8 +528,8 @@
         "finished_caption": "En curso"
       },
       {
-        "degree": "Profesional Técnico Bachiller en Informática",
-        "institution": "Colegio Nacional de Educación Profesional Técnica ",
+        "degree": "Bachillerato Técnico Profesional en Informática",
+        "institution": "Colegio Nacional de Educación Profesional Técnica",
         "campus": "Puerto Vallarta 075",
         "startDate": "Agosto 2018",
         "endDate": "Julio 2021",
@@ -535,7 +540,7 @@
         "extracurricularActivities": [],
         "schoolLink": "https://www.conalep.edu.mx/",
         "finished": true,
-        "finished_caption": "Terminado"
+        "finished_caption": "Completado"
       }
     ]
   },
@@ -544,10 +549,10 @@
       "title": "Portafolio",
       "menu_opener_title": "Botón para abrir menú móvil",
       "home_url": "/",
-      "languageUrl": "/en",
+      "languageUrl": "/",
       "languageCaption": "EN",
-      "flagUrl": "/usa.svg",
-      "avatarAlt": "Avatar de chimuelo para mí",
+      "flagUrl": "/mexico.svg",
+      "avatarAlt": "Avatar Chimuelo para mí",
       "version_title": "versión",
       "version_caption": "Hecho con ❤️"
     },
@@ -569,12 +574,12 @@
     },
     "education": {
       "calification_caption": "Promedio",
-      "school_link_caption": "Visitiar sitio web",
-      "is_finished_caption": "terminado",
+      "school_link_caption": "Visitar sitio web",
+      "is_finished_caption": "completado",
       "is_not_finished_caption": "en curso"
     },
     "theme_toggler": {
-      "title": "Botón para cambiar de tema oscuro/claro",
+      "title": "Botón para cambiar tema oscuro/claro",
       "aria-label": "Botón que cambia el tema del portafolio entre oscuro/claro"
     },
     "project_status_badge": {
@@ -582,23 +587,23 @@
         "active": "Activo",
         "maintenance": "Mantenimiento",
         "completed": "Completado",
-        "paused": "Pausado",
+        "paused": "En pausa",
         "planned": "Planeado",
         "in_evaluation": "En evaluación"
       },
       "status_tooltips": {
         "active": "Proyecto en desarrollo activo.",
-        "maintenance": "Proyecto estable que recibe mejoras o ajustes menores.",
+        "maintenance": "Proyecto estable que recibe mejoras menores o ajustes.",
         "completed": "Proyecto finalizado sin desarrollo activo.",
         "paused": "Proyecto detenido temporalmente.",
         "planned": "Proyecto definido, aún no iniciado.",
-        "in_evaluation": "Idea o proyecto en análisis de viabilidad."
+        "in_evaluation": "Idea o proyecto bajo análisis de viabilidad."
       }
     },
     "footer": {
       "contact_me_caption": "Contáctame",
-      "contact_paragraph": "Si deseas contactarme o comunicarte con migo para discutir oportunidades o solo para decir ¡hola!",
-      "follow_me_caption": "Sigueme",
+      "contact_paragraph": "No dudes en contactarme para discutir oportunidades o simplemente para saludar!",
+      "follow_me_caption": "Sígueme",
       "copyright_notice": "Todos los derechos reservados",
       "contact_link_loading": "cargando...",
       "builded_with_caption": "Hecho con ❤️"

@@ -25,35 +25,41 @@
     "author": "Jorge Antonio Macias Zambrano",
     "author_shortname": "Jorge Macias"
   },
-  "sections": [
-    {
-      "label": "About Me",
+  "sections": {
+    "about": {
+      "label": "About me",
       "url": "about"
     },
-    {
+    "skills": {
       "label": "Skills",
       "url": "skills"
     },
-    {
+    "experiences": {
       "label": "Professional Experience",
-      "url": "experience"
+      "url": "experiences"
     },
-    {
+    "projects": {
       "label": "Projects",
       "url": "projects"
     },
-    {
+    "education": {
       "label": "Education",
       "url": "education"
     }
-  ],
+  },
   "sections_data": {
     "about": {
       "greeting": "Hello, I am",
       "short_name": "Jorge Macias",
-      "position": "Fullstack Engineer",
-      "tagline": "Creating functional and well-thought experiences, guided by curiosity and continuous learning.",
-      "pfp_alt": "Jorge Macia's photo"
+      "position": "Full Stack Developer",
+      "stack": "TypeScript • React • Astro • C#",
+      "stack_variations": [
+        "C# • Desktop • WPF",
+        "Binary parsing • Low level",
+        "Game modding • Lua"
+      ],
+      "tagline": "Building functional and well-thought software, guided by curiosity and continuous learning.",
+      "pfp_alt": "Jorge Macias photo"
     },
     "skills": {
       "categories": {
