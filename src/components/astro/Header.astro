@@ -3,11 +3,12 @@ import type { Locale } from "@/types";
 import { appendBaseUrl, getTranslation } from "@/utils";
 import { Menu, X } from "@lucide/astro";
 import { ThemeToggler } from "../react/ThemeToggler";
+import Link from "./Link.astro";
 
 const { currentLocale } = Astro;
 const { t } = getTranslation(currentLocale as Locale);
 
-const sections = t("sections");
+const sections = Object.values(t("sections"));
 const languageUrl = t("components.header.languageUrl");
 const flagUrl = t("components.header.flagUrl");
 const languageCaption = t("components.header.languageCaption");
@@ -29,8 +30,7 @@ const lang = currentLocale;
     <ul class="flex items-center gap-4">
       {
         sections.map((el) => {
-          return el;
-          // return <Link isForMenu {...el} />;
+          return <Link isForMenu {...el} />;
         })
       }
     </ul>
@@ -81,7 +81,7 @@ const lang = currentLocale;
       class="flex flex-col justify-between bg-white dark:bg-dark-800 w-8/12 h-full transition-all duration-300 ease-in-out transform -translate-x-full"
     >
       <section
-        class="flex justify-between items-center p-4 border-b dark:border-dark-500"
+        class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-dark-500"
       >
         <a
           class="font-bold cursor-pointer text-xl hover:text-accent-700 dark:hover:text-accent-600"
@@ -99,8 +99,10 @@ const lang = currentLocale;
         </button>
       </section>
 
-      <section class="flex flex-col gap-4 flex-1 divide-y">
-        <div class="flex p-4 pb-0 items-center justify-between">
+      <section
+        class="flex flex-col gap-4 flex-1 divide-y divide-gray-200 dark:divide-dark-500"
+      >
+        <div class="flex p-4 items-center justify-between">
           <a
             class="flex items-center gap-2 py-1"
             href={appendBaseUrl(languageUrl)}
@@ -123,14 +125,13 @@ const lang = currentLocale;
         <ul class="flex flex-col p-4 gap-2 dark:border-dark-500 flex-1">
           {
             sections.map((el) => {
-              return el;
-              // return <Link isForMenu {...el} />;
+              return <Link isForMenu {...el} />;
             })
           }
         </ul>
       </section>
 
-      <footer class="p-4 border-t dark:border-dark-500">
+      <footer class="p-4 border-t border-gray-200 dark:border-dark-500">
         {
           import.meta.env.PUBLIC_VERSION !== undefined && (
             <p class="text-xs">
