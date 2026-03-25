@@ -1,0 +1,47 @@
+---
+import type { SectionCmpProps as Props } from "@/types";
+import { clsx } from "clsx";
+
+const { title, id, variant = "normal", showTitle = false } = Astro.props;
+
+const baseSectionClasses =
+  "w-full py-12 px-4 sm:px-6 lg:px-8 overflow-x-hidden";
+const heroSectionClasses =
+  "min-h-[80vh] md:min-h-[100vh] flex items-center justify-center";
+const normalSectionClasses = "max-w-6xl mx-auto";
+
+const baseTitleClasses = "text-black dark:text-white mb-6 break-words";
+const heroTitleClasses =
+  "text-4xl sm:text-5xl md:text-6xl font-bold break-words";
+const normalTitleClasses = "text-2xl sm:text-3xl font-semibold break-words";
+
+const baseArticleClasses = "w-full break-words";
+const heroArticleClasses = "text-center max-w-3xl mx-auto";
+
+const isHero = variant === "hero";
+---
+
+<section
+  id={id}
+  class={clsx(
+    baseSectionClasses,
+    isHero ? heroSectionClasses : normalSectionClasses,
+  )}
+>
+  <article class={clsx(baseArticleClasses, isHero && heroArticleClasses)}>
+    {
+      title && showTitle && (
+        <h2
+          class={clsx(
+            baseTitleClasses,
+            isHero ? heroTitleClasses : normalTitleClasses,
+          )}
+        >
+          {title}
+        </h2>
+      )
+    }
+
+    <slot />
+  </article>
+</section>
