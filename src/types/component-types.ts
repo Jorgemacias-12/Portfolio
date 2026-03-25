@@ -10,3 +10,18 @@ export interface MenuItem {
   url: string;
   icon?: Icon;
 }
+
+export type LinkComponentProps = MenuItem & {
+  isForMenu?: boolean;
+  isForElement?: boolean;
+  isLastElement?: boolean;
+};
+
+export interface SectionCmpProps {
+  id?: string;
+  title?: string;
+  variant?: SectionVariant;
+  showTitle?: boolean;
+}
+
+export type SectionVariant = "hero" | "normal";
