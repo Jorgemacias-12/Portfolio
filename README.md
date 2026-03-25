@@ -16,18 +16,79 @@ The site is designed to be fast, accessible, and easy to navigate, taking advant
 
 ```
 /
+├── astro.config.mjs
+├── package.json
+├── tsconfig.json
 ├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── llm.txt
+│   ├── robots.txt
+│   └── site.webmanifest
+└── src/
+    ├── components/
+    │   ├── astro/
+    │   │   ├── Footer.astro
+    │   │   ├── Header.astro
+    │   │   ├── Link.astro
+    │   │   └── Section.astro
+    │   └── react/
+    │       ├── RotateText.tsx
+    │       └── ThemeToggler.tsx
+    ├── constants/
+    │   ├── index.ts
+    │   └── social-networks.ts
+    ├── i18n/
+    │   └── lang-definitions.ts
+    ├── layouts/
+    │   └── PortfolioLayout.astro
+    ├── locales/
+    │   ├── en.json
+    │   └── es.json
+    ├── pages/
+    │   ├── index.astro
+    │   └── en/index.astro
+    ├── sections/
+    │   ├── index.ts
+    │   └── portfolio/
+    │       ├── About.astro
+    │       ├── Education.astro
+    │       ├── Experiences.astro
+    │       ├── Projects.astro
+    │       └── Skills.astro
+    ├── seo/
+    │   └── me.ld.json
+    ├── styles/
+    │   └── global.css
+    ├── types/
+    │   ├── component-types.ts
+    │   ├── dtos.ts
+    │   ├── i18n.ts
+    │   ├── index.ts
+    │   ├── sections.ts
+    │   └── theme.ts
+    └── utils/
+        ├── animations.ts
+        ├── i18n.ts
+        └── link.ts
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Directory Reference
 
-Components for Astro/React/Vue/Svelte/Preact are placed in `src/components/`.
-
-Static assets, like images, go in the `public/` directory.
+- `astro.config.mjs`: Astro configuration and integrations.
+- `package.json`: NPM/Bun dependencies, scripts, and metadata.
+- `tsconfig.json`: TypeScript compiler options.
+- `public/`: Static assets served directly (images, icons, robots, manifest, etc.).
+- `src/components/astro/`: Reusable Astro UI components for layout and interface elements.
+- `src/components/react/`: React component widgets used in pages (e.g., rotating text, theme toggle).
+- `src/constants/`: Application constants (social links, shared values).
+- `src/i18n/`: Internationalization helper and language definitions.
+- `src/layouts/`: High-level page layout component (`PortfolioLayout.astro`).
+- `src/locales/`: Locale JSON files for English and Spanish text content.
+- `src/pages/`: Astro pages and routes (root and language-specific pages).
+- `src/sections/`: Structured sections used in page composition, including portfolio subcomponents.
+- `src/seo/`: SEO meta data and JSON-LD configuration (`me.ld.json`).
+- `src/styles/`: Global CSS styling for the site.
+- `src/types/`: TypeScript type definitions and interfaces.
+- `src/utils/`: Utility functions for animations, localization, and link helpers.
 
 ## Commands
 
