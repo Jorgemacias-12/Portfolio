@@ -31,7 +31,7 @@
       "url": "about"
     },
     "skills": {
-      "label": "Skills",
+      "label": "Technical Skills",
       "url": "skills"
     },
     "experiences": {
@@ -62,214 +62,49 @@
       "pfp_alt": "Jorge Macias photo"
     },
     "skills": {
-      "categories": {
-        "langs": {
-          "title": "Programming Languages",
-          "content": [
-            {
-              "name": "JavaScript",
-              "color": "green",
-              "icon": {
-                "name": "javascript",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "TypeScript",
-              "color": "green",
-              "icon": {
-                "name": "typescript",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "C#",
-              "color": "green",
-              "icon": {
-                "name": "csharp",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "Python",
-              "color": "green",
-              "icon": {
-                "name": "python",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "Lua",
-              "color": "green",
-              "icon": {
-                "name": "lua",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "PHP",
-              "color": "green",
-              "icon": {
-                "name": "php",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "SQL",
-              "color": "green",
-              "icon": {
-                "name": "mysql",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "HTML5",
-              "color": "green",
-              "icon": {
-                "name": "html5",
-                "isLucideIcon": false
-              }
-            }
-          ]
-        },
-        "frameworks": {
-          "title": "Frameworks",
-          "content": [
-            {
-              "name": "React",
-              "color": "blue",
-              "icon": {
-                "name": "react",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "Tailwind CSS",
-              "color": "blue",
-              "icon": {
-                "name": "tailwindcss",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "Astro",
-              "color": "blue",
-              "icon": {
-                "name": "astro",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "Laravel",
-              "color": "blue",
-              "icon": {
-                "name": "laravel",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "Bun",
-              "color": "blue",
-              "icon": {
-                "name": "bun",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "Node JS",
-              "color": "blue",
-              "icon": {
-                "name": "nodejs",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "Windows Presentation Foundation (WPF)",
-              "color": "blue",
-              "icon": {
-                "name": "dot-net",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "WinForms",
-              "color": "blue",
-              "icon": {
-                "name": "dotnetcore",
-                "isLucideIcon": false
-              }
-            }
-          ]
-        },
-        "tools": {
-          "title": "Development Tools",
-          "content": [
-            {
-              "name": "Git",
-              "color": "orange",
-              "icon": {
-                "name": "git",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "GitHub",
-              "color": "orange",
-              "icon": {
-                "name": "github",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "GitHub Actions",
-              "color": "orange",
-              "icon": {
-                "name": "githubactions",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "Nginx",
-              "color": "orange",
-              "icon": {
-                "name": "nginx",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "Linux",
-              "color": "orange",
-              "icon": {
-                "name": "linux",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "Insomnia",
-              "color": "orange",
-              "icon": {
-                "name": "insomnia",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "Visual Studio Code",
-              "color": "orange",
-              "icon": {
-                "name": "vscode",
-                "isLucideIcon": false
-              }
-            },
-            {
-              "name": "Visual Studio",
-              "color": "orange",
-              "icon": {
-                "name": "visualstudio",
-                "isLucideIcon": false
-              }
-            }
-          ]
-        }
+      "core": {
+        "label": "Core",
+        "color": "text-accent-600 dark:text-accent-500",
+        "technologies": [
+          { "name": "TypeScript", "icon": "typescript" },
+          { "name": "React", "icon": "react" },
+          { "name": "Astro", "icon": "astro" },
+          { "name": "C#", "icon": "csharp" }
+        ],
+        "tagline": "Technologies I use the most to build web and desktop applications."
+      },
+      "runtime": {
+        "label": "Runtime / Platform",
+        "color": "text-blue-500 dark:text-blue-300",
+        "technologies": [
+          { "name": "Node.js", "icon": "nodejs" },
+          { "name": "Bun", "icon": "bun" },
+          { "name": ".NET", "icon": "dotnetcore" }
+        ],
+        "tagline": "Environements where my applications run and are executed."
+      },
+      "tools": {
+        "label": "Tools",
+        "color": "text-emerald-500 dark:text-emerald-300",
+        "technologies": [
+          { "name": "Git", "icon": "git" },
+          { "name": "Linux", "icon": "linux" },
+          { "name": "Nginx", "icon": "nginx" },
+          { "name": "VSCode", "icon": "vscode" },
+          { "name": "Visual Studio", "icon": "visualstudio" }
+        ],
+        "tagline": "Tools I use during development and for setting up and deploying projects."
+      },
+      "technical": {
+        "label": "Technical Interests",
+        "color": "text-purple-500 dark:text-purple-300",
+        "technologies": [
+          { "name": "Binary Parsing", "icon": null },
+          { "name": "Game Modding", "icon": null },
+          { "name": "Rendering", "icon": null },
+          { "name": "Low-level", "icon": null }
+        ],
+        "tagline": "Things I like exploring through experiments and personal projects."
       }
     },
     "experiences": [
@@ -278,30 +113,22 @@
         "company": "SMCI",
         "period": "December 2024 – February 2025",
         "responsibilities": [
-          "Participation in the development of a software solution for the public transport sector, focused on real-time communication between embedded devices and a web management platform.",
-          "Development of a REST API for receiving, validating and processing data.",
-          "Automation of the deployment process for backend and frontend on the server.",
-          "Collaboration in fixing issues on the web dashboard.",
-          "Support in resolving problems related to React and TypeScript, especially regarding typing and code structure.",
-          "Contribution to the implementation of role-based access control and permissions."
+          "Built a real-time communication platform connecting embedded devices with a web management system.",
+          "Developed a REST API to handle data validation and processing.",
+          "Solved React and TypeScript issues, improving type safety and code structure."
         ],
         "technologies": [
           {
-            "name": "REST API",
-            "icon": { "name": "server", "isLucideIcon": true },
-            "color": "blue"
+            "name": "React",
+            "icon": "react"
           },
-          { "name": "React", "icon": { "name": "react" }, "color": "cyan" },
           {
             "name": "TypeScript",
-            "icon": { "name": "typescript" },
-            "color": "blue"
+            "icon": "typescript"
           },
-          { "name": "Git", "icon": { "name": "git" }, "color": "orange" },
           {
-            "name": "CI/CD",
-            "icon": { "name": "workflow", "isLucideIcon": true },
-            "color": "violet"
+            "name": "Git",
+            "icon": "git"
           }
         ]
       },
@@ -310,26 +137,23 @@
         "company": "DEVOCAMP",
         "period": "July 2022 – September 2023",
         "responsibilities": [
-          "Participation in a frontend development training program applying HTML5, CSS and JavaScript fundamentals.",
-          "Development of guided exercises and projects focused on basic frontend best practices.",
-          "Work under SCRUM methodology using work boards for task management and tracking.",
-          "Participation in daily meetings (dailies) for progress coordination and communication.",
-          "Reinforcement of collaborative work and task organization using management tools."
+          "Built projects applying core frontend best practices.",
+          "Worked in a SCRUM environment using task boards to track progress.",
+          "Participated in daily stand-ups to coordinate and communicate progress."
         ],
         "technologies": [
-          { "name": "HTML5", "icon": { "name": "html5" }, "color": "orange" },
-          { "name": "CSS", "icon": { "name": "css3" }, "color": "blue" },
+          {
+            "name": "HTML5",
+            "icon": "html5"
+          },
           {
             "name": "JavaScript",
-            "icon": { "name": "javascript" },
-            "color": "yellow"
+            "icon": "javascript"
           },
           {
-            "name": "SCRUM",
-            "icon": { "name": "users", "isLucideIcon": true },
-            "color": "rose"
-          },
-          { "name": "Trello", "icon": { "name": "trello" }, "color": "blue" }
+            "name": "CSS",
+            "icon": "css"
+          }
         ]
       }
     ],
