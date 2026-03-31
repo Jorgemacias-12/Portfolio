@@ -1,0 +1,11 @@
+---
+import clsx from "clsx";
+
+const { class: className } = Astro.props;
+---
+
+<article
+  class={clsx(" bg-gray-100 dark:bg-dark-650 p-2 rounded-sm", className)}
+>
+  <slot />
+</article>

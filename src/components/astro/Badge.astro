@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+import clsx from "clsx";
+
+interface Props {
+  name: string;
+  icon: string | null;
+  color?: string;
+}
+
+const { name, icon, color } = Astro.props;
+
+const hasIcon = Boolean(icon);
+const iconName = hasIcon ? `devicon:${icon}` : null;
+---
+
+<article
+  class={clsx(
+    "inline-flex items-center gap-2 px-3 py-1 rounded-md text-sm font-medium transition-colors",
+    hasIcon ? "" : "bg-gray-300 dark:bg-dark-600 ",
+    color,
+  )}
+>
+  {iconName && <Icon name={iconName} class="w-4 h-4 shrink-0" />}
+
+  <span>{name}</span>
+</article>
