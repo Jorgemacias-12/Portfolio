@@ -1,1 +1,11 @@
-soly mencho wey
+---
+import Job from "@/components/astro/Job.astro";
+import type { Locale } from "@/types";
+import { getTranslation } from "@/utils";
+
+const { t } = getTranslation(Astro.currentLocale as Locale);
+---
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-2">
+  {t("sections_data.experiences").map((el) => <Job {...el} />)}
+</section>
