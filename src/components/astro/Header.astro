@@ -139,7 +139,7 @@ const lang = currentLocale;
   </nav>
 </section>
 
-<script is:inline>
+<script>
   document.addEventListener("DOMContentLoaded", () => {
     const SWIPE_MIN_DISTANCE = 80;
     const EDGE_ZONE_WIDTH = 50;
@@ -157,9 +157,22 @@ const lang = currentLocale;
     const headerEl = document.getElementById("header");
     const mobileMenu = document.getElementById("mobile-menu");
     const menuContent = document.getElementById("mobile-menu-content");
-    const menuButtons = document.querySelectorAll(".menu-opener");
+    const menuButtons = document.querySelectorAll(
+      ".menu-opener",
+    ) as NodeListOf<HTMLButtonElement>;
     const menuIcons = document.querySelectorAll(".lucide.lucide-menu");
     const closeIcons = document.querySelectorAll(".lucide.lucide-x");
+
+    if (
+      !headerEl ||
+      !mobileMenu ||
+      !menuContent ||
+      !menuButtons ||
+      !menuIcons ||
+      !closeIcons
+    ) {
+      return;
+    }
 
     const glassClasses = [
       "fixed",
@@ -182,17 +195,16 @@ const lang = currentLocale;
       isTouchInEdgeZone = false;
     };
 
-    const toggleMenu = (shouldOpen) => {
-      if (typeof shouldOpen === "boolean") {
-        if (shouldOpen === isMenuOpen) return;
-        isMenuOpen = shouldOpen;
-      } else {
-        isMenuOpen = !isMenuOpen;
-      }
+    const toggleMenu = (shouldOpen?: boolean) => {
+      isMenuOpen = typeof shouldOpen === "boolean" ? shouldOpen : !isMenuOpen;
 
       menuIcons.forEach((icon) => icon.classList.toggle("hidden", isMenuOpen));
       closeIcons.forEach((icon) =>
         icon.classList.toggle("hidden", !isMenuOpen),
+      );
+
+      menuButtons.forEach((btn) =>
+        btn.setAttribute("aria-expanded", `${isMenuOpen}`),
       );
 
       if (isMenuOpen) {
@@ -212,7 +224,7 @@ const lang = currentLocale;
       document.documentElement.style.overflow = isMenuOpen ? "hidden" : "";
     };
 
-    const handleTouchStart = (e) => {
+    const handleTouchStart = (e: TouchEvent) => {
       if (window.innerWidth >= 768) return;
       const touchX = e.touches[0].clientX;
       touchStartX = touchX;
@@ -221,7 +233,7 @@ const lang = currentLocale;
       isSwipingHorizontally = false;
     };
 
-    const handleTouchMove = (e) => {
+    const handleTouchMove = (e: TouchEvent) => {
       if (window.innerWidth >= 768) return;
       if (!isMenuOpen && !isTouchInEdgeZone) return;
       const touchX = e.touches[0].clientX;
@@ -251,7 +263,7 @@ const lang = currentLocale;
       }
     };
 
-    const handleTouchEnd = (e) => {
+    const handleTouchEnd = (e: TouchEvent) => {
       if (window.innerWidth >= 768) return;
       if (touchStartX === 0 || !isSwipingHorizontally) {
         resetTouchState();
@@ -269,9 +281,38 @@ const lang = currentLocale;
       resetTouchState();
     };
 
-    const handleClickOutside = (e) => {
+    const handleClickOutside = (e: MouseEvent) => {
       if (isMenuOpen && e.target === mobileMenu) {
         toggleMenu(false);
+      }
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isMenuOpen) return;
+
+      if (e.key === "Escape") {
+        toggleMenu(false);
+        return;
+      }
+
+      if (e.key === "Tab") {
+        const focusableElements = menuContent.querySelectorAll<HTMLElement>(
+          "a, button, input, [tabindex]:not([tabindex='-1'])",
+        );
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
       }
     };
 
@@ -301,14 +342,18 @@ const lang = currentLocale;
     document.body.prepend(triggerElement);
     headerObserver.observe(triggerElement);
 
-    menuButtons.forEach((btn) =>
-      btn.addEventListener("click", () => toggleMenu()),
-    );
+    menuButtons.forEach((btn) => {
+      btn.addEventListener("click", () => toggleMenu());
+      btn.setAttribute("aria-expanded", `${isMenuOpen}`);
+    });
+
     mobileMenu.addEventListener("click", handleClickOutside);
     document.addEventListener("touchstart", handleTouchStart, {
       passive: false,
     });
     document.addEventListener("touchmove", handleTouchMove, { passive: false });
     document.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+    document.addEventListener("keydown", handleKeyDown);
   });
 </script>
