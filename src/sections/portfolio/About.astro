@@ -1,7 +1,7 @@
 ---
 import { RotateText } from "@/components/react/RotateText";
 import { type Locale } from "@/types";
-import { getTranslation, randomGradient } from "@/utils";
+import { getTranslation } from "@/utils";
 
 const { currentLocale } = Astro;
 const { t } = getTranslation(currentLocale as Locale);
@@ -26,7 +26,7 @@ const { t } = getTranslation(currentLocale as Locale);
         {t("sections_data.about.position")}
       </p>
 
-      <p class="flex flex-col gap-2">
+      <p class="inline-flex flex-col gap-2 w-fit">
         <span
           class="typewriter text-accent-600 dark:text-accent-500 text-xl"
           style={{
@@ -39,15 +39,17 @@ const { t } = getTranslation(currentLocale as Locale);
             typeof t("sections_data.about.stack") === "string"
               ? t("sections_data.about.stack")
               : ""
-          }</span
-        >
+          }
+        </span>
       </p>
 
-      <RotateText
-        client:load
-        className="text-teal-800 dark:text-teal-200"
-        texts={t("sections_data.about.stack_variations")}
-      />
+      <div class="relative z-40">
+        <RotateText
+          client:load
+          className="text-blue-800 dark:text-blue-300"
+          texts={t("sections_data.about.stack_variations")}
+        />
+      </div>
     </div>
 
     <p class="w-auto text-gray-500 dark:text-gray-400">
@@ -60,8 +62,8 @@ const { t } = getTranslation(currentLocale as Locale);
       class="rounded-full"
       src="/me.webp"
       alt={t("sections_data.about.pfp_alt")}
-      width="200"
-      height="200"
+      width="300"
+      height="300"
       loading="eager"
       fetchpriority="high"
     />
