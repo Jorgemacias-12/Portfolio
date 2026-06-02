@@ -1,9 +1,15 @@
 ---
+import { socialNetworks } from "@/constants";
 import type { Locale } from "@/types";
 import { getTranslation } from "@/utils";
 import { Mail } from "@lucide/astro";
+import Link from "./Link.astro";
 
-const { t } = getTranslation(Astro.currentLocale as Locale);
+const locale = Astro.currentLocale as Locale;
+
+const { t } = getTranslation(locale);
+
+const socials = socialNetworks[locale];
 ---
 
 <footer
@@ -27,12 +33,12 @@ const { t } = getTranslation(Astro.currentLocale as Locale);
 
         <a
           id="email-link"
-          class="inline-flex gap-2 p-4 rounded-lg bg-accent-500/10 hover:bg-accent-500/20 mt-4 duration-300 transition-all font-semibold text-accent-700 dark:text-accent-500"
+          class="inline-flex gap-2 p-4 rounded-lg bg-accent-500/10 hover:bg-accent-500/20 mt-4 duration-300 transition-all font-semibold text-accent-700 dark:text-accent-500 cursor-pointer items-center"
         >
           <Mail />
-          <span id="text-content"
-            >{t("components.footer.contact_link_loading")}</span
-          >
+          <span class="text-xs md:text-sm" id="email-text">
+            {t("components.footer.contact_link_label")}
+          </span>
         </a>
       </div>
 
@@ -43,17 +49,17 @@ const { t } = getTranslation(Astro.currentLocale as Locale);
           </h3>
 
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <!-- {
-              socialNetworks.map((s) => {
-                return <SocialLink {...s} />;
+            {
+              socials.map((s) => {
+                return <Link linkType="social" {...s} />;
               })
-            } -->
+            }
           </div>
         </div>
       </div>
     </div>
 
-    <div class="border-t dark:border-dark-500 border-border my-12"></div>
+    <div class="border-t border-gray-300 dark:border-dark-600 my-12"></div>
 
     <div
       class="flex flex-col sm:flex-row justify-between items-center gap-6 text-sm text-gray-500 dark:text-gray-100/60"
@@ -74,3 +80,22 @@ const { t } = getTranslation(Astro.currentLocale as Locale);
     </div>
   </section>
 </footer>
+
+<script>
+  const encoded = "am9yZ2VhbnRvbmlvbWFjaWFzemFtYnJhbm9AZ21haWwuY29t";
+
+  const link = document.getElementById("email-link");
+  const text = document.getElementById("email-text");
+
+  if (link && text) {
+    const decoded = atob(encoded);
+
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      text.textContent = decoded;
+
+      window.location.href = `mailto:${decoded}`;
+    });
+  }
+</script>
