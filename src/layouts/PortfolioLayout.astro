@@ -18,7 +18,10 @@ const { t } = getTranslation(Astro.currentLocale as Locale);
 <html lang={Astro.currentLocale}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>{t("site.title")}</title>
 
     <link rel="me" href="https://github.com/Jorgemacias-12" />
