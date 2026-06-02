@@ -25,9 +25,7 @@ export default defineConfig({
     react(),
     sitemap(),
     icon({
-      include: {
-        devicon: ["*"],
-      },
+      include: { devicon: ["*"], local: ["*"] },
     }),
   ],
 
