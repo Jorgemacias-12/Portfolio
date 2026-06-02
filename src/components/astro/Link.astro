@@ -1,16 +1,24 @@
 ---
 import type { LinkComponentProps as Props } from "@/types";
 import { appendBaseUrl } from "@/utils";
+import { Icon } from "astro-icon/components";
 import clsx from "clsx";
 
-const { label, url, icon, isForMenu, isForElement, isLastElement } =
-  Astro.props;
+const {
+  label,
+  url,
+  linkType = "oficial",
+  icon,
+  isForMenu = false,
+  isForElement = false,
+  isLastElement = false,
+} = Astro.props;
 
 const internalUrl = isForMenu ? appendBaseUrl(`#${url}`) : appendBaseUrl(url);
 ---
 
 {
-  isForMenu && (
+  isForMenu && linkType !== "social" && (
     <li>
       <a
         class="link flex flex-1 w-full p-2 rounded-md text-sm hover:bg-accent-600 hover:text-white dark:hover:bg-accent-500"
@@ -25,7 +33,7 @@ const internalUrl = isForMenu ? appendBaseUrl(`#${url}`) : appendBaseUrl(url);
 }
 
 {
-  isForElement && (
+  isForElement && linkType !== "social" && (
     <a
       target="_blank"
       rel="noopener noreferrer"
@@ -37,8 +45,21 @@ const internalUrl = isForMenu ? appendBaseUrl(`#${url}`) : appendBaseUrl(url);
           : "bg-accent-700 dark:bg-accent-500 text-white dark:hover:bg-accent-500/50 hover:bg-accent-700/50",
       )}
     >
-      {/* {icon && <Icon {...icon} />} */}
       {label}
+    </a>
+  )
+}
+
+{
+  linkType === "social" && (
+    <a
+      class="flex flex-col p-4 rounded-lg items-center justify-center border border-accent-700 text-accent-700 hover:bg-accent-700/10 dark:text-accent-400 dark:hover:bg-accent-500/20 transition-all duration-300 gap-1"
+      rel="noopener noreferrer"
+      target="_blank"
+      href={url}
+    >
+      {icon && <Icon style="color: currentColor;" {...icon} />}
+      <span>{label}</span>
     </a>
   )
 }
