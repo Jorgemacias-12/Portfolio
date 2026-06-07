@@ -58,6 +58,15 @@
 
 :root {
   font-family: "Geist Mono Variable", monospace;
+
+  --sb-size: 0.75rem;
+  --sb-track-color: #e2e8f0;
+  --sb-thumb-color: #9a4600;
+}
+
+.dark {
+  --sb-track-color: #1e1e1e;
+  --sb-thumb-color: #ff5c00;
 }
 
 html {
@@ -67,30 +76,27 @@ html {
 
 body {
   min-height: 100dvh;
-  transition: background-color 0.5s ease-in;
   @apply bg-white dark:bg-black text-black dark:text-white;
 }
 
-.typewriter {
-  --characters: 1;
-  --duration: 2s;
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
 
-  @apply [--cursor-color:theme(colors.accent.600)] 
-         dark:[--cursor-color:theme(colors.accent.500)];
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 5px;
+}
 
-  display: inline-block;
-  width: fit-content;
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 5px;
+}
 
-  font-family: monospace;
-  white-space: nowrap;
-
-  border-right: 2px solid var(--cursor-color);
-
-  padding-right: 0.2rem;
-
-  animation:
-    typing var(--duration) steps(var(--characters)) forwards,
-    blink 0.7s step-end infinite;
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
 }
 
 .gradient-text {
@@ -105,12 +111,33 @@ body {
   display: inline-block;
 }
 
+.typewriter {
+  --characters: 1;
+  --duration: 2s;
+
+  @apply [--cursor-color:theme(colors.accent.600)]
+  dark:[--cursor-color:theme(colors.accent.500)];
+
+  display: inline-block;
+
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+
+  border-right: 2px solid var(--cursor-color);
+
+  animation:
+    typing var(--duration) steps(var(--characters)) forwards,
+    blink 0.7s step-end infinite;
+  padding-right: 0.1rem;
+}
+
 @keyframes typing {
   from {
-    clip-path: inset(0 100% 0 0);
+    width: 0;
   }
   to {
-    clip-path: inset(0 0 0 0);
+    width: 100%;
   }
 }
 
@@ -119,6 +146,7 @@ body {
   100% {
     border-color: var(--cursor-color);
   }
+
   50% {
     border-color: transparent;
   }
