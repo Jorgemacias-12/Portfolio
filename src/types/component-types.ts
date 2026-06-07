@@ -1,4 +1,4 @@
-import type { Icon } from "./dtos";
+import type { Icon, LinkType } from "./dtos";
 
 export interface AstroComponent {
   (props: any): any;
@@ -15,6 +15,7 @@ export type LinkComponentProps = MenuItem & {
   isForMenu?: boolean;
   isForElement?: boolean;
   isLastElement?: boolean;
+  linkType?: LinkType;
 };
 
 export interface SectionCmpProps {
@@ -25,3 +26,4 @@ export interface SectionCmpProps {
 }
 
 export type SectionVariant = "hero" | "normal";
+export type BadgeType = "normal" | "graduated" | "completed" | "ongoing";
