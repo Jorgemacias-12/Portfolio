@@ -1,1 +1,11 @@
-ay wey
+---
+import EducationCard from "@/components/astro/EducationCard.astro";
+import type { Locale } from "@/types";
+import { getTranslation } from "@/utils";
+
+const { t } = getTranslation(Astro.currentLocale as Locale);
+---
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  {t("sections_data.education").map((e) => <EducationCard {...e} />)}
+</section>
