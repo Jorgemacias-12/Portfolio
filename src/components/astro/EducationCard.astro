@@ -1,0 +1,124 @@
+---
+import type { Locale, Education as Props, TranslationKey } from "@/types";
+import Card from "./Card.astro";
+import { Icon } from "astro-icon/components";
+import { getTranslation } from "@/utils";
+import { Calendar, ExternalLink, GraduationCap, Star } from "@lucide/astro";
+import Badge from "./Badge.astro";
+
+const {
+  campus,
+  degree,
+  endDate,
+  gpa,
+  institution,
+  location,
+  startDate,
+  status,
+  schoolIconName,
+  relevantProjects,
+  verificationLinks,
+} = Astro.props;
+
+const { t } = getTranslation(Astro.currentLocale as Locale);
+const statusMessage = t(
+  `components.education.status_badge_${status}` as TranslationKey,
+);
+const hasValidRelevantProjects = Boolean(relevantProjects.length > 0);
+const hasValidVerificationLinks = Boolean(verificationLinks.length > 0);
+---
+
+<Card class="flex flex-col h-full group p-4 transition-all duration-300 gap-4">
+  <header class="flex justify-between items-start">
+    <section class="flex flex-col gap-2">
+      <Badge class="w-fit" name={statusMessage as string} type={status} />
+
+      <h3 class="text-xl font-bold leading-tight">{degree}</h3>
+    </section>
+
+    <Icon size={42} name={`local:${schoolIconName}`} title={institution} />
+  </header>
+
+  <main class="flex flex-col gap-4">
+    <section class="flex flex-col gap-1">
+      <p class="text-sm font-semibold text-gray-700 dark:text-gray-400">
+        {institution}
+      </p>
+      <p class="text-xs text-gray-500 flex items-center gap-1 italic">
+        {campus} • {location}
+      </p>
+    </section>
+
+    <section class="grid grid-cols-2 gap-4">
+      <div class="flex items-center gap-3">
+        <div
+          class="p-2 rounded-lg bg-amber-100 dark:bg-amber-900/10 text-amber-600"
+        >
+          <Star size={18} />
+        </div>
+
+        <p class="flex flex-col">
+          <span class="text-xs text-gray-400 uppercase font-bold"
+            >{t("components.education.gpa_label")}</span
+          >
+          <span class="text-sm font-bold">{gpa}</span>
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div
+          class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/10 text-blue-600"
+        >
+          <Calendar size={18} />
+        </div>
+
+        <div class="flex flex-col">
+          <span
+            class="text-[10px] text-gray-400 uppercase font-bold tracking-wider"
+            >{t("components.education.period_label")}</span
+          >
+          <span class="text-sm font-bold">
+            {startDate.split("-")[0]} — {endDate.split("-")[0]}
+          </span>
+        </div>
+      </div>
+    </section>
+
+    {
+      relevantProjects && hasValidRelevantProjects && (
+        <section class="space-y-3 grow">
+          <h4 class="text-xs uppercase  flex items-center gap-1.5">
+            <GraduationCap size={14} />
+            {t("components.education.relevant_projects_label")}
+          </h4>
+          <div class="flex flex-col gap-2">
+            {relevantProjects.map(({ label, href }) => (
+              <a target="_blank" class="text-xs p-2 rounded-lg" href={href}>
+                <span class="font-medium">{label}</span>
+                <ExternalLink size={12} class="text-gray-400" />
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    }
+  </main>
+
+  <footer class="mt-auto pt-4 grid grid-cols-2 gap-2">
+    {
+      verificationLinks &&
+        hasValidVerificationLinks &&
+        verificationLinks.map(({ label, href, icon }) => (
+          <a
+            href={href}
+            target="_blank"
+            class="inline-flex items-center gap-1.5 text-xs font-bold p-2 rounded-md w-full cursor-pointer bg-gray-200 dark:bg-dark-500"
+          >
+            {icon && <Icon name={icon} />}
+            {!icon && <ExternalLink />}
+            {label}
+          </a>
+        ))
+    }
+  </footer>
+</Card>
