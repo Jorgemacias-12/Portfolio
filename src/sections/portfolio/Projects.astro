@@ -1,1 +1,11 @@
-mira bien hdptm
+---
+import Project from "@/components/astro/Project.astro";
+import type { Locale } from "@/types";
+import { getTranslation } from "@/utils";
+
+const { t } = getTranslation(Astro.currentLocale as Locale);
+---
+
+<section class="grid grid-cols-1 md:grid-cols-3 gap-2">
+  {t("sections_data.projects").map((el) => <Project {...el} />)}
+</section>
