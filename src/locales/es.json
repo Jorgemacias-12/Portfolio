@@ -304,9 +304,9 @@
       "title": "Portafolio",
       "menu_opener_title": "Botón para abrir el menú móvil",
       "home_url": "/",
-      "languageUrl": "/",
-      "languageCaption": "ES",
-      "flagUrl": "/mexico.svg",
+      "languageUrl": "/en",
+      "languageCaption": "EN",
+      "flagUrl": "/usa.svg",
       "avatarAlt": "Avatar de Chimuelo para mí",
       "version_title": "versión",
       "version_caption": "Hecho con ❤️"
