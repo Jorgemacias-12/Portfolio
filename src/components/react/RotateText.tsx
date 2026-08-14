@@ -25,6 +25,8 @@ export const RotateText = ({
 }: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
+  const [isAnimationDone, setIsAnimationDone] = useState(false);
+
   const ghostRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLSpanElement>(null);
 
@@ -36,6 +38,17 @@ export const RotateText = ({
   };
 
   useEffect(() => {
+    const handleAnimationDone = () => {
+      setIsAnimationDone(true);
+    };
+
+    window.addEventListener("hero-animation-done", handleAnimationDone);
+    return () => {
+      window.removeEventListener("hero-animation-done", handleAnimationDone);
+    };
+  }, []);
+
+  useEffect(() => {
     requestAnimationFrame(updateHeight);
     if (!wrapperRef.current) return;
     const resizeObserver = new ResizeObserver(() => updateHeight());
@@ -44,12 +57,14 @@ export const RotateText = ({
   }, [texts]);
 
   useEffect(() => {
-    if (texts.length <= 1) return;
+    if (texts.length <= 1 || !isAnimationDone) return;
+
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % texts.length);
     }, interval);
+
     return () => clearInterval(timer);
-  }, [texts.length, interval]);
+  }, [texts.length, interval, isAnimationDone]);
 
   if (!texts.length) return null;
 
