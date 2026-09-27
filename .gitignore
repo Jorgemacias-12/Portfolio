@@ -23,6 +23,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# Ignore any example file
+# ignore any file that contains "example"
+example/
 example.*
-example
