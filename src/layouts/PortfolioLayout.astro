@@ -68,7 +68,7 @@ const { t } = getTranslation(Astro.currentLocale as Locale);
     <meta name="apple-mobile-web-app-title" content="jorgemacias" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <script>
+    <script is:inline>
       (function () {
         document.documentElement.classList.toggle(
           "dark",

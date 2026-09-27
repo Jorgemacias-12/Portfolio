@@ -1,0 +1,63 @@
+:root {
+  /* Token principal del proyecto */
+  --bg: #0b0f14;
+  --bg-alt: #101924;
+  --surface: #121b22;
+  --surface-strong: #1a2430;
+  --text: #eaf0f5;
+  --text-soft: #c7d2dc;
+  --text-muted: #9aa8b5;
+  --border: #24313d;
+  --accent: #ff7a1a;
+  --accent-hover: #ff9a4d;
+  --accent-soft: #ffd3ae;
+  --radius: 18px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.button {
+  background: var(--accent);
+  color: #091118;
+  border-radius: 12px;
+  padding: 12px 20px;
+}
+
+.button:hover {
+  background: var(--accent-hover);
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+/*
+  Idea de traducción a Astro/Tailwind:
+
+  - coloca estos valores en src/styles/global.css
+  - usa variables para botones, cards y texto
+  - mantén un número pequeño de tokens para no perderte
+
+  Ejemplo:
+
+  @theme {
+    --color-bg: #0b0f14;
+    --color-surface: #121b22;
+    --color-text: #eaf0f5;
+    --color-text-muted: #9aa8b5;
+    --color-accent: #ff7a1a;
+    --color-accent-hover: #ff9a4d;
+    --color-border: #24313d;
+  }
+*/

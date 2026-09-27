@@ -12,9 +12,7 @@ const { t } = getTranslation(currentLocale as Locale);
 >
   <div id="hero-text" class="w-auto flex flex-col gap-4 space-y-4">
     <div class="flex flex-col gap-4">
-      <p
-        class="text-lg text-gray-500 dark:text-gray-400 opacity-0 entry-element"
-      >
+      <p class="text-lg text-text-muted opacity-0 entry-element">
         {t("sections_data.about.greeting")}
       </p>
 
@@ -25,7 +23,7 @@ const { t } = getTranslation(currentLocale as Locale);
       </h1>
 
       <p
-        class="text-xl sm:text-2xl text-accent-600 dark:text-accent-500 font-medium opacity-0 entry-element"
+        class="text-xl text-success sm:text-2xl font-medium opacity-0 entry-element"
       >
         {t("sections_data.about.position")}
       </p>
@@ -36,7 +34,7 @@ const { t } = getTranslation(currentLocale as Locale);
       >
         <span
           id="typewriter-text"
-          class="text-accent-600 dark:text-accent-500 text-xl"
+          class="text-accent text-xl"
           style={{
             "--characters":
               typeof t("sections_data.about.stack") === "string"
@@ -55,13 +53,13 @@ const { t } = getTranslation(currentLocale as Locale);
       <div class="relative z-40 opacity-0 entry-element">
         <RotateText
           client:load
-          className="text-blue-800 dark:text-blue-300"
+          className="text-blue-800 dark:text-blue-500"
           texts={t("sections_data.about.stack_variations")}
         />
       </div>
     </div>
 
-    <p class="w-auto text-gray-500 dark:text-gray-400 opacity-0 entry-element">
+    <p class="w-auto text-text-muted opacity-0 entry-element">
       {t("sections_data.about.tagline")}
     </p>
   </div>

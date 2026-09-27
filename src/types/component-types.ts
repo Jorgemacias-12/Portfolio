@@ -1,4 +1,5 @@
-import type { Icon, LinkType } from "./dtos";
+import type { Icon, LinkType, TechnicalSkill } from "./dtos";
+import type { Locale } from "./i18n";
 
 export interface AstroComponent {
   (props: any): any;
@@ -15,7 +16,8 @@ export type LinkComponentProps = MenuItem & {
   isForMenu?: boolean;
   isForElement?: boolean;
   isLastElement?: boolean;
-  linkType?: LinkType;
+  variant?: LinkType;
+  classes?: string;
 };
 
 export interface SectionCmpProps {
@@ -25,5 +27,33 @@ export interface SectionCmpProps {
   showTitle?: boolean;
 }
 
+export interface CarrouselCmp {
+  locale: Locale;
+  images?: (typeof Image)[];
+}
+
+export interface BadgeCmpProps extends TechnicalSkill {
+  color?: string;
+  type?: BadgeType;
+  class?: string;
+}
+
+export interface LinkVariantConfig {
+  href: string;
+  target?: TargetType;
+  rel?: string;
+  wrapper: any | typeof Fragment;
+  classes: string;
+}
+
+export interface SectionTypeConfig extends SectionCmpProps {
+  section: string;
+  article: string;
+  title: string;
+}
+
+export type SectionType = NonNullable<SectionCmpProps["variant"]>;
+export type LinkVariant = NonNullable<LinkComponentProps["variant"]>;
+export type TargetType = "_blank" | "_self" | "_parent" | "_top";
 export type SectionVariant = "hero" | "normal";
 export type BadgeType = "normal" | "graduated" | "completed" | "ongoing";

@@ -3,120 +3,77 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-gray-50: #f9fafb;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #111827;
-
-  --color-dark-900: #000000;
-  --color-dark-850: #0a0a0a;
-  --color-dark-800: #121416;
-  --color-dark-750: #141619;
-  --color-dark-700: #1a1d21;
-  --color-dark-650: #202327;
-  --color-dark-600: #2c3036;
-  --color-dark-550: #373c43;
-  --color-dark-500: #444b54;
-  --color-dark-450: #525965;
-  --color-dark-400: #646b75;
-  --color-dark-350: #7a828c;
-  --color-dark-300: #959da8;
-  --color-dark-250: #b1bac4;
-  --color-dark-200: #ced4db;
-  --color-dark-150: #e1e7ef;
-  --color-dark-100: #f0f3f8;
-  --color-dark-50: #f9fbff;
-
-  --color-accent-950: #2a0c00;
-  --color-accent-900: #3a1500;
-  --color-accent-850: #4a1d00;
-  --color-accent-800: #5a2600;
-  --color-accent-750: #6a2e00;
-  --color-accent-700: #7a3600;
-  --color-accent-650: #8a3e00;
-  --color-accent-600: #9a4600;
-  --color-accent-550: #aa4e00;
-  --color-accent-500: #ff5c00;
-  --color-accent-450: #ff6f1a;
-  --color-accent-400: #ff8333;
-  --color-accent-350: #ff974d;
-  --color-accent-300: #ffab66;
-  --color-accent-250: #ffbf80;
-  --color-accent-200: #ffd399;
-  --color-accent-150: #ffe7b3;
-  --color-accent-100: #fff3cc;
-  --color-accent-50: #fff9e6;
+  --color-bg: #f3f4f6;
+  --color-bg-alt: #eef4fb;
+  --color-surface: #ffffff;
+  --color-surface-strong: #edf3f8;
+  --color-surface-soft: #f7fafc;
+  --color-text: #0f172a;
+  --color-text-soft: #334155;
+  --color-text-muted: #64748b;
+  --color-text-inverse: #f8fafc;
+  --color-border: #dfe7f1;
+  --color-border-strong: #c7d2e0;
+  --color-accent: #ff7a1a;
+  --color-accent-hover: #ff9a4d;
+  --color-accent-soft: #7a3b00;
+  --color-accent-strong: #d85d00;
+  --color-success: #0f766e;
+  --color-warning: #b45309;
+  --color-danger: #b91c1c;
+  --color-surface-last: #2e4056;
 
   --header-height: 72px;
 }
 
 :root {
   font-family: "Geist Mono Variable", monospace;
-
   --sb-size: 0.75rem;
-  --sb-track-color: #e2e8f0;
-  --sb-thumb-color: #9a4600;
 }
 
 .dark {
-  --sb-track-color: #1e1e1e;
-  --sb-thumb-color: #ff5c00;
+  --color-bg: #0b0f14;
+  --color-bg-alt: #101924;
+  --color-surface: #121b22;
+  --color-surface-strong: #1a2430;
+  --color-surface-soft: #1f2b36;
+  --color-surface-last: #2e4056;
+  --color-text: #eaf0f5;
+  --color-text-soft: #c7d2dc;
+  --color-text-muted: #9aa8b5;
+  --color-text-inverse: #091118;
+  --color-border: #24313d;
+  --color-border-strong: #303030;
+  --color-accent: #ff7a1a;
+  --color-accent-hover: #ff9a4d;
+  --color-accent-soft: #ffd3ae;
+  --color-accent-strong: #e05e00;
+  --color-success: #2dd4bf;
+  --color-warning: #fbbf24;
+  --color-danger: #f87171;
 }
 
 html {
   scroll-padding-top: var(--header-height);
   scroll-behavior: smooth;
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+::selection {
+  background-color: var(--color-accent-strong);
+  color: white;
 }
 
 body {
   min-height: 100dvh;
-  @apply bg-white dark:bg-black text-black dark:text-white;
-}
-
-body::-webkit-scrollbar {
-  width: var(--sb-size);
-}
-
-body::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 5px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 5px;
-}
-
-@supports not selector(::-webkit-scrollbar) {
-  body {
-    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-  }
-}
-
-.gradient-text {
-  background: var(--gradient);
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  background-clip: text;
-  color: transparent;
-
-  display: inline-block;
 }
 
 .typewriter {
   --characters: 1;
   --duration: 2s;
 
-  @apply [--cursor-color:theme(colors.accent.600)]
-  dark:[--cursor-color:theme(colors.accent.500)];
+  @apply [--cursor-color:var(--color-accent)];
 
   display: inline-block;
 
@@ -124,7 +81,7 @@ body::-webkit-scrollbar-thumb {
   overflow: hidden;
   width: 0;
 
-  border-right: 2px solid var(--cursor-color);
+  border-right: 10px solid var(--cursor-color);
 
   animation:
     typing var(--duration) steps(var(--characters)) forwards,

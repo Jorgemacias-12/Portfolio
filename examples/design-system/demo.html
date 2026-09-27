@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo de sistema de diseño</title>
+    <link rel="stylesheet" href="./tokens.css" />
+    <style>
+      body {
+        padding: 48px 24px;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .stack {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      .panel {
+        padding: 24px;
+        border-radius: 18px;
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .theme-label {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container stack">
+      <header class="topbar">
+        <span class="tag">Sistema de diseño</span>
+
+        <button
+          id="theme-toggle"
+          class="theme-switcher"
+          type="button"
+          aria-label="Cambiar a modo claro"
+        >
+          <span class="theme-icon">☀️</span>
+          <span class="theme-label">Modo claro</span>
+        </button>
+      </header>
+
+      <section class="panel">
+        <span class="tag">Full-stack developer</span>
+        <h1 class="h1" style="margin-top: 16px">Jorge Macías</h1>
+        <p class="body" style="margin-top: 12px; max-width: 700px">
+          Desarrollador con foco en interfaces limpias, rendimiento y
+          experiencias web claras.
+        </p>
+
+        <div class="row" style="margin-top: 24px">
+          <button class="button-primary">Ver proyectos</button>
+          <button class="button-secondary">Contactar</button>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="h2" style="margin-bottom: 16px">Jerarquía visual</h2>
+
+        <div class="grid">
+          <article class="card">
+            <span class="tag">Proyecto</span>
+            <h3 class="h3" style="margin-top: 16px">NBTMap Explorer</h3>
+            <p class="body" style="margin-top: 12px">
+              Explorador de datos binarios para entender y visualizar
+              información estructurada.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="tag">Stack</span>
+            <h3 class="h3" style="margin-top: 16px">TypeScript • React • C#</h3>
+            <p class="body" style="margin-top: 12px">
+              Tecnologías que me permiten construir productivamente desde
+              frontend hasta backend.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="tag">Experiencia</span>
+            <h3 class="h3" style="margin-top: 16px">Diseño y arquitectura</h3>
+            <p class="body" style="margin-top: 12px">
+              Diseño interfaces claras, modularizadas y con enfoque en la
+              mantenibilidad del código.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2 class="h2">Bloque de texto</h2>
+        <p class="body" style="margin-top: 12px; max-width: 720px">
+          Este es un ejemplo de un texto de cuerpo. Tiene un nivel de lectura
+          cómodo con contraste suficiente, y se usa para explicar mejor la idea
+          sin competir con el título principal.
+        </p>
+        <p class="muted" style="margin-top: 12px; max-width: 720px">
+          Este texto va más suave para ayudar a diferenciar subtítulos,
+          etiquetas o descripciones secundarias.
+        </p>
+      </section>
+    </div>
+
+    <script>
+      const root = document.documentElement;
+      const toggleButton = document.getElementById("theme-toggle");
+      const themeLabel = document.querySelector(".theme-label");
+      const themeIcon = document.querySelector(".theme-icon");
+
+      const applyTheme = (theme) => {
+        root.setAttribute("data-theme", theme);
+        localStorage.setItem("design-system-theme", theme);
+
+        const isDark = theme === "dark";
+        themeLabel.textContent = isDark ? "Modo claro" : "Modo oscuro";
+        themeIcon.textContent = isDark ? "☀️" : "🌙";
+        toggleButton.setAttribute(
+          "aria-label",
+          isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro",
+        );
+      };
+
+      const savedTheme = localStorage.getItem("design-system-theme");
+      const preferredTheme = window.matchMedia("(prefers-color-scheme: light)")
+        .matches
+        ? "light"
+        : "dark";
+
+      applyTheme(savedTheme || preferredTheme);
+
+      toggleButton.addEventListener("click", () => {
+        const nextTheme =
+          root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        applyTheme(nextTheme);
+      });
+    </script>
+  </body>
+</html>

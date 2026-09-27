@@ -1,4 +1,4 @@
-export type LinkType = "social" | "oficial";
+export type LinkType = "social" | "oficial" | "menu" | "iconfied" | "element";
 export type EducationStatus = "graduated" | "completed" | "ongoing";
 
 export interface Icon {
@@ -15,7 +15,7 @@ export interface SocialNetwork {
 
 export interface TechnicalSkill {
   name: string;
-  icon?: string;
+  icon?: string | undefined | null;
 }
 
 export interface TechnicalSkillItem {

@@ -13,56 +13,52 @@ const socials = socialNetworks[locale];
 ---
 
 <footer
-  class="relative mt-32 pt-24 pb-12 border-t border-gray-300 dark:border-dark-600"
+  class="flex flex-col md:flex-row mt-32 pt-24 pb-12 border-t border-border-strong"
 >
-  <div class="absolute inset-0 overflow-hidden pointer-events-none"></div>
-
-  <section class="relative mx-auto max-w-6xl px-6 lg:px-8">
+  <section class="mx-auto max-w-6xl px-6 lg:px-8">
     <div class="grid md:grid-cols-2 gap-16 mb-16">
       <div class="space-y-6">
         <div>
-          <h2 class="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+          <h2 class="text-5xl md:text-4xl font-bold text-accent mb-4">
             {t("components.footer.contact_me_caption")}
           </h2>
           <p
-            class="text-lg text-gray-500 dark:text-gray-100/60 leading-relaxed max-w-sm"
+            class="text-md md:text-lg text-text-muted leading-relaxed max-w-sm"
           >
             {t("components.footer.contact_paragraph")}
           </p>
         </div>
 
-        <a
+        <button
+          type="button"
           id="email-link"
-          class="inline-flex gap-2 p-4 rounded-lg bg-accent-500/10 hover:bg-accent-500/20 mt-4 duration-300 transition-all font-semibold text-accent-700 dark:text-accent-500 cursor-pointer items-center"
+          aria-label={t("components.footer.contact_me_caption")}
+          class="inline-flex cursor-pointer items-center gap-2 rounded-lg bg-accent/10 p-4 font-semibold text-accent transition-colors duration-300 hover:bg-accent/20"
         >
-          <Mail />
-          <span class="text-xs md:text-sm" id="email-text">
+          <Mail class="size-5 shrink-0" />
+          <span class="" id="email-text">
             {t("components.footer.contact_link_label")}
           </span>
-        </a>
+        </button>
       </div>
 
       <div class="space-y-8">
-        <div>
-          <h3 class="text-xl font-semibold text-foreground mb-6">
+        <div class="flex flex-col gap-4">
+          <h3 class="text-4xl text-accent font-semibold text-foreground">
             {t("components.footer.follow_me_caption")}
           </h3>
 
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {
-              socials.map((s) => {
-                return <Link linkType="social" {...s} />;
-              })
-            }
+          <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {socials.map((s) => <Link variant="social" {...s} />)}
           </div>
         </div>
       </div>
     </div>
 
-    <div class="border-t border-gray-300 dark:border-dark-600 my-12"></div>
+    <hr class="my-12 border-border-strong" />
 
     <div
-      class="flex flex-col sm:flex-row justify-between items-center gap-6 text-sm text-gray-500 dark:text-gray-100/60"
+      class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-text-muted"
     >
       <p>
         &copy; {new Date().getFullYear()}
@@ -70,7 +66,7 @@ const socials = socialNetworks[locale];
       </p>
 
       <p>
-        {t("components.footer.builded_with_caption")}
+        {t("components.footer.built_with_caption")}
       </p>
 
       <p>
@@ -82,20 +78,23 @@ const socials = socialNetworks[locale];
 </footer>
 
 <script>
-  const encoded = "am9yZ2VhbnRvbmlvbWFjaWFzemFtYnJhbm9AZ21haWwuY29t";
+  function initEmail() {
+    const encoded = "am9yZ2VhbnRvbmlvbWFjaWFzemFtYnJhbm9AZ21haWwuY29t";
+    const button = document.getElementById("email-link");
+    const text = document.getElementById("email-text");
 
-  const link = document.getElementById("email-link");
-  const text = document.getElementById("email-text");
+    if (!button || !text || !button.dataset.ready) {
+      return;
+    }
 
-  if (link && text) {
-    const decoded = atob(encoded);
+    button.dataset.ready = "true";
+    const email = atob(encoded);
 
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      text.textContent = decoded;
-
-      window.location.href = `mailto:${decoded}`;
+    button.addEventListener("click", () => {
+      text.textContent = email;
+      window.location.href = `mailto:${email}`;
     });
   }
+
+  document.addEventListener("DOMContentLoaded", initEmail);
 </script>

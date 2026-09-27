@@ -64,7 +64,7 @@
     "skills": {
       "core": {
         "label": "Principales",
-        "color": "text-accent-600 dark:text-accent-500",
+        "color": "text-rose-600 dark:text-rose-500",
         "technologies": [
           { "name": "TypeScript", "icon": "typescript" },
           { "name": "React", "icon": "react" },
@@ -307,6 +307,7 @@
       "languageUrl": "/en",
       "languageCaption": "EN",
       "flagUrl": "/usa.svg",
+      "flagCaption": "",
       "avatarAlt": "Avatar de Chimuelo para mí",
       "version_title": "versión",
       "version_caption": "Hecho con ❤️"
@@ -367,7 +368,7 @@
       "copyright_notice": "Todos los derechos reservados",
       "contact_link_loading": "cargando...",
       "contact_link_label": "Contáctame",
-      "builded_with_caption": "Hecho con ❤️"
+      "built_with_caption": "Hecho con ❤️"
     }
   }
 }
