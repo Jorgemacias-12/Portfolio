@@ -2,6 +2,13 @@ import english from "@/locales/en.json";
 
 export type LanguageType = typeof english;
 export type Locale = "en" | "es"; // TODO: change this to enum??
+export type TranslationKey = NestedKeyOf<LanguageType>;
+
+export type TranslationObject = {
+  locale: Locale;
+  dictionary: LanguageType;
+  t: <K extends TranslationKey>(key: K) => ValueAtKey<LanguageType, K>;
+};
 
 export type NestedKeyOf<T extends Record<string, unknown>> = {
   [K in keyof T & string]: T[K] extends Record<string, unknown>
