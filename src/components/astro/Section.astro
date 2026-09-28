@@ -1,0 +1,44 @@
+---
+import type {
+  SectionCmpProps as Props,
+  SectionType,
+  SectionTypeConfig,
+} from "@/types";
+import clsx from "clsx";
+
+const baseSection = "w-full py-12 px-4 sm:px-6 lg:px-8 overflow-x-hidden";
+const baseTitle = "text-black dark:text-white mb-6 break-words";
+const baseArticle = "w-full break-words";
+
+const config: Record<SectionType, SectionTypeConfig> = {
+  hero: {
+    section: "min-h-[80vh] md:min-h-[100vh] flex items-center justify-center",
+    article: "text-center max-w-3xl mx-auto",
+    title: "text-4xl sm:text-5xl md:text-6xl font-bold",
+  },
+  normal: {
+    section: "max-w-6xl mx-auto",
+    article: "flex flex-col gap-8",
+    title: "text-2xl sm:text-3xl font-semibold text-accent",
+  },
+};
+
+const { id, showTitle, title, variant = "normal" } = Astro.props;
+const {
+  article,
+  section,
+  title: titleClasses,
+} = config[variant] ?? config.normal;
+---
+
+<section id={id} class={clsx(baseSection, section)}>
+  <article class={clsx(baseArticle, article)}>
+    {
+      title && showTitle && (
+        <h2 class={clsx(baseTitle, titleClasses)}>{title}</h2>
+      )
+    }
+
+    <slot />
+  </article>
+</section>
