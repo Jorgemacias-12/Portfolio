@@ -1,7 +1,7 @@
 ---
 import type { Locale } from "@/types";
 import { appendBaseUrl, getTranslation } from "@/utils";
-import styles from "@/styles/global.css";
+import "@/styles/global.css";
 import "@fontsource-variable/geist";
 import "@fontsource-variable/geist-mono";
 
@@ -11,6 +11,7 @@ if (!Astro.currentLocale) {
 
 const { t } = getTranslation(Astro.currentLocale as Locale);
 import about_me_schema from "@/seo/me.ld.json";
+import Header from "@/components/astro/Header.astro";
 ---
 
 <!doctype html>
@@ -61,8 +62,6 @@ import about_me_schema from "@/seo/me.ld.json";
     <meta name="twitter:description" content={t("site.description")} />
     <meta name="twitter:image" content={appendBaseUrl("/og-image.jpg")} />
 
-    <link rel="stylesheet" href={styles} />
-
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -84,6 +83,7 @@ import about_me_schema from "@/seo/me.ld.json";
     <script type="application/ld+json" set:html={about_me_schema} />
   </head>
   <body>
+    <Header />
     <main role="main">
       <slot />
     </main>
