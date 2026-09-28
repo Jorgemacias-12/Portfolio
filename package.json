@@ -13,8 +13,13 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^7.0.0",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.3.5"
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "astro": "^7.3.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "allowScripts": {
     "esbuild": true
