@@ -1,9 +1,11 @@
-import type { Icon, LinkType } from ".";
+import type { Icon, LinkType, TechnicalSkill } from "./dtos";
+import type { Locale } from "./i18n";
 
 export interface AstroComponent {
   (props: any): any;
   isAstroComponent?: boolean;
 }
+
 export interface MenuItem {
   label: string;
   url: string;
@@ -17,11 +19,31 @@ export type LinkComponentProps = MenuItem & {
   variant?: LinkType;
   classes?: string;
 };
+
 export interface SectionCmpProps {
   id?: string;
   title?: string;
   variant?: SectionVariant;
   showTitle?: boolean;
+}
+
+export interface CarrouselCmp {
+  locale: Locale;
+  images?: (typeof Image)[];
+}
+
+export interface BadgeCmpProps extends TechnicalSkill {
+  color?: string;
+  type?: BadgeType;
+  class?: string;
+}
+
+export interface LinkVariantConfig {
+  href: string;
+  target?: TargetType;
+  rel?: string;
+  wrapper: any | typeof Fragment;
+  classes: string;
 }
 
 export interface SectionTypeConfig extends SectionCmpProps {
