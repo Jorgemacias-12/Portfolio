@@ -15,12 +15,8 @@ export const getTranslation = (locale: Locale): TranslationObject => {
   }
 
   const t = <K extends TranslationKey>(key: K): ValueAtKey<LanguageType, K> => {
-    // TODO: remove ts-ignore when the acutal content in the
-    // TODO: translation files is ready or at least present.
     const value = key
-      // @ts-ignore
       .split(".")
-      // @ts-ignore
       .reduce((acc, part) => acc?.[part], dictionary as any);
 
     if (value === undefined) {
