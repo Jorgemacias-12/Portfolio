@@ -1,6 +1,6 @@
 // @ts-check
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
-import { LOCALES } from "@/types";
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,11 +9,13 @@ export default defineConfig({
 
   i18n: {
     defaultLocale: "es",
-    locales: LOCALES,
+    locales: ["es", "en"],
     routing: {
       prefixDefaultLocale: false,
     },
   },
 
-  integrations: [],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
