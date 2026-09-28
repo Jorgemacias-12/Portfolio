@@ -3,7 +3,6 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* 1. Tus paletas base completas */
   --color-gray-50: #f9fafb;
   --color-gray-100: #f3f4f6;
   --color-gray-200: #e5e7eb;
@@ -54,28 +53,105 @@
   --color-accent-100: #fff3cc;
   --color-accent-50: #fff9e6;
 
-  /* =========================================================
-     2. SISTEMA DE ALIAS SEMÁNTICOS
-     ========================================================= */
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-surface-strong: var(--color-surface-strong);
+  --color-surface-soft: var(--color-surface-soft);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+  --color-border: var(--color-border);
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
 
-  /* Fondo General (Body) */
-  --color-background: var(--color-dark-900);
+  --header-height: 72px;
+}
 
-  /* Textos */
-  --color-text-main: var(--color-dark-50); /* Texto principal / brillante */
-  --color-text-muted: var(--color-dark-350); /* Texto secundario o atenuado */
-  --color-text-inverse: var(
-    --color-dark-900
-  ); /* Texto sobre fondos claros/acento */
-
-  /* Niveles de Cards y Superficies */
-  --color-card: var(--color-dark-800); /* Nivel base para tarjetas */
-  --color-card-hover: var(--color-dark-750); /* Estado hover de tarjetas */
-  --color-card-elevated: var(
-    --color-dark-700
-  ); /* Tarjetas flotantes, modales o dropdowns */
-  --color-card-border: var(--color-dark-600); /* Bordes sutiles para tarjetas */
-
-  /* Acento principal */
+:root {
+  font-family: "Geist Variable", system-ui;
+  --color-bg: var(--color-dark-50);
+  --color-surface: #ffffff;
+  --color-surface-strong: var(--color-dark-100);
+  --color-surface-soft: var(--color-dark-50);
+  --color-text: var(--color-gray-900);
+  --color-text-muted: var(--color-gray-500);
+  --color-border: var(--color-gray-200);
   --color-accent: var(--color-accent-500);
+  --color-accent-hover: var(--color-accent-450);
+}
+
+.dark {
+  --color-bg: var(--color-dark-900);
+  --color-surface: var(--color-dark-800);
+  --color-surface-strong: var(--color-dark-700);
+  --color-surface-soft: var(--color-dark-750);
+  --color-text: var(--color-dark-50);
+  --color-text-muted: var(--color-dark-350);
+  --color-border: var(--color-dark-550);
+  --color-accent: var(--color-accent-500);
+  --color-accent-hover: var(--color-accent-400);
+}
+
+html {
+  scroll-padding-top: var(--header-height);
+  scroll-behavior: smooth;
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.normal {
+  font-family: "Geist Variable";
+}
+
+.mono {
+  font-family: "Geist Mono Variable";
+}
+
+.typewriter {
+  --characters: 1;
+  --duration: 2s;
+
+  @apply [--cursor-color:var(--color-accent)];
+
+  display: inline-block;
+
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+
+  border-right: 10px solid var(--cursor-color);
+
+  animation:
+    typing var(--duration) steps(var(--characters)) forwards,
+    blink 0.7s step-end infinite;
+  padding-right: 0.1rem;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-color: var(--cursor-color);
+  }
+
+  50% {
+    border-color: transparent;
+  }
 }
