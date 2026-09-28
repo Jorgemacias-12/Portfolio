@@ -29,6 +29,8 @@
     "esbuild": true
   },
   "devDependencies": {
+    "@iconify-json/devicon": "^1.2.68",
+    "@iconify-json/lucide": "^1.2.137",
     "@types/node": "^26.6.3"
   }
 }
