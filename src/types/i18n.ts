@@ -1,7 +1,9 @@
 import english from "@/locales/en.json";
 
+export const LOCALES = ["en", "es"];
+
 export type LanguageType = typeof english;
-export type Locale = "en" | "es"; // TODO: change this to enum??
+export type Locale = typeof LOCALES;
 export type TranslationKey = NestedKeyOf<LanguageType>;
 
 export type TranslationObject = {
