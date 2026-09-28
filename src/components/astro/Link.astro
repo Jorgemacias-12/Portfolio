@@ -1,0 +1,76 @@
+---
+import type {
+  LinkVariant,
+  LinkVariantConfig,
+  LinkComponentProps as Props,
+} from "@/types";
+import { appendBaseUrl } from "@/utils";
+import { Icon } from "astro-icon/components";
+import clsx from "clsx";
+
+const { label, url, variant = "element", icon } = Astro.props;
+
+const config: Record<LinkVariant, LinkVariantConfig> = {
+  menu: {
+    href: appendBaseUrl(`#${url}`),
+    target: undefined,
+    rel: undefined,
+    wrapper: "li",
+    classes:
+      "link text-sm flex flex-1 w-full p-2 rounded-md text-sm text-text hover:bg-accent hover:text-white active:bg-accent active:text-white text-nowrap transition-all duration-200",
+  },
+  social: {
+    href: url,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    wrapper: Fragment,
+    classes:
+      "border p-4 border-border-strong flex flex-col items-center justify-center gap-2 rounded-lg",
+  },
+  element: {
+    href: url,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    wrapper: Fragment,
+    classes:
+      "inline-flex gap-2 items-center rounded-md p-2 transition-colors duration-200",
+  },
+  iconfied: {
+    href: url,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    wrapper: Fragment,
+    classes:
+      "inline-flex gap-2 items-center rounded-md p-2 transition-colors duration-200",
+  },
+  oficial: {
+    href: url,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    wrapper: Fragment,
+    classes:
+      "inline-flex gap-2 items-center rounded-md p-2 transition-colors duration-200",
+  },
+};
+
+const current = config[variant] ?? config.element;
+const Wrapper = current.wrapper;
+---
+
+<Wrapper>
+  <a
+    href={current.href}
+    target={current.target}
+    rel={current.rel}
+    aria-label={variant === "menu" ? label : undefined}
+    data-url={variant === "menu" ? url : undefined}
+    class={clsx(current.classes)}
+  >
+    {
+      variant === "social" && icon && (
+        <Icon style="color: currentColor;" {...icon} />
+      )
+    }
+    <span>{label}</span>
+  </a>
+</Wrapper>
