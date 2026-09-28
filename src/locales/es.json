@@ -1,1 +1,374 @@
-{}
+{
+  "site": {
+    "title": "Jorge Macias | Desarrollador de Software",
+    "description": "Desarrollador de software especializado en aplicaciones frontend, backend y de escritorio. Explora mi portafolio, echa un vistazo a mi proyectos y mira cómo construyo soluciones funcionales y optimizadas.",
+    "keywords": [
+      "Jorge Macias",
+      "Jorge Antonio Macias Zambrano",
+      "Jorge Macias portafolio",
+      "desarrollador web",
+      "desarrollador frontend",
+      "desarrollador React",
+      "desarrollador web Puerto Vallarta",
+      "ingeniero de software Puerto Vallarta",
+      "portafolio de desarrollador",
+      "proyectos de desarrollo web",
+      "aplicaciones de React",
+      "TypeScript",
+      "JavaScript",
+      "WPF",
+      "C#",
+      "Astro",
+      "Tailwind",
+      "portafolio tecnológico"
+    ],
+    "author": "Jorge Antonio Macias Zambrano",
+    "author_shortname": "Jorge Macias"
+  },
+  "sections": {
+    "about": {
+      "label": "Sobre mí",
+      "url": "about"
+    },
+    "skills": {
+      "label": "Habilidades Técnicas",
+      "url": "skills"
+    },
+    "experiences": {
+      "label": "Experiencia Profesional",
+      "url": "experiences"
+    },
+    "projects": {
+      "label": "Proyectos",
+      "url": "projects"
+    },
+    "education": {
+      "label": "Educación",
+      "url": "education"
+    }
+  },
+  "sections_data": {
+    "about": {
+      "greeting": "Hola, soy",
+      "short_name": "Jorge Macias",
+      "position": "Desarrollador Full Stack",
+      "stack": "TypeScript • React • Astro • C#",
+      "stack_variations": [
+        "C# • Escritorio • WPF",
+        "Análisis binario • Bajo nivel",
+        "Modding de videojuegos • Lua"
+      ],
+      "tagline": "Construyendo software funcional y bien pensado, guiado por la curiosidad y el aprendizaje continuo.",
+      "pfp_alt": "Foto de Jorge Macias"
+    },
+    "skills": {
+      "core": {
+        "label": "Principales",
+        "color": "text-rose-600 dark:text-rose-500",
+        "technologies": [
+          { "name": "TypeScript", "icon": "typescript" },
+          { "name": "React", "icon": "react" },
+          { "name": "Astro", "icon": "astro" },
+          { "name": "C#", "icon": "csharp" }
+        ],
+        "tagline": "Tecnologías que más utilizo para construir aplicaciones web y de escritorio."
+      },
+      "runtime": {
+        "label": "Entorno de ejecución / Plataforma",
+        "color": "text-blue-500 dark:text-blue-300",
+        "technologies": [
+          { "name": "Node.js", "icon": "nodejs" },
+          { "name": "Bun", "icon": "bun" },
+          { "name": ".NET", "icon": "dotnetcore" }
+        ],
+        "tagline": "Entornos donde corren y se ejecutan mis aplicaciones."
+      },
+      "tools": {
+        "label": "Herramientas",
+        "color": "text-emerald-500 dark:text-emerald-300",
+        "technologies": [
+          { "name": "Git", "icon": "git" },
+          { "name": "Linux", "icon": "linux" },
+          { "name": "Nginx", "icon": "nginx" },
+          { "name": "VSCode", "icon": "vscode" },
+          { "name": "Visual Studio", "icon": "visualstudio" }
+        ],
+        "tagline": "Herramientas que uso durante el desarrollo y para la configuración y despliegue de proyectos."
+      },
+      "technical": {
+        "label": "Intereses Técnicos",
+        "color": "text-purple-500 dark:text-purple-300",
+        "technologies": [
+          { "name": "Análisis binario", "icon": null },
+          { "name": "Modding de videojuegos", "icon": null },
+          { "name": "Renderizado", "icon": null },
+          { "name": "Bajo nivel", "icon": null }
+        ],
+        "tagline": "Cosas que me gusta explorar a través de experimentos y proyectos personales."
+      }
+    },
+    "experiences": [
+      {
+        "role": "Desarrollador Full Stack",
+        "company": "SMCI",
+        "period": "Diciembre 2024 – Febrero 2025",
+        "responsibilities": [
+          "Construí una plataforma de comunicación en tiempo real que conecta dispositivos embebidos con un sistema de gestión web.",
+          "Desarrollé una API REST para manejar la validación y el procesamiento de datos.",
+          "Resolví problemas de React y TypeScript, mejorando la seguridad de tipado y la estructura del código."
+        ],
+        "technologies": [
+          {
+            "name": "React",
+            "icon": "react"
+          },
+          {
+            "name": "TypeScript",
+            "icon": "typescript"
+          },
+          {
+            "name": "Git",
+            "icon": "git"
+          }
+        ]
+      },
+      {
+        "role": "Desarrollador Frontend Trainee",
+        "company": "DEVOCAMP",
+        "period": "Julio 2022 – Septiembre 2023",
+        "responsibilities": [
+          "Construí proyectos aplicando las mejores prácticas esenciales de frontend.",
+          "Trabajé en un entorno SCRUM utilizando tableros de tareas para realizar el seguimiento del progreso.",
+          "Participé en reuniones diarias (daily stand-ups) para coordinar y comunicar los avances."
+        ],
+        "technologies": [
+          {
+            "name": "HTML5",
+            "icon": "html5"
+          },
+          {
+            "name": "JavaScript",
+            "icon": "javascript"
+          },
+          {
+            "name": "CSS",
+            "icon": "css"
+          }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "NBTMap Explorer",
+        "description": "Aplicación de escritorio desarrollada en C# para explorar, visualizar y exportar mapas de objetos de Minecraft (map_*.dat) a partir de archivos NBT, sin necesidad de ejecutar Minecraft ni usar mods.",
+        "media": [
+          {
+            "url": "projects/nbtmap-explorer/nbtmap-explorer-splash-screen-light.avif",
+            "description": "Pantalla de carga de NBTMap Explorer en modo claro, herramienta de mapas NBT de Minecraft versión 0.0.1, carga completa al 100 por ciento lista para la exploración 2025."
+          },
+          {
+            "url": "projects/nbtmap-explorer/nbtmap-explorer-splash-screen-dark.avif",
+            "description": "Pantalla de carga de NBTMap Explorer en modo oscuro, para la herramienta de exploración de mapas de Minecraft versión 0.0.1, carga al 100 por ciento lista para la exploración, derechos de autor 2025."
+          },
+          {
+            "url": "projects/nbtmap-explorer/nbtmap-window-light.avif",
+            "description": "Interfaz con tema claro de NBTMap Explorer v0.0.1 con lista jerárquica de mapas en la barra lateral, panel de propiedades, acciones para exportar PNG y ver datos NBT, estado de mapas cargados y pie de página con control de zoom."
+          },
+          {
+            "url": "projects/nbtmap-explorer/nbtmap-window-dark.avif",
+            "description": "Ventana principal con tema oscuro de NBTMap Explorer v0.0.1 con barra de menú, pestañas, barra de búsqueda, tabla de archivos de mapa, dimensiones 100x100, botones para exportar PNG y ver datos NBT, barra de estado y zoom."
+          }
+        ],
+        "repo_link": "https://github.com/Jorgemacias-12/NBTMap-Explorer"
+      },
+      {
+        "name": "Pony the Dragon! [REP+]",
+        "description": "Pony se encuentra en un mundo extraño que no comprende... ¡pero aun así hará lo que los dragones hacen mejor!",
+        "media": [
+          {
+            "url": "projects/pony/pony_mod_pfp.avif",
+            "description": "Retrato del mod de Pony en Steam"
+          },
+          {
+            "url": "projects/pony/pony-2.gif",
+            "description": ""
+          },
+          {
+            "url": "projects/pony/pony-3.avif",
+            "description": ""
+          },
+          {
+            "url": "projects/pony/pony-c-selector.avif",
+            "description": ""
+          }
+        ],
+        "repo_link": "https://github.com/SweetyStorm/PonyCharacter",
+        "demo_link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3012202919",
+        "links": []
+      },
+      {
+        "name": "Bank2Xlsx",
+        "description": "Aplicación de escritorio construida con C# y WPF que convierte archivos bancarios de texto plano en hojas de cálculo de Excel estructuradas y editables mediante el análisis automatizado y la transformación de datos.",
+        "media": [
+          {
+            "url": "projects/bank2xlsx/bank2xlsx-cover.avif",
+            "description": "Interfaz principal de la aplicación de escritorio Bank2Xlsx"
+          },
+          {
+            "url": "projects/bank2xlsx/bank2xlsx-export.avif",
+            "description": "Flujo de trabajo para la generación y exportación de hojas de cálculo de Excel"
+          },
+          {
+            "url": "projects/bank2xlsx/bank2xlsx-result.avif",
+            "description": "Resultado estructurado de Excel generado a partir de datos bancarios"
+          }
+        ],
+        "repo_link": "https://github.com/Jorgemacias-12/bank2xlsx",
+        "links": [
+          {
+            "label": "Descargar",
+            "href": "https://github.com/Jorgemacias-12/bank2xlsx/releases"
+          }
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": "ug-ing-2021",
+        "degree": "Licenciatura en Ingeniería de Computación",
+        "institution": "Universidad de Guadalajara (UdeG)",
+        "campus": "Centro Universitario de la Costa (CUCOSTA)",
+        "location": "Puerto Vallarta, Jalisco, México",
+        "startDate": "2021-08-01",
+        "endDate": "2026-01-15",
+        "gpa": "96.15/100",
+        "status": "graduated",
+        "finished": true,
+        "labels": {
+          "status_badge": "Graduado",
+          "period_caption": "2021 — 2026",
+          "gpa_label": "Promedio",
+          "visit_button": "Sitio Oficial"
+        },
+        "schoolLink": "http://www.cuc.udg.mx/",
+        "schoolIconName": "udg",
+        "verificationLinks": [
+          {
+            "label": "Certificado Académico",
+            "href": "https://titel.siiau.udg.mx/TitulacionServicios-war/titulo.xhtml?guid=489A7230C587624EE06400144FFB2ED6",
+            "type": "official"
+          }
+        ],
+        "relevantProjects": [],
+        "achievements": [
+          "Excelencia Académica (Promedio Sobresaliente)",
+          "Voluntario Activo en el Departamento de TI Institucional"
+        ]
+      },
+      {
+        "id": "conalep-tech-2018",
+        "degree": "Profesional Técnico Bachiller en Informática",
+        "institution": "Colegio Nacional de Educación Profesional Técnica",
+        "campus": "Puerto Vallarta 075",
+        "location": "Puerto Vallarta, Jalisco, México",
+        "startDate": "2018-08-01",
+        "endDate": "2021-07-15",
+        "gpa": "9.9/10",
+        "status": "completed",
+        "finished": true,
+        "labels": {
+          "status_badge": "Terminado",
+          "period_caption": "2018 — 2021",
+          "gpa_label": "Promedio",
+          "visit_button": "Sitio Web"
+        },
+        "schoolLink": "https://www.conalep.edu.mx/",
+        "schoolIconName": "conalep",
+        "verificationLinks": [
+          {
+            "label": "Cédula Profesional",
+            "href": "https://www.gob.mx/cedulaprofesional",
+            "type": "official"
+          }
+        ],
+        "relevantProjects": [],
+        "achievements": [
+          "Mención Honorífica por rendimiento académico",
+          "Primer lugar de la generación de graduados"
+        ]
+      }
+    ]
+  },
+  "components": {
+    "header": {
+      "title": "Portafolio",
+      "menu_opener_title": "Botón para abrir el menú móvil",
+      "home_url": "/",
+      "languageUrl": "/en",
+      "languageCaption": "EN",
+      "flagUrl": "/usa.svg",
+      "flagCaption": "",
+      "avatarAlt": "Avatar de Chimuelo para mí",
+      "version_title": "versión",
+      "version_caption": "Hecho con ❤️"
+    },
+    "carrousel": {
+      "no_preview": "Vista previa no disponible",
+      "images_indicator": "imágenes",
+      "open_gallery": "Abrir galería",
+      "image": "Imagen",
+      "image_gallery": "Galería de imágenes",
+      "image_controls": "Controles de imagen",
+      "zoom_in": "Acercar (+)",
+      "zoom_out": "Alejar (-)",
+      "rotate": "Rotar (R)",
+      "reset": "Restablecer",
+      "close": "Cerrar (Esc)",
+      "previous_image": "Imagen anterior",
+      "next_image": "Siguiente imagen",
+      "thumbnail_navigation": "Navegación por miniaturas"
+    },
+    "project": {
+      "repo_link_label": "Ver repositorio",
+      "demo_label": "Demostración en vivo"
+    },
+    "education": {
+      "status_badge_graduated": "Graduado",
+      "status_badge_completed": "Terminado",
+      "gpa_label": "Promedio",
+      "period_label": "PERIODO",
+      "relevant_projects_label": "Proyectos Relevantes"
+    },
+    "theme_toggler": {
+      "title": "Botón para cambiar el tema oscuro/claro",
+      "aria-label": "Botón que cambia el tema del portafolio entre oscuro y claro"
+    },
+    "project_status_badge": {
+      "status_labels": {
+        "active": "Activo",
+        "maintenance": "Mantenimiento",
+        "completed": "Completado",
+        "paused": "Pausado",
+        "planned": "Planificado",
+        "in_evaluation": "En evaluación"
+      },
+      "status_tooltips": {
+        "active": "Proyecto en desarrollo activo.",
+        "maintenance": "Proyecto estable que recibe mejoras menores o ajustes.",
+        "completed": "Proyecto terminado sin desarrollo activo.",
+        "paused": "Proyecto detenido temporalmente.",
+        "planned": "Proyecto definido, aún no comenzado.",
+        "in_evaluation": "Idea o proyecto bajo análisis de viabilidad."
+      }
+    },
+    "footer": {
+      "contact_me_caption": "Ponte en Contacto",
+      "contact_paragraph": "¡No dudes en comunicarte para hablar de oportunidades o simplemente para saludar!",
+      "follow_me_caption": "Sígueme",
+      "copyright_notice": "Todos los derechos reservados",
+      "contact_link_loading": "cargando...",
+      "contact_link_label": "Contáctame",
+      "built_with_caption": "Hecho con ❤️"
+    }
+  }
+}

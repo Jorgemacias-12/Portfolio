@@ -1,1 +1,374 @@
-{}
+{
+  "site": {
+    "title": "Jorge Macias | Software Developer",
+    "description": "Software developer specialized in frontend, backend, and desktop applications. Explore my portfolio, check out my projects, and see how I build functional and optimized solutions.",
+    "keywords": [
+      "Jorge Macias",
+      "Jorge Antonio Macias Zambrano",
+      "Jorge Macias portfolio",
+      "web developer",
+      "frontend developer",
+      "React developer",
+      "web developer Puerto Vallarta",
+      "software engineer Puerto Vallarta",
+      "developer portfolio",
+      "web development projects",
+      "React applications",
+      "TypeScript",
+      "JavaScript",
+      "WPF",
+      "C#",
+      "Astro",
+      "Tailwind",
+      "tech portfolio"
+    ],
+    "author": "Jorge Antonio Macias Zambrano",
+    "author_shortname": "Jorge Macias"
+  },
+  "sections": {
+    "about": {
+      "label": "About me",
+      "url": "about"
+    },
+    "skills": {
+      "label": "Technical Skills",
+      "url": "skills"
+    },
+    "experiences": {
+      "label": "Professional Experience",
+      "url": "experiences"
+    },
+    "projects": {
+      "label": "Projects",
+      "url": "projects"
+    },
+    "education": {
+      "label": "Education",
+      "url": "education"
+    }
+  },
+  "sections_data": {
+    "about": {
+      "greeting": "Hello, I am",
+      "short_name": "Jorge Macias",
+      "position": "Full Stack Developer",
+      "stack": "TypeScript • React • Astro • C#",
+      "stack_variations": [
+        "C# • Desktop • WPF",
+        "Binary parsing • Low level",
+        "Game modding • Lua"
+      ],
+      "tagline": "Building functional and well-thought software, guided by curiosity and continuous learning.",
+      "pfp_alt": "Jorge Macias photo"
+    },
+    "skills": {
+      "core": {
+        "label": "Core",
+        "color": "text-rose-600 dark:text-rose-500",
+        "technologies": [
+          { "name": "TypeScript", "icon": "typescript" },
+          { "name": "React", "icon": "react" },
+          { "name": "Astro", "icon": "astro" },
+          { "name": "C#", "icon": "csharp" }
+        ],
+        "tagline": "Technologies I use the most to build web and desktop applications."
+      },
+      "runtime": {
+        "label": "Runtime / Platform",
+        "color": "text-blue-500 dark:text-blue-300",
+        "technologies": [
+          { "name": "Node.js", "icon": "nodejs" },
+          { "name": "Bun", "icon": "bun" },
+          { "name": ".NET", "icon": "dotnetcore" }
+        ],
+        "tagline": "Environements where my applications run and are executed."
+      },
+      "tools": {
+        "label": "Tools",
+        "color": "text-emerald-500 dark:text-emerald-300",
+        "technologies": [
+          { "name": "Git", "icon": "git" },
+          { "name": "Linux", "icon": "linux" },
+          { "name": "Nginx", "icon": "nginx" },
+          { "name": "VSCode", "icon": "vscode" },
+          { "name": "Visual Studio", "icon": "visualstudio" }
+        ],
+        "tagline": "Tools I use during development and for setting up and deploying projects."
+      },
+      "technical": {
+        "label": "Technical Interests",
+        "color": "text-purple-500 dark:text-purple-300",
+        "technologies": [
+          { "name": "Binary Parsing", "icon": null },
+          { "name": "Game Modding", "icon": null },
+          { "name": "Rendering", "icon": null },
+          { "name": "Low-level", "icon": null }
+        ],
+        "tagline": "Things I like exploring through experiments and personal projects."
+      }
+    },
+    "experiences": [
+      {
+        "role": "Full Stack Developer",
+        "company": "SMCI",
+        "period": "December 2024 – February 2025",
+        "responsibilities": [
+          "Built a real-time communication platform connecting embedded devices with a web management system.",
+          "Developed a REST API to handle data validation and processing.",
+          "Solved React and TypeScript issues, improving type safety and code structure."
+        ],
+        "technologies": [
+          {
+            "name": "React",
+            "icon": "react"
+          },
+          {
+            "name": "TypeScript",
+            "icon": "typescript"
+          },
+          {
+            "name": "Git",
+            "icon": "git"
+          }
+        ]
+      },
+      {
+        "role": "Frontend Developer Trainee",
+        "company": "DEVOCAMP",
+        "period": "July 2022 – September 2023",
+        "responsibilities": [
+          "Built projects applying core frontend best practices.",
+          "Worked in a SCRUM environment using task boards to track progress.",
+          "Participated in daily stand-ups to coordinate and communicate progress."
+        ],
+        "technologies": [
+          {
+            "name": "HTML5",
+            "icon": "html5"
+          },
+          {
+            "name": "JavaScript",
+            "icon": "javascript"
+          },
+          {
+            "name": "CSS",
+            "icon": "css"
+          }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "NBTMap Explorer",
+        "description": "Desktop application developed in C# to explore, visualize and export Minecraft item maps (map_*.dat) from NBT files, without needing to run Minecraft or use mods.",
+        "media": [
+          {
+            "url": "projects/nbtmap-explorer/nbtmap-explorer-splash-screen-light.avif",
+            "description": "NBTMap Explorer light mode splash screen Minecraft NBT map tool version 0.0.1 loading complete 100 percent ready for exploration 2025."
+          },
+          {
+            "url": "projects/nbtmap-explorer/nbtmap-explorer-splash-screen-dark.avif",
+            "description": "NBTMap Explorer dark mode splash screen for Minecraft map exploration tool version 0.0.1 loading 100 percent ready for exploration copyright 2025."
+          },
+          {
+            "url": "projects/nbtmap-explorer/nbtmap-window-light.avif",
+            "description": "NBTMap Explorer v0.0.1 light theme interface with sidebar hierarchical map list properties panel export PNG and view NBT data actions maps loaded status zoom control footer."
+          },
+          {
+            "url": "projects/nbtmap-explorer/nbtmap-window-dark.avif",
+            "description": "NBTMap Explorer v0.0.1 dark theme main window with menu bar tabs search bar map files table dimensions 100x100 export PNG and view NBT data buttons status bar zoom."
+          }
+        ],
+        "repo_link": "https://github.com/Jorgemacias-12/NBTMap-Explorer"
+      },
+      {
+        "name": "Pony the Dragon! [REP+]",
+        "description": "Pony finds himself in a bizarre world he doesn't understand... but he will still do what dragons do best!",
+        "media": [
+          {
+            "url": "projects/pony/pony_mod_pfp.avif",
+            "description": "Portrait of the Pony mod in steam"
+          },
+          {
+            "url": "projects/pony/pony-2.gif",
+            "description": ""
+          },
+          {
+            "url": "projects/pony/pony-3.avif",
+            "description": ""
+          },
+          {
+            "url": "projects/pony/pony-c-selector.avif",
+            "description": ""
+          }
+        ],
+        "repo_link": "https://github.com/SweetyStorm/PonyCharacter",
+        "demo_link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3012202919",
+        "links": []
+      },
+      {
+        "name": "Bank2Xlsx",
+        "description": "Desktop application built with C# and WPF that converts plain-text bank files into structured and editable Excel spreadsheets through automated parsing and data transformation.",
+        "media": [
+          {
+            "url": "projects/bank2xlsx/bank2xlsx-cover.avif",
+            "description": "Main interface of the Bank2Xlsx desktop application"
+          },
+          {
+            "url": "projects/bank2xlsx/bank2xlsx-export.avif",
+            "description": "Excel spreadsheet generation and export workflow"
+          },
+          {
+            "url": "projects/bank2xlsx/bank2xlsx-result.avif",
+            "description": "Structured Excel output generated from banking data"
+          }
+        ],
+        "repo_link": "https://github.com/Jorgemacias-12/bank2xlsx",
+        "links": [
+          {
+            "label": "Download",
+            "href": "https://github.com/Jorgemacias-12/bank2xlsx/releases"
+          }
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": "ug-ing-2021",
+        "degree": "B.S. in Computer Engineering",
+        "institution": "University of Guadalajara (UdeG)",
+        "campus": "Coastal University Center (CUCOSTA)",
+        "location": "Puerto Vallarta, Jalisco, Mexico",
+        "startDate": "2021-08-01",
+        "endDate": "2026-01-15",
+        "gpa": "96.15/100",
+        "status": "graduated",
+        "finished": true,
+        "labels": {
+          "status_badge": "Graduated",
+          "period_caption": "2021 — 2026",
+          "gpa_label": "GPA",
+          "visit_button": "Official Site"
+        },
+        "schoolLink": "http://www.cuc.udg.mx/",
+        "schoolIconName": "udg",
+        "verificationLinks": [
+          {
+            "label": "Academic Certificate",
+            "href": "https://titel.siiau.udg.mx/TitulacionServicios-war/titulo.xhtml?guid=489A7230C587624EE06400144FFB2ED6",
+            "type": "official"
+          }
+        ],
+        "relevantProjects": [],
+        "achievements": [
+          "Academic Excellence (Outstanding GPA)",
+          "Active Volunteer at the Institutional IT Department"
+        ]
+      },
+      {
+        "id": "conalep-tech-2018",
+        "degree": "Professional Technical Bachelor in Computer Science",
+        "institution": "National College of Professional Technical Education",
+        "campus": "Puerto Vallarta 075",
+        "location": "Puerto Vallarta, Jalisco, Mexico",
+        "startDate": "2018-08-01",
+        "endDate": "2021-07-15",
+        "gpa": "9.9/10",
+        "status": "completed",
+        "finished": true,
+        "labels": {
+          "status_badge": "Completed",
+          "period_caption": "2018 — 2021",
+          "gpa_label": "GPA",
+          "visit_button": "Website"
+        },
+        "schoolLink": "https://www.conalep.edu.mx/",
+        "schoolIconName": "conalep",
+        "verificationLinks": [
+          {
+            "label": "Professional Credentials",
+            "href": "https://www.gob.mx/cedulaprofesional",
+            "type": "official"
+          }
+        ],
+        "relevantProjects": [],
+        "achievements": [
+          "Honorable Mention for academic performance",
+          "Ranked top of the graduating class"
+        ]
+      }
+    ]
+  },
+  "components": {
+    "header": {
+      "title": "Portfolio",
+      "menu_opener_title": "Button to open mobile menu",
+      "home_url": "/",
+      "languageUrl": "/",
+      "languageCaption": "ES",
+      "flagUrl": "/mexico.svg",
+      "flagCaption": "",
+      "avatarAlt": "Chimuelo avatar for me",
+      "version_title": "version",
+      "version_caption": "Made with ❤️"
+    },
+    "carrousel": {
+      "no_preview": "Preview not available",
+      "images_indicator": "images",
+      "open_gallery": "Open gallery",
+      "image": "Image",
+      "image_gallery": "Image gallery",
+      "image_controls": "Image controls",
+      "zoom_in": "Zoom in (+)",
+      "zoom_out": "Zoom out (-)",
+      "rotate": "Rotate (R)",
+      "reset": "Reset",
+      "close": "Close (Esc)",
+      "previous_image": "Previous image",
+      "next_image": "Next image",
+      "thumbnail_navigation": "Thumbnail navigation"
+    },
+    "project": {
+      "repo_link_label": "See repository",
+      "demo_label": "Live Demo"
+    },
+    "education": {
+      "status_badge_graduated": "Graduated",
+      "status_badge_completed": "Completed",
+      "gpa_label": "GPA",
+      "period_label": "PERIOD",
+      "relevant_projects_label": "Relevant Projects"
+    },
+    "theme_toggler": {
+      "title": "Button to switch dark/light theme",
+      "aria-label": "Button that changes the portfolio theme between dark/light"
+    },
+    "project_status_badge": {
+      "status_labels": {
+        "active": "Active",
+        "maintenance": "Maintenance",
+        "completed": "Completed",
+        "paused": "Paused",
+        "planned": "Planned",
+        "in_evaluation": "In evaluation"
+      },
+      "status_tooltips": {
+        "active": "Project in active development.",
+        "maintenance": "Stable project receiving minor improvements or adjustments.",
+        "completed": "Finished project with no active development.",
+        "paused": "Project temporarily stopped.",
+        "planned": "Project defined, not yet started.",
+        "in_evaluation": "Idea or project under feasibility analysis."
+      }
+    },
+    "footer": {
+      "contact_me_caption": "Get In Touch",
+      "contact_paragraph": "Feel free to reach out to discuss,opportunities or just to say hello!",
+      "follow_me_caption": "Follow me",
+      "copyright_notice": "All rights reserved",
+      "contact_link_loading": "loading...",
+      "contact_link_label": "Contact me",
+      "built_with_caption": "Made with ❤️"
+    }
+  }
+}
