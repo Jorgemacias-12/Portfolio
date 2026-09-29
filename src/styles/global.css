@@ -80,10 +80,10 @@
 }
 
 .dark {
-  --color-bg: var(--color-dark-900);
-  --color-surface: var(--color-dark-800);
-  --color-surface-strong: var(--color-dark-700);
-  --color-surface-soft: var(--color-dark-750);
+  --color-bg: var(--color-dark-800);
+  --color-surface: var(--color-dark-700);
+  --color-surface-strong: var(--color-dark-600);
+  --color-surface-soft: var(--color-dark-550);
   --color-text: var(--color-dark-50);
   --color-text-muted: var(--color-dark-350);
   --color-border: var(--color-dark-550);
