@@ -1,5 +1,78 @@
 ---
+import { socialNetworks } from "@/data";
+import type { Locale } from "@/types";
+import { getTranslation } from "@/utils";
+import Link from "./Link.astro";
+import { Icon } from "astro-icon/components";
 
+const locale = Astro.currentLocale as Locale;
+
+const { t } = getTranslation(locale);
+
+const socials = socialNetworks[locale];
 ---
 
-<footer>footer component</footer>
+<footer
+  class="flex flex-col md:flex-row mt-32 pt-24 pb-12 border-t border-border"
+>
+  <section class="mx-auto max-w-6xl px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-16 mb-16">
+      <div class="space-y-6">
+        <div>
+          <h2 class="text-5xl md:text-4xl font-bold text-accent mb-4">
+            {t("components.footer.contact_me_caption")}
+          </h2>
+          <p
+            class="text-md md:text-lg text-text-muted leading-relaxed max-w-sm"
+          >
+            {t("components.footer.contact_paragraph")}
+          </p>
+        </div>
+
+        <button
+          type="button"
+          id="email-link"
+          aria-label={t("components.footer.contact_me_caption")}
+          class="inline-flex cursor-pointer items-center gap-2 rounded-lg bg-accent/10 p-4 font-semibold text-accent transition-colors duration-300 hover:bg-accent/20"
+        >
+          <Icon name="lucide:mail" class="size-5 shrink-0" />
+          <span class="" id="email-text">
+            {t("components.footer.contact_link_label")}
+          </span>
+        </button>
+      </div>
+
+      <div class="space-y-8">
+        <div class="flex flex-col gap-4">
+          <h3 class="text-4xl text-accent font-semibold text-foreground">
+            {t("components.footer.follow_me_caption")}
+          </h3>
+
+          <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {socials.map((s) => <Link variant="social" {...s} />)}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-12 border-border" />
+
+    <div
+      class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-text-muted"
+    >
+      <p>
+        <span> &copy; {new Date().getFullYear()} </span>
+        <span>{t("components.footer.copyright_notice")}</span>
+      </p>
+
+      <p>
+        {t("components.footer.built_with_caption")}
+      </p>
+
+      <p class="flex gap-1">
+        <span>{t("components.header.version_title")}</span>
+        <span>{import.meta.env.PUBLIC_VERSION}</span>
+      </p>
+    </div>
+  </section>
+</footer>
