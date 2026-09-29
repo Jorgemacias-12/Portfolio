@@ -3,6 +3,8 @@ import type { Locale } from "@/types";
 import { appendBaseUrl, getTranslation } from "@/utils";
 import Link from "./Link.astro";
 import { MobileMenu } from "../react/MobileMenu";
+import { LocaleChanger } from "../react/LocaleChanger";
+import { ThemeSwitch } from "../react/ThemeSwitch";
 
 const { currentLocale } = Astro;
 const { t } = getTranslation(currentLocale as Locale);
@@ -34,6 +36,11 @@ const lang = currentLocale as Locale;
         })
       }
     </ul>
+
+    <section class="flex items-center gap-4">
+      <LocaleChanger lang={currentLocale as Locale} />
+      <ThemeSwitch lang={currentLocale as Locale} client:only="react" />
+    </section>
   </nav>
 
   <nav class="p-4 flex items-center justify-between md:hidden" id="mobile-menu">
