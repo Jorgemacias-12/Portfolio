@@ -12,6 +12,7 @@ if (!Astro.currentLocale) {
 const { t } = getTranslation(Astro.currentLocale as Locale);
 import about_me_schema from "@/seo/me.ld.json";
 import Header from "@/components/astro/Header.astro";
+import Footer from "@/components/astro/Footer.astro";
 ---
 
 <!doctype html>
@@ -87,5 +88,6 @@ import Header from "@/components/astro/Header.astro";
     <main role="main">
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
