@@ -1,5 +1,51 @@
 ---
+import type { Locale } from "@/types";
+import { appendBaseUrl, getTranslation } from "@/utils";
+import Link from "./Link.astro";
+import { MobileMenu } from "../react/MobileMenu";
 
+const { currentLocale } = Astro;
+const { t } = getTranslation(currentLocale as Locale);
+
+const sections = Object.values(t("sections"));
+const languageUrl = t("components.header.languageUrl");
+const flagUrl = t("components.header.flagUrl");
+const languageCaption = t("components.header.languageCaption");
+const lang = currentLocale as Locale;
 ---
 
-header component
+<header
+  class="sticky z-50 transform-gpu backdrop-blur-sm top-0 border-b border-border"
+>
+  <nav
+    class="p-4 max-w-6xl mx-auto hidden md:flex justify-between items-center"
+  >
+    <a
+      href={appendBaseUrl("/")}
+      class="font-bold cursor-pointer text-xl hover:scale-105 transition-all duration-300 hover:text-accent"
+    >
+      {t("site.author_shortname")}</a
+    >
+
+    <ul class="flex items-center gap-4">
+      {
+        sections.map((el) => {
+          return <Link variant="menu" {...el} />;
+        })
+      }
+    </ul>
+  </nav>
+
+  <nav class="p-4 flex items-center justify-between md:hidden" id="mobile-menu">
+    <a
+      class="font-bold cursor-pointer text-xl hover:scale-105 duration-300 hover:text-accent"
+      href={appendBaseUrl("/")}
+    >
+      <h1>{t("site.author_shortname")}</h1>
+    </a>
+
+    <section>
+      <MobileMenu locale={currentLocale as Locale} client:only="react" />
+    </section>
+  </nav>
+</header>
