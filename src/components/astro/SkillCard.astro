@@ -1,0 +1,15 @@
+---
+import type { TechnicalSkillItem as Props } from "@/types";
+import Card from "./Card.astro";
+import clsx from "clsx";
+
+const { color, label, tagline, technologies } = Astro.props;
+---
+
+<Card class="flex flex-col justify-between gap-4">
+  <h3 class={clsx(color, "font-bold mono")}>{label}</h3>
+
+  <main></main>
+
+  <footer></footer>
+</Card>
