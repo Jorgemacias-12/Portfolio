@@ -1,0 +1,32 @@
+---
+import type { Job as Props } from "@/types";
+import Card from "./Card.astro";
+import Badge from "./Badge.astro";
+
+const { company, period, responsibilities, role, technologies } = Astro.props;
+---
+
+<Card class="flex flex-col gap-4">
+  <header class="flex flex-col gap-2">
+    <h3 class="text-xl font-bold">{role}</h3>
+
+    <p class="flex flex-col text-sm">
+      <span>{company}</span>
+      <span class="text-text-muted">{period}</span>
+    </p>
+  </header>
+  <main>
+    <ul
+      class="inline-flex flex-col list-inside list-disc marker:text-accent gap-2"
+    >
+      {
+        responsibilities.map((el) => {
+          return <li class="text-sm pl-2">{el}</li>;
+        })
+      }
+    </ul>
+  </main>
+  <footer class="flex flex-wrap gap-2">
+    {technologies.map((t) => <Badge {...t} />)}
+  </footer>
+</Card>
