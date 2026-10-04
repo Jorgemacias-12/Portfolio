@@ -1,1 +1,18 @@
-Skills
+---
+import SkillCard from "@/components/astro/SkillCard.astro";
+import type { Locale } from "@/types";
+import { getTranslation } from "@/utils";
+
+const { currentLocale } = Astro;
+const { t } = getTranslation(currentLocale as Locale);
+
+const skills = Object.values(t("sections_data.skills"));
+---
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  {
+    skills.map((skill) => {
+      return <SkillCard class="mono" {...skill} />;
+    })
+  }
+</section>
