@@ -1,4 +1,9 @@
-import type { Icon, LinkType, TechnicalSkill } from "./dtos";
+import type {
+  Icon,
+  LinkType,
+  TechnicalSkill,
+  TechnicalSkillItem,
+} from "./dtos";
 import type { Locale } from "./i18n";
 
 export interface AstroComponent {
@@ -35,6 +40,10 @@ export interface CarrouselCmp {
 export interface BadgeCmpProps extends TechnicalSkill {
   color?: string;
   type?: BadgeType;
+  class?: string;
+}
+
+export interface SkillCardProps extends TechnicalSkillItem {
   class?: string;
 }
 
