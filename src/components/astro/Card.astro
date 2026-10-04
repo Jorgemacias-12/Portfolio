@@ -4,7 +4,7 @@ import clsx from "clsx";
 const { class: className } = Astro.props;
 
 const defaultStyle =
-  "bg-bg dark:bg-surface-strong p-2 rounded-sm hover:scale-105 transition-transform duration-300 ease-in-out";
+  "bg-surface-strong border border-surface-strong dark:bg-surface p-2 rounded-sm hover:scale-105 transition-transform duration-300 ease-in-out";
 ---
 
 <article class={clsx(defaultStyle, className)}>
