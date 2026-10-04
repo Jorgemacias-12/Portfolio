@@ -1,15 +1,18 @@
 ---
-import type { TechnicalSkillItem as Props } from "@/types";
+import type { SkillCardProps as Props } from "@/types";
 import Card from "./Card.astro";
+import Badge from "./Badge.astro";
 import clsx from "clsx";
 
-const { color, label, tagline, technologies } = Astro.props;
+const { class: className, color, label, tagline, technologies } = Astro.props;
 ---
 
-<Card class="flex flex-col justify-between gap-4">
+<Card class={clsx("flex flex-col justify-between gap-4", className)}>
   <h3 class={clsx(color, "font-bold mono")}>{label}</h3>
 
-  <main></main>
+  <main class="flex flex-wrap gap-2">
+    {technologies.map((el) => <Badge {...el} />)}
+  </main>
 
-  <footer></footer>
+  <footer class="text-sm">{tagline}</footer>
 </Card>
