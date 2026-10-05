@@ -4,3 +4,4 @@ export * from "./themes";
 export * from "./i18n";
 export * from "./lang-definitions";
 export * from "./dtos";
+export * from "./direction";
