@@ -1,1 +1,12 @@
-Projects
+---
+import ProjectCard from "@/components/astro/ProjectCard.astro";
+import type { Locale } from "@/types";
+import { getTranslation } from "@/utils";
+
+const { t } = getTranslation(Astro.currentLocale as Locale);
+const projects = Object.values(t("sections_data.projects"));
+---
+
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+  {projects.map((p) => <ProjectCard {...p} />)}
+</section>
