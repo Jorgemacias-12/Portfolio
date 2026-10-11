@@ -26,3 +26,6 @@ pnpm-debug.log*
 # ignore any file that contains "example"
 example/
 example.*
+
+*storybook.log
+storybook-static

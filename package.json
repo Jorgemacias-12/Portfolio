@@ -10,7 +10,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "local": "astro dev --host",
-    "astro": "astro"
+    "astro": "astro",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@astrojs/react": "^7.0.0",
@@ -33,6 +35,17 @@
     "@iconify-json/devicon": "^1.2.68",
     "@iconify-json/lucide": "^1.2.137",
     "@types/node": "^26.6.3",
-    "react-icons": "^5.7.0"
+    "react-icons": "^5.7.0",
+    "storybook": "^10.6.1",
+    "@storybook/react-vite": "^10.6.1",
+    "@chromatic-com/storybook": "latest",
+    "@storybook/addon-vitest": "^10.6.1",
+    "@storybook/addon-a11y": "^10.6.1",
+    "@storybook/addon-docs": "^10.6.1",
+    "@storybook/addon-onboarding": "^10.6.1",
+    "vitest": "latest",
+    "@vitest/browser-playwright": "latest",
+    "@vitest/coverage-v8": "latest",
+    "playwright": "latest"
   }
 }
