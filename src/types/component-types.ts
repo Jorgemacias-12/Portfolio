@@ -65,4 +65,9 @@ export type SectionType = NonNullable<SectionCmpProps["variant"]>;
 export type LinkVariant = NonNullable<LinkComponentProps["variant"]>;
 export type TargetType = "_blank" | "_self" | "_parent" | "_top";
 export type SectionVariant = "hero" | "normal";
-export type BadgeType = "normal" | "graduated" | "completed" | "ongoing";
+export type BadgeType =
+  | "normal"
+  | "graduated"
+  | "completed"
+  | "ongoing"
+  | "star";
