@@ -61,13 +61,16 @@ export interface SectionTypeConfig extends SectionCmpProps {
   title: string;
 }
 
+export const BADGE_TYPES = [
+  "normal",
+  "graduated",
+  "completed",
+  "ongoing",
+  "star",
+] as const;
+
 export type SectionType = NonNullable<SectionCmpProps["variant"]>;
 export type LinkVariant = NonNullable<LinkComponentProps["variant"]>;
 export type TargetType = "_blank" | "_self" | "_parent" | "_top";
 export type SectionVariant = "hero" | "normal";
-export type BadgeType =
-  | "normal"
-  | "graduated"
-  | "completed"
-  | "ongoing"
-  | "star";
+export type BadgeType = (typeof BADGE_TYPES)[number];
