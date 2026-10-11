@@ -13,10 +13,14 @@ const typeStyles: Record<BadgeType, string> = {
     "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800 uppercase",
   ongoing:
     "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300 border border-amber-200 dark:border-amber-800 uppercase",
+  star: "p-2 rounded-lg bg-amber-100 dark:bg-amber-900/10 text-amber-600",
 };
 
-const hasIcon = Boolean(icon);
-const iconName = hasIcon ? `devicon:${icon}` : null;
+let iconName: string;
+
+if (icon) {
+  iconName = icon.includes(":") ? icon : `devicon:${icon}`;
+}
 ---
 
 <article
@@ -26,6 +30,6 @@ const iconName = hasIcon ? `devicon:${icon}` : null;
     className,
   )}
 >
-  {iconName && <Icon name={iconName} class="w-3.5 h-3.5 shirnk-0" />}
-  <span>{name}</span>
+  {iconName! && <Icon name={iconName} class="w-3.5 h-3.5 shirnk-0" />}
+  {name && <span>{name}</span>}
 </article>
