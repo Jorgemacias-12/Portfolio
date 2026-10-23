@@ -1,4 +1,4 @@
-export type LinkType = "social" | "oficial" | "menu" | "iconfied" | "element";
+export type LinkType = "menu" | "link" | "iconified" | "cta";
 export type EducationStatus = "graduated" | "completed" | "ongoing";
 
 export interface Icon {
