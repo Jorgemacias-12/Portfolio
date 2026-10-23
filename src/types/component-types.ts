@@ -5,6 +5,7 @@ import type {
   TechnicalSkillItem,
 } from "./dtos";
 import type { Locale } from "./i18n";
+import type { HTMLAttributes } from "astro/types";
 
 export interface AstroComponent {
   (props: any): any;
@@ -14,16 +15,13 @@ export interface AstroComponent {
 export interface MenuItem {
   label: string;
   url: string;
-  icon?: Icon;
+  icon?: Icon | string;
 }
 
-export type LinkComponentProps = MenuItem & {
-  isForMenu?: boolean;
-  isForElement?: boolean;
-  isLastElement?: boolean;
-  variant?: LinkType;
-  classes?: string;
-};
+export type LinkComponentProps = MenuItem &
+  HTMLAttributes<"a"> & {
+    variant?: LinkType;
+  };
 
 export interface SectionCmpProps {
   id?: string;
@@ -69,8 +67,20 @@ export const BADGE_TYPES = [
   "star",
 ] as const;
 
+export const LINK_TYPES = [
+  "social",
+  "oficial",
+  "menu",
+  "iconfied",
+  "element",
+] as const;
+
+export const SECTION_VARIANTS = ["hero", "normal"];
+
+export const TARGET_TYPE = ["_blank", "_self", "_parent", "_top"] as const;
+
 export type SectionType = NonNullable<SectionCmpProps["variant"]>;
 export type LinkVariant = NonNullable<LinkComponentProps["variant"]>;
 export type TargetType = "_blank" | "_self" | "_parent" | "_top";
-export type SectionVariant = "hero" | "normal";
+export type SectionVariant = (typeof SECTION_VARIANTS)[number];
 export type BadgeType = (typeof BADGE_TYPES)[number];
