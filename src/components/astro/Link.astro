@@ -8,69 +8,67 @@ import { appendBaseUrl } from "@/utils";
 import { Icon } from "astro-icon/components";
 import clsx from "clsx";
 
-const { label, url, variant = "element", icon } = Astro.props;
+const {
+  label,
+  url,
+  variant = "link",
+  rel = "noopener noreferrer",
+  icon,
+  target,
+  class: classes,
+} = Astro.props;
 
 const config: Record<LinkVariant, LinkVariantConfig> = {
   menu: {
     href: appendBaseUrl(`#${url}`),
-    target: undefined,
-    rel: undefined,
+    rel: rel!,
     wrapper: "li",
     classes:
-      "link text-sm flex flex-1 w-full p-2 rounded-md text-sm text-text hover:bg-accent hover:text-white active:bg-accent active:text-white text-nowrap transition-all duration-200",
+      "link list-none text-sm flex flex-1 w-full p-2 rounded-md text-sm text-text hover:bg-accent hover:text-white active:bg-accent active:text-white text-nowrap transition-all duration-200",
   },
-  social: {
-    href: url,
-    target: "_blank",
-    rel: "noopener noreferrer",
+  iconified: {
     wrapper: Fragment,
-    classes:
-      "border p-4 border-border flex flex-col items-center justify-center gap-2 rounded-lg",
+    href: url,
+    classes: "inline-flex items-center gap-2 hover:text-accent hover:underline",
   },
-  element: {
+  link: {
     href: url,
-    target: "_blank",
-    rel: "noopener noreferrer",
+    rel: rel!,
     wrapper: Fragment,
-    classes:
-      "inline-flex gap-2 items-center rounded-md p-2 transition-colors duration-200",
+    classes: "text-black dark:text-white hover:text-accent hover:underline",
   },
-  iconfied: {
-    href: url,
-    target: "_blank",
-    rel: "noopener noreferrer",
+  cta: {
     wrapper: Fragment,
-    classes:
-      "inline-flex gap-2 items-center rounded-md p-2 transition-colors duration-200",
-  },
-  oficial: {
     href: url,
-    target: "_blank",
-    rel: "noopener noreferrer",
-    wrapper: Fragment,
     classes:
-      "inline-flex gap-2 items-center rounded-md p-2 transition-colors duration-200",
+      "inline-flex flex-row-reverse items-center  rounded-md p-2 bg-accent gap-2",
   },
 };
 
-const current = config[variant] ?? config.element;
+const current = config[variant] ?? config.link;
 const Wrapper = current.wrapper;
+
+const isIconDefinition = typeof icon === "object" && icon !== null;
+const isIconName = typeof icon === "string";
+
+const iconProps = isIconDefinition
+  ? { style: "color: currentColor;", ...icon }
+  : isIconName
+    ? { name: icon }
+    : null;
 ---
 
-<Wrapper>
+<!-- add list-none when using alone menu type to avoid list style appears when using wrappers / containers that are not lists -->
+<Wrapper class="list-none">
   <a
     href={current.href}
-    target={current.target}
+    target={target}
     rel={current.rel}
     aria-label={variant === "menu" ? label : undefined}
     data-url={variant === "menu" ? url : undefined}
-    class={clsx(current.classes)}
+    class={clsx(current.classes, classes)}
   >
-    {
-      variant === "social" && icon && (
-        <Icon style="color: currentColor;" {...icon} />
-      )
-    }
+    {iconProps && <Icon {...iconProps} />}
     <span>{label}</span>
   </a>
 </Wrapper>
