@@ -1,7 +1,8 @@
 ---
+import Link from "@/components/astro/Link.astro";
 import { RotateText } from "@/components/react/RotateText";
 import { type Locale } from "@/types";
-import { getTranslation } from "@/utils";
+import { appendBaseUrl, getTranslation } from "@/utils";
 
 const { currentLocale } = Astro;
 const { t } = getTranslation(currentLocale as Locale);
@@ -61,6 +62,26 @@ const { t } = getTranslation(currentLocale as Locale);
       <p class="w-auto text-text-muted opacity-0 entry-element">
         {t("sections_data.about.tagline")}
       </p>
+
+      <div class="inline-flex gap-4">
+        <Link
+          id="cta-projects"
+          class="entry-element opacity-0"
+          variant="cta"
+          url={appendBaseUrl("#projects")}
+          icon="lucide:arrow-right"
+          label={t("sections_data.about.cta_label")}
+        />
+
+        <Link
+          id="cta-blog"
+          class="entry-element opacity-0 border border-border text-text-muted bg-transparent"
+          variant="cta"
+          url={appendBaseUrl("/blog")}
+          icon="lucide:rss"
+          label={t("sections_data.about.secondary_cta_label")}
+        />
+      </div>
     </div>
   </div>
 
