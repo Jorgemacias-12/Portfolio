@@ -1,13 +1,13 @@
-import Card from "@/components/astro/Card.astro";
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import Card from '@/components/astro/Card.astro';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 interface CardStoryArgs {
   class?: string;
   slots?: {
     default?: string;
-    [key: string]: any;
+    // [key: string]: any;
   };
-  [key: string]: any;
+  // [key: string]: any;
 }
 
 /**
@@ -15,21 +15,21 @@ interface CardStoryArgs {
  * flexible slot content, and surface background styling.
  */
 const meta = {
-  title: "Components/astro/Card",
+  title: 'Components/astro/Card',
   component: Card,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   parameters: {
     docs: {
       description: {
         component:
-          "A basic container card with hover transform animation and surface background styling.",
+          'A basic container card with hover transform animation and surface background styling.',
       },
     },
   },
   argTypes: {
     class: {
-      control: "text",
-      description: "Additional CSS classes to override or extend card styles.",
+      control: 'text',
+      description: 'Additional CSS classes to override or extend card styles.',
     },
   },
 } satisfies Meta<CardStoryArgs>;
@@ -43,10 +43,10 @@ type Story = StoryObj<typeof meta>;
  */
 export const Default: Story = {
   args: {
-    class: "",
+    class: '',
   },
   slots: {
-    default: "This is a simple text card.",
+    default: 'This is a simple text card.',
   },
 } as Story;
 
@@ -55,7 +55,7 @@ export const Default: Story = {
  */
 export const WithComplexContent: Story = {
   args: {
-    class: "",
+    class: '',
   },
   slots: {
     default: `
@@ -77,9 +77,9 @@ export const WithComplexContent: Story = {
  */
 export const CustomStyling: Story = {
   args: {
-    class: "border-blue-500 shadow-lg",
+    class: 'border-blue-500 shadow-lg',
   },
   slots: {
-    default: "Card with custom blue border and extra shadow.",
+    default: 'Card with custom blue border and extra shadow.',
   },
 } as Story;

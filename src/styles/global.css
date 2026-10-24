@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -67,7 +67,7 @@
 }
 
 :root {
-  font-family: "Geist Variable", system-ui;
+  font-family: 'Geist Variable', system-ui;
   --color-bg: var(--color-dark-50);
   --color-surface: #ffffff;
   --color-surface-strong: var(--color-dark-100);
@@ -109,11 +109,11 @@ body {
 }
 
 .normal {
-  font-family: "Geist Variable";
+  font-family: 'Geist Variable';
 }
 
 .mono {
-  font-family: "Geist Mono Variable";
+  font-family: 'Geist Mono Variable';
 }
 
 .typewriter {

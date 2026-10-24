@@ -64,49 +64,75 @@
       "secondary_cta_label": "Visit my blog"
     },
     "skills": {
-      "core": {
-        "label": "Core",
-        "color": "text-rose-600 dark:text-rose-500",
-        "technologies": [
-          { "name": "TypeScript", "icon": "typescript" },
-          { "name": "React", "icon": "react" },
-          { "name": "Astro", "icon": "astro" },
-          { "name": "C#", "icon": "csharp" }
-        ],
-        "tagline": "Technologies I use the most to build web and desktop applications."
+      "intro": {
+        "eyebrow": "Perfil técnico",
+        "title": "Tecnologías y práctica",
+        "description": "Herramientas con las que desarrollo y proyectos donde pongo en práctica mis conocimientos."
       },
-      "runtime": {
-        "label": "Runtime / Platform",
-        "color": "text-blue-500 dark:text-blue-300",
+      "focus": {
+        "title": "Desarrollo web",
+        "description": "Desarrollo aplicaciones web con TypeScript y herramientas de su ecosistema.",
         "technologies": [
-          { "name": "Node.js", "icon": "nodejs" },
-          { "name": "Bun", "icon": "bun" },
-          { "name": ".NET", "icon": "dotnetcore" }
-        ],
-        "tagline": "Environements where my applications run and are executed."
+          {
+            "name": "TypeScript",
+            "icon": "typescript"
+          },
+          {
+            "name": "React",
+            "icon": "react"
+          },
+          {
+            "name": "Astro",
+            "icon": "astro"
+          },
+          {
+            "name": "Node.js",
+            "icon": "nodejs"
+          }
+        ]
       },
-      "tools": {
-        "label": "Tools",
-        "color": "text-emerald-500 dark:text-emerald-300",
-        "technologies": [
-          { "name": "Git", "icon": "git" },
-          { "name": "Linux", "icon": "linux" },
-          { "name": "Nginx", "icon": "nginx" },
-          { "name": "VSCode", "icon": "vscode" },
-          { "name": "Visual Studio", "icon": "visualstudio" }
-        ],
-        "tagline": "Tools I use during development and for setting up and deploying projects."
+      "evidence": {
+        "title": "Aplicado en proyectos",
+        "description": "Proyectos que muestran cómo utilizo estas tecnologías.",
+        "link_label": "Ver proyecto",
+        "projects": [
+          {
+            "id": "jam-portfolio",
+            "title": "Portafolio personal",
+            "technologies": ["Astro", "React", "TypeScript"],
+            "description": "Sitio multilingüe para presentar proyectos y perfil profesional.",
+            "href": "/projects/jam-portfolio"
+          }
+        ]
       },
-      "technical": {
-        "label": "Technical Interests",
-        "color": "text-purple-500 dark:text-purple-300",
+      "additional": {
+        "title": "Otras áreas de interés",
         "technologies": [
-          { "name": "Binary Parsing", "icon": null },
-          { "name": "Game Modding", "icon": null },
-          { "name": "Rendering", "icon": null },
-          { "name": "Low-level", "icon": null }
-        ],
-        "tagline": "Things I like exploring through experiments and personal projects."
+          {
+            "name": "C#",
+            "icon": "csharp"
+          },
+          {
+            "name": "WPF",
+            "icon": null
+          },
+          {
+            "name": "Análisis binario",
+            "icon": null
+          },
+          {
+            "name": "Modding de videojuegos",
+            "icon": null
+          },
+          {
+            "name": "Renderizado",
+            "icon": null
+          },
+          {
+            "name": "Programación de bajo nivel",
+            "icon": null
+          }
+        ]
       }
     },
     "experiences": [

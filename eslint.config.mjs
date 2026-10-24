@@ -5,7 +5,14 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default [
   {
-    ignores: ['dist/', '.astro/', 'node_modules/', 'bun.lock', 'bun.lockb'],
+    ignores: [
+      'dist/**',
+      '.astro/**',
+      'node_modules/**',
+      'public/**',
+      '*.min.js',
+      'storybook-static/**',
+    ],
   },
 
   js.configs.recommended,
@@ -17,6 +24,15 @@ export default [
     rules: {
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       'no-console': ['warn', { allow: ['warn', 'error'] }],
+    },
+  },
+
+  {
+    languageOptions: {
+      globals: {
+        process: 'readonly',
+        window: 'readonly',
+      },
     },
   },
 ];

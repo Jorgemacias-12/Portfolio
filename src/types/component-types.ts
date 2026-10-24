@@ -1,13 +1,9 @@
-import type {
-  Icon,
-  LinkType,
-  TechnicalSkill,
-  TechnicalSkillItem,
-} from "./dtos";
-import type { Locale } from "./i18n";
-import type { HTMLAttributes } from "astro/types";
+import type { Icon, LinkType, TechnicalSkill, TechnicalSkillItem } from './dtos';
+import type { Locale } from './i18n';
+import type { HTMLAttributes } from 'astro/types';
 
 export interface AstroComponent {
+  // eslint-disable-next-line
   (props: any): any;
   isAstroComponent?: boolean;
 }
@@ -19,7 +15,7 @@ export interface MenuItem {
 }
 
 export type LinkComponentProps = MenuItem &
-  HTMLAttributes<"a"> & {
+  HTMLAttributes<'a'> & {
     variant?: LinkType;
   };
 
@@ -49,6 +45,7 @@ export interface LinkVariantConfig {
   href: string;
   target?: TargetType;
   rel?: string;
+  // eslint-disable-next-line
   wrapper: any | typeof Fragment;
   classes: string;
 }
@@ -59,28 +56,16 @@ export interface SectionTypeConfig extends SectionCmpProps {
   title: string;
 }
 
-export const BADGE_TYPES = [
-  "normal",
-  "graduated",
-  "completed",
-  "ongoing",
-  "star",
-] as const;
+export const BADGE_TYPES = ['normal', 'graduated', 'completed', 'ongoing', 'star'] as const;
 
-export const LINK_TYPES = [
-  "social",
-  "oficial",
-  "menu",
-  "iconfied",
-  "element",
-] as const;
+export const LINK_TYPES = ['social', 'oficial', 'menu', 'iconfied', 'element'] as const;
 
-export const SECTION_VARIANTS = ["hero", "normal"];
+export const SECTION_VARIANTS = ['hero', 'normal'];
 
-export const TARGET_TYPE = ["_blank", "_self", "_parent", "_top"] as const;
+export const TARGET_TYPE = ['_blank', '_self', '_parent', '_top'] as const;
 
-export type SectionType = NonNullable<SectionCmpProps["variant"]>;
-export type LinkVariant = NonNullable<LinkComponentProps["variant"]>;
-export type TargetType = "_blank" | "_self" | "_parent" | "_top";
+export type SectionType = NonNullable<SectionCmpProps['variant']>;
+export type LinkVariant = NonNullable<LinkComponentProps['variant']>;
+export type TargetType = '_blank' | '_self' | '_parent' | '_top';
 export type SectionVariant = (typeof SECTION_VARIANTS)[number];
 export type BadgeType = (typeof BADGE_TYPES)[number];

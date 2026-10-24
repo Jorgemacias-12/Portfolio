@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export const useModal = (isOpen: boolean, onClose?: () => void) => {
   const [isModalMounted, setIsModalMounted] = useState<boolean>(isOpen);
@@ -35,11 +35,15 @@ export const useModal = (isOpen: boolean, onClose?: () => void) => {
   }, [onClose]);
 
   useEffect(() => {
-    isOpen ? openModal() : closeModal();
+    if (isOpen) {
+      closeModal();
+    } else {
+      openModal();
+    }
   }, [isOpen, openModal, closeModal]);
 
   useEffect(() => {
-    document.body.style.overflow = isModalVisible ? "hidden" : "unset";
+    document.body.style.overflow = isModalVisible ? 'hidden' : 'unset';
   }, [isModalVisible]);
 
   useEffect(() => {
@@ -47,14 +51,14 @@ export const useModal = (isOpen: boolean, onClose?: () => void) => {
 
     const handleKeyDown = (e: KeyboardEvent) => {
       switch (e.key) {
-        case "Escape":
+        case 'Escape':
           closeModal();
       }
     };
 
-    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener('keydown', handleKeyDown);
 
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isModalMounted]);
 
   useEffect(() => {

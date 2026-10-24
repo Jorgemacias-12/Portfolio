@@ -1,32 +1,27 @@
 ---
-import Link from "@/components/astro/Link.astro";
-import { RotateText } from "@/components/react/RotateText";
-import { type Locale } from "@/types";
-import { appendBaseUrl, getTranslation } from "@/utils";
+import React from 'react';
+import Link from '@/components/astro/Link.astro';
+import { RotateText } from '@/components/react/RotateText';
+import { type Locale } from '@/types';
+import { appendBaseUrl, getTranslation } from '@/utils';
 
 const { currentLocale } = Astro;
 const { t } = getTranslation(currentLocale as Locale);
 ---
 
-<section
-  class="flex flex-col-reverse md:flex-row gap-4 items-center justify-between"
->
+<section class="flex flex-col-reverse md:flex-row gap-4 items-center justify-between">
   <div class="w-auto flex-col gap-4 space-y-4" id="hero-text">
     <div class="flex flex-col gap-4">
       <p class="text-lg text-text-muted opacity-0 entry-element">
-        {t("sections_data.about.greeting")}
+        {t('sections_data.about.greeting')}
       </p>
 
-      <h1
-        class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground text-balance opacity-0 entry-element"
-      >
-        {t("sections_data.about.short_name")}
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground text-balance opacity-0 entry-element">
+        {t('sections_data.about.short_name')}
       </h1>
 
-      <p
-        class="text-xl text-success sm:text-2xl font-medium opacity-0 entry-element"
-      >
-        {t("sections_data.about.position")}
+      <p class="text-xl text-success sm:text-2xl font-medium opacity-0 entry-element">
+        {t('sections_data.about.position')}
       </p>
 
       <p
@@ -36,18 +31,16 @@ const { t } = getTranslation(currentLocale as Locale);
         <span
           id="typewriter-text"
           class="text-accent text-xl"
-          style={{
-            "--characters":
-              typeof t("sections_data.about.stack") === "string"
-                ? t("sections_data.about.stack").length
-                : 0,
-          } as React.CSSProperties}
-        >
-          {
-            typeof t("sections_data.about.stack") === "string"
-              ? t("sections_data.about.stack")
-              : ""
+          style={
+            {
+              '--characters':
+                typeof t('sections_data.about.stack') === 'string'
+                  ? t('sections_data.about.stack').length
+                  : 0,
+            } as React.CSSProperties
           }
+        >
+          {typeof t('sections_data.about.stack') === 'string' ? t('sections_data.about.stack') : ''}
         </span>
       </p>
 
@@ -55,12 +48,12 @@ const { t } = getTranslation(currentLocale as Locale);
         <RotateText
           client:only="react"
           className="text-blue-800 font-bold mono dark:text-blue-500"
-          texts={t("sections_data.about.stack_variations")}
+          texts={t('sections_data.about.stack_variations')}
         />
       </div>
 
       <p class="w-auto text-text-muted opacity-0 entry-element">
-        {t("sections_data.about.tagline")}
+        {t('sections_data.about.tagline')}
       </p>
 
       <div class="inline-flex gap-4">
@@ -68,18 +61,18 @@ const { t } = getTranslation(currentLocale as Locale);
           id="cta-projects"
           class="entry-element opacity-0"
           variant="cta"
-          url={appendBaseUrl("#projects")}
+          url={appendBaseUrl('#projects')}
           icon="lucide:arrow-right"
-          label={t("sections_data.about.cta_label")}
+          label={t('sections_data.about.cta_label')}
         />
 
         <Link
           id="cta-blog"
           class="entry-element opacity-0 border border-border text-text-muted bg-transparent"
           variant="cta"
-          url={appendBaseUrl("/blog")}
+          url={appendBaseUrl('/blog')}
           icon="lucide:rss"
-          label={t("sections_data.about.secondary_cta_label")}
+          label={t('sections_data.about.secondary_cta_label')}
         />
       </div>
     </div>
@@ -90,7 +83,7 @@ const { t } = getTranslation(currentLocale as Locale);
       id="hero-img"
       class="rounded-full opacity-0"
       src="/me.webp"
-      alt={t("sections_data.about.pfp_alt")}
+      alt={t('sections_data.about.pfp_alt')}
       width="300"
       height="300"
       loading="eager"
@@ -100,37 +93,37 @@ const { t } = getTranslation(currentLocale as Locale);
 </section>
 
 <script>
-  import { gsap } from "gsap";
+  import { gsap } from 'gsap';
 
   const handleDOMContentLoaded = () => {
     const AVATAR_DURATION = 2.0;
     const TEXT_ENTRY_DURATION = 0.8;
     const STAGGER_DELAY = 0.15;
     const TEXT_OVERLAP_TIME = 0.6;
-    const BASE_EASE = "power3.out";
+    const BASE_EASE = 'power3.out';
 
     const timeline = gsap.timeline({
       defaults: { ease: BASE_EASE },
       onComplete: () => {
-        const typewriter = document.getElementById("typewriter-text");
+        const typewriter = document.getElementById('typewriter-text');
         if (typewriter) {
-          typewriter.classList.add("typewriter");
+          typewriter.classList.add('typewriter');
         }
 
-        window.dispatchEvent(new CustomEvent("hero-animation-done"));
+        window.dispatchEvent(new CustomEvent('hero-animation-done'));
       },
     });
 
     timeline.fromTo(
-      "#hero-img",
+      '#hero-img',
       { opacity: 0, scale: 0.8 },
-      { opacity: 1, scale: 1, duration: AVATAR_DURATION },
+      { opacity: 1, scale: 1, duration: AVATAR_DURATION }
     );
 
     const textStartTime = AVATAR_DURATION - TEXT_OVERLAP_TIME;
 
     timeline.fromTo(
-      ".entry-element",
+      '.entry-element',
       { opacity: 0, y: 30 },
       {
         opacity: 1,
@@ -138,9 +131,9 @@ const { t } = getTranslation(currentLocale as Locale);
         duration: TEXT_ENTRY_DURATION,
         stagger: STAGGER_DELAY,
       },
-      textStartTime,
+      textStartTime
     );
   };
 
-  document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
+  document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
 </script>

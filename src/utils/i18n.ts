@@ -4,8 +4,8 @@ import {
   type TranslationKey,
   type TranslationObject,
   type ValueAtKey,
-} from "@/types";
-import { AVAILABLE_LANGUAGES } from "@/types/lang-definitions";
+} from '@/types';
+import { AVAILABLE_LANGUAGES } from '@/types/lang-definitions';
 
 export const getTranslation = (locale: Locale): TranslationObject => {
   const dictionary = AVAILABLE_LANGUAGES[locale];
@@ -15,9 +15,8 @@ export const getTranslation = (locale: Locale): TranslationObject => {
   }
 
   const t = <K extends TranslationKey>(key: K): ValueAtKey<LanguageType, K> => {
-    const value = key
-      .split(".")
-      .reduce((acc, part) => acc?.[part], dictionary as any);
+    // eslint-disable-next-line
+    const value = key.split('.').reduce((acc, part) => acc?.[part], dictionary as any);
 
     if (value === undefined) {
       throw new Error(`Missing translation key: ${key}`);
