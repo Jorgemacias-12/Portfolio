@@ -1,2 +1,89 @@
 ---
+import type { Locale, Education as Props, TranslationKey } from "@/types";
+import { getTranslation } from "@/utils";
+import Card from "./Card.astro";
+import Badge from "./Badge.astro";
+import { Icon } from "astro-icon/components";
+import Link from "./Link.astro";
+
+const {
+  campus,
+  degree,
+  endDate,
+  gpa,
+  institution,
+  location,
+  startDate,
+  status,
+  schoolIconName,
+  relevantProjects,
+  verificationLinks,
+} = Astro.props;
+
+const { t } = getTranslation(Astro.currentLocale as Locale);
+
+const statusMessage = t(
+  `components.education.status_badge_${status}` as TranslationKey,
+);
+
+const hasValidRelevantProjects = Boolean(relevantProjects.length > 0);
+const hasValidVerificationLinks = Boolean(verificationLinks.length > 0);
 ---
+
+<Card
+  class="flex flex-col h-full group p-4 transition-colors duration-300 gap-4"
+>
+  <header class="flex flex-col gap-2">
+    <section class="flex items-center justify-between w-full">
+      <Badge class="w-fit" name={statusMessage as string} type={status} />
+
+      <Icon size={42} name={`local:${schoolIconName}`} title={institution} />
+    </section>
+
+    <h3 class="text-xl font-bold leading-right">{degree}</h3>
+  </header>
+
+  <main class="flex flex-col gap-4">
+    <section class="flex flex-col gap-1">
+      <p class="text-sm font-semibold text-text-muted">{institution}</p>
+      <p class="text-xs italic text-text-muted">{campus} • {location}</p>
+    </section>
+
+    <section class="grid grid-cols-2">
+      <div class="flex items-center gap-3">
+        <Badge type="star" name="" icon="lucide:star" />
+
+        <p class="flex flex-col">
+          <span class="text-xs text-text-muted uppercase font-bold">
+            {t("components.education.gpa_label")}
+          </span>
+          <span class="font-bold text-sm|">{gpa}</span>
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <Badge type="normal" name="" icon="lucide:calendar" />
+
+        <p class="flex flex-col">
+          <span
+            class="text-xs text-text-muted uppercase font-bold tracking-wider"
+            >{t("components.education.period_label")}</span
+          >
+          <span class="text-sm font-bold"
+            >{startDate.split("-")[0]} - {endDate.split("-")[0]}</span
+          >
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-auto pt-4 grid grid-cols-1 md:grid-cols-2 gap-2">
+    {
+      verificationLinks &&
+        hasValidVerificationLinks &&
+        verificationLinks.map(({ label, href, type, icon }) => (
+          <Link label={label} url={href} variant="oficial" />
+        ))
+    }
+  </footer>
+</Card>

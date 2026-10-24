@@ -1,4 +1,22 @@
 ---
+import type { Project as Props } from "@/types";
+import Card from "./Card.astro";
+import { Carrousel } from "../react/Carrousel";
+import type { Locale } from "@/types";
+import { Modal } from "../react/Modal";
 
+const { description, name, demo_link, links, media, repo_link } = Astro.props;
 ---
 
+<Card class="flex flex-col gap-4">
+  <header class="flex flex-col gap-2">
+    <Modal client:only="react"> Texto de prueba para el main </Modal>
+    <!-- <Carrousel locale={Astro.currentLocale as Locale} images={media!} /> -->
+
+    <h3 class="text-xl mono font-semibold font-balance text-accent">{name}</h3>
+  </header>
+  <main>
+    <p class="text-sm text-text-muted">{description}</p>
+  </main>
+  <footer class="flex flex-wrap gap-2"></footer>
+</Card>
