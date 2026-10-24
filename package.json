@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "latest",
+    "@eslint/js": "^10.0.1",
     "@iconify-json/devicon": "^1.2.68",
     "@iconify-json/lucide": "^1.2.137",
     "@storybook/addon-a11y": "^10.6.1",
@@ -47,9 +48,16 @@
     "@types/node": "^26.6.3",
     "@vitest/browser-playwright": "latest",
     "@vitest/coverage-v8": "latest",
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-astro": "^3.2.1",
     "playwright": "latest",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.2",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "react-icons": "^5.7.0",
     "storybook": "^10.6.1",
+    "typescript-eslint": "^8.72.0",
     "vitest": "latest"
   }
 }
