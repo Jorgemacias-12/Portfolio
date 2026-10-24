@@ -1,41 +1,40 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { BADGE_TYPES } from "@/types";
-import Badge from "@/components/astro/Badge.astro";
+import type { Meta, StoryObj } from '@storybook/react';
+import { BADGE_TYPES } from '@/types';
+import Badge from '@/components/astro/Badge.astro';
 
 /**
  * The Badge component is used to highlight status, achievements, or categories.
  * It supports multiple visual variants and dynamically adapts to the application theme.
  */
 const meta = {
-  title: "Components/astro/Badge",
+  title: 'Components/astro/Badge',
   component: Badge,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   parameters: {
     docs: {
       description: {
         component:
-          "A flexible badge UI element designed for display within user profiles, card headers, and status lists. Supports dynamic icons via Iconify.",
+          'A flexible badge UI element designed for display within user profiles, card headers, and status lists. Supports dynamic icons via Iconify.',
       },
     },
   },
   argTypes: {
     type: {
-      control: { type: "select" },
+      control: { type: 'select' },
       options: BADGE_TYPES,
-      description: "Visual variant style of the badge",
+      description: 'Visual variant style of the badge',
     },
     name: {
-      control: "text",
-      description: "Text label displayed inside the badge",
+      control: 'text',
+      description: 'Text label displayed inside the badge',
     },
     class: {
-      control: "text",
-      description: "Additional CSS classes to customize layout or styling",
+      control: 'text',
+      description: 'Additional CSS classes to customize layout or styling',
     },
     icon: {
-      control: "text",
-      description:
-        "Icon identifier based on the installed Iconify set (e.g., 'devicon:html5')",
+      control: 'text',
+      description: "Icon identifier based on the installed Iconify set (e.g., 'devicon:html5')",
     },
   },
 } satisfies Meta<typeof Badge>;
@@ -49,10 +48,10 @@ type Story = StoryObj<typeof meta>;
  */
 export const Default: Story = {
   args: {
-    type: "normal",
-    name: "Example text",
-    class: "",
-    icon: "",
+    type: 'normal',
+    name: 'Example text',
+    class: '',
+    icon: '',
   },
 };
 
@@ -64,10 +63,10 @@ export const Default: Story = {
  */
 export const Iconified: Story = {
   args: {
-    type: "normal",
-    name: "Now with icon",
-    class: "",
-    icon: "devicon:html5",
+    type: 'normal',
+    name: 'Now with icon',
+    class: '',
+    icon: 'devicon:html5',
   },
 };
 
@@ -76,8 +75,8 @@ export const Iconified: Story = {
  */
 export const Graduated: Story = {
   args: {
-    type: "graduated",
-    name: "Graduated",
+    type: 'graduated',
+    name: 'Graduated',
   },
 };
 
@@ -86,8 +85,8 @@ export const Graduated: Story = {
  */
 export const Completed: Story = {
   args: {
-    type: "completed",
-    name: "Completed",
+    type: 'completed',
+    name: 'Completed',
   },
 };
 
@@ -96,8 +95,8 @@ export const Completed: Story = {
  */
 export const Ongoing: Story = {
   args: {
-    type: "ongoing",
-    name: "In Progress",
+    type: 'ongoing',
+    name: 'In Progress',
   },
 };
 
@@ -106,8 +105,8 @@ export const Ongoing: Story = {
  */
 export const Star: Story = {
   args: {
-    type: "star",
-    name: "Featured",
-    icon: "lucide:star",
+    type: 'star',
+    name: 'Featured',
+    icon: 'lucide:star',
   },
 };
