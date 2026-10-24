@@ -9,11 +9,12 @@ const config: StorybookConfig = {
     "@storybook/addon-a11y",
     "@storybook/addon-docs",
     "@storybook/addon-onboarding",
+    "@storybook/addon-themes",
   ],
   framework: {
     name: "@storybook-astro/framework",
     options: {
-      integrations: [react({ include: ["**/react/**"] })],
+      integrations: [react({ include: ["**/*.tsx", "**/*.jsx"] })],
     },
   },
 };
