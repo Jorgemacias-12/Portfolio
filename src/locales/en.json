@@ -49,17 +49,19 @@
   },
   "sections_data": {
     "about": {
-      "greeting": "Hello, I am",
+      "greeting": "Hello, I'm",
       "short_name": "Jorge Macias",
-      "position": "Full Stack Developer",
-      "stack": "TypeScript • React • Astro • C#",
+      "position": "Software Developer",
+      "stack": "TypeScript • Node.js • React • Astro",
       "stack_variations": [
         "C# • Desktop • WPF",
-        "Binary parsing • Low level",
+        "Binary analysis • Low-level",
         "Game modding • Lua"
       ],
-      "tagline": "Building functional and well-thought software, guided by curiosity and continuous learning.",
-      "pfp_alt": "Jorge Macias photo"
+      "tagline": "I build software to solve problems and explore how things work, from applications to their inner components.",
+      "pfp_alt": "Photo of Jorge Macias",
+      "cta_label": "View my projects",
+      "secondary_cta_label": "Visit my blog"
     },
     "skills": {
       "core": {

@@ -51,15 +51,17 @@
     "about": {
       "greeting": "Hola, soy",
       "short_name": "Jorge Macias",
-      "position": "Desarrollador Full Stack",
-      "stack": "TypeScript • React • Astro • C#",
+      "position": "Desarrollador de Software",
+      "stack": "TypeScript • NodeJs • React • Astro",
       "stack_variations": [
         "C# • Escritorio • WPF",
         "Análisis binario • Bajo nivel",
         "Modding de videojuegos • Lua"
       ],
-      "tagline": "Construyendo software funcional y bien pensado, guiado por la curiosidad y el aprendizaje continuo.",
-      "pfp_alt": "Foto de Jorge Macias"
+      "tagline": "Construyo software para resolver problemas y exploro cómo funcionan las cosas, desde las aplicaciones hasta sus componentes internos.",
+      "pfp_alt": "Foto de Jorge Macias",
+      "cta_label": "Ver mis proyectos",
+      "secondary_cta_label": "Ir al blog"
     },
     "skills": {
       "core": {
@@ -244,12 +246,6 @@
         "gpa": "96.15/100",
         "status": "graduated",
         "finished": true,
-        "labels": {
-          "status_badge": "Graduado",
-          "period_caption": "2021 — 2026",
-          "gpa_label": "Promedio",
-          "visit_button": "Sitio Oficial"
-        },
         "schoolLink": "http://www.cuc.udg.mx/",
         "schoolIconName": "udg",
         "verificationLinks": [
@@ -276,12 +272,6 @@
         "gpa": "9.9/10",
         "status": "completed",
         "finished": true,
-        "labels": {
-          "status_badge": "Terminado",
-          "period_caption": "2018 — 2021",
-          "gpa_label": "Promedio",
-          "visit_button": "Sitio Web"
-        },
         "schoolLink": "https://www.conalep.edu.mx/",
         "schoolIconName": "conalep",
         "verificationLinks": [
