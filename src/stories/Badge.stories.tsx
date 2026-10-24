@@ -108,5 +108,6 @@ export const Star: Story = {
   args: {
     type: "star",
     name: "Featured",
+    icon: "lucide:star",
   },
 };
