@@ -246,12 +246,6 @@
         "gpa": "96.15/100",
         "status": "graduated",
         "finished": true,
-        "labels": {
-          "status_badge": "Graduated",
-          "period_caption": "2021 — 2026",
-          "gpa_label": "GPA",
-          "visit_button": "Official Site"
-        },
         "schoolLink": "http://www.cuc.udg.mx/",
         "schoolIconName": "udg",
         "verificationLinks": [
@@ -278,12 +272,6 @@
         "gpa": "9.9/10",
         "status": "completed",
         "finished": true,
-        "labels": {
-          "status_badge": "Completed",
-          "period_caption": "2018 — 2021",
-          "gpa_label": "GPA",
-          "visit_button": "Website"
-        },
         "schoolLink": "https://www.conalep.edu.mx/",
         "schoolIconName": "conalep",
         "verificationLinks": [
