@@ -5,7 +5,15 @@ import { getTranslation } from '@/utils';
 const { currentLocale } = Astro;
 const { t } = getTranslation(currentLocale as Locale);
 
-const skills = Object.values(t('sections_data.skills'));
+// const skills = Object.values(t('sections_data.skills'));
+// const {  } = Object.values(t('sections_data.skills'));
+const { description, eyebrow } = t('sections_data.skills.intro');
+// const {} = t('sections_data.skills.adi')
 ---
 
-<section class="grid grid-cols-1 md:grid-cols-2 gap-4">{JSON.stringify(skills)}</section>
+<section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div>
+    <h3>{eyebrow}</h3>
+    <p>{description}</p>
+  </div>
+</section>
