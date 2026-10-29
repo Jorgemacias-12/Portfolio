@@ -1,46 +1,34 @@
-# Astro Starter Kit: Basics
+# Portfolio
+
+This is my portfolio, where I share my professional profile.
+
+[Leer en español](README.es.md)
+
+## Package manager
+
+This project uses [Bun](https://bun.sh/) to install dependencies and run scripts. From the project root, install the dependencies and start the development server with:
 
 ```sh
-bun create astro@latest -- --template basics
+bun install
+bun run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Add a dependency with `bun add package-name`, or a development dependency with `bun add --dev package-name`.
 
-## 🚀 Project Structure
+## Available commands
 
-Inside of your Astro project, you'll see the following folders and files:
+These commands are defined in `package.json`:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Command                   | Description                                                                                |
+| ------------------------- | ------------------------------------------------------------------------------------------ |
+| `bun run dev`             | Start the Astro development server.                                                        |
+| `bun run build`           | Build the production site in `dist/`.                                                      |
+| `bun run preview`         | Preview the production build locally.                                                      |
+| `bun run local`           | Start the Astro development server on the network host.                                    |
+| `bun run astro -- ...`    | Run Astro CLI commands.                                                                    |
+| `bun run storybook`       | Start Storybook on port 6006.                                                              |
+| `bun run build-storybook` | Build Storybook.                                                                           |
+| `bun run prepare`         | Set up Husky Git hooks. This script also runs automatically after installing dependencies. |
+| `bun run lint`            | Run ESLint.                                                                                |
+| `bun run lint:fix`        | Run ESLint and automatically fix issues where possible.                                    |
+| `bun run format`          | Format project files with Prettier.                                                        |
